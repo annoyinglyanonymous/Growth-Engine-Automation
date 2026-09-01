@@ -1,0 +1,167 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/garage-insurance/best-garage-liability-insurance/",
+    "url": "https://agencyheight.com/garage-insurance/best-garage-liability-insurance/",
+    "name": "Garage Liability Insurance: Protect Your Auto Business with Trusted Agents on Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/garage-insurance/best-garage-liability-insurance/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/garage-insurance/best-garage-liability-insurance/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/Best-Garage-Liability-Insurance.jpg",
+    "datePublished": "2025-10-10T04:00:33+00:00",
+    "dateModified": "2025-10-15T08:33:47+00:00",
+    "description": "Protect your auto shop from costly accidents! Get custom garage liability insurance from trusted agents on Agency Height—compare quotes now.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/garage-insurance/best-garage-liability-insurance/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/garage-insurance/best-garage-liability-insurance/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/garage-insurance/best-garage-liability-insurance/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/Best-Garage-Liability-Insurance.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/Best-Garage-Liability-Insurance.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "Best Garage Liability Insurance"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/garage-insurance/best-garage-liability-insurance/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Best Garage Insurance | Get a Quote",
+      "item": "https://agencyheight.com/garage-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Best Garage Liability Insurance |Get a Quote"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "How much does garage liability insurance cost for small auto repair shops?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Garage liability insurance typically costs between $1,300 and $2,500 per year for small to mid-sized auto repair shops. The final premium depends on your business size, services offered, claims history, and location. Get a customized quote from licensed agents on Agency Height to find the best rate for your business."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Why should I use Agency Height to get garage liability insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "With Agency Height, you’re not just getting insurance—you’re getting expertise. We partner with vetted, experienced agents who understand the risks faced by repair shops, dealerships, and service centers. They’ll help you find custom coverage, fast quotes, and competitive pricing that fits your business needs perfectly."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How can Agency Height help lower my garage liability insurance costs?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Agency Height agents work with multiple insurance carriers to help you compare quotes, find discounts, and optimize coverage. By matching your business profile with the right insurer, they help you avoid paying for unnecessary coverage and ensure you get the best rate for your risk level and location."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How fast can I get garage liability insurance through Agency Height?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "In most cases, you can get multiple competitive quotes within 24 hours after connecting with an agent through Agency Height. Our network of experienced agents simplifies the process so you can get covered quickly and keep your business running without delay."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is Garage Keepers Insurance the same as General Liability Insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "No. General liability insurance covers injuries or property damage caused by your business operations, but it does not protect customer vehicles in your possession. Garage keepers insurance fills this gap by specifically covering damage to customer cars while under your care."
+    }
+   }
+  ]
+ }
+]

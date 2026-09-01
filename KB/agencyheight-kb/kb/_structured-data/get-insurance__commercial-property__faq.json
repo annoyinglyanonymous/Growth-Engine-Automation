@@ -1,0 +1,221 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/get-insurance/commercial-property/faq/",
+    "url": "https://agencyheight.com/get-insurance/commercial-property/faq/",
+    "name": "Commercial Property Insurance FAQ - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/get-insurance/commercial-property/faq/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/get-insurance/commercial-property/faq/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/2022/08/Untitled-design-44.jpg",
+    "datePublished": "2022-08-19T06:40:25+00:00",
+    "dateModified": "2023-04-20T06:12:39+00:00",
+    "description": "Looking for commercial property insurance? Our agents can help you get the best deals on your business insurance. Read more to get started.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/get-insurance/commercial-property/faq/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/get-insurance/commercial-property/faq/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/get-insurance/commercial-property/faq/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/2022/08/Untitled-design-44.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/2022/08/Untitled-design-44.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "commercial property insurance footer"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/get-insurance/commercial-property/faq/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get Insurance",
+      "item": "https://agencyheight.com/get-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Commercial Property Insurance in 2026",
+      "item": "https://agencyheight.com/get-insurance/commercial-property/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Commercial Property Insurance FAQ"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "How can I purchase commercial property insurance for my business?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Business owners can get property coverage either by buying a standalone commercial property insurance policy or investing in a comprehensive Business Owners’ Policy (BOP). A BOP policy combines general liability insurance and commercial property insurance. You can also reach out to an insurance agent to get personalized policies tailored to cover all your insurance requirements.Carriers typically offer two types of commercial property insurance coverage options: actual cash value or replacement cost. Some carriers also offer a third option called functional replacement cost.Actual Cash Value: This method reimburses the present value of the damaged property and the cost to rebuild or replace the property by taking depreciation into account.Replacement Cost: This coverage helps to repair or rebuild a commercial property using materials of the same or comparable quality.Functional Replacement Cost: The Functional Replacement Cost method helps to reimburse the repair or replacement cost of the damaged property with construction materials and techniques that are functionally equivalent to the originally used methods and materials when the building was initially constructed."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is commercial property insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "This is a type of business insurance that protects your commercial property and the valuable assets housed in or on the property from various perils such as fire, theft, vandalism, windstorms, and more."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What does commercial property insurance cover?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Commercial property insurance covers the external structure of the property and important assets inside the commercial building. A standard policy typically covers:Commercial buildingsFurniture and valuable assetsMachinery and equipmentSupplies and inventory"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the factors affecting commercial property insurance premiums?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "As with other insurance policies, commercial property insurance premiums depend on many factors, and the costs can differ from one business to another. The premiums can increase or decrease significantly depending on the nature of the business and its insurance requirements.These are the important factors affecting a standard commercial property insurance policy:Value and number of properties insuredLocation of your businessNature of your business and the industry your business is involved inCondition of your commercial propertyProperty valuation methodCoverage limits and deductiblesTypes of perils covered, etc."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is the recommended additional coverage for commercial property insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Standard commercial property insurance policies cover all the basic perils but can also leave out some crucial threats. Business owners may have to buy additional coverage in such cases.Here are some important additional types of coverage that owners should consider buying:Business Income &amp; Extra Expense (Business Interruption): Covers employee salary, net income, and basic operating expenses while your business is not operating due to an accident.Equipment Breakdown: Covers broken machinery and parts because the standard policy only covers permanent damage, not temporary breakdowns.Ordinance and Law: Covers the upgrades and the changes required to maintain the standards of the current local building code if the damaged building used the old building code."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is the average premium cost of commercial property insurance in the U.S.?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "According to Insureon, the average cost of commercial property insurance in the U.S. is $63 monthly and $755 yearly for a coverage limit of $60,000 and a median deductible of $1,000. However, to get an accurate estimate for your business, we recommend that you request quotes from different carriers or consult with independent insurance agents."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What kinds of hazards and perils are not covered by a standard commercial property insurance policy?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "A normal commercial property insurance policy excludes certain kinds of disasters and incidents. They are:EarthquakeFloodTerrorist activitiesWar and military activitiesIntentional damageNuclear hazardMinor wear and tearCommercial vehiclesValuable papersTheft by employeesBusiness interruption costsIf your business operates in a location prone to these excluded perils, you can buy additional coverage to shield your commercial assets."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What kinds of businesses require commercial property insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "While commercial property insurance is not mandated by law in all states, and some businesses require it more than others due to their riskier nature, we recommend that all companies invest in a good policy.Regardless of the business’s scale and nature, all business owners have to deal with different risks and perils. Not having commercial property insurance could lead your business to bankruptcy, legal trouble, and severe financial strain if any unexpected accident occurs.Hence, if your business meets any of the conditions mentioned below, you should consider buying commercial property coverage:If you own or rent a property for business operationsIf your business owns or rents expensive equipmentIf your business has products and inventoryIf you own valuable assets."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Which are the best carriers for commercial property insurance in 2023?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "As per constructioncoverage.com, the best insurance carriers for commercial property insurance in 2023 are:NationwideNext InsuranceThe HartfordTravelersLiberty Mutual"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the different property limits in a commercial property insurance policy?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Before you buy commercial property insurance as a business owner, you need to be clear about the coverage limit options available under this policy so you can choose the one that best suits your business. They are the blanket limit, and the scheduled building limit.A blanket limit is designed for business owners who own multiple properties. It combines the value of all your physical assets and adds it into a single limit that can be used to cover any of your insured properties.A scheduled building limit is intended for business owners who want to select individual insurance limits for each building. If you own just one building, it is your only insurance limit option. On the other hand, this option provides a low-cost alternative for business owners who want to insure multiple buildings. Unlike the blanket limit option, a scheduled building limit does not share limits in case you underinsure a property accidentally."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the different kinds of commercial property insurance policies?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "There are three types of commercial property insurance policies depending on the perils/accidents covered. They are: basic form policies, broad form policies, and special form policies.Basic form policies, also known as the “named perils policies,” only cover the perils that are explicitly listed in the policy. The insurance carrier is not obliged to pay for the damages if they are not included in the policy. You cannot get additional coverage in a basic form policy. Such policies typically cover fire, lightning, explosions, smoke, riots, etc.Broad form policies cover the perils included in a basic form policy as well as additional hazards like water damage, structural collapses, falling objects, etc.Special form policies are comprehensive policies in which excluded perils are listed rather than included perils. This means that you will be covered for all kinds of risks as long as you don’t exclude a threat from your policy. While special form policies also have certain exceptions like earthquakes and floods, they generally provide more coverage than the other two policies."
+    }
+   }
+  ]
+ }
+]

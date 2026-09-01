@@ -1,0 +1,151 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/business-insurance/cost-by-state/",
+    "url": "https://agencyheight.com/business-insurance/cost-by-state/",
+    "name": "Business Insurance Cost by State 2026- Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/business-insurance/cost-by-state/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/business-insurance/cost-by-state/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/Business-Insurance-Cost-by-State.jpg",
+    "datePublished": "2023-03-07T11:05:47+00:00",
+    "dateModified": "2025-12-22T06:22:59+00:00",
+    "description": "Looking to compare business insurance cost per state? Get tips, and FAQs to help you choose the right coverage for your business needs.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/business-insurance/cost-by-state/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/business-insurance/cost-by-state/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/business-insurance/cost-by-state/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/Business-Insurance-Cost-by-State.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/Business-Insurance-Cost-by-State.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "business_insurance_cost_state"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/business-insurance/cost-by-state/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Business Insurance | Get a Quote",
+      "item": "https://agencyheight.com/business-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Business Insurance Cost by State 2026"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Are business insurance costs higher in certain states? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes, business insurance costs can be higher in certain states due to unique risks or regulations. For example, businesses in California may pay higher workers&#8217; compensation insurance rates due to the state&#8217;s strict labor laws."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can I lower my business insurance costs by purchasing insurance from a provider in a different state? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "In some cases, purchasing insurance from a provider in a different state may be cheaper. However, it&#8217;s important to ensure that the insurance provider is licensed to do business in your state and that the policy meets the specific requirements for your state."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How often should I review my business insurance coverage and costs? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "It&#8217;s a good idea to review your business insurance coverage and costs annually, or whenever your business experiences significant changes. This can help ensure that you have the right coverage at the right cost to protect your business."
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,151 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/get-insurance/best-rv-insurance/",
+    "url": "https://agencyheight.com/get-insurance/best-rv-insurance/",
+    "name": "Best RV Insurance: All You Need to Know in 2026 - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/get-insurance/best-rv-insurance/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/get-insurance/best-rv-insurance/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/2022/08/What-Is-RV-Insurance-5.jpg",
+    "datePublished": "2022-07-28T13:06:48+00:00",
+    "dateModified": "2025-12-30T05:55:46+00:00",
+    "description": "If you've ever wondered about the best rv insurance?', then you're at the right place. Read more to learn how to secure your RV.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/get-insurance/best-rv-insurance/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/get-insurance/best-rv-insurance/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/get-insurance/best-rv-insurance/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/2022/08/What-Is-RV-Insurance-5.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/2022/08/What-Is-RV-Insurance-5.jpg",
+    "width": 600,
+    "height": 314,
+    "caption": "best_rv_insurance_body"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/get-insurance/best-rv-insurance/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get Insurance",
+      "item": "https://agencyheight.com/get-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Best RV Insurance: All You Need to Know in 2026"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Is RV insurance a good idea?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "If you buy RV insurance, you can kick back and relax knowing you’re protected in the case of an accident. Even if it may not be required by your state or lender, insuring your RV or camper is a great idea, significantly if you’ve invested a good chunk of change."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Which types of insurance are required for an RV?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Did you know that all states in the U.S.A, except New Hampshire and Virginia, require RV insurance according to the government? You will have to pay an uninsured motor vehicle fee even in such locations. You must have general liability insurance everywhere else, and in no-fault areas, you must also have personal injury protection. In these states, the RV insurance costs range from $800 to $2,000 each."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is water damage covered by RV insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Exclusions could apply, but comprehensive RV insurance packages can shield your RV against water damage. However, note that defects, water leaks, and general wear &amp; tear are typically not covered, although each policy can be unique. Before enrolling in an RV insurance policy, talk with your agent about what is and isn’t covered."
+    }
+   }
+  ]
+ }
+]

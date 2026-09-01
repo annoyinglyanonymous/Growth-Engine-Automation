@@ -1,0 +1,159 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/get-insurance/commercial-auto-insurance/",
+    "url": "https://agencyheight.com/get-insurance/commercial-auto-insurance/",
+    "name": "Commercial Auto Insurance - Get a Free Quote - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/get-insurance/commercial-auto-insurance/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/get-insurance/commercial-auto-insurance/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/2022/07/banner-image-template-1-commercial_Auto_Insurance.jpg",
+    "datePublished": "2022-01-20T06:09:59+00:00",
+    "dateModified": "2023-04-20T05:53:29+00:00",
+    "description": "Commercial vehicles are a crucial part of day-to-day operations for most businesses in the U.S. Get the right commercial auto insurance.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/get-insurance/commercial-auto-insurance/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/get-insurance/commercial-auto-insurance/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/get-insurance/commercial-auto-insurance/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/2022/07/banner-image-template-1-commercial_Auto_Insurance.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/2022/07/banner-image-template-1-commercial_Auto_Insurance.jpg",
+    "width": 1024,
+    "height": 576,
+    "caption": "commercial insurance USA"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/get-insurance/commercial-auto-insurance/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get Insurance",
+      "item": "https://agencyheight.com/get-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Commercial Auto Insurance &#8211; Get a Free Quote"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "How Can I Find a Commercial Auto Insurance Agent?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "If you’re looking for a commercial auto insurance agent, you can get in touch with them through your business insurance provider if you haven’t done so already. Another way to connect with one would be through referrals through your peers or business networks.You can also explore the Agency Height directory and find top commercial auto insurance agents near you."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How much does a commercial auto insurance policy cost?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The cost of a commercial auto insurance policy depends on several different factors. Business owners can purchase a policy that meets the state requirements or choose a higher coverage limit depending on their insurance needs.The pricing of commercial coverage is affected by factors like:Size of your business and type of industryNumber of automobilesType and model of automobilesRisks involved in your businessAmount and extent of coverage limitClaims historyDeductible AmountNumber of personnel driving your commercial vehicles"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What type of vehicles are covered by commercial auto coverage?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Commercial auto coverage covers all kinds of automobiles that are used for business purposes like:Commercial carsBusiness vansPickup trucksFood trucksBox trucksSemi-trucksTractor-trailers, and more."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Who needs commercial auto insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Business owners that use automobiles for commercial purposes like delivery, freight, and transportation require commercial auto insurance to protect themselves and their employees from liability damages, accident damages, and other unforeseen risks.Vehicles with a commercial license plate registered as commercial automobiles also require insurance to operate legally."
+    }
+   }
+  ]
+ }
+]

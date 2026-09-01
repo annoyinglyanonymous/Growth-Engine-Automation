@@ -1,0 +1,150 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/medical-malpractice-insurance/medical-malpractice-insurance-for-general-surgeons/",
+    "url": "https://agencyheight.com/medical-malpractice-insurance/medical-malpractice-insurance-for-general-surgeons/",
+    "name": "Medical Malpractice Insurance for General Surgeons - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/medical-malpractice-insurance/medical-malpractice-insurance-for-general-surgeons/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/medical-malpractice-insurance/medical-malpractice-insurance-for-general-surgeons/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/general-surgeons-hero-image-main.jpg",
+    "datePublished": "2025-11-25T11:03:05+00:00",
+    "dateModified": "2026-06-12T08:44:33+00:00",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/medical-malpractice-insurance/medical-malpractice-insurance-for-general-surgeons/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/medical-malpractice-insurance/medical-malpractice-insurance-for-general-surgeons/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/medical-malpractice-insurance/medical-malpractice-insurance-for-general-surgeons/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/general-surgeons-hero-image-main.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/general-surgeons-hero-image-main.jpg",
+    "width": 1920,
+    "height": 800,
+    "caption": "General Surgeons"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/medical-malpractice-insurance/medical-malpractice-insurance-for-general-surgeons/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Best Medical Malpractice Insurance | Get a Quote",
+      "item": "https://agencyheight.com/medical-malpractice-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Medical Malpractice Insurance for General Surgeons"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "1. Why choose Agency Height for General Surgeon Malpractice Insurance? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Agency Height provides tailored malpractice coverage for general surgeons in all U.S. states. Our expert agents simplify policies, highlight specialty-specific protections, and offer ongoing support—giving peace of mind while focusing on your patients."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "2. Why are surgeon-specific policies better than generic ones? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Surgeon-specific policies cover complex surgeries, intra- and post-op risks, and specialty exposures that generic policies often lack. Agency Height helps you compare and secure coverage that truly protects your practice."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "3. Does Agency Height support policy changes if I move or switch practices? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Our specialized agents ensure your policy includes tail or retroactive coverage and guide you through state-specific adjustments, keeping your coverage seamless across moves or job changes."
+    }
+   }
+  ]
+ }
+]

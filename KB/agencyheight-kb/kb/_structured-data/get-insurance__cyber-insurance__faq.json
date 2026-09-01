@@ -1,0 +1,245 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/get-insurance/cyber-insurance/faq/",
+    "url": "https://agencyheight.com/get-insurance/cyber-insurance/faq/",
+    "name": "Cyber Insurance FAQ 2023 - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/get-insurance/cyber-insurance/faq/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/get-insurance/cyber-insurance/faq/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/Cyber-insurance-faq.jpg",
+    "datePublished": "2023-03-13T11:36:25+00:00",
+    "dateModified": "2023-04-20T07:55:38+00:00",
+    "description": "Get answers to common questions about cyber insurance. Our FAQ covers everything from policy terms to the claims process.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/get-insurance/cyber-insurance/faq/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/get-insurance/cyber-insurance/faq/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/get-insurance/cyber-insurance/faq/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/Cyber-insurance-faq.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/Cyber-insurance-faq.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "cyber insurance faq"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/get-insurance/cyber-insurance/faq/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get Insurance",
+      "item": "https://agencyheight.com/get-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Cyber Insurance",
+      "item": "https://agencyheight.com/get-insurance/cyber-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Cyber Insurance FAQ"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What is cyber insurance, and why do businesses need it?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Cyber insurance is a type of insurance that helps businesses mitigate risks associated with cyber-attacks and data breaches. It provides financial protection against losses from cyber incidents, including data theft, network damage, and business interruption."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What does cyber insurance cover?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Cyber insurance policies vary, but typical coverage includes costs associated with responding to a cyber-attack or data breach, such as investigation, notification, and credit monitoring. It may also cover business interruption losses, legal fees, and regulatory fines."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How much does cyber insurance cost?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Cyber insurance premiums depend on many factors, including the size and type of business, the industry, the level of risk, and the amount of coverage needed. On average, cyber insurance premiums for small and medium-sized businesses can range from $1,000 to $7,500 per year."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the benefits of cyber insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Cyber insurance helps businesses reduce the financial impact of cyber-attacks and data breaches. It provides financial protection, helps businesses comply with regulatory requirements, and can provide access to resources such as legal and technical expertise."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the exclusions of cyber insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Cyber insurance policies may have exclusions, such as losses caused by employee dishonesty or intentional acts, pre-existing conditions, or losses resulting from war or terrorism. Reviewing your policy is important to understand what is covered and what is not."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do I choose a cyber insurance policy?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Choosing a cyber insurance policy requires careful consideration of your business&#8217;s risks and needs. You should evaluate the coverage, exclusions, deductibles, and limits of each policy, as well as the reputation and financial stability of the insurer."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What should I do if my business experiences a cyber-attack or data breach?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "If your business experiences a cyber-attack or data breach, you should notify your insurer immediately and follow the response plan outlined in your policy. You should also take steps to contain the breach, protect your data, and mitigate the damage."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is cyber insurance risk?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Cyber insurance risk refers to the potential financial losses and legal liabilities resulting from cyber-attacks or data breaches."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Who is responsible for cyber insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The responsibility for cyber insurance falls on both businesses and individuals. Businesses and organizations should assess their risk of cyber-attacks and data breaches and implement appropriate security measures to mitigate those risks. At the same time, individuals should take steps to protect their personal information online."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How are cyber insurance premiums determined?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Cyber insurance premiums are determined by several factors, including the level of coverage required, the types of risks being covered, the size of the business or organization, and the level of security measures in place. Premiums may also be affected by past cyber incidents or claims history."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Are all cyber incidents covered by cyber insurance?  ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Not all cyber incidents are covered by cyber insurance. It&#8217;s important to review policy terms and coverage with a qualified insurance professional to fully understand what is and is not covered. Policies typically include specific exclusions or limitations, such as those related to cyber-attacks from state-sponsored actors or losses resulting from social engineering scams."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do I file a claim for cyber insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The claims process for cyber insurance typically involves reporting the incident to the insurance provider as soon as possible and providing documentation and evidence, including any financial losses or legal liabilities incurred. The insurance provider will then review the claim and determine whether coverage applies."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can cyber insurance be combined with other types of insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes, cyber insurance can be combined with other types of insurance, such as general liability or property insurance, to provide comprehensive coverage for a range of risks. Some insurance providers offer packaged policies that combine cyber insurance with other types of coverage, while others may offer endorsements or riders for existing policies. It&#8217;s important to work with a qualified insurance professional to determine the best combination of coverage for your specific needs."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is cyber insurance mandatory for companies?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Given that many businesses heavily depend on their computer systems to carry out crucial tasks, it is necessary for them to obtain cyber insurance. Failing to do so may force a company to bear significant financial losses on its own or resort to alternative insurance policies that may not provide sufficient coverage."
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,151 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/get-insurance/cyber-insurance/",
+    "url": "https://agencyheight.com/get-insurance/cyber-insurance/",
+    "name": "Cyber Insurance 2024 - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/get-insurance/cyber-insurance/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/get-insurance/cyber-insurance/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/Cyber-Insurance.jpg",
+    "datePublished": "2023-03-14T05:11:00+00:00",
+    "dateModified": "2024-01-24T10:31:13+00:00",
+    "description": "Protect your business from cyber risks with our guide on cyber insurance. Learn about cost, comparisons, and checklists for risk management.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/get-insurance/cyber-insurance/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/get-insurance/cyber-insurance/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/get-insurance/cyber-insurance/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/Cyber-Insurance.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/Cyber-Insurance.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "cyber insurance usa"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/get-insurance/cyber-insurance/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get Insurance",
+      "item": "https://agencyheight.com/get-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Cyber Insurance"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What does cyber insurance cover?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Cyber insurance policies vary, but typical coverage includes costs associated with responding to a cyber-attack or data breach, such as investigation, notification, and credit monitoring. It may also cover business interruption losses, legal fees, and regulatory fines."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How much does cyber insurance cost?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Cyber insurance premiums depend on many factors, including the size and type of business, the industry, the level of risk, and the amount of coverage needed. On average, cyber insurance premiums for small and medium-sized businesses range from $1,000 to $7,500 per year."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the benefits of cyber insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Cyber insurance helps businesses reduce the financial impact of cyber-attacks and data breaches. It provides financial protection, helps businesses comply with regulatory requirements, and can provide access to resources such as legal and technical expertise."
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,128 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-license/",
+    "url": "https://agencyheight.com/insurance-license/",
+    "name": "Insurance License - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "datePublished": "2022-01-07T10:37:42+00:00",
+    "dateModified": "2025-07-17T06:01:15+00:00",
+    "description": "An insurance license is a necessity if you wish to become an insurance agent. Get the information you need to get started now!",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-license/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-license/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-license/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance License"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What types of insurance licenses are there?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Some of the most popular types of licenses issued in insurance are listed as follows:Accident and Health or SicknessAdjusterAutomobile Insurance Agent (Limited Lines)Car RentalCargo Shippers’ AgentCasualty Broker-AgentCredit Insurance AgentLife AgentLife and Disability Insurance AnalystLife-Limited To The Payment of Funeral And Burial ExpensesLife Settlement BrokerPersonal Lines Broker-AgentProperty and Casualty Broker-AgentSpecial Lines’ Surplus Line BrokerTravel Insurance Agent (Limited Lines)Vehicle Service Contract Provider"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How much does an insurance license cost?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The cost of state licensing tests varies, but on average, they cost between $90-$350. The total cost of your insurance course, application, and exam in Texas and California will be around $375."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How long does it take for an insurance license to expire?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The expiration dates vary by state, although most have a two-year validity period. They can, however, be renewed within a limited time."
+    }
+   }
+  ]
+ }
+]

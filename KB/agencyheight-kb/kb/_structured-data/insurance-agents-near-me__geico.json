@@ -1,0 +1,151 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-agents-near-me/geico/",
+    "url": "https://agencyheight.com/insurance-agents-near-me/geico/",
+    "name": "Find GEICO Insurance Agents Near You - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/insurance-agents-near-me/geico/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/insurance-agents-near-me/geico/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/GEICO-logo.png",
+    "datePublished": "2023-07-06T09:16:50+00:00",
+    "dateModified": "2026-06-18T06:18:18+00:00",
+    "description": "Looking for insurance? Whether you need coverage for yourself or your family, local GEICO agents are there to help. Find a local agent today!!",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-agents-near-me/geico/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-agents-near-me/geico/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/insurance-agents-near-me/geico/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/GEICO-logo.png",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/GEICO-logo.png",
+    "width": 500,
+    "height": 500,
+    "caption": "GEICO logo"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-agents-near-me/geico/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance Agents and Brokers Near You in the U.S.",
+      "item": "https://agencyheight.com/insurance-agents-near-me/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Find GEICO Insurance Agents Near You"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Is GEICO going out of business in 2026? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "GEICO is a well-established and reputable insurance company in the United States. GEICO has only closed its California sales office as of August 2022."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Does GEICO use local agents? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "GEICO operates differently from traditional insurance companies in terms of its distribution model. GEICO does not use independent insurance brokerages or agencies. Instead, it employs exclusive GEICO Local Agents who represent GEICO and its partner companies. These agents are not allowed to represent other insurance companies that compete with GEICO and its partners."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is GEICO available only in the US? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "While GEICO is primarily known for its operations in the United States, it does provide overseas insurance coverage through its affiliate, GEICO Financial Services GmbH. Since 1960, GEICO Financial Services GmbH has been acting as an agent and arranging coverage from reputable overseas insurers licensed by the respective countries where policyholders reside."
+    }
+   }
+  ]
+ }
+]

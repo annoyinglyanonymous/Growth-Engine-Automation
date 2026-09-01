@@ -1,0 +1,168 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/markets/",
+    "url": "https://agencyheight.com/markets/",
+    "name": "Carrier Appointments & Market Access | Agency Height Markets",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/markets/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/markets/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "datePublished": "2023-03-03T08:06:42+00:00",
+    "dateModified": "2026-08-10T11:45:27+00:00",
+    "description": "Find carrier appointments, MGAs, wholesalers, and E&S markets that match your risk. Request access, check appetite, and route submissions fast.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/markets/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/markets/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/markets/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "width": 1200,
+    "height": 675
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/markets/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Agency Height Markets"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Can I write insurance policies without a carrier appointment?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. Submit the risk through Agency Height Markets and our underwriting team places it with a select wholesale carrier. You earn the commission, we handle the carrier relationship. No appointment needed, no new portal, no separate tool. Works from day one for any agent."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is an insurance carrier appointment and how do I get one through Agency Height Markets?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "A carrier appointment is authorization from an insurance company to sell its policies and earn commission. In Agency Height Markets, request an appointment from the carrier card. Your NPN, E&O, W9, and state license details pre-fill from your profile. Apply through the carrier's partner portal using our link, or submit to our team for manual appointments. Most appointments confirm within 48 hours."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do I get appointed as a new agent with no production history?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Submit risks to our underwriting team from day one. Select carriers require no volume minimums, and the premium you place builds the production history carriers need to appoint you directly."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is an MGA and what is E&S insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "An MGA (Managing General Agent) is a wholesale intermediary with underwriting authority. They specialize in risks standard carriers won’t write, like niche commercial, specialty property, or professional liability. E&S (Excess & Surplus Lines) carriers write risks admitted carriers won’t: coastal property, contractors, businesses with prior losses, and more. Agency Height Markets shows E&S carriers in the same search as admitted carriers, so you never have to search multiple places when a standard market declines."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How is Agency Height Markets different from First Connect or Smart Choice?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "They solve carrier access through different models. Smart Choice is an agency network: a territory manager coordinates your appointments under their master code, and you share commission on business written through their carrier partners. First Connect is a carrier access platform that routes small commercial E&S through a partner wholesaler. Agency Height Markets puts admitted and E&S markets in one self-serve search, adds direct submission with no appointment required, and connects to your CRM, leads, and website inside Agency Height rather than living in a separate portal."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What does insurance market access mean for independent agents?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Market access is your ability to represent carriers and place policies. Without enough of it, you turn away clients when standard markets decline a risk. Agency Height Markets expands your access across admitted and E&S markets, without requiring you to build carrier relationships one by one or maintain separate appointments in each market."
+    }
+   }
+  ]
+ }
+]

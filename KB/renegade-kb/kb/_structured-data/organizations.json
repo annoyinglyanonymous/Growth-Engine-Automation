@@ -1,0 +1,27 @@
+{
+ "https://renegadeinsurance.com/#organization": {
+  "@type": "Organization",
+  "@id": "https://renegadeinsurance.com/#organization",
+  "name": "Renegade Insurance",
+  "url": "https://renegadeinsurance.com/",
+  "logo": {
+   "@type": "ImageObject",
+   "inLanguage": "en-US",
+   "@id": "https://renegadeinsurance.com/#/schema/logo/image/",
+   "url": "https://renegadeinsurance.com/wp-content/uploads/2023/02/Frame-1.svg",
+   "contentUrl": "https://renegadeinsurance.com/wp-content/uploads/2023/02/Frame-1.svg",
+   "width": 219,
+   "height": 57,
+   "caption": "Renegade Insurance"
+  },
+  "image": {
+   "@id": "https://renegadeinsurance.com/#/schema/logo/image/"
+  },
+  "sameAs": [
+   "https://www.facebook.com/JoinRenagade",
+   "https://x.com/renegadeins",
+   "https://www.instagram.com/renegade.insurance/",
+   "https://www.linkedin.com/company/renegade-insurances/"
+  ]
+ }
+}

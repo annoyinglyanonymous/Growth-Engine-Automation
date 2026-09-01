@@ -1,0 +1,61 @@
+[
+  {
+    "brand_slug": "renegade",
+    "topic": "franchise-fee",
+    "status": "resolved",
+    "severity": "blocker",
+    "detail": "RESOLVED: the initial franchise fee is $25,000. The $20,000 figure is stale copy still published on /about-us/ and mirrored into 16 KB documents, including FAQ pairs that read as standalone facts. Never write $20,000. Keep the 'starting at' and 'depending on business type' qualifiers; the fee is not a flat price.",
+    "correct_value": "$25,000",
+    "stale_values": [
+      "$20,000"
+    ],
+    "resolution": "Confirmed by automate@renegadeinsurance.com on 2026-08-26. Recorded as public.claims (approved $25,000 + prohibited $20,000) and a blocker brand_rule. Not yet cross-checked against the Franchise Disclosure Document, which is the legally controlling figure.",
+    "resolved_at": "2026-08-26T00:00:00+00:00",
+    "resolved_by": "automate@renegadeinsurance.com",
+    "sources": [
+      "https://renegadeinsurance.com/about-us/",
+      "https://renegadeinsurance.com/franchise/"
+    ]
+  },
+  {
+    "brand_slug": "renegade",
+    "topic": "carrier-count",
+    "status": "active",
+    "severity": "warning",
+    "detail": "Site meta claims quotes from '100 insurance companies' while the homepage shows only 11 carrier logos. The 11 named carriers are the verifiable set.",
+    "sources": [
+      "https://renegadeinsurance.com/"
+    ]
+  },
+  {
+    "brand_slug": "renegade",
+    "topic": "agency-hours",
+    "status": "active",
+    "severity": "info",
+    "detail": "Agency page headers state 8:30AM-5PM while the same agencies' per-day listings state 9AM-5PM. Per-day values are the ones captured in locations data.",
+    "sources": [
+      "https://renegadeinsurance.com/agency/orlando/"
+    ]
+  },
+  {
+    "brand_slug": "renegade",
+    "topic": "pembroke-pines-identity",
+    "status": "active",
+    "severity": "warning",
+    "detail": "The Pembroke Pines page markets itself as 'Renegade Insurance Miami' and displays Miami's 305-944-3030 number. Location identity on that page is unreliable.",
+    "sources": [
+      "https://renegadeinsurance.com/agency/pembroke-pines/"
+    ]
+  },
+  {
+    "brand_slug": "agencyheight",
+    "topic": "agent-count",
+    "status": "active",
+    "severity": "warning",
+    "detail": "Agent count is stated three different ways: 'surpassed 2,000 verified agents' (2023 milestone on /about-us/), '2800+ licensed insurance agents' (/car-insurance/), and 'thousands of top-rated independent agents' (/about-us/). No specific figure is supportable.",
+    "sources": [
+      "https://agencyheight.com/about-us/",
+      "https://agencyheight.com/car-insurance/"
+    ]
+  }
+]

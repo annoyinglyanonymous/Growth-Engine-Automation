@@ -1,0 +1,165 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/cost-per-state/",
+    "url": "https://agencyheight.com/get-insurance/workers-comp-insurance/cost-per-state/",
+    "name": "Workers Compensation Insurance Cost Per State in 2026 - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/cost-per-state/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/cost-per-state/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/workers-comp-insurance-per-state.jpg",
+    "datePublished": "2023-03-28T11:59:31+00:00",
+    "dateModified": "2025-10-20T06:45:06+00:00",
+    "description": "Learn about the cost and policies of workers compensation insurance per state in 2023, for states like New York, Texas, California, and so on.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/cost-per-state/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/get-insurance/workers-comp-insurance/cost-per-state/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/cost-per-state/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/workers-comp-insurance-per-state.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/workers-comp-insurance-per-state.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "workers comp insurance per state"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/cost-per-state/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get Insurance",
+      "item": "https://agencyheight.com/get-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Worker&#8217;s Compensation Insurance",
+      "item": "https://agencyheight.com/get-insurance/workers-comp-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Workers Compensation Insurance Cost Per State in 2026"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "How much does employer compensation cost?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "A worker&#8217;s compensation costs averaged $41.86 per hour, according to the U.S. Bureau of Labor Statistics."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How much is workers comp insurance Oregon?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "As per 2021 data, Oregon employers will pay employees an average of $1.00 per $100 in payroll. Employee coverage rates vary by insurance company."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How much is workers comp in Washington state?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Looking at rates as a percentage of total payroll, Washington&#8217;s rates declined from 2012 to 2022. If the proposed tax rate increase were to materialize, the average tax rate would be $1.49 per $100 of wages in 2023, It will be about the same in 2021 and 2022."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Do I need workers compensation insurance in Georgia?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "If your Georgia business has three or more people, you must provide them with insurance benefits. If the company is a legal entity or LLC, number of employees should be considered."
+    }
+   }
+  ]
+ }
+]

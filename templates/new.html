@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block title %}New brief{% endblock %}
+{% block body %}
+
+<h2 style="margin-top:0">Stage 1 &mdash; campaign brief</h2>
+<p class="muted small" style="max-width:64ch">
+  A brief is filed as <strong>draft</strong> and is allowed to be incomplete or
+  wrong. Validation is the next step and will say exactly what is missing, so
+  nothing here refuses to save.
+</p>
+
+<form method="post" action="/campaigns">
+  <fieldset>
+    <legend>What and where</legend>
+    <label>Campaign name
+      <input type="text" name="name" required
+             placeholder="Franchise Recruitment - Captive Agents Q1 2027"></label>
+
+    <div class="grid2">
+      <div>
+        <label>Product</label>
+        <select name="product_id" required>
+          {% for p in products %}
+          <option value="{{ p.id }}">
+            {{ p.brand_name }} &mdash; {{ p.name }}
+            {%- if not p.approved_for_marketing %}
+              (not approved for marketing){% endif %}
+          </option>
+          {% endfor %}
+        </select>
+      </div>
+      <div>
+        <label>Campaign type
+          <span class="hint">&mdash; sets the prohibited themes</span></label>
+        <select name="campaign_type_id">
+          <option value="">(none)</option>
+          {% for t in campaign_types %}
+          <option value="{{ t.id }}">{{ t.brand_slug }} &mdash; {{ t.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+
+    <label>Channels <span class="hint">&mdash; only these get assets</span></label>
+    <div class="checks">
+      <label><input type="checkbox" name="channels" value="email" checked>
+             email</label>
+      <label><input type="checkbox" name="channels" value="meta_ads" checked>
+             meta_ads</label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>The argument</legend>
+    <label>Objective
+      <input type="text" name="objective"
+             placeholder="Qualified franchise applications"></label>
+    <label>Target audience
+      <textarea name="target_audience"
+        placeholder="Who, where, and what they currently do"></textarea></label>
+    <label>Customer problem
+      <textarea name="customer_problem"
+        placeholder="The pain in their words, not ours"></textarea></label>
+    <label>Offer
+      <textarea name="offer"
+        placeholder="Required for email and meta_ads"></textarea></label>
+    <label>Primary benefit
+      <textarea name="primary_benefit"></textarea></label>
+    <label>Supporting benefits
+      <span class="hint">&mdash; one per line, or comma separated</span>
+      <textarea name="supporting_benefits"></textarea></label>
+    <label>Proof points
+      <span class="hint">&mdash; these must trace to approved claims</span>
+      <textarea name="proof_points"></textarea></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Action and measurement</legend>
+    <div class="grid2">
+      <div><label>Primary CTA
+        <input type="text" name="primary_cta"
+               placeholder="Talk to a Franchise Success Specialist"></label></div>
+      <div><label>Secondary CTA
+        <input type="text" name="secondary_cta"></label></div>
+      <div><label>Primary KPI
+        <input type="text" name="primary_kpi"></label></div>
+      <div><label>Geographic target
+        <span class="hint">&mdash; never AK or HI</span>
+        <input type="text" name="geographic_target"
+               placeholder="FL, GA, SC, TX"></label></div>
+    </div>
+    <label>Additional context
+      <textarea name="additional_context"></textarea></label>
+  </fieldset>
+
+  <button type="submit" data-busy="Filing&hellip;">File brief</button>
+  <a href="/" class="muted small" style="margin-left:12px">Cancel</a>
+</form>
+{% endblock %}

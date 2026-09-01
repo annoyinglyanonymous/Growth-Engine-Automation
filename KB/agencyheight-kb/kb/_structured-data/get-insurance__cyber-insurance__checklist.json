@@ -1,0 +1,157 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/get-insurance/cyber-insurance/checklist/",
+    "url": "https://agencyheight.com/get-insurance/cyber-insurance/checklist/",
+    "name": "Cyber Insurance Checklist - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/get-insurance/cyber-insurance/checklist/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/get-insurance/cyber-insurance/checklist/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/cyber-insurance-checklist.jpg",
+    "datePublished": "2023-03-13T09:22:16+00:00",
+    "dateModified": "2023-04-20T08:03:59+00:00",
+    "description": "A cyber insurance checklist helps assess security measures, identify gaps, and ensure comprehensive coverage. Protect your business.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/get-insurance/cyber-insurance/checklist/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/get-insurance/cyber-insurance/checklist/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/get-insurance/cyber-insurance/checklist/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/cyber-insurance-checklist.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/cyber-insurance-checklist.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "cyber insurance checklist"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/get-insurance/cyber-insurance/checklist/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get Insurance",
+      "item": "https://agencyheight.com/get-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Cyber Insurance",
+      "item": "https://agencyheight.com/get-insurance/cyber-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Cyber Insurance Checklist"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What types of incidents are covered by the cyber insurance policy?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The types of incidents covered by the cyber insurance policy may vary depending on the insurer and the policy. However, typical coverage may include data breaches, hacking attempts, ransomware attacks, and other types of cyber threats."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the reporting requirements for cyber insurance claims?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The reporting requirements for cyber insurance claims may vary depending on the insurer and the policy. Typically, the policyholder needs to report the cyber incident as soon as possible and provide detailed information about the incident, such as the date and time of the incident, the type of attack, and the affected systems and data."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is the policy limit for cyber insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The policy limit for cyber insurance may vary depending on the insurer and the policy. It is important for the policyholder to carefully assess their potential financial losses and select a policy limit that provides adequate coverage."
+    }
+   }
+  ]
+ }
+]

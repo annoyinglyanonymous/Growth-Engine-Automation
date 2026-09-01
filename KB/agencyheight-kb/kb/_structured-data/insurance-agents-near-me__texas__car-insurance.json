@@ -1,0 +1,173 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-agents-near-me/texas/car-insurance/",
+    "url": "https://agencyheight.com/insurance-agents-near-me/texas/car-insurance/",
+    "name": "Car Insurance Agents and Brokers Near You in Texas - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/insurance-agents-near-me/texas/car-insurance/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/insurance-agents-near-me/texas/car-insurance/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/Car-insurance-agents-in-Texas-1.jpg",
+    "datePublished": "2023-05-03T08:47:50+00:00",
+    "dateModified": "2023-05-03T10:04:25+00:00",
+    "description": "CSG Insurance Services and Hatler Insurance Agency is the best Auto Insurance Agent and Broker Near You in Houston, Austin and other cities of Texas.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-agents-near-me/texas/car-insurance/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-agents-near-me/texas/car-insurance/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/insurance-agents-near-me/texas/car-insurance/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/Car-insurance-agents-in-Texas-1.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/Car-insurance-agents-in-Texas-1.jpg",
+    "width": 1024,
+    "height": 576,
+    "caption": "Car insurance agents in Texas"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-agents-near-me/texas/car-insurance/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance Agents and Brokers Near You in the U.S.",
+      "item": "https://agencyheight.com/insurance-agents-near-me/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Insurance Agents and Brokers Near You in Texas",
+      "item": "https://agencyheight.com/insurance-agents-near-me/texas/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Car Insurance Agents and Brokers Near You in Texas"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What types of car insurance are mandatory in Texas?  ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "In Texas, drivers must have liability insurance to cover damages or injuries they may cause in an accident. The minimum liability coverage required is $30,000 per person for bodily injury, $60,000 per accident for bodily injury, and $25,000 per accident for property damage."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can I legally drive without car insurance in Texas?  ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "No, it is illegal to drive without car insurance in Texas. Drivers must have at least the minimum liability coverage required by law."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What factors affect the cost of car insurance in Texas?  ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The cost of car insurance in Texas is affected by several factors, including age, gender, driving record, type of vehicle, location, and coverage limits."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Does car insurance in Texas cover rental cars?  ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Car insurance policies in Texas may offer coverage for rental cars, but it&#8217;s important to check with your insurance company to make sure. Some credit cards may also provide rental car insurance coverage."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can I purchase car insurance online in Texas?  ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes, many insurance companies, agencies, and agents in Texas offer the ability to purchase car insurance online. You can find the best agents from Agency Height."
+    }
+   }
+  ]
+ }
+]

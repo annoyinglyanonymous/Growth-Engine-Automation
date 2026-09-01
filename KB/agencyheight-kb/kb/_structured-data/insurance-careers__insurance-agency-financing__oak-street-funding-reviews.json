@@ -1,0 +1,156 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-careers/insurance-agency-financing/oak-street-funding-reviews/",
+    "url": "https://agencyheight.com/insurance-careers/insurance-agency-financing/oak-street-funding-reviews/",
+    "name": "Oak Street Funding Reviews - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/insurance-careers/insurance-agency-financing/oak-street-funding-reviews/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/insurance-careers/insurance-agency-financing/oak-street-funding-reviews/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/Untitled-design-2025-04-18T140613.114.jpg",
+    "datePublished": "2025-04-18T08:33:41+00:00",
+    "dateModified": "2025-07-17T08:02:50+00:00",
+    "description": "Get financing for your insurance? Find out why Oak Street Funding might be the solution you're looking for. 1. 20+ years ..",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-careers/insurance-agency-financing/oak-street-funding-reviews/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-careers/insurance-agency-financing/oak-street-funding-reviews/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/insurance-careers/insurance-agency-financing/oak-street-funding-reviews/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/Untitled-design-2025-04-18T140613.114.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/Untitled-design-2025-04-18T140613.114.jpg",
+    "width": 1200,
+    "height": 628
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-careers/insurance-agency-financing/oak-street-funding-reviews/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance Careers",
+      "item": "https://agencyheight.com/insurance-careers/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Insurance Agency Loan and Financing Company",
+      "item": "https://agencyheight.com/insurance-careers/insurance-agency-financing/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Oak Street Funding Reviews"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Is Oak Street Funding a trustworthy lender? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes, Oak Street Funding is well-regarded in the industry. They&#8217;re accredited by the Better Business Bureau with an A+ rating and have built a strong reputation for helping businesses in niche markets like insurance and accounting."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is Oak Street Funding a direct lender? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes, Oak Street Funding is a direct, non-SBA lender. This means you deal directly with the team making the lending decisions, which helps speed up the process and keeps things clear and straightforward, no middlemen involved."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How can I get in touch with Oak Street Funding? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "You can call them at +1 866-625-3863, schedule a consultation, or email osf@oakstreetfunding.com."
+    }
+   }
+  ]
+ }
+]

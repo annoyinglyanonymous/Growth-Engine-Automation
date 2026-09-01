@@ -1,0 +1,151 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/get-insurance/commercial-trucking-insurance/",
+    "url": "https://agencyheight.com/get-insurance/commercial-trucking-insurance/",
+    "name": "Commercial Trucking Insurance: Get The Best Coverage in 2026 - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/get-insurance/commercial-trucking-insurance/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/get-insurance/commercial-trucking-insurance/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/2022/06/truckconcerns.jpg",
+    "datePublished": "2022-06-09T03:45:33+00:00",
+    "dateModified": "2025-12-22T07:11:13+00:00",
+    "description": "Trucks are the most vulnerable assets to any industry. Having commercial trucking insurance keep you on safe side financially.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/get-insurance/commercial-trucking-insurance/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/get-insurance/commercial-trucking-insurance/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/get-insurance/commercial-trucking-insurance/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/2022/06/truckconcerns.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/2022/06/truckconcerns.jpg",
+    "width": 1024,
+    "height": 576,
+    "caption": "commercial truck news"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/get-insurance/commercial-trucking-insurance/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get Insurance",
+      "item": "https://agencyheight.com/get-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Commercial Trucking Insurance: Get The Best Coverage in 2026"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "How can I figure out what kind of commercial trucking insurance I require?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Talking to an insurance specialist is the best way to figure out what you need. They can walk you through your options and help you choose the best ones for you.However, the forms of insurance coverage that are most appropriate for you will be determined by a variety of circumstances, including the following:AgeDriving recordsCondition of your vehiclesUse of your trucks and cargoState and federal requirementsDistance travelled"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What kind of insurance do I need for commercial trucking?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Liability, Physical Damage, Cargo and General Liability are some specified coverage you need for trucking business."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Do truck drivers need separate insurance coverage?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Truck drivers usually need to have their own insurance policies that cover them for any accidents or damage that they may cause while driving. Cargo insurance is also a common requirement for truck drivers, as it covers any goods that are being transported and can become damaged or lost in transit."
+    }
+   }
+  ]
+ }
+]

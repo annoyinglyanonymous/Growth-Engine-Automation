@@ -1,0 +1,128 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/agency-management-system/",
+    "url": "https://agencyheight.com/agency-management-system/",
+    "name": "Agency Management System - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "datePublished": "2022-07-25T05:09:06+00:00",
+    "dateModified": "2025-03-24T07:53:23+00:00",
+    "description": "Agency management software has several benefits, including CRM for insurance agents, and for insurance agencies. Learn more.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/agency-management-system/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/agency-management-system/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/agency-management-system/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Agency Management System"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What is claims management system?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "To acquire and process information on the underlying policy and coverages, the claim, and the claimant, an adjuster or claims handler (or an automated process) uses a claims management system, which is primarily a transaction-enabled system of records."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is agency business model?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The agency-based business model produces a pool of experts who can offer solutions to consumer problems. Together, a business and an agency outsource non-core business operations. Among these duties are branding, marketing, advertising, and public relations."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What software do claims adjusters use?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Insurance companies have been using the computer application Xactimate to calculate construction costs more frequently over the past ten years. Adjusters working for insurance firms use it to calculate the costs of repairing and rebuilding damaged buildings."
+    }
+   }
+  ]
+ }
+]

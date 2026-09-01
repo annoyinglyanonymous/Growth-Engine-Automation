@@ -1,0 +1,161 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/car-insurance/",
+    "url": "https://agencyheight.com/car-insurance/",
+    "name": "Car insurance | Get a Free Auto insurance Quote - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/car-insurance/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/car-insurance/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/cheap-car-insurance-near-me.jpg",
+    "datePublished": "2025-11-10T08:43:19+00:00",
+    "dateModified": "2026-05-08T05:56:35+00:00",
+    "description": "Connect with top car insurance agents near you for free personalized quotes and find the best car insurance policy in no time",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/car-insurance/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/car-insurance/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/car-insurance/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/cheap-car-insurance-near-me.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/cheap-car-insurance-near-me.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "cheap car insurance near me"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/car-insurance/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Car insurance | Get a Free Auto insurance Quote"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Why should I choose Agency Height for my car insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "We connect you with licensed local agents who get your unique driving needs. They compare top providers to find the best coverage at competitive rates, saving you money and ensuring you’re fully protected. With Agency Height, you get personalized guidance and peace of mind — not just a policy."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What types of coverage do I really need for my car? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Most drivers need liability coverage at a minimum, but adding collision, comprehensive, and medical protection ensures financial safety and peace of mind. Your needs may vary based on your vehicle, location, and budget."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What do I need to get car insurance coverage? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "To get car insurance, you’ll typically need your driver’s license, vehicle details (VIN, make, model, year), and personal information. Insurers also consider your driving history and how you use your car. Connect with a verified agent through Agency Height to simplify the process and get personalized quotes that fit your needs."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do I know I’m getting the best deal?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Agency Height agents compare multiple carriers for you, review discounts, coverage levels, and premiums. You see your options side by side, so you can choose the best policy for your needs and budget — all without calling multiple insurance companies yourself."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can you help if I have a teen driver or multiple cars?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Absolutely. Our agents specialize in customized policies for families, multi-vehicle households, and unique driving needs. You’ll get flexible, affordable coverage designed around your situation."
+    }
+   }
+  ]
+ }
+]

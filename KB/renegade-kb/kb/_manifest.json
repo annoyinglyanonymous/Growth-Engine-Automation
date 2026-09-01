@@ -1,0 +1,408 @@
+[
+ {
+  "slug": "about-us",
+  "category": "company",
+  "title": "About Us - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/about-us/",
+  "chars": 5669,
+  "aliases": []
+ },
+ {
+  "slug": "agency-value-calculator",
+  "category": "franchise-and-partners",
+  "title": "Agency Value Calculator - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency-value-calculator/",
+  "chars": 1029,
+  "aliases": []
+ },
+ {
+  "slug": "agency__edgewater",
+  "category": "locations",
+  "title": "HIG - Edgewater - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/edgewater/",
+  "chars": 5824,
+  "aliases": []
+ },
+ {
+  "slug": "agency__edgewater__become-a-partner",
+  "category": "locations",
+  "title": "Become A Partner - HIG - Edgewater",
+  "url": "https://renegadeinsurance.com/agency/edgewater/become-a-partner/",
+  "chars": 391,
+  "aliases": []
+ },
+ {
+  "slug": "agency__edgewater__get-a-quote",
+  "category": "locations",
+  "title": "Get A Quote - HIG - Edgewater - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/edgewater/get-a-quote/",
+  "chars": 377,
+  "aliases": []
+ },
+ {
+  "slug": "agency__hardeeville",
+  "category": "locations",
+  "title": "Hardeeville - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/hardeeville/",
+  "chars": 5593,
+  "aliases": []
+ },
+ {
+  "slug": "agency__hardeeville__become-a-partner",
+  "category": "locations",
+  "title": "Become A Partner - Hardeeville",
+  "url": "https://renegadeinsurance.com/agency/hardeeville/become-a-partner/",
+  "chars": 410,
+  "aliases": []
+ },
+ {
+  "slug": "agency__hardeeville__get-a-quote",
+  "category": "locations",
+  "title": "Get A Quote - Hardeeville - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/hardeeville/get-a-quote/",
+  "chars": 396,
+  "aliases": []
+ },
+ {
+  "slug": "agency__lauderdale-lakes",
+  "category": "locations",
+  "title": "Lauderdale Lakes - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/lauderdale-lakes/",
+  "chars": 5558,
+  "aliases": []
+ },
+ {
+  "slug": "agency__miami__become-a-partner",
+  "category": "locations",
+  "title": "Become A Partner - Miami - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/miami/become-a-partner/",
+  "chars": 392,
+  "aliases": [
+   "agency__lauderdale-lakes__become-a-partner"
+  ]
+ },
+ {
+  "slug": "agency__miami__get-a-quote",
+  "category": "locations",
+  "title": "Get A Quote - Miami - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/miami/get-a-quote/",
+  "chars": 378,
+  "aliases": []
+ },
+ {
+  "slug": "agency__new-smyrna-beach",
+  "category": "locations",
+  "title": "HIG - New Smyrna Beach - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/new-smyrna-beach/",
+  "chars": 5849,
+  "aliases": []
+ },
+ {
+  "slug": "agency__new-smyrna-beach__become-a-partner",
+  "category": "locations",
+  "title": "Become A Partner - HIG - New Smyrna Beach - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/new-smyrna-beach/become-a-partner/",
+  "chars": 386,
+  "aliases": []
+ },
+ {
+  "slug": "agency__new-smyrna-beach__get-a-quote",
+  "category": "locations",
+  "title": "Get A Quote - HIG - New Smyrna Beach - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/new-smyrna-beach/get-a-quote/",
+  "chars": 372,
+  "aliases": []
+ },
+ {
+  "slug": "agency__orlando",
+  "category": "locations",
+  "title": "Orlando - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/orlando/",
+  "chars": 6042,
+  "aliases": []
+ },
+ {
+  "slug": "agency__orlando__become-a-partner",
+  "category": "locations",
+  "title": "Become A Partner - Orlando - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/orlando/become-a-partner/",
+  "chars": 398,
+  "aliases": []
+ },
+ {
+  "slug": "agency__orlando__get-a-quote",
+  "category": "locations",
+  "title": "Get A Quote - Orlando - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/orlando/get-a-quote/",
+  "chars": 384,
+  "aliases": []
+ },
+ {
+  "slug": "agency__palm-bay",
+  "category": "locations",
+  "title": "Palm Bay - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/palm-bay/",
+  "chars": 5013,
+  "aliases": []
+ },
+ {
+  "slug": "agency__palm-bay__become-a-partner",
+  "category": "locations",
+  "title": "Become A Partner - Palm Bay - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/palm-bay/become-a-partner/",
+  "chars": 400,
+  "aliases": []
+ },
+ {
+  "slug": "agency__palm-bay__get-a-quote",
+  "category": "locations",
+  "title": "Get A Quote - Palm Bay - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/palm-bay/get-a-quote/",
+  "chars": 386,
+  "aliases": []
+ },
+ {
+  "slug": "agency__panama-city",
+  "category": "locations",
+  "title": "Panama City - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/panama-city/",
+  "chars": 4391,
+  "aliases": []
+ },
+ {
+  "slug": "agency__panama-city__become-a-partner",
+  "category": "locations",
+  "title": "Become a Partner - Panama City",
+  "url": "https://renegadeinsurance.com/agency/panama-city/become-a-partner/",
+  "chars": 398,
+  "aliases": []
+ },
+ {
+  "slug": "agency__panama-city__get-a-quote",
+  "category": "locations",
+  "title": "Get A Quote - Panama City - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/panama-city/get-a-quote/",
+  "chars": 384,
+  "aliases": []
+ },
+ {
+  "slug": "agency__pembroke-pines",
+  "category": "locations",
+  "title": "Pembroke Pines - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/pembroke-pines/",
+  "chars": 5041,
+  "aliases": []
+ },
+ {
+  "slug": "agency__pembroke-pines__become-a-partner",
+  "category": "locations",
+  "title": "Become A Partner - Pembroke Pines - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/pembroke-pines/become-a-partner/",
+  "chars": 413,
+  "aliases": []
+ },
+ {
+  "slug": "agency__port-orange",
+  "category": "locations",
+  "title": "HIG - Port Orange - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/port-orange/",
+  "chars": 5390,
+  "aliases": []
+ },
+ {
+  "slug": "agency__port-orange__become-a-partner",
+  "category": "locations",
+  "title": "Become A Partner - HIG - Port Orange - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/port-orange/become-a-partner/",
+  "chars": 385,
+  "aliases": []
+ },
+ {
+  "slug": "agency__port-orange__get-a-quote",
+  "category": "locations",
+  "title": "Get A Quote - HIG - Port Orange - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/port-orange/get-a-quote/",
+  "chars": 371,
+  "aliases": []
+ },
+ {
+  "slug": "agency__porter",
+  "category": "locations",
+  "title": "Porter - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/porter/",
+  "chars": 5441,
+  "aliases": []
+ },
+ {
+  "slug": "agency__porter__become-a-partner",
+  "category": "locations",
+  "title": "Become a Partner - Porter",
+  "url": "https://renegadeinsurance.com/agency/porter/become-a-partner/",
+  "chars": 436,
+  "aliases": []
+ },
+ {
+  "slug": "agency__porter__become-a-referral-partner",
+  "category": "locations",
+  "title": "Porter - Become a Referral Partner - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/porter/become-a-referral-partner/",
+  "chars": 2128,
+  "aliases": []
+ },
+ {
+  "slug": "agency__porter__get-a-quote",
+  "category": "locations",
+  "title": "Get A Quote - Porter - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/porter/get-a-quote/",
+  "chars": 422,
+  "aliases": []
+ },
+ {
+  "slug": "agency__savannah",
+  "category": "locations",
+  "title": "Savannah - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/savannah/",
+  "chars": 5058,
+  "aliases": []
+ },
+ {
+  "slug": "agency__savannah__become-a-partner",
+  "category": "locations",
+  "title": "Become A Partner - Savannah",
+  "url": "https://renegadeinsurance.com/agency/savannah/become-a-partner/",
+  "chars": 439,
+  "aliases": []
+ },
+ {
+  "slug": "agency__savannah__become-a-referral-partner",
+  "category": "locations",
+  "title": "Savannah - Become a Referral Partner - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/savannah/become-a-referral-partner/",
+  "chars": 2131,
+  "aliases": []
+ },
+ {
+  "slug": "agency__savannah__get-a-quote",
+  "category": "locations",
+  "title": "Get A Quote - Savannah - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/agency/savannah/get-a-quote/",
+  "chars": 425,
+  "aliases": []
+ },
+ {
+  "slug": "become-an-agency-owner",
+  "category": "franchise-and-partners",
+  "title": "Become An Insurance Agency Owner | Get Industry Leading Commissions",
+  "url": "https://renegadeinsurance.com/become-an-agency-owner/",
+  "chars": 2075,
+  "aliases": []
+ },
+ {
+  "slug": "careers",
+  "category": "company",
+  "title": "Careers - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/careers/",
+  "chars": 4431,
+  "aliases": []
+ },
+ {
+  "slug": "contact-us",
+  "category": "company",
+  "title": "Contact Us - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/contact-us/",
+  "chars": 3240,
+  "aliases": []
+ },
+ {
+  "slug": "franchise",
+  "category": "franchise-and-partners",
+  "title": "Franchise with Renegade Insurance",
+  "url": "https://renegadeinsurance.com/franchise/",
+  "chars": 6958,
+  "aliases": []
+ },
+ {
+  "slug": "franchise__application",
+  "category": "franchise-and-partners",
+  "title": "Application - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/franchise/application/",
+  "chars": 1001,
+  "aliases": []
+ },
+ {
+  "slug": "home",
+  "category": "company",
+  "title": "Renegade Insurance | Shop Insurance with An Expert Agent",
+  "url": "https://renegadeinsurance.com/",
+  "chars": 4159,
+  "aliases": [
+   "agency",
+   "support",
+   "get-a-quote"
+  ]
+ },
+ {
+  "slug": "insurance-agency-back-office-support",
+  "category": "franchise-and-partners",
+  "title": "Insurance Agency Back Office Support - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/insurance-agency-back-office-support/",
+  "chars": 8590,
+  "aliases": []
+ },
+ {
+  "slug": "insurance-agent-application",
+  "category": "franchise-and-partners",
+  "title": "Insurance Agent Application - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/insurance-agent-application/",
+  "chars": 952,
+  "aliases": []
+ },
+ {
+  "slug": "license-disclosures",
+  "category": "legal",
+  "title": "License Disclosures - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/license-disclosures/",
+  "chars": 1369,
+  "aliases": []
+ },
+ {
+  "slug": "partner-with-us",
+  "category": "franchise-and-partners",
+  "title": "Partner Form - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/partner-with-us/",
+  "chars": 255,
+  "aliases": []
+ },
+ {
+  "slug": "privacy-policy",
+  "category": "legal",
+  "title": "Privacy Policy - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/privacy-policy/",
+  "chars": 18394,
+  "aliases": []
+ },
+ {
+  "slug": "property-partnership",
+  "category": "franchise-and-partners",
+  "title": "Commercial Insurance-Property Application - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/property-partnership/",
+  "chars": 226,
+  "aliases": []
+ },
+ {
+  "slug": "sell-your-insurance-agency",
+  "category": "franchise-and-partners",
+  "title": "Sell Your P&C Insurance Agency - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/sell-your-insurance-agency/",
+  "chars": 6148,
+  "aliases": []
+ },
+ {
+  "slug": "terms-of-use",
+  "category": "legal",
+  "title": "Terms of Use - Renegade Insurance",
+  "url": "https://renegadeinsurance.com/terms-of-use/",
+  "chars": 33848,
+  "aliases": []
+ }
+]

@@ -1,0 +1,134 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/agency-management-system/cost-and-considerations/",
+    "url": "https://agencyheight.com/agency-management-system/cost-and-considerations/",
+    "name": "Agency Management System Cost and Other Factors To Consider",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "datePublished": "2022-08-01T03:26:23+00:00",
+    "dateModified": "2025-07-17T05:37:44+00:00",
+    "description": "It's critical to consider price and other aspects before you buy an agency management system for your insurance agency. Learn more.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/agency-management-system/cost-and-considerations/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/agency-management-system/cost-and-considerations/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/agency-management-system/cost-and-considerations/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Agency Management System",
+      "item": "https://agencyheight.com/agency-management-system/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Agency Management System Cost and Other Factors To Consider"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What is the annual cost of insurance agency management systems for insurance agencies?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Maintaining your AMS in line with your company’s needs is a good investment. Most insurance agency management software will cost you between 5% and 16% of the total license fee per year in maintenance and improvement expenses."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Do Insurance Agency Management Systems include CRM?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Customer relationship management (CRM) is present in the majority of insurance agency management systems, along with other features specific to the insurance sector."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is CRM software for insurance agents beneficial?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The best insurance agent CRM programs support the needs of the insurance sector. When searching for a customer management solution, insurance agents need to find a provider that offers features like claims management, sales process automation, policy data management, commission traceability, email marketing templates, and automation, insurance applications, and quote management."
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Campaign Engine{% endblock %}</title>
+<style>
+/* No framework and no build step. One stylesheet, inlined, because a
+   four-screen internal tool does not need an asset pipeline. */
+:root {
+  --ink: #17191c; --muted: #5b6570; --line: #dfe3e8; --bg: #f7f8fa;
+  --card: #fff; --accent: #1f4f8b;
+  --ok: #1c6b3a; --ok-bg: #e8f4ec;
+  --warn: #8a5800; --warn-bg: #fdf2dc;
+  --err: #a01b1b; --err-bg: #fbeaea;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+       font: 15px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+             Roboto, Helvetica, Arial, sans-serif; }
+a { color: var(--accent); }
+header { background: var(--card); border-bottom: 1px solid var(--line);
+         padding: 14px 24px; display: flex; gap: 18px; align-items: baseline; }
+header h1 { font-size: 17px; margin: 0; font-weight: 650; }
+header nav { margin-left: auto; display: flex; gap: 16px; }
+main { max-width: 1080px; margin: 0 auto; padding: 24px; }
+h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .06em;
+     color: var(--muted); margin: 30px 0 12px; font-weight: 650; }
+h3 { font-size: 15px; margin: 0 0 6px; }
+.card { background: var(--card); border: 1px solid var(--line);
+        border-radius: 8px; padding: 16px 18px; margin-bottom: 12px; }
+table { width: 100%; border-collapse: collapse; background: var(--card);
+        border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+th, td { text-align: left; padding: 10px 14px;
+         border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: .05em;
+     color: var(--muted); background: #fbfcfd; }
+tr:last-child td { border-bottom: 0; }
+.pill { display: inline-block; padding: 2px 9px; border-radius: 20px;
+        font-size: 12px; font-weight: 600; border: 1px solid transparent; }
+.pill.draft      { background: #eef1f4; color: var(--muted); }
+.pill.validated,
+.pill.pass,
+.pill.approved   { background: var(--ok-bg);   color: var(--ok); }
+.pill.warning,
+.pill.review,
+.pill.needs_info { background: var(--warn-bg); color: var(--warn); }
+.pill.blocked,
+.pill.rejected   { background: var(--err-bg);  color: var(--err); }
+.pill.superseded { background: #eef1f4; color: var(--muted);
+                   text-decoration: line-through; }
+.muted { color: var(--muted); }
+.small { font-size: 13px; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 12px; }
+button, .btn { font: inherit; font-weight: 600; padding: 8px 14px;
+               border-radius: 6px; border: 1px solid var(--accent);
+               background: var(--accent); color: #fff; cursor: pointer; }
+button.ghost { background: #fff; color: var(--accent); }
+button.danger { background: #fff; color: var(--err); border-color: #e3b8b8; }
+button[disabled] { opacity: .45; cursor: not-allowed; }
+button.sm { padding: 4px 10px; font-size: 13px; }
+form.inline { display: inline; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.flash { padding: 11px 14px; border-radius: 6px; margin-bottom: 18px;
+         border: 1px solid; }
+.flash.ok    { background: var(--ok-bg);   border-color: #bfe0cb;
+               color: var(--ok); }
+.flash.warn  { background: var(--warn-bg); border-color: #ecd6a4;
+               color: var(--warn); }
+.flash.error { background: var(--err-bg);  border-color: #e8c4c4;
+               color: var(--err); }
+label { display: block; font-weight: 600; font-size: 13px; margin: 14px 0 4px; }
+label .hint { font-weight: 400; color: var(--muted); }
+input[type=text], textarea, select {
+  width: 100%; padding: 8px 10px; border: 1px solid var(--line);
+  border-radius: 6px; font: inherit; background: #fff; }
+textarea { min-height: 68px; resize: vertical; }
+fieldset { border: 1px solid var(--line); border-radius: 8px;
+           background: var(--card); padding: 4px 18px 18px; margin: 0 0 16px; }
+legend { font-size: 12px; text-transform: uppercase; letter-spacing: .05em;
+         color: var(--muted); font-weight: 650; padding: 0 6px; }
+.checks { display: flex; gap: 16px; margin-top: 6px; }
+.checks label { display: flex; gap: 6px; align-items: center; margin: 0;
+                font-weight: 400; }
+.checks input { width: auto; }
+ul.findings { margin: 8px 0 0; padding-left: 18px; }
+ul.findings li { margin-bottom: 5px; }
+.finding-blocker { color: var(--err); }
+.finding-warning { color: var(--warn); }
+.asset-fields { margin: 8px 0 0; }
+.asset-fields dt { font-size: 12px; text-transform: uppercase;
+                   letter-spacing: .04em; color: var(--muted);
+                   margin-top: 8px; }
+.asset-fields dd { margin: 2px 0 0; white-space: pre-wrap; }
+.over { color: var(--err); font-weight: 600; }
+details summary { cursor: pointer; font-weight: 600; font-size: 13px;
+                  color: var(--accent); }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; }
+.who { display: flex; gap: 8px; align-items: center; }
+.who .name { font-weight: 600; font-size: 13px; }
+.who button { background: none; border: 0; color: var(--muted);
+              font-size: 13px; font-weight: 400; padding: 0;
+              text-decoration: underline; cursor: pointer; }
+.banner { background: var(--warn-bg); border-bottom: 1px solid #ecd6a4;
+          color: var(--warn); padding: 8px 24px; font-size: 13px; }
+.signin { max-width: 420px; margin: 60px auto; }
+.signin .note { color: var(--muted); font-size: 13px; margin: 14px 0 0; }
+@media (max-width: 720px) { .grid2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Campaign Engine</h1>
+  <span class="muted small">brief &rarr; strategy &rarr; angles &rarr;
+        concepts &rarr; assets &rarr; QA</span>
+  <nav class="small">
+    <a href="/">Campaigns</a>
+    <a href="/campaigns/new">New brief</a>
+    <a href="/docs">API</a>
+    {% if operator is defined and operator %}
+    <span class="who">
+      <span class="name" title="approvals are recorded as this">
+        {{ operator }}</span>
+      <form method="post" action="/signout" class="inline" data-no-busy>
+        <button type="submit">sign out</button>
+      </form>
+    </span>
+    {% endif %}
+  </nav>
+</header>
+{% if identity_enabled is defined and not identity_enabled %}
+<div class="banner">
+  <strong>Identity is not configured.</strong>
+  Approvals and validation runs are being recorded as
+  <span class="mono">{{ unattributed_as }}</span>, which names nobody. Set
+  <span class="mono">OPERATORS</span> in <span class="mono">.env</span> --
+  see <span class="mono">.env.example</span>.
+</div>
+{% endif %}
+<main>
+{% if msg %}<div class="flash {{ kind }}">{{ msg }}</div>{% endif %}
+{% block body %}{% endblock %}
+</main>
+<script>
+/* The only script in the app. A generation takes 30 to 120 seconds and the
+   browser gives no indication that the POST is working, so the button says so
+   itself. Double submits would create a duplicate draft, which is the real
+   bug this prevents. */
+document.addEventListener('submit', function (e) {
+  var form = e.target;
+  if (form.dataset.noBusy !== undefined) return;
+  var btn = form.querySelector('button[type=submit], button:not([type])');
+  if (!btn) return;
+  var busy = btn.dataset.busy || 'Working\u2026';
+  btn.dataset.original = btn.textContent;
+  btn.textContent = busy;
+  btn.disabled = true;
+  /* Re-enable if the page is restored from cache rather than reloaded. */
+  window.addEventListener('pageshow', function () {
+    btn.disabled = false;
+    if (btn.dataset.original) btn.textContent = btn.dataset.original;
+  });
+});
+</script>
+</body>
+</html>

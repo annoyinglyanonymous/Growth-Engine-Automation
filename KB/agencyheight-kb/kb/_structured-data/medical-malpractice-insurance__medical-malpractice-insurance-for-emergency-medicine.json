@@ -1,0 +1,150 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/medical-malpractice-insurance/medical-malpractice-insurance-for-emergency-medicine/",
+    "url": "https://agencyheight.com/medical-malpractice-insurance/medical-malpractice-insurance-for-emergency-medicine/",
+    "name": "Medical Malpractice Insurance for Emergency Medicine - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/medical-malpractice-insurance/medical-malpractice-insurance-for-emergency-medicine/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/medical-malpractice-insurance/medical-malpractice-insurance-for-emergency-medicine/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/emergency-intro-image.jpg",
+    "datePublished": "2025-12-03T07:40:29+00:00",
+    "dateModified": "2026-06-12T08:46:29+00:00",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/medical-malpractice-insurance/medical-malpractice-insurance-for-emergency-medicine/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/medical-malpractice-insurance/medical-malpractice-insurance-for-emergency-medicine/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/medical-malpractice-insurance/medical-malpractice-insurance-for-emergency-medicine/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/emergency-intro-image.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/emergency-intro-image.jpg",
+    "width": 1600,
+    "height": 1200,
+    "caption": "emergency medicine"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/medical-malpractice-insurance/medical-malpractice-insurance-for-emergency-medicine/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Best Medical Malpractice Insurance | Get a Quote",
+      "item": "https://agencyheight.com/medical-malpractice-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Medical Malpractice Insurance for Emergency Medicine"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "1. How much does malpractice insurance cost for emergency medicine physicians? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Costs vary widely based on your practice type, state, and responsibilities. High premiums are a challenge in emergency medicine, contributing to retention concerns, which is why professional groups push for liability reforms. Agency Height connects you to brokers with access to all major carriers, helping you find coverage that fits your needs at the best price.Cost Examples by State &amp; Practice Type: Low-Liability States (MN, WI, VA): $8,000 – $18,000Moderate-Liability States (CA, CO, MI, TX): $18,000 – $32,000High-Liability States (FL, PA, IL, NY): $35,000 – $70,000+Pediatric EM / Urban Level 1 Call Coverage: $60,000 – $110,000"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "2. Can emergency physicians reduce malpractice insurance costs? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. With Agency Height, ER physicians can lower premiums by qualifying discounts if they are new to practice, have no recent claims, or complete risk management courses. Our agents compare coverage across all major carriers to find the best rates, and since commissions are included in your premium, you pay the same whether you purchase directly or through us. Partner with Agency Height to secure the right coverage at the best price. "
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "3. Why should I choose Agency Height for my malpractice coverage ?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Agency Height connects you with licensed agents who specialize in emergency medicine. You get multiple tailored quotes, access to A-rated Insurance agencies, and expert guidance on coverage limits, policy types, and multi-state protection—all at no additional cost to you."
+    }
+   }
+  ]
+ }
+]

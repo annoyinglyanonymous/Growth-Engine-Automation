@@ -1,0 +1,142 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/get-insurance/errors-and-omissions-insurance/",
+    "url": "https://agencyheight.com/get-insurance/errors-and-omissions-insurance/",
+    "name": "Errors and Omissions Insurance: Get the Best E&O Policy",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "datePublished": "2022-01-05T05:06:15+00:00",
+    "dateModified": "2023-04-20T06:17:32+00:00",
+    "description": "Errors and Omissions insurance shields professionals from different occupations. Get the appropriate E&O insurance from our insurance agents.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/get-insurance/errors-and-omissions-insurance/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/get-insurance/errors-and-omissions-insurance/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/get-insurance/errors-and-omissions-insurance/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get Insurance",
+      "item": "https://agencyheight.com/get-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Errors and Omissions Insurance: Get the Best E&amp;O Policy"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Is E & O Insurance required by law?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "No, E&amp;O insurance is not mandatory by law in all fifty states. Certain states have set federal requirements on E&amp;O insurance for professions that involve higher risks like law practice and medical field.For instance, in the state of Tennessee, timeshare salesperson, affiliate brokers and real estate brokers are required by law to have errors and omissions insurance. Similarly, Colorado mandates E&amp;O coverage for all real estate businesses.Even in the states where it is not mandated, businesses are advised to purchase E&amp;O insurance to protect themselves from the financial damages that can result from errors and omissions."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "When should I purchase E&O insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "You should purchase E&amp;O insurance as soon as you start your business. This way, you will be protected from the financial damage that will result from errors and omissions."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What does E&O insurance cover?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Errors and omissions insurance policies cover attorney fees, court costs, and settlements costs up to the policy’s limits. This also includes a variety of claims, including negligence, misrepresentation, breach of contract, and even unfair competition. Some policies also provide coverage for pre-judgment interest and punitive damages, which are not typically covered by general liability insurance.However, the forms of insurance coverage that are most appropriate for you will be determined by a variety of circumstances, including the following:AgeDriving recordsCondition of your vehiclesUse of your trucks and cargoState and federal requirementsDistance travelled"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Why is a business insurance agent important?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "A business insurance agent is important as they will help you get the best insurance for your business needs. They are insurance experts and will provide you with the best business insurance."
+    }
+   }
+  ]
+ }
+]

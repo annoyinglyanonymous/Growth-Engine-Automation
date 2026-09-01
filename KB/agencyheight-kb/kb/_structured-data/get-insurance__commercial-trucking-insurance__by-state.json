@@ -1,0 +1,140 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/get-insurance/commercial-trucking-insurance/by-state/",
+    "url": "https://agencyheight.com/get-insurance/commercial-trucking-insurance/by-state/",
+    "name": "Commercial Trucking Insurance By State - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "datePublished": "2022-06-30T08:29:31+00:00",
+    "dateModified": "2025-06-16T11:55:39+00:00",
+    "description": "Know about the state requirements for trucking insurance near you. Get free consultations & quotes from commercial truck insurance brokers.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/get-insurance/commercial-trucking-insurance/by-state/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/get-insurance/commercial-trucking-insurance/by-state/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/get-insurance/commercial-trucking-insurance/by-state/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get Insurance",
+      "item": "https://agencyheight.com/get-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Commercial Trucking Insurance: Get The Best Coverage in 2026",
+      "item": "https://agencyheight.com/get-insurance/commercial-trucking-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Commercial Trucking Insurance By State"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "How can I find cheap trucking insurance near me?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "In order to find cheap trucking insurance in your area, make sure to enlist anything that represents the credibility of your business and drivers. Also, consult your agent if there are any on-going offers from carriers of your choice like bundle discounts.&nbsp;"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the top commercial truck insurance companies near me?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "If you want to get insurance from top carriers in your area, the major carriers present in most states are GEICO, Progressive, Statefarm, etc. Once again, we recommend that you get advice from experts. For example, if you are getting commercial truck insurance in Alabama, talk to independent agents who are licensed there.&nbsp;"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How can I find the best commercial truck insurance agents near me?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Go to local insurance agent directories online like Agency Height or type in your state and city on the browser. The list of search results will be a good point to start.&nbsp;"
+    }
+   }
+  ]
+ }
+]

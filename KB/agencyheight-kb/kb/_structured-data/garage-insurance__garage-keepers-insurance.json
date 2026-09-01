@@ -1,0 +1,167 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/garage-insurance/garage-keepers-insurance/",
+    "url": "https://agencyheight.com/garage-insurance/garage-keepers-insurance/",
+    "name": "Best Garage Keepers Insurance |Get a Quote - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/garage-insurance/garage-keepers-insurance/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/garage-insurance/garage-keepers-insurance/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/Garage-Keepr-Insurance.jpg",
+    "datePublished": "2025-10-03T04:34:44+00:00",
+    "dateModified": "2025-10-08T08:30:42+00:00",
+    "description": "Secure your garage like a pro with Agency Height’s Garage Keepers Insurance—coverage that protects every customer's car!",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/garage-insurance/garage-keepers-insurance/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/garage-insurance/garage-keepers-insurance/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/garage-insurance/garage-keepers-insurance/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/Garage-Keepr-Insurance.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/Garage-Keepr-Insurance.jpg",
+    "width": 1920,
+    "height": 678,
+    "caption": "Garage Keepr Insurance"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/garage-insurance/garage-keepers-insurance/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Best Garage Insurance | Get a Quote",
+      "item": "https://agencyheight.com/garage-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Best Garage Keepers Insurance |Get a Quote"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What does Garage Keepers Insurance cover?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Garage keepers insurance covers customer vehicles while they are in your care, custody, or control. This includes protection against theft, vandalism, fire, weather damage, and collisions that may occur during storage, servicing, or test drives."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Why should I get Garage Keepers Insurance through Agency Height?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Agency Height partners with top-rated insurance carriers to secure customized garage keepers insurance at competitive rates. Our agents understand the unique risks facing auto shops, dealerships, and service centers, ensuring you get the right protection without overpaying."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How does Agency Height help lower my Garage Keepers Insurance costs?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "We compare multiple insurance carriers to find the best coverage at the most affordable price. By tailoring policies to your business needs and recommending risk management practices, Agency Height helps reduce premiums while keeping your customer vehicles fully protected."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What makes Agency Height different from other insurance providers?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Unlike one-size-fits-all policies, Agency Height provides personalized coverage solutions designed for automotive service businesses. We offer expert guidance, dedicated claims support, and ongoing policy management so your business stays protected as it grows."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is Garage Keepers Insurance the same as General Liability Insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "No. General liability insurance covers injuries or property damage caused by your business operations, but it does not protect customer vehicles in your possession. Garage keepers insurance fills this gap by specifically covering damage to customer cars while under your care."
+    }
+   }
+  ]
+ }
+]

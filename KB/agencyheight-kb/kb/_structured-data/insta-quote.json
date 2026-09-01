@@ -1,0 +1,136 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insta-quote/",
+    "url": "https://agencyheight.com/insta-quote/",
+    "name": "InstaQuote - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "datePublished": "2025-11-11T07:12:19+00:00",
+    "dateModified": "2025-11-14T09:54:56+00:00",
+    "description": "Capture more leads with InstaQuote. Use our QR codes to turn every interaction, online or offline, into a new client.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insta-quote/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insta-quote/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insta-quote/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "InstaQuote"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Can any insurance agency get their custom link?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Any agency can get their custom link on Agency Height. Just add your listing and fill out your details to get a custom link."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Where can I use the custom link?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "You can use your custom link in any of your online marketing initiatives. Share it in your social media, Google business profile, Yelp, or your email marketing."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Does it cost anything to get my custom QR?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "You can get your custom QR, link and business card with your logo for free. More features to come soon."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can I still have the access to the Agency Height Directory?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "You can get all previous features including the directory while enjoying InstaQuote to easily manage your leads."
+    }
+   }
+  ]
+ }
+]

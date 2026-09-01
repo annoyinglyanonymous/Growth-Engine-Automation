@@ -1,0 +1,145 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/home-insurance/",
+    "url": "https://agencyheight.com/home-insurance/",
+    "name": "Homeowners insurance | Get a Free Quote - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/home-insurance/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/home-insurance/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/2022/08/home-insurance-image.jpg",
+    "datePublished": "2022-01-14T11:38:50+00:00",
+    "dateModified": "2026-08-11T07:51:17+00:00",
+    "description": "Get free personalized quotes from top home insurance agents near you and protect your assets with affordable homeowners' coverage today",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/home-insurance/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/home-insurance/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/home-insurance/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/2022/08/home-insurance-image.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/2022/08/home-insurance-image.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "home-insurance-feat"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/home-insurance/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Homeowners insurance | Get a Free Quote"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What is homeowners' insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Homeowners insurance protects your home, belongings, and liability. With Agency Height, you not only get coverage for fire, storms, theft, and accidents—but also expert guidance to ensure your policy fits your unique needs. "
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How much does homeowners insurance cost?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The average U.S. homeowner pays around $2,100 per year, but costs vary based on location, home value, age, and risk factors. Agency Height helps you compare quotes from top carriers to find affordable coverage tailored to your home. "
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Why should I choose Agency Height for Homeowners Insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Agency Height delivers personalized protection and expert support. We help you:Compare top-rated carriers for the best valueUnderstand policy limits, exclusions, and endorsementsCustomize coverage to your home and lifestyleKeep your policy updated as your needs changeWith Agency Height, you get more than insurance—you get peace of mind."
+    }
+   }
+  ]
+ }
+]

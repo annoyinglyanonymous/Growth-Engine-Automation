@@ -1,0 +1,200 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://renegadeinsurance.com/insurance-agency-back-office-support/",
+    "url": "https://renegadeinsurance.com/insurance-agency-back-office-support/",
+    "name": "Insurance Agency Back Office Support - Renegade Insurance",
+    "isPartOf": {
+     "@id": "https://renegadeinsurance.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://renegadeinsurance.com/insurance-agency-back-office-support/#primaryimage"
+    },
+    "image": {
+     "@id": "https://renegadeinsurance.com/insurance-agency-back-office-support/#primaryimage"
+    },
+    "thumbnailUrl": "https://renegadeinsurance.com/wp-content/uploads/2026/04/persona-golden-bg.webp",
+    "datePublished": "2026-06-15T05:44:27+00:00",
+    "dateModified": "2026-08-06T04:17:15+00:00",
+    "description": "Renegade provides insurance agency back office support so P&C agency owners can focus on selling. Zero disruption to your clients or book.",
+    "breadcrumb": {
+     "@id": "https://renegadeinsurance.com/insurance-agency-back-office-support/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://renegadeinsurance.com/insurance-agency-back-office-support/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://renegadeinsurance.com/insurance-agency-back-office-support/#primaryimage",
+    "url": "https://renegadeinsurance.com/wp-content/uploads/2026/04/persona-golden-bg.webp",
+    "contentUrl": "https://renegadeinsurance.com/wp-content/uploads/2026/04/persona-golden-bg.webp",
+    "width": 1500,
+    "height": 1196
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://renegadeinsurance.com/insurance-agency-back-office-support/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://renegadeinsurance.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Scale your Insurance Agency"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://renegadeinsurance.com/#website",
+    "url": "https://renegadeinsurance.com/",
+    "name": "Renegade Insurance",
+    "description": "Get insurance quotes from 100 insurance companies while working with your local agent. The easiest way to buy and manage all of your insurance needs.",
+    "publisher": {
+     "@id": "https://renegadeinsurance.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://renegadeinsurance.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://renegadeinsurance.com/#organization",
+    "name": "Renegade Insurance",
+    "url": "https://renegadeinsurance.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://renegadeinsurance.com/#/schema/logo/image/",
+     "url": "https://renegadeinsurance.com/wp-content/uploads/2023/02/Frame-1.svg",
+     "contentUrl": "https://renegadeinsurance.com/wp-content/uploads/2023/02/Frame-1.svg",
+     "width": 219,
+     "height": 57,
+     "caption": "Renegade Insurance"
+    },
+    "image": {
+     "@id": "https://renegadeinsurance.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/JoinRenagade",
+     "https://x.com/renegadeins",
+     "https://www.instagram.com/renegade.insurance/",
+     "https://www.linkedin.com/company/renegade-insurances/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What is insurance agency back office support?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Insurance agency back office support is the full-service handling of an agency&#8217;s operations, including renewals, endorsements, cancellations, carrier coordination, and remarkets. Renegade&#8217;s back office services allow agency owners to hand off day-to-day operations and focus entirely on production and insurance agency growth.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Who is insurance agency back support designed for?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "This service is designed for independent P&amp;C agency owners with an established book of business who spend more time servicing existing clients than writing new business. It also serves owners who want to grow their agency book of business value before an eventual exit.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Does Renegade take ownership of my book of business? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "No. Renegade provides insurance back office support as a service partnership, not an acquisition. You retain full ownership of your agency book of business, your client relationships, and your commissions.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How long does the transition take?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The average transition to Renegade&#8217;s back office services completes in six months. The timeline depends on book size, carrier mix, and current operational structure, with zero disruption to your policyholders throughout.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What happens to my clients during the transition?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Your clients continue receiving service under your agency&#8217;s name throughout the transition. Renegade handles all service interactions on your behalf, with client communication and relationship continuity built into the process from day one.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can I still write new business while Renegade manages my existing book? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. Growing your insurance agency is the primary objective of this service. Renegade handles renewals, endorsements, remarkets, and day-to-day service so you can redirect your time entirely toward production.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can I grow my agency while working with Renegade?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. Agency owners in the Renegade network grow through organic production, new lines including commercial lines, and access to Renegade&#8217;s equity leverage program for acquisitions. Handing off back office operations removes the ceiling that prevents most independent owners from scaling their insurance agency.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can I eventually sell my book of business through Renegade? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. Insurance back office support can serve as a structured path toward a future exit. When you are ready to monetize your agency book of business, Renegade provides a defined process on your terms, not in a fire sale, with continuity built in for your staff and clients.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Will working with Renegade help me lower my agency overhead? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. Agency owners who transition to Renegade&#8217;s back office services consolidate workflows, reduce administrative costs, and eliminate the staffing overhead of managing a service team in-house.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What states does Renegade offer book management services in?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Renegade currently operates across multiple states. Contact our team to confirm availability in your state.\n"
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,151 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/get-insurance/home-insurance-old/",
+    "url": "https://agencyheight.com/get-insurance/home-insurance-old/",
+    "name": "Home Insurance 2024: Your Family's Security - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/get-insurance/home-insurance-old/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/get-insurance/home-insurance-old/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/2022/08/home-insurance-image.jpg",
+    "datePublished": "2025-11-06T07:06:44+00:00",
+    "dateModified": "2025-11-11T07:11:13+00:00",
+    "description": "Home insurance is an important policy that includes various coverage options for homeowners with specific needs according to where they live.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/get-insurance/home-insurance-old/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/get-insurance/home-insurance-old/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/get-insurance/home-insurance-old/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/2022/08/home-insurance-image.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/2022/08/home-insurance-image.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "home-insurance-feat"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/get-insurance/home-insurance-old/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get Insurance",
+      "item": "https://agencyheight.com/get-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Homeowners Insurance old"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What is home insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Home insurance protects the infrastructure of your home and the belongings contained inside of it. When you get this insurance, you’ll get coverage for unexpected and accidental damage that can put your house and personal belongings at risk simultaneously."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What does a standard home insurance policy cover?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "A standard home insurance policy protects your house against accidental damage, theft, vandalism, fire, and extreme weather damage such as wind, hail, storm, and fire."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are some of the exceptions to standard home insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Your standard home insurance policy does not provide coverage for damage caused by natural disasters such as floods, earthquakes, and hurricanes. It is not provided by the standard policy. The same goes for pets, cars, and houses used as commercial properties. You can contact your agent to get add-ons to your insurance policy if you require coverage for them."
+    }
+   }
+  ]
+ }
+]

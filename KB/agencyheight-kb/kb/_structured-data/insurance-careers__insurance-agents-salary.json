@@ -1,0 +1,151 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-careers/insurance-agents-salary/",
+    "url": "https://agencyheight.com/insurance-careers/insurance-agents-salary/",
+    "name": "Insurance Agents Salary in 2026 - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/insurance-careers/insurance-agents-salary/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/insurance-careers/insurance-agents-salary/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/Agent-Salary-Feature-image.jpg",
+    "datePublished": "2023-06-19T11:57:24+00:00",
+    "dateModified": "2025-12-22T06:24:14+00:00",
+    "description": "Discover the latest information on insurance agent salaries in 2026. Explore the earning potential, factors influencing compensation and more",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-careers/insurance-agents-salary/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-careers/insurance-agents-salary/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/insurance-careers/insurance-agents-salary/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/Agent-Salary-Feature-image.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/Agent-Salary-Feature-image.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "Agent-Salary-Feature-image"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-careers/insurance-agents-salary/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance Careers",
+      "item": "https://agencyheight.com/insurance-careers/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Insurance Agents Salary in 2026: Geico, Farmers or Statefarm Which Are Among Highest Paying?"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Do insurance agents earn a commission in addition to their salary? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes, many insurance agents earn a commission in addition to their base salary. Commissions are typically based on the premiums they sell and can vary depending on the insurance company and the type of insurance policy. The commission structure can be a percentage of the premium or a flat fee."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Are there any additional bonuses or incentives for insurance agents?  ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Some insurance companies offer bonuses or incentives to their agents based on performance metrics such as meeting sales targets or retaining clients. These additional bonuses or incentives can contribute to an insurance agent&#8217;s overall earnings."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Are there differences in insurance agent salaries based on the type of insurance they sell? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes, there can be differences in salaries based on the type of insurance an agent sells. For example, agents who specialize in selling life insurance, health insurance, or high-value property and casualty insurance may earn higher salaries or commissions due to the complexity and potential size of the policies."
+    }
+   }
+  ]
+ }
+]

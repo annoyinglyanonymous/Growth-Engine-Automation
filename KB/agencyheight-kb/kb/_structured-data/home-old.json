@@ -1,0 +1,177 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/home-old/",
+    "url": "https://agencyheight.com/home-old/",
+    "name": "Find an Insurance Agent Near Me - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "datePublished": "2025-05-05T04:59:10+00:00",
+    "dateModified": "2026-07-29T12:19:43+00:00",
+    "description": "Search for experienced insurance agents near me by simply entering your zip code. Connect with the best agents through Agency Height.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/home-old/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/home-old/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/home-old/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Find an Insurance Agent Near Me"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "InsuranceAgency",
+  "@id": "#organization",
+  "name": "Agency Height",
+  "url": "",
+  "logo": "https://agencyheight.com/wp-content/uploads/cropped-main-logo-tm.png",
+  "description": "Agency Height is an online insurance brokerage platform connecting insurance buyers with top licensed insurance agents nationwide.",
+  "slogan": "Find the Best Insurance Agents Near You",
+  "telephone": "+1-206-410-8621",
+  "email": "business@agencyheight.com",
+  "currenciesAccepted": "USD",
+  "foundingDate": "2019",
+  "address": {
+   "@type": "PostalAddress",
+   "streetAddress": "9450 SW Gemini Dr PMB 47941",
+   "addressLocality": "Beaverton",
+   "addressRegion": "OR",
+   "postalCode": "97008",
+   "addressCountry": "US"
+  },
+  "areaServed": {
+   "@type": "Country",
+   "name": "United States"
+  },
+  "sameAs": [
+   "https://facebook.com/AgencyHeight/",
+   "https://linkedin.com/company/agencyheight/",
+   "https://twitter.com/AgencyHeight",
+   "https://instagram.com/agencyheight/"
+  ],
+  "knowsAbout": [
+   "Commercial Truck Insurance",
+   "Home Insurance",
+   "Auto Insurance",
+   "Life Insurance",
+   "Business Insurance",
+   "Specialty Insurance",
+   "Commercial Vehicle Insurance"
+  ],
+  "hasOfferCatalog": {
+   "@type": "OfferCatalog",
+   "name": "Insurance Products",
+   "itemListElement": [
+    {
+     "@type": "Offer",
+     "itemOffered": {
+      "@type": "Service",
+      "name": "Home Insurance",
+      "url": "https://www.agencyheight.com/home-insurance"
+     }
+    },
+    {
+     "@type": "Offer",
+     "itemOffered": {
+      "@type": "Service",
+      "name": "Auto Insurance",
+      "url": "https://www.agencyheight.com/car-insurance"
+     }
+    },
+    {
+     "@type": "Offer",
+     "itemOffered": {
+      "@type": "Service",
+      "name": "Life Insurance",
+      "url": "https://www.agencyheight.com/life-insurance"
+     }
+    },
+    {
+     "@type": "Offer",
+     "itemOffered": {
+      "@type": "Service",
+      "name": "Business Insurance",
+      "url": "https://www.agencyheight.com/business-insurance"
+     }
+    }
+   ]
+  }
+ }
+]

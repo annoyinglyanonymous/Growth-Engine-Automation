@@ -1,0 +1,192 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-agency-websites/",
+    "url": "https://agencyheight.com/insurance-agency-websites/",
+    "name": "Website for Insurance Agent & Agency. Live with in a week. - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/insurance-agency-websites/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/insurance-agency-websites/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "datePublished": "2026-05-19T05:16:55+00:00",
+    "dateModified": "2026-08-17T11:23:06+00:00",
+    "description": "Agency Height builds and manages your insurance agency website. AI-written copy, free domain, free hosting, SSL and lead form included. Live with in a week.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-agency-websites/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-agency-websites/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/insurance-agency-websites/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "width": 1200,
+    "height": 675
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-agency-websites/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance Agency Websites"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Is this a website builder, or do you build it for me?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "We design, build, and manage it for you. No builder, editor, or template to use. We generate all copy from your Agency Height profile using custom AI, you review the draft, flag anything to correct, and we fix it. We handle the writing, designing, building, and hosting — everything."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How much does it cost?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Your website is included on any annual plan — no separate subscription, no setup fee, no hidden charges. One plan covers everything: free domain for the first year, free hosting, SSL, and the full Agency Height platform. You also get Market Access, Agent Directory listing, Lead Bank (claim insurance quote requests we collect on our platform), lead gen form, CRM, lead generator, lead enricher, and more — based on your plan."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Which Agency Height plan includes the website?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Both Premium and Enterprise annual plans include the website. Enterprise annual — $79.99/mo ($959.88/year). Premium annual — $29.99/mo ($359.88/year). Not available on monthly plans."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Do I have to pay for domain and hosting?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "No. Domain, hosting, and SSL are all included in your plan. A new domain is covered for the first year at no extra charge. Free domain and free hosting — both included."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is my insurance agent website SEO optimised for local search?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. We practise basic SEO on every insurance agent website we build to help you rank in your local area. Every site is structured and indexed from day one — meta data, structured copy, and proper indexing applied automatically. The verified Agency Height profile-matched content also helps your visibility in AI-powered search and Google local search."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can I publish blogs on my website?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Not currently. Blog publishing and content management are not supported at the moment. We recommend connecting your website to Google My Business and publishing content there as posts — it helps your agency rank on Google Maps and Google Search for local queries."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can I use my existing domain and hosting?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Domain yes — we connect it via DNS and our team guides you through it. Domain renewal remains your responsibility. Hosting no — we manage everything on our infrastructure, so you don't need a separate hosting account for this site."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What happens if I cancel?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "You can transfer your domain and keep it — transfer costs are yours to cover. Site content lives inside Agency Height and can't be exported, though you're free to copy any text manually. Access ends when your plan ends."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What happens when my information changes?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Contact our team — new carrier, updated number, corrected bio — and we update the site. No login, no editor. Let us know when something changes, we handle it."
+    }
+   }
+  ]
+ }
+]

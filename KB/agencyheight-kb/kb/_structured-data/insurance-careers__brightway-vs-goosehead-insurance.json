@@ -1,0 +1,151 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-careers/brightway-vs-goosehead-insurance/",
+    "url": "https://agencyheight.com/insurance-careers/brightway-vs-goosehead-insurance/",
+    "name": "Brightway vs. Goosehead Insurance 2026 - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/insurance-careers/brightway-vs-goosehead-insurance/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/insurance-careers/brightway-vs-goosehead-insurance/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/brightway-vs-goosehead-insurance-2-min.png",
+    "datePublished": "2023-08-17T09:10:12+00:00",
+    "dateModified": "2025-12-22T05:11:58+00:00",
+    "description": "Explore the essential aspects that define Goosehead and Brightway empowering you to make an informed decision that aligns with your careers goals.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-careers/brightway-vs-goosehead-insurance/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-careers/brightway-vs-goosehead-insurance/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/insurance-careers/brightway-vs-goosehead-insurance/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/brightway-vs-goosehead-insurance-2-min.png",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/brightway-vs-goosehead-insurance-2-min.png",
+    "width": 1200,
+    "height": 628,
+    "caption": "brightway vs goosehead insurance"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-careers/brightway-vs-goosehead-insurance/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance Careers",
+      "item": "https://agencyheight.com/insurance-careers/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Brightway vs. Goosehead Insurance 2026"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Is Goosehead Insurance a pyramid scheme?  ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "No, Goosehead is a legitimate company. It has good financial ratings and a superior A+ rating with BBB."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Does Goosehead provide homeowners insurance?  ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes, they offer various insurance services, including homeowners&#8217; insurance, to help protect your home and belongings."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Who founded Brightway Insurance?  ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Two brothers, David Miller, and Michael Miller established Brightway Insurance. Recently, after GrowthCurve Capital’s majority investment, Mark Cantin took over as the president and CEO of the franchise."
+    }
+   }
+  ]
+ }
+]

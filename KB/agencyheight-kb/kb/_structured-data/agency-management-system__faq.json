@@ -1,0 +1,190 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/agency-management-system/faq/",
+    "url": "https://agencyheight.com/agency-management-system/faq/",
+    "name": "Agency Management System FAQ - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "datePublished": "2022-01-25T02:11:32+00:00",
+    "dateModified": "2023-06-06T07:47:14+00:00",
+    "description": "Frequently asked questions for agency management system can guide insurance agency owners in the direction of the best answer for their business.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/agency-management-system/faq/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/agency-management-system/faq/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/agency-management-system/faq/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Agency Management System",
+      "item": "https://agencyheight.com/agency-management-system/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Agency Management System FAQ"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What software do claims adjusters use?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Over the past ten years, insurance firms have increasingly relied on the computer software program Xactimate to estimate construction costs. It is used by adjusters for insurance companies to estimate building damage, repair, and rebuilding costs."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Why do insurance companies use CRM?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "A CRM aids insurance brokers and agents in streamlining communication, tracking prospects, and converting more clients. An insurance CRM also assists you in decreasing manual activities through sophisticated automation so you can concentrate more on developing fruitful interactions."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How much does an insurance agency management system cost?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Depending on the feature set desired, the price of an insurance agency management system can range from $60 per user per month to over $300 per person per month."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How does a CRM help insurance companies?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "A CRM for insurance is a service that caters to particular requirements of insurance brokers and insurance companies. With an insurance CRM, you can handle numerous policies in a single system, organize all of your leads and claims, automate assignments to the appropriate employees, and manage your business."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is claims management system?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "An adjuster or claims handler (or an automated process) employs a claims management system, which is fundamentally a transaction-enabled system of records, to gather and process data about the underlying policy and coverages, the claim, and the claimant. Analyze and evaluate the claim’s circumstances."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What does a client management software do?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Client management systems enable organizations to efficiently manage their interactions with both present and potential clients. This may involve controlling sales, streamlining procedures, and planning focused customer communications, depending on the client management software you employ."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the 3 types of CRM?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "CRM systems can be classified as either operational, analytical, or collaborative."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is the difference between CRM and CMS?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "CRM software tracks all of your prospects and customers by documenting and summarizing their interactions with your website. However, a content management system (CMS) is used for building and managing a website."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is agency business model?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "A pool of professionals who can provide answers to customer problems is created under the agency-based business model. A company and an agency work together to outsource non-core business operations. Branding, marketing, advertising, and PR are a few of these responsibilities."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Which is the best insurance broker software?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "According to Shop Agency Height, these are the top products for insurance agency software:EZLynxJenesis SoftwareAgency BlocAgency MatrixAgency EpicHawkSoft"
+    }
+   }
+  ]
+ }
+]

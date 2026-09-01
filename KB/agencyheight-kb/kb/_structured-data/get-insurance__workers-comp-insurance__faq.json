@@ -1,0 +1,213 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/faq/",
+    "url": "https://agencyheight.com/get-insurance/workers-comp-insurance/faq/",
+    "name": "Worker's Comp Insurance FAQs - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/faq/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/faq/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/workers-compensation-insurance-faq.jpg",
+    "datePublished": "2023-03-28T11:52:18+00:00",
+    "dateModified": "2023-04-20T08:26:25+00:00",
+    "description": "If you are curious about workers compensation insurance, check out some of the most common worker's comp FAQs in 2023.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/faq/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/get-insurance/workers-comp-insurance/faq/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/faq/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/workers-compensation-insurance-faq.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/workers-compensation-insurance-faq.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "workers compensation insurance faq"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/faq/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get Insurance",
+      "item": "https://agencyheight.com/get-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Worker&#8217;s Compensation Insurance",
+      "item": "https://agencyheight.com/get-insurance/workers-comp-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Worker&#8217;s Comp Insurance FAQs"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What is workers' compensation?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Workers compensation insurance provides health and wage benefits to people who are injured or sick on the job. Workers&#8217; remuneration is considered social insurance because it is based on a social contract between the employer and the employee."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do I pay for my workers compensation policy?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Your employer pays for workers&#8217; compensation insurance, regardless of which state you are in. An employee&#8217;s compensation cost is a percentage of their payroll."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Who pays for workers' compensation benefits?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Workers compensation insurance is insurance that provides cash benefits and medical care to workers who are injured or become ill as a result of their work. Employers pay this premium, and employees are not required to cover compensation costs."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How much does workers’ compensation insurance cost in 2023?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The average cost of workers&#8217; compensation insurance nationwide is $936 per employee per year, or $78 per month."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Do I need workers compensation insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Most states require workers&#8217; compensation insurance as soon as you hire your first employee. It&#8217;s probably not just the law, but it&#8217;s also important to get covered as soon as possible. Even if you&#8217;re a sole business owner, you may still need the insurance."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do I get workers' compensation insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The first step in getting a good workers compensation insurance policy is to talk to a local insurance agent or the insurance company where you got your business insurance."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is employee compensation insurance mandatory?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes, most employers are required by law to purchase employee compensation. In fact, all US states except Texas require businesses to have workers&#8217; compensation insurance."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Who is eligible for WC policy?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "All U.S. civilian employees, contract employees, volunteers, temporary employees under certain conditions are eligible for workers compensation insurance."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is not included in compensation?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Employee injuries resulting from workplace misconduct are not covered by the organization&#8217;s workers&#8217; compensation insurance."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is the limitation of worker compensation?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Workers compensation insurance generally doesn’t have any limits or exclusions. The insurance company pays for medical expenses necessary for the employee&#8217;s injury, illness or rehabilitation treatment. Additionally, the claim cannot be dismissed or denied unless the employer provides proof of fraud."
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,134 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-license/requirements-checklist/",
+    "url": "https://agencyheight.com/insurance-license/requirements-checklist/",
+    "name": "Insurance License Requirement Checklist - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "datePublished": "2022-01-11T10:40:28+00:00",
+    "dateModified": "2023-04-20T05:33:19+00:00",
+    "description": "We provide you with all the information you need to know about licensing requirements in the United States.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-license/requirements-checklist/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-license/requirements-checklist/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-license/requirements-checklist/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance License",
+      "item": "https://agencyheight.com/insurance-license/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Insurance License Requirement Checklist"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What is the most profitable insurance to sell?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Although there are many different types of insurance (from health insurance to auto insurance), selling life insurance is the most lucrative profession in the insurance industry"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How long does it take to get an insurance license in California?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Once they get the necessary paperwork, the Department normally needs 4 weeks to process and issue your insurance license. When your application is accepted, you will get an email with a link to the Department’s website where you can view and print your insurance license."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do insurance agents get paid?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "A commission is paid to an insurance agent when they sell you a policy. In addition, there are promised benefits that go beyond commission payments for the sales goals they hit."
+    }
+   }
+  ]
+ }
+]

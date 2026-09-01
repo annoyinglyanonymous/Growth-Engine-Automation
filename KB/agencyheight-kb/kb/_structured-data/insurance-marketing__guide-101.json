@@ -1,0 +1,166 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-marketing/guide-101/",
+    "url": "https://agencyheight.com/insurance-marketing/guide-101/",
+    "name": "Insurance Marketing 101 - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "datePublished": "2022-11-22T03:48:18+00:00",
+    "dateModified": "2025-07-17T08:08:16+00:00",
+    "description": "Insurance marketing is an important aspect while selling insurance. Know about insurance 101 which will help you succeed as an agent.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-marketing/guide-101/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-marketing/guide-101/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-marketing/guide-101/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance Marketing: Importance, Strategies and Cost",
+      "item": "https://agencyheight.com/insurance-marketing/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Insurance Marketing 101"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What do you mean by insurance marketing?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Insurance marketing is the marketing of insurance services to get more customers, which in turn generates profits. Insurance organizations use innovative insurance marketing techniques to survive and thrive in highly competitive markets.&nbsp;"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are leads in insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "An insurance prospect is a prospect who has requested a quote for an insurance project or has expressed a desire to cooperate with you in some other way. Many lead options are available depending on your budget and lead generation strategies.&nbsp;"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is a lead generator in insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Insurance lead generation is the process of gaining potential customers for your insurance business through marketing activities.&nbsp;"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do you market a product for insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Marketing a product for insurance will help you stand out from your national and regional competitors. Referrals and PPC advertisement are effective strategies for marketing insurance products.&nbsp;"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are leads for insurance agents?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Specifically in the insurance industry, leads for insurance agents are the prospects who has requested a quote for an insurance product or service.&nbsp;"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do car companies generate leads?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "PPC campaigns are one of the most effective ways to generate leads. This is because the advertising platforms of Google, Facebook and Twitter allow us to target our audience.&nbsp;"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is paying for leads worth it?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Paying for leads will help you have a very positive ROI for your business if it makes sense for your business and leads to great results.&nbsp;"
+    }
+   }
+  ]
+ }
+]

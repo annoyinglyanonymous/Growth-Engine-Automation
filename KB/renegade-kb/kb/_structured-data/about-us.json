@@ -1,0 +1,152 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://renegadeinsurance.com/about-us/",
+    "url": "https://renegadeinsurance.com/about-us/",
+    "name": "About Us - Renegade Insurance",
+    "isPartOf": {
+     "@id": "https://renegadeinsurance.com/#website"
+    },
+    "datePublished": "2024-03-05T22:04:00+00:00",
+    "dateModified": "2026-07-17T11:29:26+00:00",
+    "description": "We leverage local hands-on knowledge and best-in-class expertise to provide unrivalled experience and service to our agent and customers.",
+    "breadcrumb": {
+     "@id": "https://renegadeinsurance.com/about-us/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://renegadeinsurance.com/about-us/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://renegadeinsurance.com/about-us/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://renegadeinsurance.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About Us"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://renegadeinsurance.com/#website",
+    "url": "https://renegadeinsurance.com/",
+    "name": "Renegade Insurance",
+    "description": "Get insurance quotes from 100 insurance companies while working with your local agent. The easiest way to buy and manage all of your insurance needs.",
+    "publisher": {
+     "@id": "https://renegadeinsurance.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://renegadeinsurance.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://renegadeinsurance.com/#organization",
+    "name": "Renegade Insurance",
+    "url": "https://renegadeinsurance.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://renegadeinsurance.com/#/schema/logo/image/",
+     "url": "https://renegadeinsurance.com/wp-content/uploads/2023/02/Frame-1.svg",
+     "contentUrl": "https://renegadeinsurance.com/wp-content/uploads/2023/02/Frame-1.svg",
+     "width": 219,
+     "height": 57,
+     "caption": "Renegade Insurance"
+    },
+    "image": {
+     "@id": "https://renegadeinsurance.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/JoinRenagade",
+     "https://x.com/renegadeins",
+     "https://www.instagram.com/renegade.insurance/",
+     "https://www.linkedin.com/company/renegade-insurances/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What is Renegade Insurance? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Renegade Insurance is a modern P&amp;C insurance company that helps agents own, sell, and manage insurance agencies. Renegade runs a franchise network, acquires agencies and books of business, and manages books for agents who keep ownership.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What does Renegade Insurance do? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Renegade Insurance operates three core programs: agency franchising, agency acquisitions, and back office support. Renegade holds direct appointments with regional and national carriers and MGAs across personal lines, commercial lines, and specialty products.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Where is Renegade Insurance located? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Renegade Insurance is headquartered in Beaverton, Oregon. Renegade operates 9 retail locations across Florida, South Carolina, Georgia, and Texas.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How much does a Renegade franchise cost? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Renegade franchise fees start at $20,000 depending on business type. A monthly support and technology fee applies after launch, and financing is available for qualified candidates.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How does Renegade value an agency it acquires? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Renegade builds a market-based valuation using retention ratio, commission revenue, growth trajectory, and book mix. Renegade acquires agencies with cash at close and no broker fees at any stage.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is Renegade Insurance a good place to work? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Renegade Insurance is a Great Place to Work Certified company. Renegade&#8217;s team works across its Oregon headquarters, its retail locations, and its operations and technology partners.\n"
+    }
+   }
+  ]
+ }
+]

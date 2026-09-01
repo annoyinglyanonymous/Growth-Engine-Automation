@@ -1,0 +1,127 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/get-insurance/cyber-insurance/cost-by-state/",
+    "url": "https://agencyheight.com/get-insurance/cyber-insurance/cost-by-state/",
+    "name": "Cyber Insurance Cost by State 2024 - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/get-insurance/cyber-insurance/cost-by-state/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/get-insurance/cyber-insurance/cost-by-state/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/cyber-insurance-cost-by-state.jpg",
+    "datePublished": "2023-03-14T08:38:00+00:00",
+    "dateModified": "2024-01-24T10:39:44+00:00",
+    "description": "Cyber insurance cost can vary by state. Check out our guide to learn how location impacts coverage and rates.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/get-insurance/cyber-insurance/cost-by-state/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/get-insurance/cyber-insurance/cost-by-state/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/get-insurance/cyber-insurance/cost-by-state/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/cyber-insurance-cost-by-state.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/cyber-insurance-cost-by-state.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "cyber insurance cost by state"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/get-insurance/cyber-insurance/cost-by-state/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get Insurance",
+      "item": "https://agencyheight.com/get-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Cyber Insurance",
+      "item": "https://agencyheight.com/get-insurance/cyber-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Cyber Insurance Cost by State"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ }
+]

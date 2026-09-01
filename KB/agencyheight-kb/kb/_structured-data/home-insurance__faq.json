@@ -1,0 +1,214 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/home-insurance/faq/",
+    "url": "https://agencyheight.com/home-insurance/faq/",
+    "name": "Homeowners Insurance FAQ 2023 - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "datePublished": "2022-03-03T09:05:48+00:00",
+    "dateModified": "2023-04-20T06:12:31+00:00",
+    "description": "Have questions about your homeowners’ insurance policy? Get the latest updated insights from Agency Height today!",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/home-insurance/faq/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/home-insurance/faq/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/home-insurance/faq/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Homeowners insurance | Get a Free Quote",
+      "item": "https://agencyheight.com/home-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Homeowners Insurance FAQ"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Is homeowners insurance the same as home insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Technically, homeowner’s insurance is the same as home insurance. But homeowner’s insurance can cover far more than the structure of your house, as home insurance does.Besides the usual coverage provided for your home, the homeowner’s insurance policy also protects any individual who faces an accident at your property. Likewise, if you happen to cause damage to your neighbor’s property unexpectedly, a homeowner’s insurance policy can provide coverage for the same."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Does homeowner's insurance provide any benefits or alternatives in cases of damage to my house that cannot be immediately fixed?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "It’s best to check with your insurance provider. But insurers can usually provide you with additional living expenses if you cannot live in your home right after an incident that has caused partial or complete damage to your house."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What factors do I need to look into before talking about the cost with my homeowner's insurance agent?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Before finalizing premiums and prices to get your home insured, you should have a brief idea of some factors determining the cost of getting homeowner’s insurance. The most common ones are listed below:Price, Age, Size of the PropertyNumber of People ResidingAmount of CoverageAmount of DeductiblesLevel of MaintenanceRisk Level of the AreaHistory of ClaimsNumber of Protective DevicesYou can find more details through our guide to get the best homeowners insurance."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How long do I get insured for once I purchase a homeowner's insurance policy?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "You’ll generally get insured for a year. However, for renewals, you need to consult with your agent beforehand. Not to mention, you should also pay your insurance premiums on time to be eligible for the renewal."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Does my homeowner's insurance policy cover renovated or added structures?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "It depends. When you renovate an existing structure or add-on another one, for example, a garage or a swimming pool, you’ll obviously need extra coverage. For individualized details, do check in with your insurance agent on time."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Does homeowners' insurance cover earthquake damages?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Homeowners’ insurance typically does not cover earthquake damage. However, some insurers offer earthquake insurance as an add-on to your homeowner’s policy or a standalone policy. It’s essential to check with your insurer to see what coverage is available and how much it would cost."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Which other expenses does renter’s insurance cover?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Renter’s insurance covers legal expenses and additional living expenses if your home/apartment is unfit to live in until repair work is completed."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Why do some apartments require tenants to have renters' insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Owners of apartment complexes require insurance policies to cover their buildings and properties. Tenants are required to have a separate policy for their liability coverage. Tenants should have a renters’ policy regardless of what the apartment owner or landlord needs."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Does renter’s insurance cover home-based businesses?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "No, renter’s insurance does not cover home-based businesses. If you are seeking a policy to cover the same, there is a feature of in-home business rider to be added on to renter’s insurance. However, this is only available with some insurers."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Are roommates covered under Renters Policy?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Most of the Renter’s policy does not cover roommates. While it covers you and the property you legally own, roommates require a separate policy."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is there an option available for sharing Renter’s Policy with roommates?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Sharing renter’s policy with your roommates allows you to save bucks but not all the insurance companies have such options available."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Does condo insurance policy cover theft?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes, condo insurance policy does cover theft of personal belongings in your condo. This provision is under the personal property coverage of a condo policy."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What kind of property/belongings does the condo insurance policy provide protection for?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The condo insurance policy covers the theft of furniture, electronic appliances and sports equipment. It does not cover cash, jewelry, silverware, or any other valuable personal item."
+    }
+   }
+  ]
+ }
+]

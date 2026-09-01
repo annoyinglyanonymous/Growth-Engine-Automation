@@ -1,0 +1,145 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/specialty-insurance/",
+    "url": "https://agencyheight.com/specialty-insurance/",
+    "name": "Get the Best Insurance for Specialty Insurance Risks - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/specialty-insurance/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/specialty-insurance/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/Untitled-design-97.jpg",
+    "datePublished": "2025-01-21T06:38:47+00:00",
+    "dateModified": "2025-10-14T10:56:11+00:00",
+    "description": "Get the best specialty insurance, offering tailored solutions to businesses and individuals operating in complex industries.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/specialty-insurance/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/specialty-insurance/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/specialty-insurance/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/Untitled-design-97.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/Untitled-design-97.jpg",
+    "width": 1920,
+    "height": 678,
+    "caption": "hard to place insurance risks"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/specialty-insurance/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get the Best Insurance for Specialty Insurance Risks"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What is Specialty insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Insurance Risks that are hard-to-place or hard to get coverage for due to high risk nature due to physical hazards, natural calamities, location, huge number of threats involved in the business which are usually unacceptable to the standard markets are categorized under hard-to-place insurance."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the examples of industries with hard-to-place insurance risks?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Some of the industries that are considered high risks by carriers are within transportation, healthcare, hospitality, high-value property &amp; home, environmental, retail, technology, artisan &amp; specialty classes areas."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Why some industries are classified as hard-to-place risk industries?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Industries that involve high risks, uncommon coverage needs, high volume of previous claims history, exposed or prone to natural disasters, high crime rates, volatile regulatory or market conditions get classified as hard-to-place insurance risks and often involves working with specialized brokers who can navigate these challenges to find appropriate coverage."
+    }
+   }
+  ]
+ }
+]

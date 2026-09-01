@@ -1,0 +1,201 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/frequently-asked-questions/",
+    "url": "https://agencyheight.com/frequently-asked-questions/",
+    "name": "Frequently Asked Questions - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/frequently-asked-questions/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/frequently-asked-questions/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/2023/01/Feature-Image-38.jpg",
+    "datePublished": "2023-01-10T11:26:46+00:00",
+    "dateModified": "2026-06-23T04:26:16+00:00",
+    "description": "Find answers to your insurance queries on our comprehensive FAQ page. We cover a wide range of topics regarding insurance here!",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/frequently-asked-questions/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/frequently-asked-questions/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/frequently-asked-questions/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/2023/01/Feature-Image-38.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/2023/01/Feature-Image-38.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "Feature-Image 38"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/frequently-asked-questions/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Frequently Asked Questions"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What is Agency Height, and why should I join?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Agency Height is a complete platform for insurance agents and agencies, not just a directory. It replaces five or six separate tools with one: your profile, exclusive Lead Bank leads, custom intake forms, carrier market access, a built-in CRM, and a done-for-you website. Everything is connected, so a lead moves from first contact to bound policy in one place, and purchased separately, these tools would run $190 to $655 a month."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Who is Agency Height platform for?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Whether you are newly licensed or seasoned, captive or independent, writing personal, commercial, or life, the platform scales to how you work, from building your first profile to managing an established book."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How will Agency Height bring me more leads?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Leads reach you four ways, all landing in your CRM: your profile&#8217;s quote form, your own campaign link, platform matching through the directory, and Lead Bank claims. There are no caps on how many leads you receive through your profile, and directory matching as your profile sits in front of more than 20,000 buyers searching each month. The only limit is on Lead Bank, a separate pool you claim from, and on the Free plan, where you can open two leads in full before upgrading. Every lead is stored in your CRM either way."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What makes Lead Bank better than buying leads?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Lead Bank is a pool of real buyers who requested a quote on Agency Height but were not matched to an agent. You filter by your licensed states and lines, review each buyer&#8217;s details, and once you claim a lead it is yours alone, one agent per lead. Unlike vendors that sell the same lead to three to five agents at $15 to $60 each, claims are exclusive and included in your plan: two per month on Premium and seven on Enterprise. Free agents can browse the pool but cannot unlock leads."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How does the intake form help me close faster?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Your profile&#8217;s quote form captures basic requests from buyers who find you. The intake form is one you create and share by link or QR code, and it collects far more detail, such as VIN and driver data for auto, or financials and NAICS code for commercial, so leads arrive close to application-ready. It is bilingual, free on every plan, and feeds directly into your CRM."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What does the CRM do for me?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "It keeps every prospect, quote, and renewal in one place, tracking a deal from first inquiry to bound policy across My Leads, Campaigns, and My Book. It manages your sales workflow; it does not rate, quote, bind, or handle claims, and it is not a full agency management system for accounting, commissions, or carrier downloads."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How does Agency Height Markets help me write more business?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The Agency Height Markets lets you search admitted and E&amp;S carriers, MGAs, and wholesalers by appetite, state, and risk type in one place. Each carrier shows your status (appointed, appointment needed, or eligible to submit with none) with your NPN, E&amp;O, and W9 pre-filled. You can place E&amp;S risks from day one and earn the commission while Agency Height manages the carrier relationship. It is free for every agent."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Do I get a website, and what is involved on my end?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes, on Premium and Enterprise annual plans, with almost nothing required from you. Our AI writes every page from your profile, you review a single draft, and we build, host, and publish it on your own domain, typically live within a week, with a free first-year domain, hosting, and SSL included. We handle every update. The website is not available on monthly plans."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What does it cost, and what is free?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "We have two paid plans. Premium is $29.99/month billed annually or $39.99 month-to-month. Enterprise is $79.99/month billed annually or $99.99 month-to-month. You can try Premium for 14 days for $1. A basic profile is free."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Am I locked into a contract, and what support do I get?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "There are no long-term contracts. Plans are monthly or annual, and you may cancel at any time. Premium activates immediately, so the current billing period is non-refundable, but canceling stops all future renewals and we send a reminder a week before any charge. Free plans include regular support, paid plans add priority support and onboarding, and Enterprise includes a custom marketing strategy with monthly analytics."
+    }
+   }
+  ]
+ }
+]

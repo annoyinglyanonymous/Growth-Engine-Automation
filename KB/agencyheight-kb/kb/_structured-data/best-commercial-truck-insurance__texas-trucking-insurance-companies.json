@@ -1,0 +1,134 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/best-commercial-truck-insurance/texas-trucking-insurance-companies/",
+    "url": "https://agencyheight.com/best-commercial-truck-insurance/texas-trucking-insurance-companies/",
+    "name": "Best Trucking Insurance Companies in Texas ",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "datePublished": "2025-02-06T14:30:21+00:00",
+    "dateModified": "2026-06-12T08:59:24+00:00",
+    "description": "Get to know about the best trucking insurance companies in Texas. Know which provides you with the best fit for your fleet.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/best-commercial-truck-insurance/texas-trucking-insurance-companies/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/best-commercial-truck-insurance/texas-trucking-insurance-companies/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/best-commercial-truck-insurance/texas-trucking-insurance-companies/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Best Commercial Truck Insurance | Get a Quote",
+      "item": "https://agencyheight.com/best-commercial-truck-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Best Trucking Insurance Companies in Texas "
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What are the things to consider when determining the most appropriate trucking insurance liability? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "In Texas, trucking insurance providers will ask three key questions to help determine the most appropriate truck insurance and liability limits:What type of trucking operation do you run?What types of trucks and equipment do you use?What are your coverage and liability requirements?"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How much is commercial truck insurance in Texas? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "On average, Texas truck insurance can range from $3,000 to $12,000 annually for a single truck, but it can be higher for fleets or trucks hauling higher-risk loads."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What do I need to operate a commercial truck in Texas? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "To operate a commercial truck in Texas you must meet several legal and regulatory requirements about Commercial Driver License (CDL), Motor Carrier Enforcement, Electronic Clearance, Electronic Tolls, Electronic Credentialing, CMV Registration (IRP), CMV Fuel Use Taxation (IFTA) and other requirements as per the law."
+    }
+   }
+  ]
+ }
+]

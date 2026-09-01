@@ -1,0 +1,110 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://renegadeinsurance.com/agency/savannah/become-a-referral-partner/",
+    "url": "https://renegadeinsurance.com/agency/savannah/become-a-referral-partner/",
+    "name": "Savannah - Become a Referral Partner - Renegade Insurance",
+    "isPartOf": {
+     "@id": "https://renegadeinsurance.com/#website"
+    },
+    "datePublished": "2024-04-11T10:58:36+00:00",
+    "dateModified": "2024-06-20T11:28:23+00:00",
+    "description": "Join Renegade Insurance in Savannah as a referral partner & get access to multiple leading carriers with vast price points.",
+    "breadcrumb": {
+     "@id": "https://renegadeinsurance.com/agency/savannah/become-a-referral-partner/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://renegadeinsurance.com/agency/savannah/become-a-referral-partner/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://renegadeinsurance.com/agency/savannah/become-a-referral-partner/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://renegadeinsurance.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Agency",
+      "item": "https://renegadeinsurance.com/agency/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Savannah",
+      "item": "https://renegadeinsurance.com/agency/savannah/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Savannah &#8211; Become a Referral Partner"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://renegadeinsurance.com/#website",
+    "url": "https://renegadeinsurance.com/",
+    "name": "Renegade Insurance",
+    "description": "Get insurance quotes from 100 insurance companies while working with your local agent. The easiest way to buy and manage all of your insurance needs.",
+    "publisher": {
+     "@id": "https://renegadeinsurance.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://renegadeinsurance.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://renegadeinsurance.com/#organization",
+    "name": "Renegade Insurance",
+    "url": "https://renegadeinsurance.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://renegadeinsurance.com/#/schema/logo/image/",
+     "url": "https://renegadeinsurance.com/wp-content/uploads/2023/02/Frame-1.svg",
+     "contentUrl": "https://renegadeinsurance.com/wp-content/uploads/2023/02/Frame-1.svg",
+     "width": 219,
+     "height": 57,
+     "caption": "Renegade Insurance"
+    },
+    "image": {
+     "@id": "https://renegadeinsurance.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/JoinRenagade",
+     "https://x.com/renegadeins",
+     "https://www.instagram.com/renegade.insurance/",
+     "https://www.linkedin.com/company/renegade-insurances/"
+    ]
+   }
+  ]
+ }
+]

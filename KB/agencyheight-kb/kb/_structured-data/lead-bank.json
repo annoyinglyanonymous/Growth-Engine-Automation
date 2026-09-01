@@ -1,0 +1,184 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/lead-bank/",
+    "url": "https://agencyheight.com/lead-bank/",
+    "name": "Exclusive Insurance Leads for Agents | Lead Bank",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/lead-bank/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/lead-bank/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "datePublished": "2026-06-10T03:59:29+00:00",
+    "dateModified": "2026-08-17T11:51:46+00:00",
+    "description": "Lead Bank gives agents exclusive, unclaimed insurance leads by state and line of business. Claim leads from your licensed states, available on paid plans.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/lead-bank/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/lead-bank/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/lead-bank/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "width": 1200,
+    "height": 675
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/lead-bank/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Lead Bank"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What are exclusive insurance leads?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Exclusive insurance leads go to one agent only. Lead Bank removes the lead from the pool the moment you unlock it. No other agent can see or contact that buyer after you claim. This is structurally different from shared lead vendors who sell the same contact to multiple agents at once."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How many leads can I claim each month?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Premium plan agents can claim up to 2 leads per month. Enterprise plan agents can claim up to 7 Both allowances reset monthly on a fixed cycle. The limit is set by your plan, not by lead inventory."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Will these leads convert?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Every Lead Bank lead is a real buyer who requested coverage, and once you claim it, that buyer is yours exclusively on Agency Height. Keep in mind that buyers often explore more than one option when shopping for insurance, so reaching out promptly makes a meaningful difference. Agents who follow up quickly while interest is high tend to see the strongest results."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What lines of business are available in leads for insurance agents?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Lead Bank includes personal lines (auto, home, renters), commercial lines, life insurance, and specialty lines. Health insurance leads are not included."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can I claim leads outside my licensed states?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "No. Lead Bank reads your licensed states from your Agency Height profile and automatically blocks claims from states where you are not licensed. You only see leads you can legally work."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What happens after I claim a lead?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The lead is removed from the pool immediately. The buyer's full contact details, name, email, and phone number, are delivered to your personal lead table. You update the status as you work it and can convert it to a prospect in your dashboard at any time."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do commercial insurance leads work in Lead Bank?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Commercial leads enter Lead Bank the same way personal lines do. A business owner requests a quote on Agency Height, goes unmatched, and the lead enters the pool for exclusive claim. You can filter specifically for commercial lines and claim independently of your personal lines claims."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How is Lead Bank different from EverQuote or QuoteWizard?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "EverQuote and QuoteWizard charge $15–$60 per lead and distribute those same leads to multiple agents. Lead Bank leads are fully exclusive and included in your existing Agency Height plan with no per-lead fee. Every lead also comes from a real buyer who started a quote request on Agency Height, not from an aggregated external list."
+    }
+   }
+  ]
+ }
+]

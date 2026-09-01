@@ -1,0 +1,121 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-careers/insurance-agency-acquisition-broker/",
+    "url": "https://agencyheight.com/insurance-careers/insurance-agency-acquisition-broker/",
+    "name": "Insurance Agency Acquistion Brokers in 2026 - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/insurance-careers/insurance-agency-acquisition-broker/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/insurance-careers/insurance-agency-acquisition-broker/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/insurance-agency-acquisition-broker.png",
+    "datePublished": "2025-01-23T12:06:35+00:00",
+    "dateModified": "2025-12-22T05:12:30+00:00",
+    "description": "Learn how insurance acquisition brokerage like Sica | Fletcher, MidCap and more simplify the process and maximize your business value.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-careers/insurance-agency-acquisition-broker/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-careers/insurance-agency-acquisition-broker/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/insurance-careers/insurance-agency-acquisition-broker/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/insurance-agency-acquisition-broker.png",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/insurance-agency-acquisition-broker.png",
+    "width": 1200,
+    "height": 600,
+    "caption": "insurance agency acquisition broker"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-careers/insurance-agency-acquisition-broker/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance Careers",
+      "item": "https://agencyheight.com/insurance-careers/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Insurance Agency Acquistion Brokers in 2026"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ }
+]

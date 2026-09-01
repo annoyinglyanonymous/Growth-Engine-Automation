@@ -1,0 +1,151 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/get-insurance/business-insurance-old/",
+    "url": "https://agencyheight.com/get-insurance/business-insurance-old/",
+    "name": "Business Insurance in 2023 - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/get-insurance/business-insurance-old/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/get-insurance/business-insurance-old/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/Business-Insurance-Main.jpg",
+    "datePublished": "2022-04-07T07:17:25+00:00",
+    "dateModified": "2025-11-11T11:20:12+00:00",
+    "description": "Are you searching for agents that can get you the right business insurance? We have a list of experts who specializes in commercial insurance.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/get-insurance/business-insurance-old/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/get-insurance/business-insurance-old/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/get-insurance/business-insurance-old/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/Business-Insurance-Main.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/Business-Insurance-Main.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "business_insurance"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/get-insurance/business-insurance-old/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get Insurance",
+      "item": "https://agencyheight.com/get-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Business Insurance old"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What is a business insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Business liability insurance is designed to protect businesses from financial risks. This insurance protects you and your company from property damage, general liability and also covers employee risks."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Do I need business insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Business insurance protects a business against economic loss due to various risks such as property damage, liability claims, and employee injury. Depending on your industry and the specific risks your business faces, certain types of business insurance may be required by law, while others are strongly recommended to protect your assets and financial stability. You can get a good deal on your business insurance through many insurance companies like Universal North America Insurance. You should further look into other insurance companies to make best decision."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What types of business insurance are there?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "There are several types of business insurance, including general liability insurance, property insurance, commercial auto insurance, workers&#8217; compensation insurance, and professional liability insurance (also known as negligence and omission insurance)."
+    }
+   }
+  ]
+ }
+]

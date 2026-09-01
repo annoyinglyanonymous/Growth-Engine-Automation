@@ -1,0 +1,120 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-careers/what-makes-a-good-retail-insurance-agent/",
+    "url": "https://agencyheight.com/insurance-careers/what-makes-a-good-retail-insurance-agent/",
+    "name": "What Makes a Good Retail Insurance Agent?  - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/insurance-careers/what-makes-a-good-retail-insurance-agent/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/insurance-careers/what-makes-a-good-retail-insurance-agent/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/a-11.jpg",
+    "datePublished": "2025-03-31T16:32:37+00:00",
+    "dateModified": "2025-04-01T15:55:30+00:00",
+    "description": "What makes a good retail insurance agent? Find our how to become a succesful insurance agent in 2025. Read more.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-careers/what-makes-a-good-retail-insurance-agent/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-careers/what-makes-a-good-retail-insurance-agent/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/insurance-careers/what-makes-a-good-retail-insurance-agent/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/a-11.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/a-11.jpg",
+    "width": 1200,
+    "height": 628
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-careers/what-makes-a-good-retail-insurance-agent/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance Careers",
+      "item": "https://agencyheight.com/insurance-careers/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "What Makes a Good Retail Insurance Agent? "
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,167 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/life-insurance/checklist/",
+    "url": "https://agencyheight.com/life-insurance/checklist/",
+    "name": "Life Insurance Checklist: Tracking The Essentials - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/life-insurance/checklist/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/life-insurance/checklist/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/2022/07/Life-Insurance-Checklist-Feature-Image.jpg",
+    "datePublished": "2022-01-21T08:40:53+00:00",
+    "dateModified": "2025-11-11T08:00:12+00:00",
+    "description": "A life insurance checklist helps you track your essentials before you buy a policy. From documents to discounts, here's everything you need!",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/life-insurance/checklist/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/life-insurance/checklist/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/life-insurance/checklist/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/2022/07/Life-Insurance-Checklist-Feature-Image.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/2022/07/Life-Insurance-Checklist-Feature-Image.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "Life-Insurance-Checklist-Feature-Image"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/life-insurance/checklist/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Life Insurance",
+      "item": "https://agencyheight.com/life-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Life Insurance Checklist"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Why do I need it?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Answering this question is the first step to plan out your life insurance policy. You might want life insurance for a handful of reasons. Some are helping your family to pay out expenses, paying for your children’s expenses, or maybe paying out for your funeral expenses.Depending on these reasons, you can choose to get the policy of your choice, whether it be term, whole, universal, or variable life policy. Knowing why you need insurance will also help you figure out how much coverage you need."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Who do I choose as my beneficiary?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Usually, one chooses their spouse, parent, or child to be their beneficiary. However, if the situation arises, you can also choose your friends or your organization as a beneficiary. If necessary, you can also choose to have more than one beneficiary. But it’s best to inform them beforehand to avoid confusion later on.&nbsp;"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Do I have my finances managed?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "This is probably one of the most critical questions you must ask yourself before applying for a life insurance policy. Getting insured, whether for a fixed period or a life-long, is quite expensive despite the discounts.So, we recommend you assess and manage your finances to support your current lifestyle and pay for the upcoming policy premiums. If you think you will not be able to do so, you can reconsider applying for a life policy right away."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Do I have enough information about the insurance company?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Getting life insurance is a crucial milestone. And for something as important as this, it’s best to choose one of the reputed life insurance firms to sign up for a policy. They will undoubtedly have greater credibility with regard to the policy you’re seeking.Browse for companies with good ratings and reviews. Additionally, you can even ask for opinions from those who have bought policies from them prior to you. If you want to pursue a certain carrier for your coverage, then contact them to know their offerings in detail.The best advice we can give you is to keep your options open. Shortlist some of the best companies based on their offerings, your requirements and coverage limit. Narrow down on the possible few before finalizing on one."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Does the prospective insurance company offer renewals and conversion options?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Most insurance companies make their services transparent when they convey information to their clients. However, it’s best to ask yourself about renewals if you think you’ll be needing it.On top of this, there might be instances when you might need to change your policy depending on the changing requirements. You should ask the carrier if they facilitate the same. If they don’t, then you might need to search for alternatives."
+    }
+   }
+  ]
+ }
+]

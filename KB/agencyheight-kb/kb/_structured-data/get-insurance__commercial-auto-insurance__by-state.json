@@ -1,0 +1,127 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/get-insurance/commercial-auto-insurance/by-state/",
+    "url": "https://agencyheight.com/get-insurance/commercial-auto-insurance/by-state/",
+    "name": "Commercial Auto Insurance By State - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/get-insurance/commercial-auto-insurance/by-state/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/get-insurance/commercial-auto-insurance/by-state/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/2022/07/Commercial-Auto-Insurance-state-bannerimg.jpg",
+    "datePublished": "2022-01-22T07:27:00+00:00",
+    "dateModified": "2023-02-15T03:53:27+00:00",
+    "description": "Looking for cost and requirements of commercial vehicle of each state? Get valuable insights on commercial auto insurance by state..",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/get-insurance/commercial-auto-insurance/by-state/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/get-insurance/commercial-auto-insurance/by-state/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/get-insurance/commercial-auto-insurance/by-state/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/2022/07/Commercial-Auto-Insurance-state-bannerimg.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/2022/07/Commercial-Auto-Insurance-state-bannerimg.jpg",
+    "width": 1024,
+    "height": 576,
+    "caption": "commercial auto insurance by state banner"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/get-insurance/commercial-auto-insurance/by-state/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get Insurance",
+      "item": "https://agencyheight.com/get-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Commercial Auto Insurance &#8211; Get a Free Quote",
+      "item": "https://agencyheight.com/get-insurance/commercial-auto-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Commercial Auto Insurance By State"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ }
+]

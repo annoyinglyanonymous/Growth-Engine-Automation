@@ -1,0 +1,168 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://renegadeinsurance.com/franchise/",
+    "url": "https://renegadeinsurance.com/franchise/",
+    "name": "Franchise with Renegade Insurance",
+    "isPartOf": {
+     "@id": "https://renegadeinsurance.com/#website"
+    },
+    "datePublished": "2024-11-07T21:27:00+00:00",
+    "dateModified": "2026-08-12T06:14:18+00:00",
+    "description": "Start an independent insurance agency franchise with Renegade. 80% commissions, $25,000 entry, back-office support included.",
+    "breadcrumb": {
+     "@id": "https://renegadeinsurance.com/franchise/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://renegadeinsurance.com/franchise/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://renegadeinsurance.com/franchise/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://renegadeinsurance.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Franchise"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://renegadeinsurance.com/#website",
+    "url": "https://renegadeinsurance.com/",
+    "name": "Renegade Insurance",
+    "description": "Get insurance quotes from 100 insurance companies while working with your local agent. The easiest way to buy and manage all of your insurance needs.",
+    "publisher": {
+     "@id": "https://renegadeinsurance.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://renegadeinsurance.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://renegadeinsurance.com/#organization",
+    "name": "Renegade Insurance",
+    "url": "https://renegadeinsurance.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://renegadeinsurance.com/#/schema/logo/image/",
+     "url": "https://renegadeinsurance.com/wp-content/uploads/2023/02/Frame-1.svg",
+     "contentUrl": "https://renegadeinsurance.com/wp-content/uploads/2023/02/Frame-1.svg",
+     "width": 219,
+     "height": 57,
+     "caption": "Renegade Insurance"
+    },
+    "image": {
+     "@id": "https://renegadeinsurance.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/JoinRenagade",
+     "https://x.com/renegadeins",
+     "https://www.instagram.com/renegade.insurance/",
+     "https://www.linkedin.com/company/renegade-insurances/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "How do I get started? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Fill out the application form on this page to connect with a Franchise Success Specialist. Whether you&#8217;re a licensed P&amp;C agent looking to own an independent insurance agency, or a business professional from real estate, mortgage, or financial services exploring insurance franchise opportunities, our team will walk you through the model and confirm if you qualify.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is the initial investment to become a Renegade franchise owner? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Initial franchise fees start at $25,000 depending on your business type. A monthly support and technology fee applies after launch. Financing is available for qualified candidates. Additional startup costs may vary by state and are detailed in the Franchise Disclosure Document.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Does Renegade Insurance provide training? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. Renegade offers a mandatory two-week hands-on training program using real leads. Training covers the full sales process, carrier systems, and agency management. This is designed for both experienced agents transitioning out of captive carriers and professionals from outside insurance who want to own an insurance agency without starting from scratch.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Does Renegade Insurance offer financing? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. Financing options are available for qualified candidates. Our team works with you to structure an arrangement that fits your situation, whether you&#8217;re an established agent or a first-time business owner entering the insurance franchise opportunity.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How are Renegade franchise owners compensated? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Renegade franchise owners earn 80% on new business personal lines commissions and up to 80% on renewals. Renegade pays agencies monthly based on carrier commissions received. For agents leaving captive carriers, this structure typically represents a significant increase over what a captive model pays.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How long does it take to open a Renegade Insurance agency? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Most Renegade franchise locations open within 60 to 180 days of signing. Timeline depends on licensing, location setup, and local permit requirements in your state. For professionals already running a business in real estate, mortgage, or financial services, the onboarding process is designed to work alongside your existing operation during the transition.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Do I need to hire my own staff as a Renegade franchise owner? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. As a business owner, you hire your own staff. Renegade provides guidance to help you find the right talent. Many franchise owners, particularly those coming from outside the insurance industry, start lean and scale their team as the book grows.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What kind of support can I expect from Renegade Insurance? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Renegade&#8217;s support includes hands-on training, post-launch guidance, regional expert sessions, marketing tools, and webinars. The back-office team handles customer service, bookkeeping, and marketing, so whether you&#8217;re a captive agent building your first independent book or a business professional owning an insurance agency for the first time, you&#8217;re not running operations alone.\n"
+    }
+   }
+  ]
+ }
+]

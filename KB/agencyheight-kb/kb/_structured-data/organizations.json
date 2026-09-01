@@ -1,0 +1,27 @@
+{
+ "https://agencyheight.com/#organization": {
+  "@type": "Organization",
+  "@id": "https://agencyheight.com/#organization",
+  "name": "Agency Height",
+  "url": "https://agencyheight.com/",
+  "logo": {
+   "@type": "ImageObject",
+   "inLanguage": "en-US",
+   "@id": "https://agencyheight.com/#/schema/logo/image/",
+   "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+   "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+   "width": 412,
+   "height": 131,
+   "caption": "Agency Height"
+  },
+  "image": {
+   "@id": "https://agencyheight.com/#/schema/logo/image/"
+  },
+  "sameAs": [
+   "https://www.facebook.com/AgencyHeight",
+   "https://x.com/AgencyHeight",
+   "https://www.instagram.com/agencyheight/",
+   "https://www.pinterest.com/agencyheight/"
+  ]
+ }
+}

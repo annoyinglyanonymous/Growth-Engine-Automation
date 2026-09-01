@@ -1,0 +1,134 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/medical-malpractice-insurance/texas-insurance-agents/",
+    "url": "https://agencyheight.com/medical-malpractice-insurance/texas-insurance-agents/",
+    "name": "Medical Malpractice Insurance Agents in Texas - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "datePublished": "2025-01-24T07:43:15+00:00",
+    "dateModified": "2026-06-12T08:55:03+00:00",
+    "description": "Find top medical malpractice insurance agents in Texas and get quotes to secure the best coverage for health workers in the state.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/medical-malpractice-insurance/texas-insurance-agents/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/medical-malpractice-insurance/texas-insurance-agents/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/medical-malpractice-insurance/texas-insurance-agents/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Best Medical Malpractice Insurance | Get a Quote",
+      "item": "https://agencyheight.com/medical-malpractice-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Medical Malpractice Insurance Agents in Texas"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "1. Does Texas require medical malpractice insurance? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Medical malpractice is not mandatory by state however hospitals and health organizations can require employees to have medical malpractice insurance. It is also recommended for private practitioners to get medical malpractice insurance."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "2. What is the limit for medical malpractice insurance in Texas? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Texas legislation generally limits the amount of non-economic damages recoverable to $500,000 in wrongful death claims and $250,000 in other claims."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "3. What is the time limit for medical malpractice in Texas? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The term limit for medical malpractice claim in Texas is 2 years."
+    }
+   }
+  ]
+ }
+]

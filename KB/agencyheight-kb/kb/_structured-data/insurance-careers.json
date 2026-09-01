@@ -1,0 +1,145 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-careers/",
+    "url": "https://agencyheight.com/insurance-careers/",
+    "name": "Insurance Careers - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/insurance-careers/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/insurance-careers/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/Rectangle-20638.png",
+    "datePublished": "2022-01-15T07:05:48+00:00",
+    "dateModified": "2025-02-27T10:10:55+00:00",
+    "description": "Get the latest updates on everything related to insurance careers and insurance jobs in the United States to become a super-agent in 2025.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-careers/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-careers/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/insurance-careers/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/Rectangle-20638.png",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/Rectangle-20638.png",
+    "width": 1440,
+    "height": 505,
+    "caption": "insurance careers banner image"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-careers/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance Careers"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Is insurance a rewarding career?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "According to the US Bureau of Labor Statistics, the job future for insurance sales agents is bright, with a projected growth rate of 5% between 2019 and 2029."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the highest paying insurance jobs?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Actuaries, insurance claims adjusters, insurance underwriters, risk analysts, financial analysts, and insurance agents are some of the highest-paid insurance jobs in 2025."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the most popular states for entry-level insurance positions?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Florida, New York, Georgia, Illinois, Texas and Arizona are among the cities with the most popular Entry Level Insurance jobs."
+    }
+   }
+  ]
+ }
+]

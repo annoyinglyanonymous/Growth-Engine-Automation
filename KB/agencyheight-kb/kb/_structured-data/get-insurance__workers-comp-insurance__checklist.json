@@ -1,0 +1,165 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/checklist/",
+    "url": "https://agencyheight.com/get-insurance/workers-comp-insurance/checklist/",
+    "name": "Workers Compensation Insurance Checklist - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/checklist/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/checklist/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/workers-comp-insurance-checklist-scaled.jpg",
+    "datePublished": "2023-03-28T11:33:27+00:00",
+    "dateModified": "2023-04-20T08:44:43+00:00",
+    "description": "Looking for a comprehensive checklist for workers' compensation claims? Our guide covers everything you need to know to ensure your claims.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/checklist/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/get-insurance/workers-comp-insurance/checklist/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/checklist/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/workers-comp-insurance-checklist-scaled.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/workers-comp-insurance-checklist-scaled.jpg",
+    "width": 2560,
+    "height": 1707,
+    "caption": "workers comp insurance checklist"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/checklist/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get Insurance",
+      "item": "https://agencyheight.com/get-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Worker&#8217;s Compensation Insurance",
+      "item": "https://agencyheight.com/get-insurance/workers-comp-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Workers Compensation Insurance Checklist"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What is workers compensation insurance example? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Workers compensation insurance is an insurance policy that covers medical expenses and lost wages for employees who are injured or become ill as a result of their work."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the methods of workers compensation? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Common methods of workers compensation include state-run programs, private policies, self-insurance plans, and employer liability insurance."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is the purpose of a worker's comp audit? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The purpose of a worker&#8217;s comp audit is to ensure compliance with the regulations surrounding workers&#8217; compensation coverage, to verify payroll records and payments, and to detect any areas where claims may have been underpaid."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Why is safety audit required? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Safety audits are required to ensure that workplaces are free from hazards which could put employee health and safety at risk. This includes identifying potential risks in the workplace, implementing proper training programs for employees, conducting regular inspections of equipment, and assessing other risk management plans."
+    }
+   }
+  ]
+ }
+]

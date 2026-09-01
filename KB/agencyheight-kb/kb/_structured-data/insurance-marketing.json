@@ -1,0 +1,128 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-marketing/",
+    "url": "https://agencyheight.com/insurance-marketing/",
+    "name": "Insurance Marketing: Importance, Strategies and Cost - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "datePublished": "2022-10-31T09:19:41+00:00",
+    "dateModified": "2025-07-17T06:16:24+00:00",
+    "description": "The generation of insurance leads is highly enhanced by insurance marketing. Discover our marketing strategies to get more revenue and leads",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-marketing/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-marketing/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-marketing/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance Marketing: Importance, Strategies and Cost"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "How do you convince people to buy insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Strong opening sentences that discuss the demands of the audience and why they require insurance is a smart move. Addressing their pain points when it comes to shopping for insurance. These are typically the frequent inquiries and worries that most insurance consumers have. It could comprise the cost of the premium, the scope of the coverage, and even any claims."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How is insurance policy marketing carried out?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Recognize the various segments of your market.Determine how they intend to buy (there will be multiple).Select the platforms you want to employ for your marketing (those frequented by your users)Ads, remarketing, landing pages, content marketing, chatbots, etc. should all be planned correctly in your marketing strategy."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How significant is marketing in the insurance sector?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Since insurance products cannot be seen or touched and only exist in the form of commitments, marketing is essential for the insurance market to balance supply and demand."
+    }
+   }
+  ]
+ }
+]

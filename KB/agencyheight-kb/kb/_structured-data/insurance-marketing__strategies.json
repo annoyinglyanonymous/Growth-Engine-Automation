@@ -1,0 +1,166 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-marketing/strategies/",
+    "url": "https://agencyheight.com/insurance-marketing/strategies/",
+    "name": "Insurance Marketing Strategies - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "datePublished": "2022-11-23T05:23:57+00:00",
+    "dateModified": "2023-04-20T05:48:58+00:00",
+    "description": "A proper insurance marketing strategy will help you attract customers and gain insurance leads, It will help you succeed in the industry.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-marketing/strategies/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-marketing/strategies/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-marketing/strategies/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance Marketing: Importance, Strategies and Cost",
+      "item": "https://agencyheight.com/insurance-marketing/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Insurance Marketing Strategies"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What do you mean by marketing of insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Insurance marketing is the marketing of insurance services to reach more customers, which in turn generates profits. Insurance organizations use innovative insurance marketing techniques to survive and thrive in highly competitive markets.&nbsp;"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do I market my insurance company?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The best way for you to market your insurance company is by digital marketing. It helps you know your audience and increase reach by investing in quality content and advertisements.&nbsp;"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do insurance companies attract clients?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Insurance companies attract clients by creating brand awareness. Insurance companies attract their clients with the help of insurance marketing which helps in promoting their product or service.&nbsp;"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do you create a marketing plan for an insurance company?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The first step you should take while creating a marketing plan is accessing your insurance company and your targeted customers.&nbsp;"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the 5 main marketing strategies?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The 5 main marketing strategies are product, place, price, promotion, and people.&nbsp;"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do I succeed in selling insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "As an insurance agent you should have customer service skills and a good understanding about insurance industry in order to sell insurance. You should also consider digital marketing strategies to step up in the game.&nbsp;"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is the most profitable type of insurance to sell?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The most profitable insurance to sell is life insurance policies.&nbsp;"
+    }
+   }
+  ]
+ }
+]

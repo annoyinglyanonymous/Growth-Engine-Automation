@@ -1,0 +1,176 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/lead-generator-enricher/",
+    "url": "https://agencyheight.com/lead-generator-enricher/",
+    "name": "Insurance Lead Generation for Agents – Find & Enrich | Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/lead-generator-enricher/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/lead-generator-enricher/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "datePublished": "2026-06-12T08:09:40+00:00",
+    "dateModified": "2026-07-20T08:46:33+00:00",
+    "description": "Agency Height's Lead Generator lets agents find cold insurance prospects by keyword and location. Enrich any contact instantly. Enterprise plan included.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/lead-generator-enricher/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/lead-generator-enricher/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/lead-generator-enricher/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "width": 1200,
+    "height": 675
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/lead-generator-enricher/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Lead Generator &amp; Enricher"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "How do insurance agents get leads with this tool?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Use Lead Generator to search by job title or business type and city. You get up to 10 contacts per search: name, email, LinkedIn, company, and title. There's no cap on how many searches you run. Then use Lead Enricher on any contact to get a full background profile before you call. Together they form a complete insurance lead generation workflow inside your Agency Height account."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What's the difference between Lead Generator and buying insurance leads?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "When you buy leads from a vendor, you're purchasing contacts that multiple other agents also receive. Lead Generator lets you find your own cold prospects directly, and nobody else gets the same list you build. You also control exactly who you search for, rather than receiving a pre-filtered batch from someone else's criteria."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can I search for commercial insurance leads or is it just personal lines?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Both. Personal search lets you find decision-makers by job title, search for \"fleet manager,\" \"business owner,\" \"CFO,\" or any role you want to reach. Business search finds companies by type and city, so you can pull a list of auto dealers, contractors, restaurants, or any other business category in any market."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How accurate is the contact data?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Results come from a third-party database of 275M+ verified contacts. Agency Height doesn't independently verify each record. Most results are accurate, though occasionally a contact may have changed roles or their email may be outdated. Treat results the same way you would any prospecting list: verify before you reach out."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can I export my results?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. Lead Generator results can be exported as a CSV file. Lead Enricher output is displayed on screen as a written profile, with no structured CSV export for enrichment results."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is Lead Generator available on all plans?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Lead Generator and Lead Enricher are available on the Enterprise plan ($79.99/month billed annually). They're bundled in, no separate subscription required. See all plan features →"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What happens if Lead Enricher finds nothing for a contact?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Lead Enricher works with business emails only, so personal addresses (Gmail, Yahoo, and the like) usually return nothing. A no-match still uses one search, and you'll see a blank or \"no results found\" screen."
+    }
+   }
+  ]
+ }
+]

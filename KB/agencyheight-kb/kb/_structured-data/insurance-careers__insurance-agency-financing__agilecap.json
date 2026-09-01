@@ -1,0 +1,157 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-careers/insurance-agency-financing/agilecap/",
+    "url": "https://agencyheight.com/insurance-careers/insurance-agency-financing/agilecap/",
+    "name": "AgileCap Insurance Agency Lending Reviews 2025 - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/insurance-careers/insurance-agency-financing/agilecap/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/insurance-careers/insurance-agency-financing/agilecap/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/agilecap.jpg",
+    "datePublished": "2025-02-11T11:50:31+00:00",
+    "dateModified": "2025-10-14T08:25:08+00:00",
+    "description": "Get the best insurance financing options to help your agency grow with AgileCap Insurance Agency Lending company.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-careers/insurance-agency-financing/agilecap/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-careers/insurance-agency-financing/agilecap/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/insurance-careers/insurance-agency-financing/agilecap/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/agilecap.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/agilecap.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "agilecap"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-careers/insurance-agency-financing/agilecap/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance Careers",
+      "item": "https://agencyheight.com/insurance-careers/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Insurance Agency Loan and Financing Company",
+      "item": "https://agencyheight.com/insurance-careers/insurance-agency-financing/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "AgileCap Insurance Agency Lending Reviews "
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Is AgileCap an insurance broker? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "No, AgileCap provides loans exclusively to insurance agencies."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can I apply for a loan if my agency is new? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "While AgileCap mainly works with established agencies, they may offer flexible options for those with at least 2 years of experience."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How can I get in touch with AgileCap? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "You can call them at +1 855-514-1189, schedule a consultation, or email sales@agilecapfunds.com."
+    }
+   }
+  ]
+ }
+]

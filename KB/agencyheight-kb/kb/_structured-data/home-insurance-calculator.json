@@ -1,0 +1,160 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/home-insurance-calculator/",
+    "url": "https://agencyheight.com/home-insurance-calculator/",
+    "name": "Home Insurance Calculator - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/home-insurance-calculator/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/home-insurance-calculator/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/home-feature-image.jpg",
+    "datePublished": "2026-04-17T03:20:34+00:00",
+    "dateModified": "2026-08-04T03:14:45+00:00",
+    "description": "Use our free home insurance calculator to estimate how much coverage you need and what it might cost. Get accurate, instant results based on your home's details.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/home-insurance-calculator/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/home-insurance-calculator/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/home-insurance-calculator/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/home-feature-image.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/home-feature-image.jpg",
+    "width": 1200,
+    "height": 650
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/home-insurance-calculator/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Home Insurance Calculator"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "1. How is home insurance calculated?  ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Insurers weigh dozens of factors including your home&#8217;s replacement cost, location and weather risk, roof age, construction materials, deductible, coverage limits, your claims history, and (in most states) your credit-based insurance score. Each company weighs these factors differently, which is why quotes vary between carriers."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "2. How much home insurance do I actually need? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "At minimum, your dwelling coverage should equal the full cost to rebuild your home — not its market value. Most experts recommend $300,000 in personal liability coverage. You should also carry enough personal property coverage to replace your belongings. The calculator helps you find a starting coverage level based on your home value."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "3. Why is home insurance so expensive right now? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Several factors are driving 2026 premiums higher: rising construction material costs, more frequent and severe weather events (wildfires, hurricanes, hail), reinsurance cost increases, and in some states, legal environment pressures. While rate increases have slowed in some markets, most homeowners should expect continued upward pressure at renewal."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "4. Does my calculator estimate account for flood insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Standard homeowners&#8217; insurance does not cover flood damage. Flood insurance is purchased separately through the National Flood Insurance Program (NFIP) or private carriers. If you&#8217;re in a flood zone, budget separately for flood coverage — it&#8217;s not included in this estimate."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "5. Can I get home insurance without a credit check?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "A few states (California, Maryland, Massachusetts) prohibit credit-based insurance scoring. In most states, however, your credit score is a legal and commonly used rating factor. Some insurers weigh it more heavily than others — one more reason to compare multiple quotes."
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,115 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/best-insurance-near-me-atlanta/",
+    "url": "https://agencyheight.com/best-insurance-near-me-atlanta/",
+    "name": "Best Insurance Near Me Atlanta  - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/best-insurance-near-me-atlanta/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/best-insurance-near-me-atlanta/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/Untitled-design-82.jpg",
+    "datePublished": "2024-09-25T08:35:02+00:00",
+    "dateModified": "2024-09-26T07:51:56+00:00",
+    "description": "Looking for the best insurance near you in Atlanta, Georgia? Connect with the best insurance agents and agencies on Agency Height directory.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/best-insurance-near-me-atlanta/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/best-insurance-near-me-atlanta/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/best-insurance-near-me-atlanta/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/Untitled-design-82.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/Untitled-design-82.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "best insurance near me Atlanta"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/best-insurance-near-me-atlanta/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Best Insurance Near Me Atlanta "
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,198 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-license/faq/",
+    "url": "https://agencyheight.com/insurance-license/faq/",
+    "name": "Insurance License FAQ: 11 Most Asked Questions - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "datePublished": "2022-06-24T11:03:03+00:00",
+    "dateModified": "2023-04-20T05:28:21+00:00",
+    "description": "For a career in insurance, having an insurance license is a must. Continue reading to know more about insurance licensing.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-license/faq/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-license/faq/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-license/faq/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance License",
+      "item": "https://agencyheight.com/insurance-license/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Insurance License FAQ"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What kinds of insurance licenses are available?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Some of the most popular types of licenses issued in insurance are listed as follows:Accident and Health or SicknessAdjusterAutomobile Insurance Agent (Limited Lines)Car RentalCargo Shippers’ AgentCasualty Broker-AgentCredit Insurance AgentLife AgentLife and Disability Insurance AnalystLife-Limited To The Payment of Funeral And Burial ExpensesLife Settlement BrokerPersonal Lines Broker-AgentProperty and Casualty Broker-AgentSpecial Lines’ Surplus Line BrokerTravel Insurance Agent (Limited Lines)Vehicle Service Contract Provider"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is the cost of an insurance license?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "State license examination fees range, but often fall between $90-$350. In Texas and California, the total cost of your insurance course, application, and exam will be close to $375."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How long does an insurance license last before it expires?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "States have different expiration dates, although most have a two-year window of validity. However, they can be extended for a brief period of time."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How can I transfer my insurance license from one state to another?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "In most cases, a person with a valid license in another state may apply to the department to have their license transferred to another.For a transfer, you must submit an application to your new state’s insurance department. Most of the time, retaking all of the courses and examinations for a new license isn’t necessary. Before you send this application, many states want to see that you’ve had your license for a certain amount of time, and you must include an official clearance letter from your previous home state."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is a resident insurance license?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "A resident is someone who has a home or operates a primary business in the state. The license issued to a resident is referred to as a resident insurance license."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can a non-US citizen sell insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes, if you have the necessary papers, you can get an insurance license in most states in the United States even if you are not a U.S. citizen. A work permit is usually required by most insurance firms."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is a non-resident insurance license?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "An agent who is licensed in a domicile where he or she does not reside is issued a non-resident insurance license. A non-resident license holder can sell insurance in a state other than the one they live in."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How long does an insurance license in Florida last?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "In Florida, insurance licenses are everlasting and never expire. To keep their license active, licensees must attend continuing education classes every two years. The two-year period begins on the last day of the holder’s birth month in the year the initial insurance license was issued."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Are Florida and New York insurance license reciprocal states?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Except for New York, California, and Hawaii, every state has a reciprocal arrangement with Florida. Out-of-state adjusters are not eligible for reciprocal licenses in New York. In order to alter claims in New York, you must pass the state exam."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is it difficult to pass the insurance licensing exams?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Each insurance licensure exam is unique in its difficulty. Students feel the health insurance exam is more challenging than the Life insurance exam. Similarly, property insurance is considered less difficult than casualty insurance."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How long does it take to get an insurance license?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Getting a license to sell insurance can take either a few days or several weeks. To complete all the criteria for your insurance license, allow two to eight weeks."
+    }
+   }
+  ]
+ }
+]

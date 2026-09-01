@@ -1,0 +1,167 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/agency-starter-kit/how-to-buy-sell-insurance-agency/",
+    "url": "https://agencyheight.com/agency-starter-kit/how-to-buy-sell-insurance-agency/",
+    "name": "How to Buy and Sell an Insurance Agency? ",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/agency-starter-kit/how-to-buy-sell-insurance-agency/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/agency-starter-kit/how-to-buy-sell-insurance-agency/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/How-to-buysell-an-insurance-agency.png",
+    "datePublished": "2025-08-18T10:38:43+00:00",
+    "dateModified": "2025-08-20T08:52:26+00:00",
+    "description": "Learn how to buy/sell an insurance agency with confidence. Our step-by-step guide covers valuation, financing, due diligence, and growth strategies to help entrepreneurs and investors succeed in today’s insurance market.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/agency-starter-kit/how-to-buy-sell-insurance-agency/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/agency-starter-kit/how-to-buy-sell-insurance-agency/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/agency-starter-kit/how-to-buy-sell-insurance-agency/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/How-to-buysell-an-insurance-agency.png",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/How-to-buysell-an-insurance-agency.png",
+    "width": 1200,
+    "height": 628,
+    "caption": "How to buysell an insurance agency"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/agency-starter-kit/how-to-buy-sell-insurance-agency/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance Agency Starter Kit: Start a Successful Insurance Agency",
+      "item": "https://agencyheight.com/agency-starter-kit/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How to Buy and Sell an Insurance Agency? "
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What are the key advantages of buying an existing insurance agency? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Buying an established agency provides immediate cash flow, existing carrier relationships, brand recognition, and trained staff."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do I determine the value of an insurance agency? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The agency’s value is based on its annual revenue multiplier (1.5x to 3x) or EBITDA multiple (4x to 7x), along with client retention and growth potential. "
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What financing options are available when buying an insurance agency? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Financing options include SBA loans, traditional bank loans, seller financing, and private investors. "
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How can I ensure a smooth transition when selling my insurance agency? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Ensure financial records are organized, strengthen client relationships, and confirm carrier contracts can transfer smoothly"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are common mistakes to avoid when buying or selling an insurance agency? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Avoid skipping due diligence, overpaying, poor client transition, and ignoring legal advice. "
+    }
+   }
+  ]
+ }
+]

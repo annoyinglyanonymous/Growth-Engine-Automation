@@ -1,0 +1,121 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/best-commercial-truck-insurance/short-term-truck-insurance/",
+    "url": "https://agencyheight.com/best-commercial-truck-insurance/short-term-truck-insurance/",
+    "name": "Short Term Truck Insurance: Get the Best Temporary Trucking Coverage  - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/best-commercial-truck-insurance/short-term-truck-insurance/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/best-commercial-truck-insurance/short-term-truck-insurance/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/a-24.jpg",
+    "datePublished": "2025-04-10T09:22:36+00:00",
+    "dateModified": "2026-06-12T08:51:19+00:00",
+    "description": "Get affordable, flexible short term truck insurance coverage tailored for one-day, weekly, or monthly needs. Protect your rig today!",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/best-commercial-truck-insurance/short-term-truck-insurance/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/best-commercial-truck-insurance/short-term-truck-insurance/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/best-commercial-truck-insurance/short-term-truck-insurance/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/a-24.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/a-24.jpg",
+    "width": 1920,
+    "height": 578,
+    "caption": "short term truck insurance"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/best-commercial-truck-insurance/short-term-truck-insurance/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Best Commercial Truck Insurance | Get a Quote",
+      "item": "https://agencyheight.com/best-commercial-truck-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Short Term Truck Insurance: Get the Best Temporary Trucking Coverage "
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ }
+]

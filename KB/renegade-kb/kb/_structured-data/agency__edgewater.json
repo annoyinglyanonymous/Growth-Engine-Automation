@@ -1,0 +1,166 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://renegadeinsurance.com/agency/edgewater/",
+    "url": "https://renegadeinsurance.com/agency/edgewater/",
+    "name": "HIG - Edgewater - Renegade Insurance",
+    "isPartOf": {
+     "@id": "https://renegadeinsurance.com/#website"
+    },
+    "datePublished": "2023-08-18T05:47:02+00:00",
+    "dateModified": "2025-01-15T04:38:46+00:00",
+    "description": "HIG x Renegade Edgewater | Your Local Insurance Experts ☎ 386-944-5555. Protect what matters. Get personalized insurance solutions now!",
+    "breadcrumb": {
+     "@id": "https://renegadeinsurance.com/agency/edgewater/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://renegadeinsurance.com/agency/edgewater/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://renegadeinsurance.com/agency/edgewater/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://renegadeinsurance.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Agency",
+      "item": "https://renegadeinsurance.com/agency/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "HIG &#8211; Edgewater"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://renegadeinsurance.com/#website",
+    "url": "https://renegadeinsurance.com/",
+    "name": "Renegade Insurance",
+    "description": "Get insurance quotes from 100 insurance companies while working with your local agent. The easiest way to buy and manage all of your insurance needs.",
+    "publisher": {
+     "@id": "https://renegadeinsurance.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://renegadeinsurance.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://renegadeinsurance.com/#organization",
+    "name": "Renegade Insurance",
+    "url": "https://renegadeinsurance.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://renegadeinsurance.com/#/schema/logo/image/",
+     "url": "https://renegadeinsurance.com/wp-content/uploads/2023/02/Frame-1.svg",
+     "contentUrl": "https://renegadeinsurance.com/wp-content/uploads/2023/02/Frame-1.svg",
+     "width": 219,
+     "height": 57,
+     "caption": "Renegade Insurance"
+    },
+    "image": {
+     "@id": "https://renegadeinsurance.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/JoinRenagade",
+     "https://x.com/renegadeins",
+     "https://www.instagram.com/renegade.insurance/",
+     "https://www.linkedin.com/company/renegade-insurances/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "I know who HIG is, but who is Renegade? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Renegade Insurance is a tech-enabled P&amp;C agency that is revolutionizing the way insurance is bought and sold. You can learn more by visiting this link.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Are the HIG powered by Renegade offices the only offices Renegade has? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Renegade’s flagship office is in Atlanta, GA with multiple agency hubs throughout the southern and southeastern U.S. Our three HIG locations are the primary hubs for Florida and the southeastern seaboard.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is HIG powered by Renegade licensed? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes, HIG powered by Renegade is licensed in Florida, while Renegade is licensed in 48 states for Property and Casualty. We focus on Home, Auto, Commercial and Specialty. For more information, visit this link.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How is HIG powered by Renegade different from other agencies? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "HIG powered by Renegade combines the power of an insurance marketplace with an expert advisor. We help you get multiple quotes from leading carriers to choose from while providing you the guidance when and where you need it.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How is a HIG powered by Renegade agent different from a captive agent? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "HIG powered by Renegade agents operate as brokers. They have the capability to shop the entire marketplace to find the best product that fits your specific situation. Whether it is your personal belongings, or the most complicated commercial risk, we have the capability of making sure you are well taken care of.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How will HIG powered by Renegade help me with Florida-specific insurance problems? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Our team of local, Florida-based advisors bring a wealth of knowledge and experience, ensuring every individual in the area receives top-notch care. Our company size grants us access to markets that smaller agencies may lack, providing you and your family with the best possible coverage and service.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Who do I reach out to for a potential partnership? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "For any partnership queries, you can call us at 386-944-5555 or set up a meeting with our Agency Manager, Dawn Cropp, here.\n"
+    }
+   }
+  ]
+ }
+]

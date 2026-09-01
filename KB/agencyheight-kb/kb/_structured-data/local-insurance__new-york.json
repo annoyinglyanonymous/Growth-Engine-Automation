@@ -1,0 +1,215 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/local-insurance/new-york/",
+    "url": "https://agencyheight.com/local-insurance/new-york/",
+    "name": "Local Insurance Agents in New York 2026 - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/local-insurance/new-york/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/local-insurance/new-york/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/2022/10/Insurance-agents-in-new-york.jpg",
+    "datePublished": "2022-10-10T03:25:34+00:00",
+    "dateModified": "2025-12-22T07:33:43+00:00",
+    "description": "There are several insurance agents in New York who can assist you whether you're seeking auto insurance or homeowners insurance. Contact them today.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/local-insurance/new-york/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/local-insurance/new-york/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/local-insurance/new-york/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/2022/10/Insurance-agents-in-new-york.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/2022/10/Insurance-agents-in-new-york.jpg",
+    "width": 1920,
+    "height": 1280,
+    "caption": "new york"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/local-insurance/new-york/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Local Insurance Agents Near You",
+      "item": "https://agencyheight.com/local-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Local Insurance Agents in New York 2026"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "How much does home insurance cost in New York?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The average cost of home insurance in New York is $1,418 per year, with $250,000 in dwelling coverage."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do I get auto insurance in New York?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "There are several ways to get auto insurance rate quotes in New York. You can get in touch with agents, brokers, or specific insurance firms via phone or online. Additionally, there are quote brokers who actively promote their services to customers and offer online samples of the auto insurance rates of particular insurers."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is the minimum auto insurance coverage required in New York?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "No-Fault (Personal Injury Protection), Liability, and Uninsured Motorists insurance are the minimum types of insurance and coverages that must be obtained in order to meet New York’s financial responsibility laws."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is auto comprehensive insurance in New York?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Under comprehensive auto insurance in New York, your insurer will pay you regardless of who is at fault for any damage to your car resulting from incidents other than collisions, such as theft (of the entire vehicle or individual components), fire, flood, windstorm, broken glass, vandalism, animal contact, or collision with falling or flying objects."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How much does renters insurance cost in New York?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "In New York, renters insurance typically costs $14 monthly or $150 annually."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is renters' insurance mandatory in New York?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "No, there is no federal requirement requiring tenants to have renters insurance; however, some landlords might include a clause in the lease requiring tenants to provide proof of coverage."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How much does condo insurance cost in New York?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The typical cost of homeowners insurance for condo owners in New York is $1,291 for a policy with coverage of $100,000 or more."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Do I need business insurance in New York?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "If you have any employees, you must have workers’ compensation and disability benefits insurance in New York State, and you need auto insurance if you drive or own a truck for work. As a condition of your lease, a landlord frequently asks you to keep a particular level of liability insurance. Similarly, to protect their assets, your bank or investors may require you to maintain life, business interruption, fire, or other types of insurance."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How much is business insurance in New York?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "A typical small business in Georgia can expect to pay between $300 and $5,000 per year for general liability insurance."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is workers compensation insurance in New York?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Workers’ compensation insurance offers financial aid and/or medical attention to employees who are hurt on the job or fall ill as a direct result of their work. This insurance is paid for by the employer; the employee is not expected to contribute to the cost of compensation."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is workers compensation taxable in New York?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Benefits associated with workers’ compensation are excluded from federal income, Social Security, and Medicare taxes, under IRS regulations. Benefits related to workers’ compensation are also, if appropriate, free from municipal and state income taxes in New York."
+    }
+   }
+  ]
+ }
+]

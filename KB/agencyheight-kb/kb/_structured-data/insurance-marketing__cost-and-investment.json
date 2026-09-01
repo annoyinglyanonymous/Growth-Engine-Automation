@@ -1,0 +1,134 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-marketing/cost-and-investment/",
+    "url": "https://agencyheight.com/insurance-marketing/cost-and-investment/",
+    "name": "Insurance Marketing: Cost and Investment in Detail - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "datePublished": "2022-11-10T03:35:40+00:00",
+    "dateModified": "2023-04-20T05:48:06+00:00",
+    "description": "There are many factors to consider when planning an insurance marketing budget, and it's essential to weigh all options before making any decisions. Read more.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-marketing/cost-and-investment/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-marketing/cost-and-investment/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-marketing/cost-and-investment/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance Marketing: Importance, Strategies and Cost",
+      "item": "https://agencyheight.com/insurance-marketing/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Insurance Marketing: Cost and Investment in Detail"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "How much should I spend on a marketing strategy?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Simply said, your marketing expenditure should be a portion of your revenue. B2B businesses typically spend between 2 and 5% of their sales on marketing. The ratio is frequently higher—between 5 and 10% – for B2C insurance businesses.&nbsp;"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is a suitable profit margin for an insurance company?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Many insurance companies run on margins as low as 2% to 3%. Smaller profit margins mean that an insurance company’s ability to make a profit and maintain its financial stability can be drastically altered by even the smallest changes in its cost structure or pricing.&nbsp;"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Which marketing strategy would be the most affordable for insurance agents?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "One of the most cost-effective marketing strategies for insurance brokers is the referral program. Your customer base is one of your most effective insurance marketing tools. Friends’ suggestions are four times more likely to result in sales, demonstrating the value of their advice.As an alternative, devoted customers are four times more likely to recommend your insurance company to a friend. On the other hand, local SEO is a long-term, cost-effective marketing technique. By connecting with your target audience directly, you may reach more relevant audiences and increase conversion rates."
+    }
+   }
+  ]
+ }
+]

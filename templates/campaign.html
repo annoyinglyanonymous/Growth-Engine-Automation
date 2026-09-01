@@ -1,0 +1,326 @@
+{% extends "base.html" %}
+{% block title %}{{ c.name }}{% endblock %}
+
+{% macro findings(items, cls) %}
+  {% if items %}
+  <ul class="findings small">
+    {% for f in items %}
+    <li class="finding-{{ cls }}">
+      {#- Finding.as_dict() omits empty optional keys, so field/evidence/
+          remedy are frequently ABSENT rather than None. Attribute access
+          works only because Jinja's default Undefined is falsy; .get() says
+          what is meant and survives StrictUndefined. #}
+      <strong>{{ f.check }}</strong>
+      {%- if f.get('field') %} <span class="mono">[{{ f.get('field') }}]</span>{% endif %}
+      &mdash; {{ f.message }}
+      {%- if f.get('evidence') %} <span class="mono">&ldquo;{{ f.get('evidence') }}&rdquo;</span>{% endif %}
+      {%- if f.get('remedy') %}<div class="muted">&rarr; {{ f.get('remedy') }}</div>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+{% endmacro %}
+
+{% block body %}
+
+<div class="row" style="justify-content:space-between; align-items:baseline">
+  <div>
+    <h2 style="margin:0 0 4px">{{ c.name }}</h2>
+    <div class="muted small">
+      {{ c.brand_name }} &middot; {{ c.product_name }}
+      {%- if c.campaign_type_name %} &middot; {{ c.campaign_type_name }}{% endif %}
+      &middot; {{ (c.channels or []) | join(', ') }}
+    </div>
+  </div>
+  <span class="pill {{ c.status }}">{{ c.status }}</span>
+</div>
+
+{% if not c.product_marketable %}
+<div class="flash warn" style="margin-top:16px">
+  This product is not approved for marketing, so no approved claim reaches the
+  generators and copy will have nothing governed to assert. Set
+  <span class="mono">products.approved_for_marketing</span> first.
+</div>
+{% endif %}
+
+<!-- ------------------------------------------------------------ stage 3 -->
+<h2>Stage 3 &mdash; validation</h2>
+<div class="card">
+  <form method="post" action="/campaigns/{{ c.id }}/validate" class="row">
+    <button type="submit" data-busy="Validating&hellip;">Run validation</button>
+    <label class="small" style="margin:0; font-weight:400">
+      <input type="checkbox" name="use_ai" value="1" style="width:auto">
+      include the AI judgement tier
+    </label>
+  </form>
+
+  {% if latest_validation %}
+  {% set v = latest_validation %}
+  <div style="margin-top:14px">
+    <span class="pill {{ v.status }}">{{ v.status }}</span>
+    <span class="muted small">
+      #{{ v.validation_number }} &middot;
+      deterministic: {{ v.deterministic_status }} &middot;
+      AI: {{ v.ai_status or 'not assessed' }}
+      {% if v.validated_by %}&middot; run by {{ v.validated_by }}{% endif %}
+    </span>
+    {{ findings(v.blockers, 'blocker') }}
+    {{ findings(v.warnings, 'warning') }}
+    {{ findings(v.recommendations, 'info') }}
+    {% if not v.blockers and not v.warnings %}
+      <div class="small muted" style="margin-top:6px">No findings.</div>
+    {% endif %}
+  </div>
+  {% else %}
+  <p class="muted small" style="margin-bottom:0">Not validated yet.</p>
+  {% endif %}
+</div>
+
+<!-- ------------------------------------------------------------ stage 4 -->
+<h2>Stage 4 &mdash; strategy</h2>
+<div class="card">
+  <form method="post" action="/campaigns/{{ c.id }}/strategy" class="inline">
+    <button type="submit" data-busy="Generating&hellip; (up to 2 min)">
+      Generate strategy</button>
+  </form>
+  {% if strategies %}
+    <span class="muted small" style="margin-left:8px">
+      {{ strategies | length }} version(s)</span>
+  {% endif %}
+</div>
+
+{% for s in strategies %}
+<div class="card">
+  <div class="row" style="justify-content:space-between">
+    <h3>V{{ s.version_number }}
+      <span class="pill {{ s.status }}">{{ s.status }}</span></h3>
+    {% if s.status == 'draft' %}
+    <form method="post"
+          action="/campaigns/{{ c.id }}/strategy/{{ s.id }}/approve"
+          class="inline">
+      <button type="submit" class="sm" data-busy="Approving&hellip;">
+        Approve</button>
+    </form>
+    {% elif s.approved_by %}
+      <span class="muted small">approved by {{ s.approved_by }}</span>
+    {% endif %}
+  </div>
+  <p style="margin:6px 0"><strong>{{ s.core_message }}</strong></p>
+  <p class="small muted" style="margin:0 0 8px">{{ s.positioning }}</p>
+  <details>
+    <summary>Pain points, benefits, proof points, objections</summary>
+    <div class="grid2 small" style="margin-top:10px">
+      <div>
+        <strong>Pain points</strong>
+        <ul>{% for p in s.pain_points %}<li>{{ p }}</li>{% endfor %}</ul>
+        <strong>Benefits</strong>
+        <ul>{% for b in s.benefits %}<li>{{ b }}</li>{% endfor %}</ul>
+      </div>
+      <div>
+        <strong>Proof points</strong>
+        <ul>{% for p in s.proof_points %}<li>{{ p }}</li>{% endfor %}</ul>
+        <strong>Objections</strong>
+        <ul>{% for o in s.objections %}
+          <li>{{ o.objection }}<div class="muted">{{ o.response }}</div></li>
+        {% endfor %}</ul>
+      </div>
+    </div>
+    <p class="small muted">Hypothesis: {{ s.hypothesis }}</p>
+    {% if s.knowledge_snapshot %}
+    <p class="small muted mono">
+      grounded in {{ s.knowledge_snapshot.kb_chunk_ids | length }} chunks,
+      {{ s.knowledge_snapshot.approved_claims | length }} approved claims
+    </p>
+    {% endif %}
+  </details>
+</div>
+{% endfor %}
+
+<!-- ------------------------------------------------------------ stage 5 -->
+<h2>Stage 5 &mdash; angles</h2>
+<div class="card">
+  <form method="post" action="/campaigns/{{ c.id }}/angles" class="inline">
+    <button type="submit" data-busy="Generating&hellip;"
+            {% if not can.generate_angles %}disabled{% endif %}>
+      Generate angles</button>
+  </form>
+  {% if not can.generate_angles %}
+    <span class="muted small" style="margin-left:8px">
+      needs an approved strategy</span>
+  {% else %}
+    <span class="muted small" style="margin-left:8px">
+      {{ counts.angles_approved }} approved</span>
+  {% endif %}
+</div>
+
+{% for a in angles %}
+<div class="card">
+  <div class="row" style="justify-content:space-between">
+    <h3>{{ a.name }} <span class="pill {{ a.status }}">{{ a.status }}</span></h3>
+    {% if a.status == 'draft' %}
+    <div class="row">
+      <form method="post"
+            action="/campaigns/{{ c.id }}/angles/{{ a.id }}/approve"
+            class="inline">
+        <button type="submit" class="sm">Approve</button></form>
+      <form method="post"
+            action="/campaigns/{{ c.id }}/angles/{{ a.id }}/reject"
+            class="inline">
+        <button type="submit" class="sm danger">Reject</button></form>
+    </div>
+    {% elif a.decided_by %}
+      <span class="muted small">{{ a.status }} by {{ a.decided_by }}</span>
+    {% endif %}
+  </div>
+  <p class="small" style="margin:4px 0">{{ a.hypothesis }}</p>
+  <p class="small muted" style="margin:0">{{ a.rationale }}</p>
+</div>
+{% endfor %}
+
+<!-- ------------------------------------------------------------ stage 6 -->
+<h2>Stage 6 &mdash; concepts</h2>
+<div class="card">
+  <form method="post" action="/campaigns/{{ c.id }}/concepts" class="inline">
+    <button type="submit" data-busy="Generating&hellip;"
+            {% if not can.generate_concepts %}disabled{% endif %}>
+      Generate concepts</button>
+  </form>
+  {% if not can.generate_concepts %}
+    <span class="muted small" style="margin-left:8px">
+      needs an approved angle</span>
+  {% else %}
+    <span class="muted small" style="margin-left:8px">
+      {{ counts.concepts_approved }} approved</span>
+  {% endif %}
+</div>
+
+{% for cc in concepts %}
+<div class="card">
+  <div class="row" style="justify-content:space-between">
+    <h3>{{ cc.hook }}
+      <span class="pill {{ cc.status }}">{{ cc.status }}</span></h3>
+    {% if cc.status == 'draft' %}
+    <div class="row">
+      <form method="post"
+            action="/campaigns/{{ c.id }}/concepts/{{ cc.id }}/approve"
+            class="inline">
+        <button type="submit" class="sm">Approve</button></form>
+      <form method="post"
+            action="/campaigns/{{ c.id }}/concepts/{{ cc.id }}/reject"
+            class="inline">
+        <button type="submit" class="sm danger">Reject</button></form>
+    </div>
+    {% elif cc.decided_by %}
+      <span class="muted small">{{ cc.status }} by {{ cc.decided_by }}</span>
+    {% endif %}
+  </div>
+  <div class="muted small">{{ cc.angle }}</div>
+  <p class="small" style="margin:6px 0 0">{{ cc.idea }}</p>
+  <p class="small muted" style="margin:4px 0 0">
+    Visual: {{ cc.visual_direction }}</p>
+</div>
+{% endfor %}
+
+<!-- --------------------------------------------------------- stages 7/8 -->
+<h2>Stages 7 &amp; 8 &mdash; assets and QA</h2>
+<div class="card">
+  {% if not can.generate_assets %}
+    <p class="muted small" style="margin:0">
+      Needs an approved concept. Migration 013 makes
+      <span class="mono">concept_id</span> NOT NULL on assets, so there is no
+      copy without a concept by construction.</p>
+  {% else %}
+  <div class="row">
+    {% if 'meta_ads' in (c.channels or []) %}
+    <form method="post" action="/campaigns/{{ c.id }}/assets/meta"
+          class="inline">
+      <button type="submit" data-busy="Generating&hellip; (up to 2 min)">
+        Generate Meta ads</button></form>
+    {% endif %}
+    {% if 'email' in (c.channels or []) %}
+    <form method="post" action="/campaigns/{{ c.id }}/assets/email"
+          class="row" style="gap:6px">
+      <select name="emails" style="width:auto">
+        <option value="3" selected>3 emails</option>
+        <option value="4">4 emails</option>
+        <option value="5">5 emails</option>
+      </select>
+      <button type="submit" data-busy="Generating&hellip; (up to 2 min)">
+        Generate email sequence</button>
+    </form>
+    {% endif %}
+  </div>
+  <form method="post" action="/campaigns/{{ c.id }}/qa" class="row"
+        style="margin-top:12px">
+    <button type="submit" class="ghost" data-busy="Running QA&hellip;"
+            {% if not can.run_qa %}disabled{% endif %}>Run QA</button>
+    <label class="small" style="margin:0; font-weight:400">
+      <input type="checkbox" name="use_ai" value="1" style="width:auto">
+      include the AI judgement tier
+    </label>
+    {% if counts.assets %}
+    <span class="muted small">
+      {{ counts.assets }} asset(s), {{ counts.assets_approved }} approved
+      {%- if counts.assets_blocked %},
+        <span class="finding-blocker">{{ counts.assets_blocked }} blocked
+        </span>{% endif %}
+    </span>
+    {% endif %}
+  </form>
+  {% endif %}
+</div>
+
+{% for a in assets %}
+<div class="card">
+  <div class="row" style="justify-content:space-between">
+    <h3>
+      {{ a.channel }} / {{ a.asset_type }} &middot; variant {{ a.variant }}
+      {%- if a.position %} &middot; email {{ a.position }}{% endif %}
+      <span class="muted small">v{{ a.version_number }}</span>
+      <span class="pill {{ a.status }}">{{ a.status }}</span>
+      {% if a.qa_status %}
+        <span class="pill {{ a.qa_status }}">QA {{ a.qa_status }}</span>
+      {% else %}
+        <span class="muted small">no QA yet</span>
+      {% endif %}
+    </h3>
+    {% if a.status == 'review' and a.qa_status in ('pass', 'warning') %}
+    <form method="post"
+          action="/campaigns/{{ c.id }}/assets/{{ a.id }}/approve"
+          class="inline">
+      <button type="submit" class="sm" data-busy="Approving&hellip;">
+        Approve</button></form>
+    {% elif a.approved_by %}
+      <span class="muted small">approved by {{ a.approved_by }}</span>
+    {% endif %}
+  </div>
+  <div class="muted small">concept: {{ a.concept_hook }}{% if a.qa_by %}
+    &middot; QA by {{ a.qa_by }}{% endif %}</div>
+
+  <dl class="asset-fields">
+    {% for key, value in a.content.items() %}
+    <dt>{{ key }}
+      {%- if value is string %}
+        <span class="muted">({{ value | length }} chars)</span>{% endif %}
+    </dt>
+    <dd>{{ value }}</dd>
+    {% endfor %}
+  </dl>
+
+  {% if a.blockers or a.warnings %}
+  <div style="margin-top:10px">
+    {{ findings(a.blockers, 'blocker') }}
+    {{ findings(a.warnings, 'warning') }}
+  </div>
+  {% endif %}
+
+  {% if a.knowledge_snapshot %}
+  <p class="small muted mono" style="margin:10px 0 0">
+    {{ a.knowledge_snapshot.kb_chunk_ids | length }} chunks &middot;
+    {{ a.knowledge_snapshot.approved_claims | length }} approved claims &middot;
+    {{ a.knowledge_snapshot.prohibited_claims | length }} prohibited withheld
+  </p>
+  {% endif %}
+</div>
+{% endfor %}
+{% endblock %}

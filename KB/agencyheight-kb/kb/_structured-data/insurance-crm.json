@@ -1,0 +1,183 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-crm/",
+    "url": "https://agencyheight.com/insurance-crm/",
+    "name": "Insurance CRM - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/insurance-crm/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/insurance-crm/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "datePublished": "2026-06-18T04:18:38+00:00",
+    "dateModified": "2026-07-15T05:03:52+00:00",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-crm/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-crm/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/insurance-crm/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "width": 1200,
+    "height": 675
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-crm/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance CRM"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What is an insurance CRM and do I actually need one?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "A CRM (Customer Relationship Management system) tracks your clients, deals, and pipeline in one place. If you're managing more than a handful of clients and keep losing track of who you quoted or where a deal stands, a CRM fixes that. Agency Height is insurance CRM software built specifically for how agents work, with fields for coverage lines, carrier quotes, and policy terms that a generic CRM doesn't have."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is the CRM really free?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. The CRM, My Leads, Campaigns, and My Book, is free on every Agency Height plan, including the Free plan. No separate subscription, no per-seat pricing, no setup fee. Paid plans unlock more across the wider platform, but the CRM itself never costs extra on any tier."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How is Agency Height CRM different from AgencyZoom or HubSpot?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "AgencyZoom focuses on lead nurture workflows. HubSpot is a general-purpose sales CRM built for any industry. Agency Height CRM is built around the actual data model of insurance: account, opportunity, quote, policy. It tracks carrier quotes per opportunity and stores billing detail and E&S tax on policies. It's also part of the Agency Height platform, so leads from your directory profile, campaign forms, and Lead Bank flow in automatically."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Does it connect to my insurance carriers for rating or binding?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "No. The CRM is a sales and relationship tool, not a rater or policy management system. It doesn't rate with carriers, bind or issue policies, or handle claims. You quote and bind through your carriers as you normally would, then record the details here. Think of it as the place where you track what's happening, not where transactions happen."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can I use this instead of an agency management system (AMS)?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "It depends on what you need. Agency Height CRM handles the full client and sales pipeline (leads, opportunities, quotes, and policies) but it doesn't do accounting, commission tracking, or carrier downloads. If you're a solo agent or small agency that doesn't need a full back-office AMS, it covers the core pipeline work. If you need commission reconciliation or carrier downloads, you'd still use a separate system for that."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do leads get into the CRM?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "From your public directory profile when a buyer submits a quote request, from your campaign forms, from the platform when a buyer picks you as a matched agent, from Lead Bank when you claim a request, and from connected lead partners. You can also add one by hand for referrals, walk-ins, or calls. Every one of them lands as an account automatically, ready to work."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is the CRM included in my plan or is it a separate add-on?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Included, on every plan. The full CRM, My Leads, Campaigns, and My Book, comes with Agency Height at no extra cost, from the Free plan up. No separate subscription, no setup fee. It sits alongside your Agent Directory listing, Lead Form, Lead Bank access, and the rest of the platform."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What types of insurance can I track in the CRM?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Personal, Commercial, and Life. For Personal, coverage templates include Auto, Home, Renter, Condo, Pet, Flood, Umbrella, Motorcycle, and PL Policies. For Commercial, you can track any coverage line as an opportunity against a commercial account. Trucking is supported as a campaign type as well."
+    }
+   }
+  ]
+ }
+]

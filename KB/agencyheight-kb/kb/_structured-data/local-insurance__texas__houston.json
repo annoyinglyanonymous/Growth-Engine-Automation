@@ -1,0 +1,173 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/local-insurance/texas/houston/",
+    "url": "https://agencyheight.com/local-insurance/texas/houston/",
+    "name": "Top Agents Near You in Houston, Tx - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/local-insurance/texas/houston/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/local-insurance/texas/houston/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/2022/10/Houston-Insurance-Agents.jpg",
+    "datePublished": "2022-09-30T08:15:48+00:00",
+    "dateModified": "2023-02-10T11:08:30+00:00",
+    "description": "Get multiple quotes from independent insurance agents near you in Houston and choose the right fit for your immediate insurance needs.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/local-insurance/texas/houston/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/local-insurance/texas/houston/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/local-insurance/texas/houston/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/2022/10/Houston-Insurance-Agents.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/2022/10/Houston-Insurance-Agents.jpg",
+    "width": 1200,
+    "height": 620,
+    "caption": "houston insurance agents"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/local-insurance/texas/houston/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Local Insurance Agents Near You",
+      "item": "https://agencyheight.com/local-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Local Insurance Agents in Texas",
+      "item": "https://agencyheight.com/local-insurance/texas/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Top Agents Near You in Houston, Tx"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What is the average cost of car insurance in Houston?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The average cost of car insurance in Houston is $2365 annually for full coverage. However, you can reduce your premium by comparing quotes from multiple carriers and applying for car insurance discounts."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What kinds of coverage do business owners in Houston need?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Business owners in Houston should consider including professional liability coverage, general liability insurance, commercial property coverage, commercial auto coverage, and workers’ compensation coverage in their commercial insurance policy. Carriers in Houston also offer additional options like business interruption insurance and employment practices liability insurance."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is the average cost of home insurance in Houston?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "On average, Texans pay $3143 annually for home insurance which is higher than the national average. Texas is an expensive state to buy home insurance due to a combination of natural and financial factors."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Why is business insurance important for companies in Houston?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Business insurance is essential for companies in Houston because it helps protect businesses from potential financial losses that could occur as a result of damage or injuries sustained in the course of business operations. Insurance can help to cover the costs of repairs, replacements, and medical bills that may be incurred in the event of an accident or incident."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is the average cost of life insurance in Houston?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The average cost of life insurance in Houston is $633 annually. However, life insurance costs can vary depending on the age, gender, health condition, and medical history of the buyer."
+    }
+   }
+  ]
+ }
+]

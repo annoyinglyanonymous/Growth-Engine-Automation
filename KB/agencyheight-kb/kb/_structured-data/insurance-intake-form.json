@@ -1,0 +1,176 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-intake-form/",
+    "url": "https://agencyheight.com/insurance-intake-form/",
+    "name": "Free Insurance Intake Form for Agents | Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/insurance-intake-form/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/insurance-intake-form/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "datePublished": "2026-06-15T04:06:24+00:00",
+    "dateModified": "2026-08-17T11:37:24+00:00",
+    "description": "Agency Height builds and manages a professional website for every insurance agent. AI copy, domain, hosting, SSL and lead form. No setup. Live in 2 days.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-intake-form/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-intake-form/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/insurance-intake-form/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "width": 1200,
+    "height": 675
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-intake-form/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance Intake Form"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What information does the insurance intake form collect?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The form collects everything needed to start a quote without a follow-up call. For Auto: vehicle year, make, model, and VIN; household driver details including date of birth and license status; and prior insurance status with optional declaration page upload. For Commercial: business name, NAICS industry code, employee count, revenue, and current coverage status. Home and Life campaigns collect the relevant property and contact information for those lines. All fields adapt to the coverage type you select when setting up your campaign link."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Does it work for auto, home, life, and commercial insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. When you create a campaign, you choose the coverage type: Personal, Commercial, Life, or Trucking. The insurance quote form your prospect sees adjusts its fields to match. A prospect filling out an auto form sees vehicle and driver sections. A commercial prospect sees business information and coverage type selection. You can create multiple campaigns for different lines."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is it really free on every plan?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. The intake form is included on every Agency Height plan - Free, Premium, and Enterprise - at no extra cost. There is no per-submission charge and no monthly add-on. You create campaign links, share them, and receive leads without paying anything beyond your plan."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How does the form connect to my CRM?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Every submission automatically creates a new opportunity in your Agency Height CRM under My Leads. The lead's contact details, coverage type, and all intake data are attached to that opportunity. You also receive an email alert when a new submission comes in. Nothing needs to be entered manually."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can my clients fill out the form in Spanish?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. The form includes a language toggle the prospect controls themselves. They can switch between English and Spanish at any point. No setup is required from you and no translation work is needed on your end."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do I share my insurance inquiry form link with prospects?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Once you create a campaign in your dashboard, you get a personal link you can place anywhere: your email signature, social media bio, Google Business Profile, a QR code on your business card, or inside a paid ad. The form opens with your name, photo, phone, and email visible throughout, so the prospect knows who they are working with."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is the difference between the intake form and the quote form on my profile?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Your Agency Height directory profile includes a built-in standard quote form — prospects who find your public profile can submit a request directly to you, which also routes to your CRM. The intake form is separate: you generate it yourself in the Campaigns area of your dashboard, get a personal link, and share it actively. It collects significantly more detail — vehicle data, driver info, declaration uploads, business financials for commercial — so the lead arrives closer to application-ready. Both are exclusive to you."
+    }
+   }
+  ]
+ }
+]

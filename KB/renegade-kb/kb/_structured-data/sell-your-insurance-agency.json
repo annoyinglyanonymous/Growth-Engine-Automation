@@ -1,0 +1,160 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://renegadeinsurance.com/sell-your-insurance-agency/",
+    "url": "https://renegadeinsurance.com/sell-your-insurance-agency/",
+    "name": "Sell Your P&amp;C Insurance Agency - Renegade Insurance",
+    "isPartOf": {
+     "@id": "https://renegadeinsurance.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://renegadeinsurance.com/sell-your-insurance-agency/#primaryimage"
+    },
+    "image": {
+     "@id": "https://renegadeinsurance.com/sell-your-insurance-agency/#primaryimage"
+    },
+    "thumbnailUrl": "https://renegadeinsurance.com/wp-content/uploads/2026/05/sell-your-agency-hero-image.webp",
+    "datePublished": "2026-05-25T11:18:40+00:00",
+    "dateModified": "2026-07-14T11:11:57+00:00",
+    "description": "Sell your P&C insurance agency directly to Renegade. No broker fees, cash at close, market-based valuation. Book a free consultation.",
+    "breadcrumb": {
+     "@id": "https://renegadeinsurance.com/sell-your-insurance-agency/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://renegadeinsurance.com/sell-your-insurance-agency/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://renegadeinsurance.com/sell-your-insurance-agency/#primaryimage",
+    "url": "https://renegadeinsurance.com/wp-content/uploads/2026/05/sell-your-agency-hero-image.webp",
+    "contentUrl": "https://renegadeinsurance.com/wp-content/uploads/2026/05/sell-your-agency-hero-image.webp",
+    "width": 1000,
+    "height": 730
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://renegadeinsurance.com/sell-your-insurance-agency/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://renegadeinsurance.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Sell Your P&amp;C Insurance Agency"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://renegadeinsurance.com/#website",
+    "url": "https://renegadeinsurance.com/",
+    "name": "Renegade Insurance",
+    "description": "Get insurance quotes from 100 insurance companies while working with your local agent. The easiest way to buy and manage all of your insurance needs.",
+    "publisher": {
+     "@id": "https://renegadeinsurance.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://renegadeinsurance.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://renegadeinsurance.com/#organization",
+    "name": "Renegade Insurance",
+    "url": "https://renegadeinsurance.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://renegadeinsurance.com/#/schema/logo/image/",
+     "url": "https://renegadeinsurance.com/wp-content/uploads/2023/02/Frame-1.svg",
+     "contentUrl": "https://renegadeinsurance.com/wp-content/uploads/2023/02/Frame-1.svg",
+     "width": 219,
+     "height": 57,
+     "caption": "Renegade Insurance"
+    },
+    "image": {
+     "@id": "https://renegadeinsurance.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/JoinRenagade",
+     "https://x.com/renegadeins",
+     "https://www.instagram.com/renegade.insurance/",
+     "https://www.linkedin.com/company/renegade-insurances/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What steps are involved in transferring my insurance agency/book of business to Renegade? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The process has four steps:\n1. Renegade signs an NDA and issues a Letter of Intent.\n2. Renegade requests a due diligence package including 12 months of commission statements, bank statements, production reports, loss ratio reports, a full policy list, carrier contact details, your active license, and current appointment status.\n3. Once due diligence is complete, Renegade issues a contract for signing.\n4. After signing, Renegade transfers payment and takes ownership of the book.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How long does it typically take to transfer an insurance agency/book of business with Renegade? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Most book transfers complete in 30 to 120 days from contract signing. The timeline depends on carrier requirements and administrative procedures. Renegade works to expedite the process while ensuring a smooth transition for all parties.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What happens to my clients/customers after I transfer my insurance agency/book of business? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "All clients transfer to Renegade, where the service team manages renewals, endorsements, cancellations, and cross-sells. Coverage continuity is maintained throughout the transition. Clients experience no gap in service.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Do I have to use a broker to sell my insurance agency?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "No. Renegade buys directly from agency owners with no broker involvement. There are no broker fees at any stage of the transaction.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What if I'm not ready to sell my agency yet?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Renegade offers a Back Office Support partnership for agency owners who want to reduce operational load without a full exit. Partners retain their book while Renegade handles servicing, back-office, and carrier access.\n"
+    }
+   }
+  ]
+ }
+]

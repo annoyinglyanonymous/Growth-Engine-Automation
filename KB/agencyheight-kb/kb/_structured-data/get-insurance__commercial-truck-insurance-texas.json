@@ -1,0 +1,151 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/get-insurance/commercial-truck-insurance-texas/",
+    "url": "https://agencyheight.com/get-insurance/commercial-truck-insurance-texas/",
+    "name": "Commercial Truck Insurance in Texas: Protecting Your Business Investment",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/get-insurance/commercial-truck-insurance-texas/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/get-insurance/commercial-truck-insurance-texas/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/Commercial-truck-Insurance-Texas.jpg",
+    "datePublished": "2023-11-06T13:03:03+00:00",
+    "dateModified": "2023-11-17T08:13:58+00:00",
+    "description": "Learn how to safeguard your assets and investments, whether you have a single truck or an entire fleet. Explore the details of commercial truck insurance in Texas.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/get-insurance/commercial-truck-insurance-texas/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/get-insurance/commercial-truck-insurance-texas/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/get-insurance/commercial-truck-insurance-texas/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/Commercial-truck-Insurance-Texas.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/Commercial-truck-Insurance-Texas.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "Commercial truck Insurance Texas"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/get-insurance/commercial-truck-insurance-texas/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get Insurance",
+      "item": "https://agencyheight.com/get-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Commercial Truck Insurance in Texas: Protecting Your Business Investment"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "How much is commercial truck insurance in Texas?  ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Commercial truck insurance costs about $13,606 on average in Texas."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is Texas a no-fault state?  ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "No, Texas is an at-fault state. This implies that the person responsible for the accident also pays for the damage"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is Texas insurance more expensive?  ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Texas has three of the top 10 largest cities in the country. It also has a growing population. So, car insurance can be more expensive in the state."
+    }
+   }
+  ]
+ }
+]

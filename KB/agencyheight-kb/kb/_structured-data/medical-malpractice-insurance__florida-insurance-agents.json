@@ -1,0 +1,151 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/medical-malpractice-insurance/florida-insurance-agents/",
+    "url": "https://agencyheight.com/medical-malpractice-insurance/florida-insurance-agents/",
+    "name": "    Medical Malpractice Insurance Agents in Florida - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/medical-malpractice-insurance/florida-insurance-agents/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/medical-malpractice-insurance/florida-insurance-agents/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/Untitled-design-99.jpg",
+    "datePublished": "2024-12-18T12:00:22+00:00",
+    "dateModified": "2025-01-24T07:45:14+00:00",
+    "description": "Find top medical malpractice insurance agents in Florida and get quotes to secure the best coverage for health workers in the state.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/medical-malpractice-insurance/florida-insurance-agents/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/medical-malpractice-insurance/florida-insurance-agents/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/medical-malpractice-insurance/florida-insurance-agents/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/Untitled-design-99.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/Untitled-design-99.jpg",
+    "width": 1920,
+    "height": 678,
+    "caption": "workers comp news 2025"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/medical-malpractice-insurance/florida-insurance-agents/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Best Medical Malpractice Insurance | Get a Quote",
+      "item": "https://agencyheight.com/medical-malpractice-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "    Medical Malpractice Insurance Agents in Florida"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "1. Does Florida have a medical malpractice cap? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "No, there are no caps on economic damage in Florida. This implies there are no limitations on damages when it comes to settling the compensation with the plaintiff for their medical payments and loss of income due to the medical malpractice. "
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "2. What doctors pay the most for medical malpractice insurance? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Medical Professionals with riskiest specialties like neurosurgeons, cardiovascular surgeons, obstetricians, surgeons, and ER doctors pay more for medical malpractice insurance. "
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "3. What are the types of medical malpractice insurance carriers? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The types of medical malpractice insurance carriers are admitted carriers, excess and surplus lines, risk retention groups, captives, trusts, and joint underwriting associations.    "
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,151 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/home-insurance/average-cost/",
+    "url": "https://agencyheight.com/home-insurance/average-cost/",
+    "name": "Average Homeowners Insurance Cost in the US - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/home-insurance/average-cost/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/home-insurance/average-cost/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/2022/09/home-insurance-banner-image-1.jpg",
+    "datePublished": "2022-01-30T09:39:22+00:00",
+    "dateModified": "2023-12-06T08:16:14+00:00",
+    "description": "Shop for a homeowner's insurance policy with the help of an insurance agent and save money your average homeowners' insurance rates.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/home-insurance/average-cost/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/home-insurance/average-cost/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/home-insurance/average-cost/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/2022/09/home-insurance-banner-image-1.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/2022/09/home-insurance-banner-image-1.jpg",
+    "width": 1024,
+    "height": 576,
+    "caption": "home_insurance_cost_feat"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/home-insurance/average-cost/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Homeowners insurance | Get a Free Quote",
+      "item": "https://agencyheight.com/home-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Average Homeowners Insurance Rates in the U.S."
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Do I Need a Homeowners Insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Homeowners insurance provides financial protection for your home and assets. Find an insurance agent and get an appropriate and reliable insurance for your home."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How Do I Save Money Using an Insurance Agent?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "An experienced insurance agent will help you shop with different insurance companies and policies, so that you find the one that is best for your needs and budget."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What Is the Best Insurance for Homeowners?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The best insurance for homeowners is one that provides comprehensive coverage, with flexible coverage options and competitive rates."
+    }
+   }
+  ]
+ }
+]

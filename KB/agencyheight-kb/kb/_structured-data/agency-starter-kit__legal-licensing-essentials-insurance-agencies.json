@@ -1,0 +1,121 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/agency-starter-kit/legal-licensing-essentials-insurance-agencies/",
+    "url": "https://agencyheight.com/agency-starter-kit/legal-licensing-essentials-insurance-agencies/",
+    "name": "Agency Starter Kit: Building Your Insurance Business Foundation",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/agency-starter-kit/legal-licensing-essentials-insurance-agencies/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/agency-starter-kit/legal-licensing-essentials-insurance-agencies/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/starting-an-insurance-agency-guide.jpg",
+    "datePublished": "2025-08-13T05:00:06+00:00",
+    "dateModified": "2025-08-13T10:51:39+00:00",
+    "description": "Starting an Insurance Agency Guide – Master legal steps, choose the right structure, get licensed, and build a strong foundation.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/agency-starter-kit/legal-licensing-essentials-insurance-agencies/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/agency-starter-kit/legal-licensing-essentials-insurance-agencies/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/agency-starter-kit/legal-licensing-essentials-insurance-agencies/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/starting-an-insurance-agency-guide.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/starting-an-insurance-agency-guide.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "starting an insurance agency guide"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/agency-starter-kit/legal-licensing-essentials-insurance-agencies/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance Agency Starter Kit: Start a Successful Insurance Agency",
+      "item": "https://agencyheight.com/agency-starter-kit/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Agency Starter Kit: Navigating the Foundation of Your Insurance Business "
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,148 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/workers-compensation-insurance-cost/",
+    "url": "https://agencyheight.com/get-insurance/workers-comp-insurance/workers-compensation-insurance-cost/",
+    "name": "Workers Compensation Insurance Cost - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "datePublished": "2023-03-29T06:27:30+00:00",
+    "dateModified": "2023-04-20T08:30:44+00:00",
+    "description": "Get workers compensation insurance quotes from local insurance agents by learning what determines the workers compensation insurance cost.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/workers-compensation-insurance-cost/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/get-insurance/workers-comp-insurance/workers-compensation-insurance-cost/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/get-insurance/workers-comp-insurance/workers-compensation-insurance-cost/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get Insurance",
+      "item": "https://agencyheight.com/get-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Worker&#8217;s Compensation Insurance",
+      "item": "https://agencyheight.com/get-insurance/workers-comp-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Workers Compensation Insurance Cost"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What is the workers comp rate in Georgia?  ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Georgia&#8217;s worker&#8217;s comp index is $1.64. That means you pay an average of $1.64 for every $100 in payroll. If a person has three employees with a total salary of $100,000, they will pay about $1,640 as worker’s compensation per year. "
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is workers comp insurance required in Georgia? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "By law, all companies with three or more employees, including regular part-time workers, must have worker&#8217;s compensation insurance. "
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How to get workers comp insurance in Georgia?  ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The Georgia Workers Compensation Board does not sell workers compensation insurance. An insurance agent or broker will help you get an affordable and reliable workers comp insurance in Georgia.  "
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is the most expensive workers comp claim?  ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Vehicle accidents are the costliest workplace injuries. On average, a car accident claims costs $81,971 in workers&#8217; compensation costs.   "
+    }
+   }
+  ]
+ }
+]

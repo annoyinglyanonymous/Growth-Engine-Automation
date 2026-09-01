@@ -1,0 +1,144 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/best-commercial-truck-insurance/",
+    "url": "https://agencyheight.com/best-commercial-truck-insurance/",
+    "name": "Best Commercial Truck Insurance | Get a Quote - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/best-commercial-truck-insurance/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/best-commercial-truck-insurance/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/commercial-truck-intro.jpg",
+    "datePublished": "2025-02-06T12:21:31+00:00",
+    "dateModified": "2026-07-01T10:22:42+00:00",
+    "description": "Get the best commercial truck insurance from top insurance agents. Request a free truck insurance quote today and start saving!",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/best-commercial-truck-insurance/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/best-commercial-truck-insurance/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/best-commercial-truck-insurance/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/commercial-truck-intro.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/commercial-truck-intro.jpg",
+    "width": 1360,
+    "height": 800
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/best-commercial-truck-insurance/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Best Commercial Truck Insurance | Get a Quote"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "How does truck insurance work?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Commercial trucking coverage protects trucking drivers and trucking businesses from financial losses due to unexpected accidents, damage to cargo, or liability incurred through different types of coverage like liability insurance, cargo insurance, physical damage insurance, non-trucking liability, workers compensation, uninsured/underinsured motorist coverage etc."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": " Can I operate without trucking insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "No. Trucking insurance is legally required for all commercial drivers across the United States. Operating without it can result in fines, license suspension, or even criminal charges"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": " What happens if my insurance lapses?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Delays in securing coverage can lead to serious consequences, including fines, loss of your CDL, and difficulty finding affordable insurance in the future. Always renew your policy on time."
+    }
+   }
+  ]
+ }
+]

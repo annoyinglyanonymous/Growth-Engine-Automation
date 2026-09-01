@@ -1,0 +1,153 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/garage-insurance/",
+    "url": "https://agencyheight.com/garage-insurance/",
+    "name": "Best Garage Insurance | Get a Quote - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/garage-insurance/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/garage-insurance/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/Garage-Insurance-Safeguard-Your-Garage-with-Agency-Height.jpg",
+    "datePublished": "2025-08-05T09:45:29+00:00",
+    "dateModified": "2026-07-01T10:49:47+00:00",
+    "description": "Get a trusted Garage Insurance Agent with Agency Height. Compare quotes, get expert guidance, and protect your garage business today!",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/garage-insurance/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/garage-insurance/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/garage-insurance/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/Garage-Insurance-Safeguard-Your-Garage-with-Agency-Height.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/Garage-Insurance-Safeguard-Your-Garage-with-Agency-Height.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "Garage Insurance - Safeguard Your Garage with Agency Height"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/garage-insurance/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Best Garage Insurance | Get a Quote"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Why choose Agency Height for garage liability insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "We connect you with experienced local agents, help compare quotes, select the right coverage, and provide ongoing support—giving your garage complete protection."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What coverage does Agency Height recommend for garages?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "A combination of garage liability, commercial auto, garagekeepers, property, and workers’ comp, plus optional add-ons like umbrella/excess liability for extra protection."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How fast can I get coverage?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "After evaluating your garage, our agents provide personalized quotes from top carriers—many clients secure coverage within 1-2 weeks."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Do I get support after purchasing a policy?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. Agency Height agents offers ongoing support for policy updates, coverage questions, certificates, and claims, ensuring your insurance grows with your business."
+    }
+   }
+  ]
+ }
+]

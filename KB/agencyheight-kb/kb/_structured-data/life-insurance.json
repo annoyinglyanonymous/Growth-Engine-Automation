@@ -1,0 +1,145 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/life-insurance/",
+    "url": "https://agencyheight.com/life-insurance/",
+    "name": "Life Insurance | Get a Quote - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/life-insurance/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/life-insurance/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/2022/07/What-Is-Life-Insurance-Content-Image-2.jpg",
+    "datePublished": "2025-11-10T08:15:38+00:00",
+    "dateModified": "2026-05-08T05:58:31+00:00",
+    "description": "Protect and build your future with the best life insurance policies suited to your needs. Get a quote from top life insurance agents today",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/life-insurance/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/life-insurance/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/life-insurance/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/2022/07/What-Is-Life-Insurance-Content-Image-2.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/2022/07/What-Is-Life-Insurance-Content-Image-2.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "What-Is-Life-Insurance-Optimal-For"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/life-insurance/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Life Insurance"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Why do I need life insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Because life is unpredictable — and your family shouldn’t have to pay the price for it."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Isn’t it expensive?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Not anymore. Term life coverage can cost less than your daily coffee habit."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can I change or cancel my policy later?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Absolutely. Most plans offer flexibility as your life and finances evolve."
+    }
+   }
+  ]
+ }
+]

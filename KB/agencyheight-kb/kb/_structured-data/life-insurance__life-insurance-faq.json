@@ -1,0 +1,263 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/life-insurance/life-insurance-faq/",
+    "url": "https://agencyheight.com/life-insurance/life-insurance-faq/",
+    "name": "Life Insurance FAQ - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/life-insurance/life-insurance-faq/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/life-insurance/life-insurance-faq/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/2022/07/Life-insurance-FAQ-feature-image.jpg",
+    "datePublished": "2022-01-15T11:42:30+00:00",
+    "dateModified": "2025-11-11T08:00:33+00:00",
+    "description": "Go through our life insurance FAQs and navigate your way through the policies that take care of your dependents. We got you covered!",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/life-insurance/life-insurance-faq/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/life-insurance/life-insurance-faq/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/life-insurance/life-insurance-faq/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/2022/07/Life-insurance-FAQ-feature-image.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/2022/07/Life-insurance-FAQ-feature-image.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "Life-insurance-FAQ-feature-image"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/life-insurance/life-insurance-faq/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Life Insurance",
+      "item": "https://agencyheight.com/life-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Life Insurance Frequently Asked Questions"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Does everyone need life insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Not necessarily. Life insurance is a good backup to have, but it isn’t mandatory. Usually, people who have someone dependent on them financially require it."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How much life insurance do I need?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Depending on a variety of factors, the amount of coverage you need may differ from that of other people. Financial experts recommend buying 10 to 15 times your annual income’s worth of insurance. In the event of your death, the amount should be enough to cover your family’s expenses, such as mortgage and bills, in the future."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Which is the best life insurance company?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Nerd Wallet and U.S. News rate Haven Life as the best option for term life insurance. Mass Mutual is also an excellent choice if you need other types of insurance as well. You should try and look out for companies that are rated A- or better."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Will there be any consequences if I forget to pay my premium on time?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "There are two possible outcomes if you fail to pay your premium on time. If you have a term life policy, then you’ll get a 30-to-31-days grace period, in which you can pay your premium without any interest or penalty charge. However, if it’s a permanent life policy, then you can tell your insurance company to deduct the premium from the cash value accumulated."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can the insurance company cancel my policy?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes, they can cancel your policy under certain conditions, such as failure to pay your premiums even within the 30-to-31-day grace period. Your policy can also get terminated if you happen to leave your current job or get fired, in case you had purchased it through your employer."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Which type of life insurance is better?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "It depends. If you’re looking for more affordable coverage, then, term life can best suit you. However, if you want life-long coverage, then you should sign up for a permanent life policy."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the major things asked for in a life insurance application?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The life insurance application asks you how much coverage you need, and whether or not you need to add policy riders. Besides this, you will also be asked to fill in your personal details – name, address, date of birth, social security number, net worth, and annual earnings."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Do I have to take an exam to purchase a life insurance policy?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. Before purchasing a policy, you’ll need to sit for a brief exam administered by the insurance company of your choice. Insurers will use this test to estimate the level of risk you pose. Your credit and claims history, as well as any past terminal illness or similar circumstance, are all part of this."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What does it mean when a life policy is paid up?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "When you notice that your life insurance policy is paid up, it means that all the premiums have been paid, and that it is now in effect and will remain so until the time of your passing or the policy is terminated."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What happens to the cash value in my policy when I pass away?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "When you pass away, the insurance company you purchased the policy from, will pay out the death benefit to your designated beneficiary. The amount of death benefit indicated in your policy is more important than the amount of cash value you’ve collected in your policy."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How long should I have had a life insurance policy for, before expecting it to be paid as a death benefit?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The minimum waiting period for a life insurance payout is usually two to four years. The death benefits will be paid in accordance to the premiums you have paid till date."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How long does it generally take to build up cash value in whole life insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "It usually takes around 10 years for a whole life insurance policy to pay its cash value. However, you can seek advice from your agent or advisor for the same."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What happens if your designated beneficiary dies before you do?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "If your designated beneficiary dies before you do, your contingent beneficiary can get the lump– sum. Your estate goes through the probate process if there’s no contingent beneficiary for the death benefit."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Are life insurance premiums taxable?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Life insurance premiums are generally not taxed. You pay the exact amount quoted by your insurance company, and none of it will be added to cover taxes. However, if you have assigned your estate as the beneficiary, it is liable for estate taxes."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can I save money while buying life insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes, you can save money by purchasing either a term life policy, or a mix of both term and permanent life policies. This will significantly bring down your premiums. You can also purchase permanent life insurance if you want to bring down your premiums as quickly as possible."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What’s the difference between life policy and funeral policy?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Life insurance policy can cover an individual, married couple, and can at times, provide coverage for children as well. Whereas, a funeral policy simply offers coverage for multiple people, usually a family, on the event of their death."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Are life insurance and death insurance the same thing?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. The terms are used interchangeably, the second one being rarer than the first. However, accidental death insurance is an entirely different policy and must not be mistaken for life insurance."
+    }
+   }
+  ]
+ }
+]

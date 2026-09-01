@@ -1,0 +1,159 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-license/cost-by-state/",
+    "url": "https://agencyheight.com/insurance-license/cost-by-state/",
+    "name": "Insurance License Cost By State - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/insurance-license/cost-by-state/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/insurance-license/cost-by-state/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/insurance-license-cost-by-state.jpg",
+    "datePublished": "2022-01-07T03:38:02+00:00",
+    "dateModified": "2026-01-19T10:29:38+00:00",
+    "description": "How much does it cost to become an insurance agent? Any insurance career you're considering can require a license. Here is a price breakdown.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-license/cost-by-state/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-license/cost-by-state/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/insurance-license/cost-by-state/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/insurance-license-cost-by-state.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/insurance-license-cost-by-state.jpg",
+    "width": 1200,
+    "height": 800,
+    "caption": "insurance license cost by state"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-license/cost-by-state/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance License",
+      "item": "https://agencyheight.com/insurance-license/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Insurance License Cost By State"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Is it mandatory to submit fingerprint impressions in California?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "When applying for a non-resident license in California, you are not needed to provide fingerprints if you currently have a valid resident license issued by one of the following states:Alaska, Idaho, Ohio, Texas, Arizona, Louisiana, Oregon, Utah, Delaware, Montana, Pennsylvania, Washington, New Jersey, South Carolina, Tennessee, Florida, Nevada, and Georgia."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What does obtaining an insurance license in Pennsylvania typically cost?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Pennsylvania charges $53 for the insurance license exam, $23.85 for fingerprinting, $55 for an online application, and $25 for any revisions."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can I renew my insurance license for free after it expires?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "To reinstate a license that has expired, a relicensing application must be submitted. The majority of states charge a nominal fee for late and regular renewal of licenses."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the non-resident insurance license fees by state?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "According to the NIPR, there is a $5.60 transaction fee in addition to the state-wise fee to get a non-resident insurance license."
+    }
+   }
+  ]
+ }
+]

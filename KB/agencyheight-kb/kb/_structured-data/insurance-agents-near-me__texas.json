@@ -1,0 +1,151 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-agents-near-me/texas/",
+    "url": "https://agencyheight.com/insurance-agents-near-me/texas/",
+    "name": "Insurance Agents and Brokers Near You in Texas - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/insurance-agents-near-me/texas/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/insurance-agents-near-me/texas/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/banner-image.jpg",
+    "datePublished": "2023-04-28T06:05:11+00:00",
+    "dateModified": "2023-05-03T09:33:30+00:00",
+    "description": "Find the best Auto, Home and Life Insurance Agent and Broker Near You in Carrollton, Austin, Houston, and other cities of Texas.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-agents-near-me/texas/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-agents-near-me/texas/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/insurance-agents-near-me/texas/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/banner-image.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/banner-image.jpg",
+    "width": 1024,
+    "height": 576,
+    "caption": "insurance broker near me in texas"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-agents-near-me/texas/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance Agents and Brokers Near You in the U.S.",
+      "item": "https://agencyheight.com/insurance-agents-near-me/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Insurance Agents and Brokers Near You in Texas"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What types of insurance do insurance brokers in Texas offer? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Texas insurance brokers can offer a wide range of insurance products, including home, auto, life, business, and more."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do I find a reputable insurance broker in Texas? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "You can find local insurance brokers or agents in Texas through Agency Height insurance directory."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is the minimum liability coverage required for car insurance in Texas?  ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "In Texas, drivers must have a minimum coverage of $30,000 of liability insurance per person for bodily injury, $60,000 per accident for bodily injury, and $25,000 for property damage."
+    }
+   }
+  ]
+ }
+]

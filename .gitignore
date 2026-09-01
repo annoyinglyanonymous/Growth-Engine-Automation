@@ -1,0 +1,17 @@
+# Secrets. Must be ignored BEFORE the first commit -- .env holds a working
+# Supabase password in plaintext.
+.env
+.env.*
+!.env.example
+
+# Regenerable: python -m Ingestion.md_ingest && python -m Ingestion.json_ingest
+build/
+
+# Raw scrape kept for re-extraction; ~240 HTML files per brand.
+# Remove these two lines if you do want the raw HTML in version control.
+KB/*/raw/
+
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/

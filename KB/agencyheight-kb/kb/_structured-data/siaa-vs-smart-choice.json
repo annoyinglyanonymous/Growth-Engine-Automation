@@ -1,0 +1,145 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/siaa-vs-smart-choice/",
+    "url": "https://agencyheight.com/siaa-vs-smart-choice/",
+    "name": "SIAA Vs. Smart Choice: Which is the Better Option in 2026? - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/siaa-vs-smart-choice/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/siaa-vs-smart-choice/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/Comparison-Article-1.png",
+    "datePublished": "2023-07-19T08:51:36+00:00",
+    "dateModified": "2025-12-22T06:27:30+00:00",
+    "description": "SIAA or Smart Choice? Which is the better alliance in 2026? Uncover the ideal choice with our analysis. Decide wisely.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/siaa-vs-smart-choice/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/siaa-vs-smart-choice/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/siaa-vs-smart-choice/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/Comparison-Article-1.png",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/Comparison-Article-1.png",
+    "width": 1200,
+    "height": 628,
+    "caption": "Comparison Article"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/siaa-vs-smart-choice/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "SIAA Vs. Smart Choice: Which is the Better Option in 2026?"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Who is the owner of Smart Choice? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The owner, Chairman and CEO of Smart Choice is Doug Witcher."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How does Smart Choice work? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Smart Choice® is the largest network of independent insurance agents with access to over 9,000 agents and 100 carrier partners. As a member, you&#8217;ll enjoy top-rated markets, comprehensive product training, and unparalleled sales and marketing support."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is 5 percent commission? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Gross commission refers to the full amount of money earned by a salesperson from their sales. This calculation can be determined using the equation: commission = total sales revenue * commission rate. To provide an example, if a salesperson sells $2,000 worth of products and receives a commission rate of 5%, their total commission will amount to $100."
+    }
+   }
+  ]
+ }
+]

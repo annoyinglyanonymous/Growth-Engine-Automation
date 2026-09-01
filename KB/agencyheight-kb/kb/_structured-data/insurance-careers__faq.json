@@ -1,0 +1,214 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-careers/faq/",
+    "url": "https://agencyheight.com/insurance-careers/faq/",
+    "name": "Insurance Careers FAQ: 13 Most Asked Questions - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "datePublished": "2022-01-15T07:44:01+00:00",
+    "dateModified": "2023-04-20T04:22:08+00:00",
+    "description": "Interested in a career in insurance? We've got the answers for you! Read more to learn how to become the best in your field.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-careers/faq/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-careers/faq/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-careers/faq/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance Careers",
+      "item": "https://agencyheight.com/insurance-careers/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Insurance Careers FAQ"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Is insurance a rewarding career?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Insurance jobs are among the best in terms of long-term compensation. According to the US Bureau of Labor Statistics, the job future for insurance sales agents is bright, with a projected growth rate of 5% between 2019 and 2029."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the highest paying insurance jobs?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Actuaries, insurance claims adjusters, insurance underwriters, risk analysts, financial analysts, and insurance agents are some of the highest-paid insurance jobs in 2022."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the most popular states for entry-level insurance positions?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "If you’re looking for an entry-level job in the Insurance industry, Florida is among your top choices. Illinois also has many insurance career opportunities to choose from, while other states offer their own set of options as well, such as New York, Georgia, Arizona, and Texas."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are some of the skills required of an insurance agent?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Customer ServiceSalesCommunicationDigital knowledgeFinancial planningDetail-orientedDecision-making"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is a career in specialty insurance a smart choice?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Insurance for products or occurrences that are considered unique or extraordinary circumstances is known as specialty insurance. Standard insurance policies rarely cover the products that fall under these categories. As a result, becoming a specialist insurer is an excellent career option because there is a high need for it."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Which type of Insurance Agent makes the most money?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "While there are various types of insurance, selling life insurance is the most lucrative business in the industry."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How much does an independent insurance agent make?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "In 2022, the national average income for an independent insurance agent in the United States is $72,813 per year. While top earners can make up to $150,000, some make as low as $11,000."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is working in the insurance industry a safe bet?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Insurance is more stable than other industries, even during a downturn. This is because, regardless of the economy, people and businesses require risk protection at all times. In comparison to other industries, working for an insurance firm or an independent agency provides more job security."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is it possible to work from home in the insurance industry?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "One of the industries that permit remote working is the insurance industry. Because the insurance industry requires diversity and the introduction of insurtech has resulted in a massive digital transformation, offering partially or fully remote positions will help insurance industry players attract talent. Employees, including insurance agents, want the flexibility to work from anywhere, so the insurance industry is adapting to remote working."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the requirements for becoming an insurance agent?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "A high school certificate and a state-issued insurance license are required to work as an insurance agent, although obtaining a bachelor’s degree has numerous advantages."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are some factors to think about while deciding which insurance company to work for?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Size of the companyReputation and prominenceFacilitiesLocationTrainingCommission StructureCulture"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the top five insurance-related jobs?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Loan processor, insurance adjuster, insurance agent, loss control consultant, and underwriter are some of the best jobs in the insurance sector."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is being an insurance agent difficult?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Insurance is not easy work, but committed agents will succeed. While working as an insurance agent can be rewarding, it also requires a lot of networking and sales."
+    }
+   }
+  ]
+ }
+]

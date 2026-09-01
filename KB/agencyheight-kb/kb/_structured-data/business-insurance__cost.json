@@ -1,0 +1,167 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/business-insurance/cost/",
+    "url": "https://agencyheight.com/business-insurance/cost/",
+    "name": "Business Insurance Cost 2023 - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/business-insurance/cost/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/business-insurance/cost/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/Business-Insurance-Cost.jpg",
+    "datePublished": "2023-03-08T04:58:40+00:00",
+    "dateModified": "2025-11-11T11:21:53+00:00",
+    "description": "Understanding business cost is very important before you purchase an insurance. This will help you select the best business insurance.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/business-insurance/cost/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/business-insurance/cost/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/business-insurance/cost/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/Business-Insurance-Cost.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/Business-Insurance-Cost.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "business_insurance_cost"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/business-insurance/cost/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Business Insurance | Get a Quote",
+      "item": "https://agencyheight.com/business-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Business Insurance Cost"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "How much is general liability insurance in GA?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Usually, a small business in Georgia should expect to pay $300 &#8211; $5,000 a year for general liability insurance."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is general liability insurance for small businesses?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "This policy protects you and your business against personal injury, property damage, defamation, defense of legal proceedings, and financial loss resulting from settlement bonds or judgments."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Why is business insurance expensive? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Commercial insurance protects your business from situations and offers higher limits than personal insurance. For example, a commercial vehicle policy protects assets if a damaged third party sues your business."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How many types of insurance are there for businesses? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The three important business coverages are general liability, commercial property, and commercial income insurance."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is commercial umbrella insurance? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Umbrella Commercial Insurance provides additional liability protection by covering costs beyond other liability limits."
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,120 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-back-office-outsourcing/cost-savings/",
+    "url": "https://agencyheight.com/insurance-back-office-outsourcing/cost-savings/",
+    "name": "How Insurance Businesses Save 40–70% with Back-Office Outsourcing",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/insurance-back-office-outsourcing/cost-savings/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/insurance-back-office-outsourcing/cost-savings/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/Inusrance-Backoffice-outsourcing-save-cost.jpg",
+    "datePublished": "2025-02-25T08:10:13+00:00",
+    "dateModified": "2025-02-25T10:22:51+00:00",
+    "description": "Discover how back-office outsourcing can help insurance agencies cut costs and boost efficiency. Learn more about cost-saving insurance outsourcing.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-back-office-outsourcing/cost-savings/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-back-office-outsourcing/cost-savings/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/insurance-back-office-outsourcing/cost-savings/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/Inusrance-Backoffice-outsourcing-save-cost.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/Inusrance-Backoffice-outsourcing-save-cost.jpg",
+    "width": 1200,
+    "height": 628
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-back-office-outsourcing/cost-savings/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Top Insurance Back-Office Outsourcing Companies in 2026",
+      "item": "https://agencyheight.com/insurance-back-office-outsourcing/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How Insurance Businesses Save 40–70% with Back-Office Outsourcing"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ }
+]

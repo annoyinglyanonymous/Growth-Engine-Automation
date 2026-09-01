@@ -1,0 +1,145 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/high-value-home-insurance/",
+    "url": "https://agencyheight.com/high-value-home-insurance/",
+    "name": "High-Value Home Insurance | Get a Quote - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/high-value-home-insurance/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/high-value-home-insurance/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/a-2.jpg",
+    "datePublished": "2025-03-05T09:41:42+00:00",
+    "dateModified": "2026-07-02T07:20:38+00:00",
+    "description": "Get the best high-value home insurance from top insurance agents. Request a free quote today and start saving!",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/high-value-home-insurance/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/high-value-home-insurance/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/high-value-home-insurance/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/a-2.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/a-2.jpg",
+    "width": 1920,
+    "height": 578,
+    "caption": "high value home insurance"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/high-value-home-insurance/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "High-Value Home Insurance | Get a Quote"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What is considered high-value home insurance? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Luxury properties that generally exceed $750,000 in replacement costs or $1 million in market valuation require high-value home insurance. "
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is the average cost of high-value home insurance? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "The average annual premium for a property with replacement value of over $750,000 is $4345. However, this cost varies depending on the type of property, valuation, location, and other factors. "
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is an HO-5 policy?  ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "An HO-5 policy is the broadest form of home insurance that one can get. It covers on an open peril basis, meaning unless something is expressly excluded, it should be covered by the policy. "
+    }
+   }
+  ]
+ }
+]

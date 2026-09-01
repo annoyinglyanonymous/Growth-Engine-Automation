@@ -1,0 +1,151 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/medical-malpractice-insurance/obgyn-medical-malpractice-insurance/",
+    "url": "https://agencyheight.com/medical-malpractice-insurance/obgyn-medical-malpractice-insurance/",
+    "name": "OB/GYN Medical Malpractice Insurance | Get a Quote – Protect Your Practice & Reputation",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/medical-malpractice-insurance/obgyn-medical-malpractice-insurance/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/medical-malpractice-insurance/obgyn-medical-malpractice-insurance/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/OBGYN-Insurance.jpg",
+    "datePublished": "2025-09-03T05:48:18+00:00",
+    "dateModified": "2026-07-01T07:24:37+00:00",
+    "description": "Secure your practice with comprehensive OB/GYN Medical Malpractice Insurance. Protect your reputation, finances, and patients today.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/medical-malpractice-insurance/obgyn-medical-malpractice-insurance/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/medical-malpractice-insurance/obgyn-medical-malpractice-insurance/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/medical-malpractice-insurance/obgyn-medical-malpractice-insurance/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/OBGYN-Insurance.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/OBGYN-Insurance.jpg",
+    "width": 1920,
+    "height": 678,
+    "caption": "OBGYN Insurance"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/medical-malpractice-insurance/obgyn-medical-malpractice-insurance/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Best Medical Malpractice Insurance | Get a Quote",
+      "item": "https://agencyheight.com/medical-malpractice-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "OB/GYN Medical Malpractice Insurance | Get a Quote"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What is OB/GYN Medical Malpractice Insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "It’s specialized coverage for OB/GYNs protecting against lawsuits from medical errors, birth complications, or surgical mistakes. Essential due to high litigation risk in obstetrics and gynecology."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How much does OB/GYN malpractice insurance cost?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Premiums vary by location, claims history, and specialty scope. Typical annual rates in major US cities range from $100,000 to $200,000."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How does Agency Height help OB/GYNs compare insurance options?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "We connect you with multiple A-rated insurance carriers, helping you compare premiums, coverage limits, and policy features to find the best fit for your practice."
+    }
+   }
+  ]
+ }
+]

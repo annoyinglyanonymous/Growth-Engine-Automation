@@ -1,0 +1,192 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/agent-directory/",
+    "url": "https://agencyheight.com/agent-directory/",
+    "name": "Insurance Agent & Agency Directory – Free Profile | Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/agent-directory/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/agent-directory/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "datePublished": "2026-06-11T04:32:36+00:00",
+    "dateModified": "2026-08-17T11:04:55+00:00",
+    "description": "Agency Height lists NPN-verified insurance agents in a searchable national directory. Create a free profile, get matched to local buyers, and manage leads.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/agent-directory/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/agent-directory/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/agent-directory/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/feature-image-5.jpg",
+    "width": 1200,
+    "height": 675
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/agent-directory/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Agent Directory"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Do I get carrier access, or just leads?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Both. Markets gives you carrier access, search carriers by appetite, request access in a click, and submit to some wholesale carriers with no appointment needed. And beyond Markets, tools like profile listing, intake forms, and Lead Bank keep leads coming in. AH Markets"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do insurance agents get leads on Agency Height?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Four paths. (1) Your public profile: a buyer finds your listing and submits a request straight to you, exclusive. (2) Your campaign link: share your form anywhere, every submission is yours alone. (3) Platform matching: a buyer picks from up to 3 matched agents, so the same lead can go to up to 3 of you. (4) Lead Bank: unclaimed requests you claim by state and line, exclusive once claimed, capped by plan (Premium 2/mo, Enterprise 7/mo). On Free, paths 1 to 3 still arrive, but you can open full details on only 2 leads before upgrading."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is insurance agent lead generation through a directory?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Buyers find you through search instead of you chasing them. Someone searches for a licensed agent in their state, sees your verified profile, and submits a request. No cold calling, no bought list. Agency Height matches by licensed state, line, and profile quality."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How does my insurance agent profile affect my ranking in the directory?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "State and line match come first. Among agents who pass, ranking weighs NPN verification, profile completeness, plan tier, recent activity, response speed, and ratings. A verified, complete, fast-replying profile on a paid plan outranks a dormant or incomplete one."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is Agency Height free for insurance agents?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. Create a profile, get NPN verified, and start receiving leads free. Free doesn't block leads, it limits how many you can open in full: after 2, you upgrade to see the rest. Lead Bank claims and the Recommended badge need a paid plan, Premium ($29.99/mo) or Enterprise ($79.99/mo), billed annually."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How is this different from buying leads from QuoteWizard or EverQuote?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "They sell leads in bulk to several agents at once, so you pay per lead and compete with up to 3 or 4 others who got the same contact. Here, a buyer finds your profile and chooses you, and that request is yours exclusively. Lead Bank claims are exclusive too, one agent per lead."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What lines of insurance are included in the directory?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Personal lines (auto, home, renters, umbrella), Commercial, and Life. Health isn't included. Your coverage types come from your NPN license data, so only lines you're licensed for show publicly."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How does insurance agent SEO work with my profile?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Your profile is a standalone, indexable page, with your name and location in the URL and your states and coverage in the content. That helps it rank when buyers search for a local agent. A fuller profile with reviews ranks better on Agency Height and in search."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can I share my profile on social media and business cards?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. Share your profile URL and Lead Form link anywhere, LinkedIn, Facebook, Instagram, your Google Business Profile, business cards, or a QR code. Every submission lands in the same My Leads inbox as your matched leads."
+    }
+   }
+  ]
+ }
+]

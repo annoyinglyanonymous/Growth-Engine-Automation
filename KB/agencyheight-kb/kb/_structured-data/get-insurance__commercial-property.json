@@ -1,0 +1,151 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/get-insurance/commercial-property/",
+    "url": "https://agencyheight.com/get-insurance/commercial-property/",
+    "name": "Commercial Property Insurance in 2026 - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/get-insurance/commercial-property/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/get-insurance/commercial-property/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/2022/08/Untitled-design-52.jpg",
+    "datePublished": "2022-08-22T06:17:05+00:00",
+    "dateModified": "2025-10-20T06:45:21+00:00",
+    "description": "Get commercial property insurance through the best agents near you. Book a free consultation to get started!",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/get-insurance/commercial-property/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/get-insurance/commercial-property/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/get-insurance/commercial-property/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/2022/08/Untitled-design-52.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/2022/08/Untitled-design-52.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "commercial property main page featured image"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/get-insurance/commercial-property/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get Insurance",
+      "item": "https://agencyheight.com/get-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Commercial Property Insurance in 2026"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What are the different kinds of commercial property insurance policies?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "There are three types of commercial property insurance policies depending on the perils/accidents covered. They are:Basic form policies, also known as “named perils policies,” only cover the perils that are explicitly listed in the policy. The insurance carrier can refuse to pay for the damages if they are not included in a policy.Broad form policies cover additional hazards like water damage, structural collapses, falling objects, etc.Special form policies are comprehensive policies in which the excluded perils are listed rather than the included perils. While these policies tend to exclude things like earthquakes and floods, they generally provides more coverage than the other two policies."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Why do you need commercial property insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Commercial property insurance typically covers commercially owned or rented property from disasters such as fire explosions, storms, theft, and vandalism. You need this type of insurance to secure your investment if any mishaps occur in the future."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What are the most common types of commercial insurance? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Property, liability and workers compensation are the most common type of commercial insurance that any business requires. Property insurance covers damage to your commercial property, liability insurance covers damage to third parties and worker’s compensation insurance is for the protection against workplace injuries to your employees."
+    }
+   }
+  ]
+ }
+]

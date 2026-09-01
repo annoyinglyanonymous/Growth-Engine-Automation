@@ -1,0 +1,153 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/top-peo-services/",
+    "url": "https://agencyheight.com/top-peo-services/",
+    "name": "Top PEO Services for Insurance in 2026: A Comprehensive Guide  - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/top-peo-services/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/top-peo-services/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/strong-digital-presence-for-insurance-agents.jpg",
+    "datePublished": "2025-03-25T07:41:47+00:00",
+    "dateModified": "2025-12-22T06:28:02+00:00",
+    "description": "Choose from the best PEO services for 2026 and get the best PEO for your small business, insurance business and more today.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/top-peo-services/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/top-peo-services/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/top-peo-services/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/strong-digital-presence-for-insurance-agents.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/strong-digital-presence-for-insurance-agents.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "strong digital presence for insurance agents"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/top-peo-services/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Top PEO Services for Insurance in 2026: A Comprehensive Guide "
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What does PEO stand for?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "PEO stands for Professional Employer Organization (PEO) which establishes co-employment, assuming employer-of-record responsibilities."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Why would you use a PEO?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "PEOs allow businesses of all scales to improve productivity and profitability and truly focus on their core mission. "
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What size organization benefits most from PEO services?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "PEOs can cater to businesses from startups to 1,000+ employees, while smaller firms benefit from cost savings, and larger ones from compliance expertise."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do PEOs typically structure their pricing?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Depending on the service providers, PEOs charge either 2-12% of payroll or $150-$250 per employee per month (PEPM), with some offering all-inclusive pricing"
+    }
+   }
+  ]
+ }
+]

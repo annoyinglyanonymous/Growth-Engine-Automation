@@ -1,0 +1,115 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/cheap-car-insurance-near-me/",
+    "url": "https://agencyheight.com/cheap-car-insurance-near-me/",
+    "name": "Cheap Car Insurance Near Me: Finding Affordable Car Insurance in 2026 - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/cheap-car-insurance-near-me/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/cheap-car-insurance-near-me/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/cheap-car-insurance-near-me.jpg",
+    "datePublished": "2025-07-01T11:45:06+00:00",
+    "dateModified": "2026-07-01T07:19:44+00:00",
+    "description": "If you are looking to buy cheap car insurance near me online in 2026, we have everything you need to make your search easier.",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/cheap-car-insurance-near-me/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/cheap-car-insurance-near-me/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/cheap-car-insurance-near-me/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/cheap-car-insurance-near-me.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/cheap-car-insurance-near-me.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "cheap car insurance near me"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/cheap-car-insurance-near-me/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Cheap Car Insurance Near Me: Finding Affordable Car Insurance in 2026"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ }
+]

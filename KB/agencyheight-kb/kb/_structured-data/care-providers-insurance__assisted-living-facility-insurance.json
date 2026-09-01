@@ -1,0 +1,151 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/care-providers-insurance/assisted-living-facility-insurance/",
+    "url": "https://agencyheight.com/care-providers-insurance/assisted-living-facility-insurance/",
+    "name": "Assisted Living Facility Insurance | Get a Quote",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/care-providers-insurance/assisted-living-facility-insurance/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/care-providers-insurance/assisted-living-facility-insurance/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/The-Ultimate-Guide-to-Assisted-Living-Facility-Insurance.jpg",
+    "datePublished": "2025-08-07T08:01:51+00:00",
+    "dateModified": "2026-07-01T10:41:54+00:00",
+    "description": "Get the best assisted living facility insurance from top insurance agents. Request a free quote today and start saving!",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/care-providers-insurance/assisted-living-facility-insurance/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/care-providers-insurance/assisted-living-facility-insurance/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/care-providers-insurance/assisted-living-facility-insurance/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/The-Ultimate-Guide-to-Assisted-Living-Facility-Insurance.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/The-Ultimate-Guide-to-Assisted-Living-Facility-Insurance.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "The Ultimate Guide to Assisted Living Facility Insurance"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/care-providers-insurance/assisted-living-facility-insurance/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Care Providers Insurance | Get a Quote",
+      "item": "https://agencyheight.com/care-providers-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Assisted Living Facility Insurance | Get a Quote"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What types of Insurance do Care Providers Need?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "They often need professional liability, general liability, property, workers’ comp, cyber, and D&amp;O insurance."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Why is Professional Liability Insurance Important for Care Providers?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "It protects against claims of negligence, errors, or inadequate care."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Does Cyber Liability Insurance cover HIPAA-Related Breaches?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes, it typically covers HIPAA violations, including fines and notification costs."
+    }
+   }
+  ]
+ }
+]

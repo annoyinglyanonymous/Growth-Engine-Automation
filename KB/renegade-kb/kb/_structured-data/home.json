@@ -1,0 +1,125 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://renegadeinsurance.com/",
+    "url": "https://renegadeinsurance.com/",
+    "name": "Renegade Insurance | Shop Insurance with An Expert Agent",
+    "isPartOf": {
+     "@id": "https://renegadeinsurance.com/#website"
+    },
+    "about": {
+     "@id": "https://renegadeinsurance.com/#organization"
+    },
+    "datePublished": "2023-01-30T09:56:08+00:00",
+    "dateModified": "2026-08-18T03:29:14+00:00",
+    "description": "Renegade combines the power of the insurance marketplace with expert agents. Get expert advice when and where you need it.",
+    "breadcrumb": {
+     "@id": "https://renegadeinsurance.com/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://renegadeinsurance.com/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://renegadeinsurance.com/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://renegadeinsurance.com/#website",
+    "url": "https://renegadeinsurance.com/",
+    "name": "Renegade Insurance",
+    "description": "Get insurance quotes from 100 insurance companies while working with your local agent. The easiest way to buy and manage all of your insurance needs.",
+    "publisher": {
+     "@id": "https://renegadeinsurance.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://renegadeinsurance.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://renegadeinsurance.com/#organization",
+    "name": "Renegade Insurance",
+    "url": "https://renegadeinsurance.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://renegadeinsurance.com/#/schema/logo/image/",
+     "url": "https://renegadeinsurance.com/wp-content/uploads/2023/02/Frame-1.svg",
+     "contentUrl": "https://renegadeinsurance.com/wp-content/uploads/2023/02/Frame-1.svg",
+     "width": 219,
+     "height": 57,
+     "caption": "Renegade Insurance"
+    },
+    "image": {
+     "@id": "https://renegadeinsurance.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/JoinRenagade",
+     "https://x.com/renegadeins",
+     "https://www.instagram.com/renegade.insurance/",
+     "https://www.linkedin.com/company/renegade-insurances/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "How is Renegade different from others? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Renegade combines power of an insurance marketplace with an agent. Therefore, you get multiple quotes to choose from and have an agent who is there to provide you with advice when and where you need it.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is Renegade licensed?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes, Renegade is licensed in 48 states across the US. For more information, click this link.\n"
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How is a Renegade agent different from a captive agent?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Renegade agents are independent so that they can work with multiple carriers to get you the coverage you need.\n"
+    }
+   }
+  ]
+ }
+]

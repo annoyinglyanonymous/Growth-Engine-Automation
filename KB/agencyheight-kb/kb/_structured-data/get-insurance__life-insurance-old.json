@@ -1,0 +1,151 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/get-insurance/life-insurance-old/",
+    "url": "https://agencyheight.com/get-insurance/life-insurance-old/",
+    "name": "Life Insurance old - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/get-insurance/life-insurance-old/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/get-insurance/life-insurance-old/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/2022/07/What-Is-Life-Insurance-Content-Image-2.jpg",
+    "datePublished": "2022-01-22T10:58:23+00:00",
+    "dateModified": "2025-11-11T07:48:44+00:00",
+    "description": "There's nothing more precious than your life. Get the latest insights before you purchase a life insurance policy, and start saving today!",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/get-insurance/life-insurance-old/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/get-insurance/life-insurance-old/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/get-insurance/life-insurance-old/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/2022/07/What-Is-Life-Insurance-Content-Image-2.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/2022/07/What-Is-Life-Insurance-Content-Image-2.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "What-Is-Life-Insurance-Optimal-For"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/get-insurance/life-insurance-old/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Get Insurance",
+      "item": "https://agencyheight.com/get-insurance/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Life Insurance old"
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "How much life insurance do I need?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Depending on various factors, the amount of coverage you need may differ from that of others. Financial experts recommend buying 10 to 15 times your annual income’s worth of insurance. In the event of your death, the amount should be enough to cover your family’s expenses, such as mortgage and bills, in the future."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Does everyone need life insurance?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Not necessarily. Life insurance is a good backup to have, but it isn’t mandatory. Usually, people who have someone dependent on them financially require it."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Which type of life insurance is better? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "It depends. If you’re looking for more affordable coverage, then, term life can best suit you. However, if you want life-long coverage, then you should sign up for a permanent life policy."
+    }
+   }
+  ]
+ }
+]

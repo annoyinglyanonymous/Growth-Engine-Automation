@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Sign in - Campaign Engine{% endblock %}
+{% block body %}
+<div class="signin">
+  <div class="card">
+    <h3>Who is approving?</h3>
+    <p class="small muted">
+      Approvals, rejections and validation runs are recorded against this name.
+    </p>
+
+    <form method="post" action="/signin">
+      <input type="hidden" name="next" value="{{ next }}">
+
+      <label for="operator">Operator</label>
+      <select id="operator" name="operator" required>
+        {% for op in operators %}
+        <option value="{{ op }}">{{ op }}</option>
+        {% endfor %}
+      </select>
+
+      {% if passcode_required %}
+      <label for="passcode">Passcode</label>
+      <input type="password" id="passcode" name="passcode" required
+             autocomplete="current-password">
+      {% endif %}
+
+      <div class="row" style="margin-top:18px">
+        <button type="submit" data-busy="Signing in&hellip;">Sign in</button>
+      </div>
+    </form>
+
+    {#
+      The note below is deliberate and should not be softened. A sign-in
+      screen implies a security boundary, and someone who believes there is
+      one may reasonably conclude it is safe to bind this to 0.0.0.0. It is
+      not: the app connects to Postgres as a superuser that bypasses RLS, so
+      the loopback bind is the whole of the access control.
+
+      Two texts, because the two modes really do differ in what they achieve
+      and saying so is the honest thing.
+    #}
+    <p class="note">
+      This records <em>who</em> approved something. It is
+      <strong>not access control</strong> &mdash; anyone who can reach this
+      port can drive every button, because the app connects to the database as
+      a superuser.
+      {% if passcode_required %}
+      The passcode is shared, so it identifies the team rather than a person.
+      {% else %}
+      There is no passcode set, so a name can be claimed by anyone at this
+      keyboard. Set <span class="mono">OPERATOR_PASSCODE</span> to require one.
+      {% endif %}
+      Real authentication arrives with hosting: a non-superuser database role,
+      row-level policies, and TLS.
+    </p>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,121 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/insurance-agents-near-me/chicago/",
+    "url": "https://agencyheight.com/insurance-agents-near-me/chicago/",
+    "name": "Finding Insurance Brokers & Agents Near Me in Chicago - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/insurance-agents-near-me/chicago/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/insurance-agents-near-me/chicago/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/Insurance-agent-and-broker-near-me-in-Chicago.jpg",
+    "datePublished": "2025-04-25T11:32:18+00:00",
+    "dateModified": "2025-10-14T08:20:48+00:00",
+    "description": "Discover the expertise of Chicago local insurance agents who live and work in your community. Get personalized insurance advice you need!",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/insurance-agents-near-me/chicago/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/insurance-agents-near-me/chicago/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/insurance-agents-near-me/chicago/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/Insurance-agent-and-broker-near-me-in-Chicago.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/Insurance-agent-and-broker-near-me-in-Chicago.jpg",
+    "width": 1200,
+    "height": 628,
+    "caption": "Insurance agent and broker near me in Chicago"
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/insurance-agents-near-me/chicago/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insurance Agents and Brokers Near You in the U.S.",
+      "item": "https://agencyheight.com/insurance-agents-near-me/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Finding Insurance Brokers and Agents near me in Chicago "
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,202 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@graph": [
+   {
+    "@type": "WebPage",
+    "@id": "https://agencyheight.com/truck-finance-calculator/",
+    "url": "https://agencyheight.com/truck-finance-calculator/",
+    "name": "Truck Finance Calculator - Estimate Your Monthly Truck Loan Payment  - Agency Height",
+    "isPartOf": {
+     "@id": "https://agencyheight.com/#website"
+    },
+    "primaryImageOfPage": {
+     "@id": "https://agencyheight.com/truck-finance-calculator/#primaryimage"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/truck-finance-calculator/#primaryimage"
+    },
+    "thumbnailUrl": "https://agencyheight.com/wp-content/uploads/trucking-loan-caculator.jpg",
+    "datePublished": "2026-03-04T10:00:05+00:00",
+    "dateModified": "2026-08-03T12:01:08+00:00",
+    "description": "Estimate your truck loan payment and plan your financing with our Truck Finance Calculator. Plan your trucking premiums with ease!",
+    "breadcrumb": {
+     "@id": "https://agencyheight.com/truck-finance-calculator/#breadcrumb"
+    },
+    "inLanguage": "en-US",
+    "potentialAction": [
+     {
+      "@type": "ReadAction",
+      "target": [
+       "https://agencyheight.com/truck-finance-calculator/"
+      ]
+     }
+    ]
+   },
+   {
+    "@type": "ImageObject",
+    "inLanguage": "en-US",
+    "@id": "https://agencyheight.com/truck-finance-calculator/#primaryimage",
+    "url": "https://agencyheight.com/wp-content/uploads/trucking-loan-caculator.jpg",
+    "contentUrl": "https://agencyheight.com/wp-content/uploads/trucking-loan-caculator.jpg",
+    "width": 1200,
+    "height": 750
+   },
+   {
+    "@type": "BreadcrumbList",
+    "@id": "https://agencyheight.com/truck-finance-calculator/#breadcrumb",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agencyheight.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Truck Finance Calculator &#8211; Estimate Your Monthly Truck Loan Payment "
+     }
+    ]
+   },
+   {
+    "@type": "WebSite",
+    "@id": "https://agencyheight.com/#website",
+    "url": "https://agencyheight.com/",
+    "name": "Agency Height",
+    "description": "",
+    "publisher": {
+     "@id": "https://agencyheight.com/#organization"
+    },
+    "potentialAction": [
+     {
+      "@type": "SearchAction",
+      "target": {
+       "@type": "EntryPoint",
+       "urlTemplate": "https://agencyheight.com/?s={search_term_string}"
+      },
+      "query-input": {
+       "@type": "PropertyValueSpecification",
+       "valueRequired": true,
+       "valueName": "search_term_string"
+      }
+     }
+    ],
+    "inLanguage": "en-US"
+   },
+   {
+    "@type": "Organization",
+    "@id": "https://agencyheight.com/#organization",
+    "name": "Agency Height",
+    "url": "https://agencyheight.com/",
+    "logo": {
+     "@type": "ImageObject",
+     "inLanguage": "en-US",
+     "@id": "https://agencyheight.com/#/schema/logo/image/",
+     "url": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "contentUrl": "https://agencyheight.com/wp-content/uploads/Logo-Blue.png",
+     "width": 412,
+     "height": 131,
+     "caption": "Agency Height"
+    },
+    "image": {
+     "@id": "https://agencyheight.com/#/schema/logo/image/"
+    },
+    "sameAs": [
+     "https://www.facebook.com/AgencyHeight",
+     "https://x.com/AgencyHeight",
+     "https://www.instagram.com/agencyheight/",
+     "https://www.pinterest.com/agencyheight/"
+    ]
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": "https://agencyheight.com/truck-finance-calculator/#webapp",
+  "name": "Truck Finance Calculator",
+  "url": "https://agencyheight.com/truck-finance-calculator/",
+  "description": "Free truck loan calculator. Estimate monthly loan payments for commercial trucks, enter loan amount, rate, and term for an instant estimate.",
+  "applicationCategory": "FinanceApplication",
+  "applicationSubCategory": "Insurance Cost Calculator",
+  "operatingSystem": "Web",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "isPartOf": {
+   "@id": "https://agencyheight.com/truck-finance-calculator/"
+  },
+  "offers": {
+   "@type": "Offer",
+   "price": "0",
+   "priceCurrency": "USD"
+  },
+  "featureList": [
+   "Monthly, weekly, and biweekly repayment estimates",
+   "Full amortization table by payment period",
+   "Balloon payment support"
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "Does this truck loan payment calculator work for used trucks? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. Enter the purchase price of the used truck as the loan amount and set your rate and term. The calculator doesn&#8217;t distinguish between new and used — it just runs the math on what you put in. Keep in mind that lenders may quote different rates on older vehicles, so test a few rate scenarios if you&#8217;re buying used. "
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Does using this calculator affect my credit score? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "No. This is an estimation tool only. No credit report is pulled, no application is submitted, and nothing is reported to any credit bureau. Use it as many times as you want with zero impact on your credit. "
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Why do I need to enter my email to see results? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "After clicking &#8220;Get Loan Payment Estimate,&#8221; you&#8217;ll enter your name and email before results display. This sends your estimate to your inbox so you can reference it later. Optionally, it also enables you to connect with licensed commercial truck insurance agents who can help you plan the full cost of ownership alongside your financing. "
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What interest rate should I enter? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Use a rate you&#8217;ve been quoted if you have one. If you&#8217;re still planning, enter a rate you&#8217;d reasonably expect based on your credit and the type of truck you&#8217;re financing — then run the same scenario at a higher rate too, to understand the range. Rates on commercial truck loans vary based on credit history, time in business, and whether the truck is new or used. "
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can I compare different loan terms with this truck loan calculator? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes — and it&#8217;s one of the most useful things you can do with it. Run the same loan amount at 36, 48, 60, and 72 months. The difference in monthly payment and total interest across those terms is often larger than most buyers expect. "
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can I use this for a truck and trailer purchased together? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "If you&#8217;re financing both as one unit under a single loan, enter the combined price as the loan amount. If you&#8217;re financing them separately, run the calculator twice — once for each — and add the two monthly payments together for your total obligation. "
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Can a startup trucking business use this calculator? ",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Yes. The calculator works for any borrower at any stage. Just keep in mind that lenders may offer different terms to newer businesses — sometimes requiring a larger down payment or a different rate. Use the calculator as your planning baseline, then work with a lender who understands your situation. "
+    }
+   }
+  ]
+ }
+]
