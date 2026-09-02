@@ -100,9 +100,15 @@ def main() -> int:
     if args.dry_run:
         print(f"{len(migrations)} migration(s) in {MIGRATIONS_DIR}:")
         for name, sql, checksum in migrations:
+            # update/delete/do belong here too. Without them a migration that
+            # only changes DATA -- 023's parking, 024's themes -- reports
+            # "~0 statements", which reads as "this file does nothing" to
+            # exactly the person running --dry-run to find out what it does.
             statements = sum(1 for line in sql.splitlines()
                              if line.strip().lower().startswith(
-                                 ("create", "alter", "insert", "drop", "comment")))
+                                 ("create", "alter", "insert", "drop",
+                                  "comment", "update", "delete", "do ",
+                                  "grant", "revoke", "truncate")))
             print(f"  {name:<28} {len(sql):>6} bytes  ~{statements} statements  "
                   f"{checksum[:12]}")
         print("\n(dry run -- nothing connected, nothing applied)")

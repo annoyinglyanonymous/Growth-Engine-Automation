@@ -1,0 +1,76 @@
+-- ---------------------------------------------------------------------------
+-- 024  Park the campaign-type themes that are prohibitions, keep the ones
+--      that are coherence guards
+--
+-- WHY THIS IS NOT THE BLANKET PARK I OFFERED
+-- I described campaign_types.prohibited_themes as "a coherence guard about
+-- which programme a campaign is for, not an assertion about what is true",
+-- and offered to park it like the claims and rules in 023. Reading all 70
+-- entries before touching them, that description is right for 57 of them and
+-- wrong for 13. So this parks the 13 and leaves the 57, which is the decision
+-- the accurate version of the question would have got.
+--
+-- THE 57 THAT STAY -- audience and tier mixing
+--   renegade/franchise        13   M&A vocabulary ("sell your agency",
+--                                  "cash at close", "no broker fees")
+--   renegade/m-and-a          10   franchise vocabulary ("80% commission",
+--                                  "two-week training", "franchise fee")
+--   renegade/book-servicing   11   both of the above
+--   agencyheight/agent-acq    16   paid-tier vocabulary ("$39.99",
+--                                  "lead bank", "upgrade to premium")
+--   agencyheight/plan-upgrade  7   free-tier vocabulary ("$0 to start")
+--
+-- Every one of those says "this vocabulary belongs to a different programme
+-- or a different price tier". None asserts anything about whether a statement
+-- is TRUE -- "sell your agency" is perfectly true, and Renegade says it
+-- loudly, in the M&A campaign type where it belongs. Putting it in a
+-- franchise ad addresses the wrong audience, which is a structural error
+-- about what the campaign is for. That guard is derived from the campaign
+-- type's own definition, not from a judgement about the business, so it is
+-- not the thing the operator asked to take back.
+--
+-- THE 13 THAT GO -- agencyheight/content-marketing
+-- These are compliance prohibitions wearing a theme's clothes:
+--
+--   guaranteed, guaranteed leads, guaranteed income, you will earn,
+--   you will save, best insurance company, cheapest coverage,
+--   we recommend you buy, this coverage is right for you, you should carry,
+--   better than state farm, better than allstate, beats geico
+--
+-- Not one is about which programme a campaign serves. They are judgements
+-- about what may be claimed -- superlatives, guaranteed outcomes, competitor
+-- comparisons, and advice that would make an editorial article read as a
+-- recommendation to buy. Exactly the class 023 moved into the operator's
+-- hands, and exactly as much my authorship as the prohibited claims were.
+--
+-- NO PRACTICAL LOSS TODAY
+-- content-marketing belongs to Agency Height, whose product is still
+-- approved_for_marketing = false, so no campaign can currently use this type
+-- at all. Parking these costs nothing now and stops an unreviewed judgement
+-- becoming load-bearing the moment the brand is enabled.
+--
+-- IF YOU WANT THEM ENFORCED, they belong at /exclusions where they will carry
+-- your name, and the list above pastes straight in. That is the difference
+-- 023 exists to draw: same words, but an instruction rather than an
+-- inference.
+--
+-- REVERSIBLE -- the exact values, ready to restore:
+--   update public.campaign_types ct set prohibited_themes = array[
+--       'guaranteed', 'guaranteed leads', 'guaranteed income',
+--       'you will earn', 'you will save', 'best insurance company',
+--       'cheapest coverage', 'we recommend you buy',
+--       'this coverage is right for you', 'you should carry',
+--       'better than state farm', 'better than allstate', 'beats geico']
+--    from public.brands b
+--   where b.id = ct.brand_id and b.slug = 'agencyheight'
+--     and ct.slug = 'content-marketing';
+-- ---------------------------------------------------------------------------
+
+-- allowed_themes is untouched. It is guidance about what the type IS about,
+-- never a prohibition, and check_campaign_type_mixing does not block on it.
+update public.campaign_types ct
+   set prohibited_themes = '{}'
+  from public.brands b
+ where b.id = ct.brand_id
+   and b.slug = 'agencyheight'
+   and ct.slug = 'content-marketing';
