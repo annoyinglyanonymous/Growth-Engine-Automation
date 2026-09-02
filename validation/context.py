@@ -13,6 +13,9 @@ prohibited, and a check that cannot see it cannot enforce it.
 
 from __future__ import annotations
 
+from datetime import datetime, timezone
+
+from config import settings
 from db import fetch_all, fetch_one
 from validation.checks import CheckContext
 
@@ -43,6 +46,7 @@ where c.id::text = %s or c.name = %s
 CLAIMS_SQL = """
 select c.status, c.claim_text, c.approved_wording, c.category,
        c.requires_disclaimer, c.disclaimer_text, c.restriction_notes,
+       c.last_reviewed_at,
        coalesce(c.trigger_phrases, '{}') as trigger_phrases
 from public.claims c
 where c.brand_id = %s
@@ -119,5 +123,11 @@ async def load(campaign_ref: str) -> tuple[dict, CheckContext]:
         allowed_themes=list(campaign.get("allowed_themes") or []),
         stale_values=stale,
         exclusions=exclusions,
+        # checks.py is import-free and pure, so the clock and the
+        # horizons are supplied here rather than read in there.
+        now=datetime.now(timezone.utc),
+        review_days=settings.claim_review_days,
+        review_days_by_category={
+            "pricing": settings.claim_review_days_pricing},
     )
     return campaign, ctx

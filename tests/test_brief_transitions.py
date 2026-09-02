@@ -19,6 +19,7 @@ import uuid
 import pytest
 
 from validation import brief
+from validation.checks import CheckContext
 
 CAMPAIGN = {"id": str(uuid.uuid4()), "name": "Franchise Q4",
             "objective": "recruit agents"}
@@ -65,7 +66,7 @@ def run_validate(monkeypatch, *, current: str | None, overall: str):
     events: list[dict] = []
 
     async def fake_load(ref):
-        return dict(CAMPAIGN), object()
+        return dict(CAMPAIGN), CheckContext()
 
     async def fake_fetch_one(sql, params=None):
         return {"status": current}
@@ -81,10 +82,6 @@ def run_validate(monkeypatch, *, current: str | None, overall: str):
     monkeypatch.setattr(brief.vctx, "load", fake_load)
     monkeypatch.setattr(brief, "fetch_one", fake_fetch_one)
     monkeypatch.setattr(brief, "cursor", lambda: FakeCursorCM(cur))
-    monkeypatch.setattr(brief, "check_missing_brief_fields", lambda ctx: [])
-    monkeypatch.setattr(brief, "check_excluded_wording", lambda c, x: [])
-    monkeypatch.setattr(brief, "check_prohibited_wording", lambda c, x: [])
-    monkeypatch.setattr(brief, "run_asset_checks", lambda *a, **k: [])
     monkeypatch.setattr(brief, "status_for", lambda findings: overall)
     monkeypatch.setattr(brief.lifecycle, "record_transition", fake_record)
 
@@ -191,7 +188,7 @@ def test_a_dry_run_writes_nothing_at_all(monkeypatch):
     events: list = []
 
     async def fake_load(ref):
-        return dict(CAMPAIGN), object()
+        return dict(CAMPAIGN), CheckContext()
 
     async def boom(*a, **k):
         raise AssertionError("a dry run must not read or write the campaign")
@@ -199,10 +196,6 @@ def test_a_dry_run_writes_nothing_at_all(monkeypatch):
     monkeypatch.setattr(brief.vctx, "load", fake_load)
     monkeypatch.setattr(brief, "fetch_one", boom)
     monkeypatch.setattr(brief, "cursor", lambda: FakeCursorCM(cur))
-    monkeypatch.setattr(brief, "check_missing_brief_fields", lambda ctx: [])
-    monkeypatch.setattr(brief, "check_excluded_wording", lambda c, x: [])
-    monkeypatch.setattr(brief, "check_prohibited_wording", lambda c, x: [])
-    monkeypatch.setattr(brief, "run_asset_checks", lambda *a, **k: [])
     monkeypatch.setattr(brief, "status_for", lambda findings: "blocked")
     monkeypatch.setattr(brief.lifecycle, "record_transition",
                         lambda *a, **k: events.append(a))

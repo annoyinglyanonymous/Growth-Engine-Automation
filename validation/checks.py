@@ -83,6 +83,17 @@ class CheckContext:
     #: reviewer needs to know whether to argue with the brief or with
     #: the brand. Enforcement is identical for both.
     exclusions: list[dict] = field(default_factory=list)
+    #: The moment to measure claim staleness against, timezone-aware. Passed
+    #: in rather than read from a clock so this module stays pure and the
+    #: freshness check is testable at any date. None means the runner did not
+    #: supply one, which is reported as an info finding rather than silently
+    #: passing.
+    now: object | None = None
+    #: Days an approved claim stays trusted without another look.
+    review_days: int = 180
+    #: Per-category override, e.g. {"pricing": 90}. A price is the claim most
+    #: likely to change without anyone updating marketing.
+    review_days_by_category: dict[str, int] = field(default_factory=dict)
 
 
 # --------------------------------------------------------------------------
@@ -154,6 +165,101 @@ def fields_of(content: dict) -> list[tuple[str, str]]:
 #: brand_exclusions.phrase. A constant so the two cannot drift: if the schema
 #: relaxes, this is the other place to look.
 MIN_EXCLUSION_CHARS = 2
+
+
+def _age_days(now, then) -> int | None:
+    """Whole days between two datetimes, or None if they cannot be compared.
+
+    last_reviewed_at is timestamptz so psycopg hands back an aware datetime,
+    and the runner supplies an aware `now`. A naive value on either side would
+    otherwise raise TypeError inside a check whose entire contract is that it
+    cannot fail -- so it is coerced to UTC rather than trusted, and an
+    genuinely incomparable pair returns None and is skipped.
+    """
+    try:
+        if getattr(now, "tzinfo", None) is None or \
+                getattr(then, "tzinfo", None) is None:
+            now = now.replace(tzinfo=None)
+            then = then.replace(tzinfo=None)
+        return (now - then).days
+    except (AttributeError, TypeError, ValueError):
+        return None
+
+
+def check_claim_freshness(content: dict,
+                          ctx: CheckContext) -> list[Finding]:
+    """Approved claims quoted in this copy that nobody has looked at lately.
+
+    THE FAILURE THIS CATCHES IS SILENT
+    An approved claim is asserted as fact for ever and nothing notices when
+    the world moves. There are seven exact prices in public.claims with no
+    expiry on any of them; the first anyone would learn that one had changed
+    is a customer reading it.
+
+    A WARNING, and deliberately not an effective_until date. A true claim must
+    not stop being usable because a date somebody invented passed -- that
+    disables correct copy on a schedule nobody chose. What a reviewer needs is
+    to be told which figures are old while looking at the asset quoting them.
+
+    Only claims the copy ACTUALLY USES. Warning about a claim this asset does
+    not quote is noise, and noise in warnings teaches people to skim them.
+    Matched two ways: the wording verbatim, and the money figures inside it --
+    the second is what catches pricing, because copy says "$39.99/mo" rather
+    than repeating the whole claim sentence.
+    """
+    if ctx.now is None:
+        return [Finding(
+            check="claim_freshness", severity="info",
+            message="Claim review dates were not checked (no clock supplied).",
+        )]
+
+    text = " ".join(t for _, t in fields_of(content))
+    if not text.strip():
+        return []
+    amounts = money_amounts(text)
+
+    findings: list[Finding] = []
+    for claim in ctx.claims:
+        if claim.get("status") != "approved":
+            continue
+        wording = (claim.get("approved_wording")
+                   or claim.get("claim_text") or "")
+        if not (contains_phrase(text, wording)
+                or (money_amounts(claim.get("claim_text") or "") & amounts)):
+            continue
+
+        horizon = ctx.review_days_by_category.get(
+            claim.get("category"), ctx.review_days)
+        reviewed = claim.get("last_reviewed_at")
+        label = wording[:60]
+
+        if reviewed is None:
+            findings.append(Finding(
+                check="claim_freshness", severity="warning",
+                message="This copy quotes an approved claim that nobody has "
+                        "confirmed.",
+                evidence=label,
+                remedy="Check it is still true, then set last_reviewed_at -- "
+                       "scripts/claim_review.py lists them with their "
+                       "sources.",
+            ))
+            continue
+
+        age = _age_days(ctx.now, reviewed)
+        if age is not None and age > horizon:
+            findings.append(Finding(
+                check="claim_freshness", severity="warning",
+                message=f"This copy quotes a claim last reviewed {age} days "
+                        f"ago ({horizon}-day limit for "
+                        f"{claim.get('category') or 'this category'}).",
+                evidence=label,
+                remedy="Confirm it against the source and update "
+                       "last_reviewed_at, or correct the claim.",
+            ))
+
+    # Per claim, not per field. One stale price is one thing to check, however
+    # many times the asset mentions it.
+    return _dedupe(findings)
 
 
 def check_excluded_wording(content: dict,
@@ -626,4 +732,8 @@ def run_asset_checks(content: dict, channel: str, asset_type: str,
         *check_unavailable_features(content, ctx),
         *check_cta_consistency(content, ctx),
         *check_character_limits(content, channel, asset_type),
+        # Last: it is the only check here that reports on something
+        # the copy got RIGHT but may have got right about a stale
+        # fact, so it belongs below the findings about the copy.
+        *check_claim_freshness(content, ctx),
     ]

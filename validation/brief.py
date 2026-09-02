@@ -36,6 +36,7 @@ from db import cursor, fetch_one, pool
 from validation import context as vctx
 from validation.ai import ai_review_brief
 from validation.checks import (
+    check_claim_freshness,
     check_excluded_wording,
     check_missing_brief_fields,
     check_prohibited_wording,
@@ -106,6 +107,10 @@ async def validate(campaign_ref: str, *, validated_by: str,
         # rather than in every asset generated from it.
         *check_excluded_wording(content, ctx),
         *check_prohibited_wording(content, ctx),
+        # A brief that quotes a stale figure in its proof_points
+        # puts that figure into every asset generated from it, so
+        # stage 3 is the cheapest place to notice.
+        *check_claim_freshness(content, ctx),
         # Campaign-type mixing, CTA and features apply to the brief too; the
         # character-limit check does not (a brief has no channel), so
         # run_asset_checks is called with a channel that has no limits and

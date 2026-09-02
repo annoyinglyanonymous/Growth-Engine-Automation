@@ -181,5 +181,24 @@ class Settings(BaseSettings):
     #: short enough that a forgotten browser on a shared desk expires.
     session_max_age: int = 43_200
 
+    #: How long an approved claim stays trusted without being looked at again.
+    #:
+    #: The failure this addresses is silent, not loud: an approved claim is
+    #: asserted as fact for ever, and nothing in the system notices when the
+    #: world moves. There are seven exact Agency Height prices in public.claims
+    #: with no expiry on any of them.
+    #:
+    #: A WARNING and not a blocker, and not an effective_until date. A true
+    #: claim must not stop being usable because a date I invented passed --
+    #: that would disable correct copy on a schedule nobody chose. What the
+    #: reviewer needs is to be told which figures are old while they are
+    #: looking at the asset that quotes them.
+    claim_review_days: int = 180
+
+    #: Pricing separately, and shorter. A price is the claim most likely to
+    #: change without anyone thinking to update marketing, and the most
+    #: damaging to get wrong in front of a customer.
+    claim_review_days_pricing: int = 90
+
 
 settings = Settings()  # type: ignore[call-arg]
