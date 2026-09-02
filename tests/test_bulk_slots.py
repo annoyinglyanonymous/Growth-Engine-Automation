@@ -21,7 +21,8 @@ import pytest
 
 from generators import pipeline
 from generators.pipeline import (bulk_skip_reason,
-                                 newer_pending_versions)
+                                 newer_pending_versions,
+                                 slot_winners)
 
 SLOT = ("channel", "asset_type", "variant", "position")
 
@@ -262,3 +263,33 @@ def test_only_the_versioned_tables_are_rejectable_here():
     with decided_by. Adding them here would give one action two code paths."""
     assert set(pipeline._REJECTABLE) == {"campaign_assets",
                                          "campaign_strategies"}
+
+
+# --------------------------------------------------------------------------
+# slot_winners: who beat whom
+# --------------------------------------------------------------------------
+
+def test_slot_winners_names_the_row_that_won():
+    assert slot_winners([row("a", 2), row("b", 4)], "review", SLOT) == {
+        "a": "b"}
+
+
+def test_slot_winners_and_newer_pending_versions_agree():
+    """Two views of one ranking. If they can disagree, approve_many can
+    report a version number from one and a winner from the other."""
+    rows = [row("a", 1), row("b", 2), row("c", 5),
+            row("d", 3, variant="B"), row("e", 9, variant="B")]
+    overtaken = newer_pending_versions(rows, "review", SLOT)
+    winners = slot_winners(rows, "review", SLOT)
+    assert set(overtaken) == set(winners)
+    by_id = {r["id"]: r for r in rows}
+    for rid, version in overtaken.items():
+        assert by_id[winners[rid]]["version_number"] == version
+
+
+def test_the_winner_of_a_single_row_slot_is_nobody():
+    assert slot_winners([row("a", 1)], "review", SLOT) == {}
+
+
+def test_slot_winners_needs_slot_columns():
+    assert slot_winners([{"id": "a", "status": "draft"}], "draft", ()) == {}

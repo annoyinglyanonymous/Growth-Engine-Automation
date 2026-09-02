@@ -194,9 +194,26 @@ forbids it.
 
 Agency Height's governance is staged and provably inert: `fetch_claims`
 returns 4 prohibited and 6 restricted rules, and **zero assertable claims**.
-Its one product is `approved_for_marketing = false`. Turning it on is a
-factual attestation that a human reviewed the claims, so it is one deliberate
-statement, quoted in `migrations/017`:
+Its one product is `approved_for_marketing = false`.
+
+Before enabling it, generate the review worksheet:
+
+```
+python scripts/claim_review.py --brand agencyheight
+```
+
+That writes `docs/agencyheight-claim-review.md` from the live database — every
+claim with its exact wording, source URL and the reason it was restricted,
+`pending_review` first. Annotate it and hand it back; it becomes a migration,
+so the decisions leave a diff instead of being typed into a SQL console.
+
+Note what the worksheet points out: **12 Agency Height claims are already
+`approved` and still produce nothing**, because the product gate is shut. They
+all become assertable the moment it opens, which makes enabling the product a
+larger step than one boolean suggests.
+
+Turning it on is a factual attestation that a human reviewed those claims, so
+it is one deliberate statement, quoted in `migrations/017`:
 
 ```sql
 update public.products set approved_for_marketing = true
@@ -232,7 +249,7 @@ database. It is self-tested against deliberate mutations.
 ## Tests
 
 ```
-python -m pytest                  # 433 tests, about 11 seconds
+python -m pytest                  # 437 tests, about 11 seconds
 python -m pytest -m dbtest        # only the ones needing a live database
 ```
 

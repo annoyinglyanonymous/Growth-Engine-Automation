@@ -250,6 +250,40 @@ _QA_SKIP_REASON = {
 }
 
 
+def _rank_slots(rows, from_status: str,
+                slot: tuple[str, ...]) -> dict[tuple, dict]:
+    """slot key -> the newest row in it that is still a candidate."""
+    best: dict[tuple, dict] = {}
+    for row in rows:
+        if row["status"] != from_status:
+            continue
+        key = tuple(row[c] for c in slot)
+        if (key not in best
+                or row["version_number"] > best[key]["version_number"]):
+            best[key] = row
+    return best
+
+
+def slot_winners(rows, from_status: str,
+                 slot: tuple[str, ...]) -> dict[str, str]:
+    """-> {overtaken row id: id of the row that beat it}.
+
+    Same ranking as newer_pending_versions, different view of it.
+    approve_many needs it to tell "still waiting on v3" apart from
+    "retired, because v3 was approved a moment ago" -- those read the
+    same to the reviewer and mean opposite things.
+    """
+    if not slot:
+        return {}
+    best = _rank_slots(rows, from_status, slot)
+    return {
+        str(row["id"]): str(best[tuple(row[c] for c in slot)]["id"])
+        for row in rows
+        if row["status"] == from_status
+        and row["id"] != best[tuple(row[c] for c in slot)]["id"]
+    }
+
+
 def newer_pending_versions(rows, from_status: str,
                            slot: tuple[str, ...]) -> dict[str, int]:
     """-> {row id: the newer pending version number in its slot}.
@@ -272,18 +306,13 @@ def newer_pending_versions(rows, from_status: str,
     """
     if not slot:
         return {}
-    pending = [r for r in rows if r["status"] == from_status]
-    newest: dict[tuple, dict] = {}
-    for row in pending:
-        key = tuple(row[c] for c in slot)
-        best = newest.get(key)
-        if best is None or row["version_number"] > best["version_number"]:
-            newest[key] = row
+    newest = _rank_slots(rows, from_status, slot)
     return {
         str(row["id"]): newest[tuple(row[c] for c in slot)][
             "version_number"]
-        for row in pending
-        if row["id"] != newest[tuple(row[c] for c in slot)]["id"]
+        for row in rows
+        if row["status"] == from_status
+        and row["id"] != newest[tuple(row[c] for c in slot)]["id"]
     }
 
 
@@ -423,6 +452,7 @@ async def approve_many(table: str, campaign_id: str, approved_by: str) -> dict:
     # chosen rather than the one the loop happened to reach last.
     overtaken = newer_pending_versions(rows, rules["from_status"],
                                        slot)
+    beat_by = slot_winners(rows, rules["from_status"], slot)
 
     approved: list[dict] = []
     skipped: list[dict] = []
@@ -442,6 +472,10 @@ async def approve_many(table: str, campaign_id: str, approved_by: str) -> dict:
         if table in _SUPERSEDE_SCOPE:
             result = await approve(table, str(row["id"]), approved_by)
             entry["superseded"] = result.get("superseded", 0)
+            # Older pending versions this approval retired. Reported
+            # rather than dropped: it is the count that explains why
+            # rows the reviewer could see a moment ago are gone.
+            entry["stale"] = result.get("stale", 0)
         else:
             # Angles and concepts approve additively -- several can stand at
             # once, because the next stage fans out across all of them. That
@@ -457,6 +491,18 @@ async def approve_many(table: str, campaign_id: str, approved_by: str) -> dict:
                                     "reason": "changed while approving"})
                     continue
         approved.append(entry)
+
+    # "v3 is a newer version awaiting review" is true when the batch
+    # starts and misleading by the time it is read: v3 was approved
+    # in this same batch, so approve() already set this row to
+    # 'superseded'. Left alone, the report sends a reviewer looking
+    # for something already decided.
+    approved_ids = {entry["id"] for entry in approved}
+    for entry in skipped:
+        version = overtaken.get(entry["id"])
+        if version is not None and beat_by.get(
+                entry["id"]) in approved_ids:
+            entry["reason"] = f"retired -- v{version} was approved"
 
     return {
         "table": table,
