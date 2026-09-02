@@ -178,16 +178,25 @@ def test_company_facts_have_no_product_parent(company_claims):
 
 
 @pytest.mark.dbtest
-def test_the_prohibited_company_claims_kept_their_trigger_phrases(
+def test_the_company_claims_that_need_trigger_phrases_have_them(
         company_claims):
-    """015 changes a parent, not a payload. 'licensed in all 50 states' has to
-    stay enforceable -- and it is now enforceable brand-wide, which is the
-    point: it is false in an M&A email too."""
-    prohibited = [c for c in company_claims if c["status"] == "prohibited"]
-    assert prohibited, "expected prohibited company claims"
-    for c in prohibited:
+    """015 changed a parent, not a payload. 023 changed a status, not a
+    payload. Both had to leave the trigger phrases alone.
+
+    An APPROVED claim needs none: nobody paraphrases a sentence you are
+    allowed to say. Everything else does -- prohibited, restricted, or parked
+    at pending_review by 023 -- because 'Licensed in all 50 states' has to be
+    caught without matching the claim row verbatim.
+
+    That the parked rows kept their phrases is what makes 023 reversible in
+    practice: re-activating one is a single UPDATE and it is immediately
+    enforceable again, rather than needing the phrases written from scratch.
+    """
+    needs_phrases = [c for c in company_claims if c["status"] != "approved"]
+    assert needs_phrases, "expected non-approved company claims"
+    for c in needs_phrases:
         assert c["trigger_phrases"], (
-            f"prohibited claim lost its phrases: {c['claim_text'][:60]!r}")
+            f"{c['status']} claim has no phrases: {c['claim_text'][:60]!r}")
 
 
 # --------------------------------------------------------------------------
@@ -214,9 +223,20 @@ def test_product_narrowed_retrieval_still_offers_brand_claims(schema, run_db):
 
 @pytest.mark.dbtest
 def test_brand_claims_reach_a_different_product_too(schema, run_db):
-    """The generalisation. agency-acquisition is a different product and is
-    approved_for_marketing = false, so its own approved claims are correctly
-    withheld -- but the brand's prohibited facts must still arrive."""
+    """The generalisation, and the sharpest demonstration of the gate.
+
+    agency-acquisition is approved_for_marketing = false, so its own APPROVED
+    claims are correctly withheld. A brand-level claim has no product to gate
+    on, so it arrives anyway -- which is not a hole: the approval on the row
+    IS the decision, and there is no product whose marketability could
+    sensibly switch off "licensed in 48 states".
+
+    Asserted on an approved claim rather than a prohibited one because 023
+    parked every prohibition. That makes this a stronger test than it was:
+    withholding a prohibition would be merely unhelpful, while withholding a
+    brand fact is the exact hole 015 closed -- an M&A brief could not see one
+    of the strongest proof points the brand owns.
+    """
     _require(schema)
     from kb_context import fetch_claims
 
@@ -224,11 +244,23 @@ def test_brand_claims_reach_a_different_product_too(schema, run_db):
         return await fetch_claims(RENEGADE, "agency-acquisition")
 
     claims = run_db(load())
-    prohibited = " ".join(c["claim_text"] for c in claims
-                          if c["status"] == "prohibited")
-    assert "all 50 states" in prohibited, (
-        "a brand-wide prohibited claim did not reach an M&A query -- this is "
-        "the exact hole 015 closes")
+    brand_level = [c for c in claims if c["product_slug"] is None]
+    assert brand_level, (
+        "no brand-level claim reached an M&A query -- this is the exact hole "
+        "015 closes")
+
+    approved = " ".join(c["claim_text"] for c in brand_level
+                        if c["status"] == "approved")
+    assert "48 states" in approved, (
+        "an approved brand fact did not survive product narrowing onto a "
+        "product that is not approved for marketing")
+
+    # The other half of the same gate: the product's own approved claims must
+    # NOT arrive, or the outer gate is doing nothing.
+    assert not [c for c in claims
+                if c["status"] == "approved"
+                and c["product_slug"] == "agency-acquisition"], (
+        "an approved claim escaped the product gate")
 
 
 @pytest.mark.dbtest
