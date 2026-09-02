@@ -33,8 +33,8 @@ If it instead says identity is not configured, every approval is recorded as
 `OPERATORS` to fix it.
 
 ```
-SCHEMA: 022_asset_rejection.sql is not applied
-        breaks: the Reject button on an asset -- ...
+SCHEMA: 023_operator_exclusions.sql is not applied
+        breaks: brief validation, asset QA and every generator -- ...
 ```
 
 That means code and database have drifted. The app still starts — `/health`,
@@ -79,6 +79,10 @@ The UI is one caller; the guards live in the modules, not the routes.
 
 Add `--ai` to validation or QA for the judgement tier (one model call). Add
 `--dry-run` to see findings without writing.
+
+**Do not use** in the nav sits outside the stages: it is where you declare
+wording that must never appear, and it constrains every stage below. See
+[Saying what not to say](#saying-what-not-to-say).
 
 Stage 2 (knowledge retrieval) runs inside every generator rather than as a
 step. Stage 10 (version history) is a by-product: every asset carries the
@@ -179,6 +183,49 @@ the whole design.
 Two nested gates let a claim through: the product must be
 `approved_for_marketing`, then the claim itself must be `approved`.
 
+### Saying what not to say
+
+Everything above is *derived* — read out of the corpus, then reviewed. There is
+a second kind of prohibition that is simply an instruction, and it does not
+need a source or a status:
+
+```
+Do not use  →  free forever
+               guaranteed leads
+               $20,000
+```
+
+- **`public.brand_exclusions`** — the standing list, per brand, at
+  **/exclusions**. Applies to every campaign for that brand.
+- **`campaigns.do_not_mention`** — the same thing on one brief, for a one-off
+  that is not a standing rule.
+
+Both are **blockers**: any asset containing the wording fails QA and cannot be
+approved. The phrases are also stated to the model *before* it sees any
+evidence, as a flat instruction with no rationale attached — a reason invites
+the model to decide the reason does not apply here.
+
+Two lists rather than one because they fail differently. A standing exclusion
+forgotten on a brief is a compliance problem; a one-off promoted to a standing
+rule quietly narrows every future campaign. A blocker says which list caught
+it, so you know whether to argue with the brief or with the brand.
+
+Matching ignores case and extra whitespace and anchors on whole words, so an
+exclusion on `ad` will not flag "adjuster". Exclusions shorter than two
+characters are ignored: `contains_phrase` is word-boundary anchored, so "a"
+genuinely is a word in "a nice offer", and one keystroke would otherwise block
+every asset in a campaign.
+
+Retiring an exclusion keeps the row and records who ended it. Re-adding a
+retired phrase revives it.
+
+**Nothing is prohibited by default.** Migration 023 parked the twelve
+prohibited claims and twelve blocker rules that were originally derived from
+the corpus rather than decided by anyone — claims to `pending_review`, rules to
+`inactive`, both reversible with one `UPDATE`. Until you add something, no
+wording is blocked on an operator's instruction. That is deliberate, and it is
+a real reduction in cover: `$20,000` in a brief passes validation clean today.
+
 Deterministic checks — prohibited wording, price consistency, CTA
 consistency, unavailable features, campaign-type mixing, missing brief fields,
 character limits — run with no model involved and can produce no false
@@ -249,7 +296,7 @@ database. It is self-tested against deliberate mutations.
 ## Tests
 
 ```
-python -m pytest                  # 437 tests, about 11 seconds
+python -m pytest                  # 465 tests, about 11 seconds
 python -m pytest -m dbtest        # only the ones needing a live database
 ```
 

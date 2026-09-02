@@ -93,6 +93,24 @@
       <textarea name="additional_context"></textarea></label>
   </fieldset>
 
+  {#- 023. The one place in this form where what you type is an instruction
+      rather than material: everything above feeds the copy, this constrains
+      it. Deliberately its own fieldset for that reason. -#}
+  <fieldset>
+    <legend>Do not mention</legend>
+    <p class="small muted" style="margin:0 0 12px">
+      Words and phrases this campaign must not use. Each one becomes a
+      blocker: any asset containing it fails QA and cannot be approved. For
+      wording that should never be used for this brand at all, use
+      <a href="/exclusions">the standing list</a> instead.
+    </p>
+    <label>Excluded wording
+      <span class="hint">&mdash; one per line, or comma separated</span>
+      <textarea name="do_not_mention"
+        placeholder="free forever&#10;guaranteed leads&#10;$20,000"></textarea>
+    </label>
+  </fieldset>
+
   <button type="submit" data-busy="Filing&hellip;">File brief</button>
   <a href="/" class="muted small" style="margin-left:12px">Cancel</a>
 </form>

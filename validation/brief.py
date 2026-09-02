@@ -36,6 +36,7 @@ from db import cursor, fetch_one, pool
 from validation import context as vctx
 from validation.ai import ai_review_brief
 from validation.checks import (
+    check_excluded_wording,
     check_missing_brief_fields,
     check_prohibited_wording,
     run_asset_checks,
@@ -99,6 +100,11 @@ async def validate(campaign_ref: str, *, validated_by: str,
 
     findings = [
         *check_missing_brief_fields(ctx),
+        # The brief is checked as copy because it becomes copy. An
+        # exclusion typed into do_not_mention on the same brief that
+        # then quotes it in the offer is worth catching at stage 3
+        # rather than in every asset generated from it.
+        *check_excluded_wording(content, ctx),
         *check_prohibited_wording(content, ctx),
         # Campaign-type mixing, CTA and features apply to the brief too; the
         # character-limit check does not (a brief has no channel), so

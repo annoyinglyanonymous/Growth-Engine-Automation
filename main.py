@@ -117,6 +117,12 @@ REQUIRED_SCHEMA: dict[str, dict] = {
         "breaks": "the Reject button on an asset -- the only way to turn "
                   "down a revision without approving it",
     },
+    "023_operator_exclusions.sql": {
+        "tables": ("brand_exclusions",),
+        "columns": (("campaigns", "do_not_mention", "ARRAY"),),
+        "breaks": "brief validation, asset QA and every generator -- the "
+                  "exclusion list is read on every one",
+    },
 }
 
 

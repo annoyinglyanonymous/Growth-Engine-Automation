@@ -101,11 +101,22 @@ async def context_for(campaign: dict, *, stage_query: str,
         campaign.get("target_audience") or "",
         campaign.get("customer_problem") or "",
     ]))[:500]
-    return await build_context(
+    ctx = await build_context(
         campaign["brand_slug"], query,
         token_budget=token_budget,
         product_slug=campaign["product_slug"],
     )
+    # build_context knows the brand, not the campaign, so the brief's
+    # own do_not_mention is added here -- the one place every
+    # generator already passes through. Appended rather than merged
+    # into the brand list so a blocker can still say which one
+    # caught the line.
+    ctx["exclusions"] = list(ctx.get("exclusions") or []) + [
+        {"phrase": p, "note": None, "scope": "brief"}
+        for p in (campaign.get("do_not_mention") or [])
+        if (p or "").strip()
+    ]
+    return ctx
 
 
 def brief_block(campaign: dict) -> str:

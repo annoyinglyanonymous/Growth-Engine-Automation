@@ -81,6 +81,24 @@ def to_system_prompt(ctx: dict) -> str:
         out += ["## Brand primer", ctx["primer"], ""]
 
     # ---- governance ------------------------------------------------------
+    # Operator exclusions come FIRST, ahead of the reviewed rules.
+    # They are the one instruction in this prompt that a person typed
+    # directly at the model rather than deriving from the corpus, and
+    # if anything below is going to be weighed against context, it
+    # should not be this. Stated as a flat prohibition with no
+    # reasoning attached, because an instruction with a rationale
+    # invites the model to decide the rationale does not apply here.
+    if ctx.get("exclusions"):
+        out += ["", "## Words and phrases you must NOT use",
+                "These are explicit instructions from the person "
+                "requesting this work. There is no context in which "
+                "they may be used, paraphrased, or implied."]
+        for e in ctx["exclusions"]:
+            line = f"- {e['phrase']}"
+            if e.get("note"):
+                line += f"  ({e['note']})"
+            out.append(line)
+
     if ctx.get("rules"):
         out += ["", "## Rules you must follow"]
         out += [f"- [{r['severity'].upper()}] {r['rule']}" for r in ctx["rules"]]

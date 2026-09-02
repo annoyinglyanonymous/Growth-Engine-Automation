@@ -27,6 +27,9 @@ TEXT_FIELDS = (
 #: text[] columns. Submitted as newline- or comma-separated text by the form.
 ARRAY_FIELDS = (
     "supporting_benefits", "proof_points", "channels", "geographic_target",
+    # 023. One-off exclusions for this campaign; brand_exclusions
+    # holds the standing ones.
+    "do_not_mention",
 )
 
 LIST_SQL = """

@@ -53,6 +53,7 @@ from fastapi.templating import Jinja2Templates
 
 import auth
 import campaigns
+import exclusions
 import lifecycle
 from generators import angles as gen_angles
 from generators import concepts as gen_concepts
@@ -261,6 +262,50 @@ async def index(request: Request, msg: str | None = None,
     })
 
 
+# --------------------------------------------------------------------------
+# The standing do-not-use list (023)
+# --------------------------------------------------------------------------
+
+@router.get("/exclusions", response_class=HTMLResponse)
+async def exclusions_page(request: Request, msg: str | None = None,
+                          kind: str = "ok"):
+    return templates.TemplateResponse(request, "exclusions.html", {
+        "rules": await exclusions.for_brand(),
+        "brands": await exclusions.brands(),
+        "msg": msg, "kind": kind, **_chrome(request),
+    })
+
+
+@router.post("/exclusions")
+async def add_exclusion(request: Request,
+                        operator: str = Depends(auth.require_operator),
+                        brand_slug: str = Form(...),
+                        phrase: str = Form(...),
+                        note: str = Form("")):
+    try:
+        row = await exclusions.add(brand_slug, phrase, operator, note)
+    except exclusions.ExclusionProblem as exc:
+        return _flash("/exclusions", str(exc), "error")
+    return _flash("/exclusions",
+                  f"{row['phrase']!r} will now block any asset that uses it",
+                  "ok")
+
+
+# The literal comes last here and there is no other route at this depth under
+# /exclusions, so nothing to shadow -- but see the overlap test.
+@router.post("/exclusions/{exclusion_id}/retire")
+async def retire_exclusion(request: Request, exclusion_id: str,
+                           operator: str = Depends(auth.require_operator)):
+    try:
+        row = await exclusions.retire(exclusion_id, operator)
+    except exclusions.ExclusionProblem as exc:
+        return _flash("/exclusions", str(exc), "error")
+    if row.get("already"):
+        return _flash("/exclusions", "already retired", "warn")
+    return _flash("/exclusions",
+                  f"{row['phrase']!r} is no longer enforced", "ok")
+
+
 @router.get("/campaigns/new", response_class=HTMLResponse)
 async def new_campaign(request: Request, msg: str | None = None,
                        kind: str = "ok"):
@@ -290,6 +335,7 @@ async def create_campaign(
     primary_kpi: str = Form(""),
     geographic_target: str = Form(""),
     additional_context: str = Form(""),
+    do_not_mention: str = Form(""),
 ):
     try:
         row = await campaigns.create(locals(), created_by=operator)

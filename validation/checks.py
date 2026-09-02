@@ -77,6 +77,12 @@ class CheckContext:
     allowed_themes: list[str] = field(default_factory=list)
     #: kb.conflicts stale_values, flattened.
     stale_values: list[str] = field(default_factory=list)
+    #: Operator-declared exclusions (023), from both lists, each as
+    #: {phrase, note, scope}. scope is "brand" or "brief" and exists
+    #: only so a blocker can say which list caught the line -- the
+    #: reviewer needs to know whether to argue with the brief or with
+    #: the brand. Enforcement is identical for both.
+    exclusions: list[dict] = field(default_factory=list)
 
 
 # --------------------------------------------------------------------------
@@ -143,6 +149,60 @@ def fields_of(content: dict) -> list[tuple[str, str]]:
 # --------------------------------------------------------------------------
 # 1. Prohibited wording
 # --------------------------------------------------------------------------
+
+#: Shortest exclusion that will be enforced, mirroring 023's CHECK on
+#: brand_exclusions.phrase. A constant so the two cannot drift: if the schema
+#: relaxes, this is the other place to look.
+MIN_EXCLUSION_CHARS = 2
+
+
+def check_excluded_wording(content: dict,
+                           ctx: CheckContext) -> list[Finding]:
+    """Wording the operator said not to use (023).
+
+    Separate from check_prohibited_wording on purpose, and it is the
+    difference that matters: a prohibited CLAIM is a judgement about
+    what is true, reached by review. An exclusion is an instruction,
+    given by a person, needing no justification. Merging them would
+    mean an operator typing "free forever" had to be modelled as a
+    claim with a status and a source, which is both wrong and enough
+    friction that nobody would do it.
+
+    A blocker, not a warning. "Do not say this" is not advice, and a
+    warning that can be clicked past is not a prohibition.
+    """
+    findings: list[Finding] = []
+    for name, text in fields_of(content):
+        for rule in ctx.exclusions:
+            phrase = (rule.get("phrase") or "").strip()
+            # Enforced here and not only in 023, because the two lists have
+            # different guards: brand_exclusions has a CHECK, but
+            # campaigns.do_not_mention is a text[] and Postgres cannot express
+            # a per-element CHECK without a subquery. So a single character
+            # typed into the brief reaches this function -- and
+            # contains_phrase is word-boundary anchored, so "a" genuinely IS
+            # a word in "a nice offer". One keystroke would block every asset
+            # in the campaign, with a finding nobody could diagnose.
+            if len(phrase) < MIN_EXCLUSION_CHARS:
+                continue
+            if not contains_phrase(text, phrase):
+                continue
+            where = ("the brief" if rule.get("scope") == "brief"
+                     else "this brand")
+            findings.append(Finding(
+                check="excluded_wording", severity="blocker",
+                field_name=name,
+                message=f"Uses wording excluded on {where}.",
+                evidence=phrase,
+                # The operator's own note if they left one. Falling
+                # back to a restatement rather than None keeps every
+                # blocker actionable -- a finding with no remedy is a
+                # complaint.
+                remedy=(rule.get("note")
+                        or f"Rewrite without {phrase!r}."),
+            ))
+    return findings
+
 
 def check_prohibited_wording(content: dict, ctx: CheckContext) -> list[Finding]:
     """Prohibited claims and known-stale figures, per field.
@@ -557,6 +617,10 @@ def run_asset_checks(content: dict, channel: str, asset_type: str,
     """Every per-asset check. Price consistency is excluded deliberately --
     it is a cross-asset check and lives in the runner."""
     return [
+        # First, because an operator instruction outranks an inferred
+        # one: if a line breaks both an exclusion and something
+        # subtler, the exclusion is the finding the reviewer acts on.
+        *check_excluded_wording(content, ctx),
         *check_prohibited_wording(content, ctx),
         *check_campaign_type_mixing(content, ctx),
         *check_unavailable_features(content, ctx),

@@ -274,3 +274,74 @@ def test_blocked_asset_offers_no_approve_button(env):
     # The only Approve text on the page would come from an asset card; there
     # are no other approvable objects in this fixture.
     assert ">\n        Approve</button>" not in out
+
+
+# --------------------------------------------------------------------------
+# The standing do-not-use list (023)
+# --------------------------------------------------------------------------
+
+def _exclusion(**kw) -> dict:
+    from datetime import datetime, timezone
+    base = {
+        "id": "e1", "phrase": "free forever", "note": "Legal asked us to.",
+        "added_by": "alice@example.com",
+        "added_at": datetime(2026, 9, 2, tzinfo=timezone.utc),
+        "active": True, "retired_by": None, "retired_at": None,
+        "brand_slug": "renegade", "brand_name": "Renegade Insurance",
+    }
+    base.update(kw)
+    return base
+
+
+def test_exclusions_page_renders_empty(env):
+    """The empty state has to say what the consequence of empty IS. A blank
+    table reads as "nothing to see"; the truth is "no wording is blocked"."""
+    out = env.get_template("exclusions.html").render(
+        rules=[], brands=[{"slug": "renegade", "name": "Renegade"}],
+        msg=None, kind="ok")
+    # Whitespace-normalised: the sentence wraps in the template, and an
+    # assertion that depends on where it wraps breaks on reflow.
+    flat = " ".join(out.split())
+    assert "Nothing excluded yet" in flat
+    assert "no wording is blocked" in flat
+    assert "{{" not in out
+
+
+def test_exclusions_page_lists_an_active_rule(env):
+    out = env.get_template("exclusions.html").render(
+        rules=[_exclusion()],
+        brands=[{"slug": "renegade", "name": "Renegade"}],
+        msg=None, kind="ok")
+    assert "free forever" in out
+    assert "Legal asked us to." in out
+    assert "alice@example.com" in out
+    assert "/retire" in out
+
+
+def test_a_retired_rule_shows_who_retired_it_and_offers_no_button(env):
+    """Retired rows are kept so the record survives, which only helps if the
+    page says who ended it -- and it must not offer to retire it twice."""
+    from datetime import datetime, timezone
+    out = env.get_template("exclusions.html").render(
+        rules=[_exclusion(active=False, retired_by="bob@example.com",
+                          retired_at=datetime(2026, 9, 3,
+                                              tzinfo=timezone.utc))],
+        brands=[{"slug": "renegade", "name": "Renegade"}],
+        msg=None, kind="ok")
+    assert "retired" in out
+    assert "bob@example.com" in out
+    assert "/retire" not in out
+
+
+def test_the_brief_form_offers_a_per_campaign_exclusion_field(env):
+    out = env.get_template("new.html").render(
+        products=[{"id": "p1", "name": "Franchise Program",
+                   "brand_name": "Renegade", "approved_for_marketing": False,
+                   "brand_slug": "renegade", "primary_cta": "Talk"}],
+        campaign_types=[{"id": "t1", "name": "Franchise",
+                         "brand_slug": "renegade"}],
+        msg=None, kind="ok")
+    assert 'name="do_not_mention"' in out
+    # And it must point at the standing list, or every one-off gets typed
+    # into every brief for ever.
+    assert "/exclusions" in out

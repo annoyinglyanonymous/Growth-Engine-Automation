@@ -259,11 +259,16 @@ def test_only_signin_and_signout_are_reachable_without_an_identity():
     }
 
 
+#: Path prefixes that belong on the gated router. An allowlist rather than a
+#: wildcard, so adding a screen means saying out loud that it needs the gate.
+GATED_PREFIXES = ("/campaigns", "/exclusions")
+
+
 def test_every_campaign_route_is_gated():
     gated = {r.path for r in ui.router.routes}
     assert gated, "the gated router is empty -- the gate is not mounted"
     for path in gated:
-        assert path == "/" or path.startswith("/campaigns"), path
+        assert path == "/" or path.startswith(GATED_PREFIXES), path
     # Spot-check that the writes really are here rather than on the open one.
     for path in ("/campaigns", "/campaigns/{campaign_id}/validate",
                  "/campaigns/{campaign_id}/qa"):
@@ -318,8 +323,12 @@ def test_preflight_names_migrations_that_exist():
         for table in spec.get("tables", ()):
             assert table in sql, f"{filename} never mentions table {table}"
         for table, column, want in needed:
+            # These are information_schema.columns.data_type values, not
+            # Postgres type names, and the two differ where it matters:
+            # text[] reports as 'ARRAY' (udt_name '_text'). Getting this
+            # wrong makes the preflight report a present column as missing.
             assert want in ("text", "uuid", "boolean", "integer",
-                            "timestamp with time zone"), want
+                            "timestamp with time zone", "ARRAY"), want
             # A column the code needs must actually be added by that file.
             assert column in sql, f"{filename} never mentions {column}"
             assert table in sql, f"{filename} never mentions {table}"

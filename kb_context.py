@@ -124,6 +124,27 @@ async def require_brand(slug: str) -> dict:
     return row
 
 
+async def fetch_exclusions(brand_slug: str) -> list[dict]:
+    """The operator's standing do-not-use list for a brand (023).
+
+    No product scoping and no gate. A claim is a statement about the business
+    and is scoped to the product it describes; an exclusion is an instruction
+    about wording, so it applies wherever those words could appear. Narrowing
+    it by product would mean "never say free forever" quietly stopped applying
+    to the next product added.
+
+    Only active rows. A retired exclusion is kept for the record -- "we used
+    to forbid this and stopped" -- and must not still be enforced.
+    """
+    return await fetch_all(
+        "select e.phrase, e.note "
+        "from public.brand_exclusions e "
+        "join public.brands b on b.id = e.brand_id "
+        "where b.slug = %s and e.active "
+        "order by e.phrase",
+        (brand_slug,))
+
+
 async def fetch_claims(brand_slug: str,
                        product_slug: str | None = None) -> list[dict]:
     """Governed claims for a brand, reached through products.
@@ -364,6 +385,12 @@ async def build_context(
 
     rules = brand_ctx.get("rules", [])
     claims = await fetch_claims(brand, product_slug)
+    # Brand-scoped only. A brief's own exclusions are added by
+    # generators.pipeline.context_for, which is the layer that knows
+    # which campaign this is.
+    exclusions = [{"phrase": e["phrase"], "note": e["note"],
+                   "scope": "brand"}
+                  for e in await fetch_exclusions(brand)]
 
     used = 0
     primer = None
@@ -439,6 +466,7 @@ async def build_context(
         "corpus": brand_ctx.get("corpus"),
         "rules": rules,
         "claims": claims,
+        "exclusions": exclusions,
         "tokens": {"budget": budget, "used": used, "estimated": True},
         "dropped": {"over_budget": skipped_budget,
                     "per_document_cap": skipped_doc_cap,

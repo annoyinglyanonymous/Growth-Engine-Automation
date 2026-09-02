@@ -63,6 +63,16 @@ order by name
 #: Stale values from every conflict for the brand, resolved or not. A resolved
 #: conflict is exactly the case where the stale value must still be caught --
 #: $20,000 is resolved AND still published.
+#: The operator's standing list for the brand (023). No product
+#: scoping and no gate: an exclusion is an instruction about wording,
+#: so it applies wherever the wording could appear.
+EXCLUSIONS_SQL = """
+select e.phrase, e.note
+from public.brand_exclusions e
+where e.brand_id = %s and e.active
+order by e.phrase
+"""
+
 STALE_SQL = """
 select coalesce(k.stale_values, '{}') as stale_values
 from kb.conflicts k
@@ -92,6 +102,15 @@ async def load(campaign_ref: str) -> tuple[dict, CheckContext]:
     stale_rows = await fetch_all(STALE_SQL, (campaign["brand_slug"],))
     stale = [v for r in stale_rows for v in (r["stale_values"] or [])]
 
+    # Both lists, flattened, each tagged with where it came from.
+    # The checks treat them identically; only the message differs.
+    standing = await fetch_all(EXCLUSIONS_SQL, (campaign["brand_id"],))
+    exclusions = [{"phrase": r["phrase"], "note": r["note"],
+                   "scope": "brand"} for r in standing]
+    exclusions += [{"phrase": p, "note": None, "scope": "brief"}
+                   for p in (campaign.get("do_not_mention") or [])
+                   if (p or "").strip()]
+
     ctx = CheckContext(
         claims=claims,
         features=features,
@@ -99,5 +118,6 @@ async def load(campaign_ref: str) -> tuple[dict, CheckContext]:
         prohibited_themes=list(campaign.get("prohibited_themes") or []),
         allowed_themes=list(campaign.get("allowed_themes") or []),
         stale_values=stale,
+        exclusions=exclusions,
     )
     return campaign, ctx
