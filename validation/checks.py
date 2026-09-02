@@ -619,6 +619,34 @@ def check_missing_brief_fields(ctx: CheckContext) -> list[Finding]:
                     "governed to lean on.",
         ))
 
+    # 025. A WARNING, not a blocker, for two reasons: campaigns filed before
+    # the column existed must not fail a re-validation retroactively, and a
+    # pure awareness campaign may genuinely have nowhere to send anyone. The
+    # cost of ignoring it is stated plainly -- unmeasurable is the word.
+    destination = (campaign.get("destination_url") or "").strip()
+    if channels and not destination:
+        findings.append(Finding(
+            check="missing_brief_field", severity="warning",
+            field_name="destination_url",
+            message="Brief has no destination URL, so approved assets will "
+                    "carry no tracked link and the campaign ships "
+                    "unmeasurable.",
+            remedy="Set destination_url on the brief before approving "
+                   "assets; the link is stamped at approval.",
+        ))
+    elif "utm_" in destination:
+        # Pre-tagged destinations happen when someone pastes a link out of an
+        # old campaign. Ours replace theirs at approval -- saying so now beats
+        # a report next quarter with half the traffic under a ghost campaign.
+        findings.append(Finding(
+            check="pretagged_destination", severity="warning",
+            field_name="destination_url",
+            message="The destination URL already carries utm parameters; "
+                    "they will be replaced per asset at approval.",
+            evidence=destination,
+            remedy="Use the bare landing URL as the destination.",
+        ))
+
     # Governance emptiness is a finding, not silence. A brief that validates
     # cleanly against zero approved claims has not really been checked.
     if not any(c.get("status") == "approved" for c in ctx.claims):

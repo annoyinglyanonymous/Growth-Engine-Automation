@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import json
 
+import tracking
 from db import cursor, fetch_all, fetch_one
 from kb_context import build_context
 
@@ -173,6 +174,30 @@ _SUPERSEDE_SCOPE = {
 }
 
 
+async def _tracked_link(cur, row: dict) -> str | None:
+    """The utm-tagged link this asset ships with, or None when there is
+    nothing to tag.
+
+    None is a normal outcome, not a failure: the brief may have no
+    destination_url (pure brand awareness, or filed before 025), and a channel
+    without a utm convention (google_ads, until it is built) has no defensible
+    source/medium to invent. Approval proceeds either way -- a missing link is
+    the UI's hint to show, never a reason a reviewer cannot sign off copy.
+    """
+    if row["channel"] not in tracking.CHANNEL_UTM:
+        return None
+    await cur.execute(
+        "select name, destination_url from public.campaigns where id = %s",
+        (row["campaign_id"],))
+    camp = await cur.fetchone()
+    if not camp or not camp["destination_url"]:
+        return None
+    return tracking.tracked_url(
+        camp["destination_url"], campaign_name=camp["name"],
+        channel=row["channel"], variant=row["variant"],
+        position=row["position"], version=row["version_number"])
+
+
 async def approve(table: str, row_id: str, approved_by: str) -> dict:
     """Approve one version; supersede whatever was approved in its scope.
 
@@ -183,6 +208,12 @@ async def approve(table: str, row_id: str, approved_by: str) -> dict:
 
     approved_by is recorded because 013's CHECK requires it: an approval with
     no approver is not an approval.
+
+    For an asset, the utm-tagged link is STAMPED here, in the same UPDATE.
+    Approval is the moment the link becomes part of what shipped, and stamping
+    rather than computing on read means a later campaign rename cannot drift
+    the recorded URL away from the one that actually ran -- the same reasoning
+    as knowledge_snapshot.
     """
     scope = _SUPERSEDE_SCOPE[table]  # KeyError for an unknown table is correct
     async with cursor() as cur:
@@ -218,11 +249,19 @@ async def approve(table: str, row_id: str, approved_by: str) -> dict:
             (row["version_number"], *(row[c] for c in scope)))
         stale = cur.rowcount
 
+        link = (await _tracked_link(cur, row)
+                if table == "campaign_assets" else None)
         await cur.execute(
             f"update public.{table} "
-            f"set status = 'approved', approved_by = %s, approved_at = now() "
-            f"where id = %s", (approved_by, row_id))
-    return {"id": row_id, "superseded": superseded, "stale": stale}
+            f"set status = 'approved', approved_by = %s, approved_at = now()"
+            + (", tracked_url = %s " if link is not None else " ")
+            + f"where id = %s",
+            (approved_by, link, row_id) if link is not None
+            else (approved_by, row_id))
+    result = {"id": row_id, "superseded": superseded, "stale": stale}
+    if link is not None:
+        result["tracked_url"] = link
+    return result
 
 
 #: Bulk-approve eligibility, per table: the status a row must be in, and

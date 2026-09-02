@@ -402,6 +402,27 @@
     {% endfor %}
   </dl>
 
+  {#- 025. The link is part of the deliverable: whoever builds the email in
+      the ESP or the ad in Ads Manager pastes THIS, not the bare destination,
+      or the campaign ships unmeasurable. Readonly input rather than text so
+      it can be selected whole with one click. -#}
+  {% if a.status == 'approved' %}
+    {% if a.tracked_url %}
+    <div class="tracked-url">
+      <span class="small muted">tracked link</span>
+      <input type="text" readonly value="{{ a.tracked_url }}"
+             onclick="this.select()">
+    </div>
+    {% elif c.destination_url %}
+    <p class="small muted" style="margin:10px 0 0">
+      approved before tracked links existed &mdash; re-approve a new version
+      to stamp one</p>
+    {% else %}
+    <p class="small muted" style="margin:10px 0 0">
+      no tracked link &mdash; the brief has no destination URL</p>
+    {% endif %}
+  {% endif %}
+
   {% if a.blockers or a.warnings %}
   <div style="margin-top:10px">
     {{ findings(a.blockers, 'blocker') }}

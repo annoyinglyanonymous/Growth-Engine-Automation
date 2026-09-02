@@ -61,6 +61,13 @@ button.danger { background: #fff; color: var(--err); border-color: #e3b8b8; }
 button[disabled] { opacity: .45; cursor: not-allowed; }
 button.sm { padding: 4px 10px; font-size: 13px; }
 form.inline { display: inline; }
+/* 025: the utm-tagged link on an approved asset. Mono and click-to-select,
+   because its one job is to be copied whole into an ESP or Ads Manager. */
+.tracked-url { margin-top: 10px; display: flex; gap: 8px;
+               align-items: center; }
+.tracked-url input[type=text] { flex: 1; width: auto; font-family: ui-monospace,
+               Consolas, monospace; font-size: 12px; padding: 5px 8px;
+               color: var(--muted); background: #fbfcfd; }
 /* The optional reason on a Reject sits beside its button, so it must
    not take the 100% width every other text input does. */
 form.inline input[type=text] { width: auto; max-width: 210px;

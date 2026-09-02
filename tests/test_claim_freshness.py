@@ -248,3 +248,65 @@ def test_every_finding_carries_a_remedy_and_evidence():
     for f in out:
         assert f.remedy, f.message
         assert f.evidence, f.message
+
+
+# --------------------------------------------------------------------------
+# 025: the destination-URL brief warnings (live next to the other
+# brief-shape findings, tested here to avoid touching the 54-test module)
+# --------------------------------------------------------------------------
+
+from validation.checks import check_missing_brief_fields
+
+
+def brief_ctx(**campaign) -> CheckContext:
+    base = {"name": "T", "objective": "x", "target_audience": "x",
+            "customer_problem": "x", "primary_benefit": "x",
+            "primary_cta": "x", "primary_kpi": "x", "offer": "x",
+            "proof_points": ["p"], "channels": ["email"],
+            "destination_url": "https://renegadeinsurance.com/franchise"}
+    base.update(campaign)
+    return CheckContext(campaign=base,
+                        claims=[{"status": "approved"}])
+
+
+def brief_findings(**campaign):
+    return [f for f in check_missing_brief_fields(brief_ctx(**campaign))
+            if f.field_name == "destination_url"
+            or f.check == "pretagged_destination"]
+
+
+def test_a_brief_with_a_destination_is_clean():
+    assert brief_findings() == []
+
+
+def test_a_missing_destination_is_a_warning_not_a_blocker():
+    """Warning on purpose, twice over: campaigns filed before 025 must not
+    fail a re-validation retroactively, and a pure awareness campaign may
+    genuinely have nowhere to send anyone."""
+    out = brief_findings(destination_url=None)
+    assert len(out) == 1
+    assert out[0].severity == "warning"
+    assert "unmeasurable" in out[0].message
+
+
+def test_no_channels_means_no_destination_warning():
+    """The missing-channels blocker already fired; piling a link warning on a
+    brief with no assets to link is noise."""
+    assert brief_findings(destination_url=None, channels=[]) == []
+
+
+def test_a_pretagged_destination_warns_and_shows_the_url():
+    """Someone pasted a link out of an old campaign. Ours replace theirs at
+    approval -- saying so now beats a report next quarter with half the
+    traffic under a ghost campaign."""
+    url = "https://renegadeinsurance.com/franchise?utm_source=oldblast"
+    out = brief_findings(destination_url=url)
+    assert len(out) == 1
+    assert out[0].check == "pretagged_destination"
+    assert out[0].severity == "warning"
+    assert out[0].evidence == url
+
+
+def test_a_destination_with_ordinary_params_does_not_warn():
+    assert brief_findings(
+        destination_url="https://renegadeinsurance.com/f?ref=partner") == []

@@ -19,20 +19,41 @@ Worth knowing before you read further: **18 of these claims are already `approve
 
 ---
 
-## 2. Prohibited — nothing to approve, confirm they are right
+## 1. Undecided
 
-These make the wording unusable wherever it appears, and they are the load-bearing half: a prohibited claim is what stops a stale or indefensible figure reaching a customer. Read them as a list of mistakes you are choosing to prevent.
+> **Renegade is licensed in all 50 states.**
+>
+> category `company` · scope **brand-level — no product to gate on** · source https://renegadeinsurance.com/license-disclosures/
 
-| # | category | wording that is blocked | why | source |
-|---|---|---|---|---|
-| 1 | `company` | Renegade is licensed in all 50 states. | False. /license-disclosures/ lists 48 states plus DC; Alaska and Hawaii are absent. Never claim all 50 states, nationwide coverage, or "every state", and never geo-target advertising to AK or HI -- see the geographic-targeting rule. Recorded pre-emptively: no page says this, but it is the sentence a generator writes when it rounds 48 up. | https://renegadeinsurance.com/license-disclosures/ |
-| 2 | `company` | Renegade provides quotes from 100 insurance companies. | Open conflict in kb.conflicts (topic carrier-count): site meta claims 100 insurance companies while the homepage shows 11 carrier logos, and 11 is the verifiable set. Never state a carrier count in any channel. Say "access to leading national and regional carriers", or name carriers from the 11. | https://renegadeinsurance.com/ |
-| 3 | `compensation` | Franchise owners earn 80% commission on new business, and Renegade runs the back office. | Live on /about-us/ and prohibited for what it omits, not for the figure. It drops "personal lines", which scopes the 80% -- the site says nothing about commercial lines splits -- and it drops renewals entirely, where the rate is "up to 80%", not 80%. Use the approved wording. | https://renegadeinsurance.com/about-us/ |
-| 4 | `compensation` | Renegade offers industry-leading commissions. | Unsubstantiated superlative, appearing three times on the live site (/careers/ twice, /become-an-agency-owner/ once). The corpus contains no competitor benchmark of any kind, so there is nothing to lead. Replace it with the figure -- 80% on new business personal lines commissions -- which is stronger anyway. | https://renegadeinsurance.com/become-an-agency-owner/ |
-| 5 | `pricing` | Initial Renegade franchise fee starts at $20,000. | Superseded. $20,000 is stale copy still published on /about-us/ and mirrored into 16 KB documents. Never use in any channel. The page itself needs correcting to $25,000. | https://renegadeinsurance.com/about-us/ |
-| 6 | `testimonial` | Renegade customers save $2,056 a year. | This figure is one customer's result, quoted on /agency/porter/: "With Carly's help, we are switching over both our car and home insurance and are saving $2056.00 a year!". An individual result is not a company claim and may never be generalised, averaged or restated without attribution. Quoting the testimonial verbatim and attributed, with a results-vary qualifier, is fine -- see the testimonial-use rule. | https://renegadeinsurance.com/agency/porter/ |
-| 7 | `testimonial` | Renegade lowers premiums by $400. | One customer's condo premium reduction after wind-mitigation documentation, quoted on three HIG location pages. Same reasoning as the $2,056 row: an individual result, tied to a specific coverage action, never a company claim. | https://renegadeinsurance.com/agency/port-orange/ |
-| 8 | `timeline` | Most independent insurance agency franchises open within 60 to 180 days of signing. | Also live on /franchise/, and the problem is the subject: this asserts a timeline for insurance franchises Renegade does not operate. Nothing in the corpus evidences an industry-wide figure, and the Renegade-scoped version conveys the same thing about the only thing we can evidence. | https://renegadeinsurance.com/franchise/ |
+> **Renegade provides quotes from 100 insurance companies.**
+>
+> category `company` · scope **brand-level — no product to gate on** · source https://renegadeinsurance.com/
+
+> **Franchise owners earn 80% commission on new business, and Renegade runs the back office.**
+>
+> category `compensation` · scope franchise-program · source https://renegadeinsurance.com/about-us/
+
+> **Renegade offers industry-leading commissions.**
+>
+> category `compensation` · scope franchise-program · source https://renegadeinsurance.com/become-an-agency-owner/
+
+> **Initial Renegade franchise fee starts at $20,000.**
+>
+> category `pricing` · scope franchise-program · source https://renegadeinsurance.com/about-us/
+
+> **Renegade customers save $2,056 a year.**
+>
+> category `testimonial` · scope franchise-program · source https://renegadeinsurance.com/agency/porter/
+
+> **Renegade lowers premiums by $400.**
+>
+> category `testimonial` · scope franchise-program · source https://renegadeinsurance.com/agency/port-orange/
+
+> **Most independent insurance agency franchises open within 60 to 180 days of signing.**
+>
+> category `timeline` · scope franchise-program · source https://renegadeinsurance.com/franchise/
+
+One of these is brand-level, which matters structurally rather than editorially. A brand-level claim has `product_id IS NULL`, so there is no product to gate it on and `fetch_claims` passes it on brand alone. Approving it **bypasses the product gate entirely** — the outer gate above stops applying to it. That is why it was staged as `pending_review` rather than `approved`. Approve it only if you are content for it to be assertable immediately.
 
 ---
 

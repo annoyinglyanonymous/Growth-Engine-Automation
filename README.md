@@ -109,6 +109,18 @@ Three things about this are deliberate:
 If the revision is worse than what it replaced, **Reject** it. The older
 version stays live and the slot is settled. Requires migration 022.
 
+### Tracked links
+
+Give the brief a **Destination URL** and every approved asset gets that URL
+with its own utm tags — source/medium per channel, the campaign as
+`utm_campaign`, and the slot + version as `utm_content`, so v5 and v7 of the
+same ad stay distinguishable in a report. The link is **stamped at
+approval** (renaming the campaign later cannot drift a URL that already
+shipped) and shown on the approved asset — whoever builds the email or the
+ad pastes *that*, not the bare destination, or the campaign ships
+unmeasurable. A brief with channels and no destination gets a validation
+warning, not a blocker. Conventions live in one map in `tracking.py`.
+
 ### Approve all
 
 Approves everything eligible and **reports what it skipped, with reasons**. A
@@ -172,8 +184,9 @@ the whole design.
 - `kb.*` — 833 documents, 1,755 chunks of scraped site copy. **Unverified.**
   Useful for tone and context; never quotable as fact.
 - `public.claims` — human-approved statements with `approved_wording`. A claim
-  is `approved`, `pending_review`, or `prohibited`. Only `approved` claims
-  reach a prompt as assertable.
+  is `approved`, `restricted` (usable only under its stated condition),
+  `prohibited`, or `pending_review`. Only `approved` claims reach a prompt
+  as assertable.
 - `public.brand_rules` — blockers and restrictions that constrain wording
   regardless of what any claim says.
 - `public.product_features` — `available` and `approved_for_marketing` are
@@ -296,7 +309,7 @@ database. It is self-tested against deliberate mutations.
 ## Tests
 
 ```
-python -m pytest                  # 465 tests, about 11 seconds
+python -m pytest                  # 526 tests, about 10 seconds
 python -m pytest -m dbtest        # only the ones needing a live database
 ```
 

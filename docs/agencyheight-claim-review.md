@@ -19,24 +19,27 @@ Worth knowing before you read further: **12 of these claims are already `approve
 
 ## 1. Undecided
 
+> **Agency Height guarantees leads.**
+>
+> category `positioning` · scope agent-platform · source https://agencyheight.com/
+
 > **Agency Height is an insurance market access and agent growth platform for independent insurance agents and agencies.**
 >
 > category `positioning` · scope **brand-level — no product to gate on** · source https://agencyheight.com/
 
+> **The Recommended badge means Agency Height recommends the agent.**
+>
+> category `positioning` · scope agent-platform · source https://agencyheight.com/
+
+> **Markets covers every admitted and E&S option.**
+>
+> category `technology` · scope agent-platform · source https://agencyheight.com/
+
+> **Agents get 2 to 3 new leads a day.**
+>
+> category `testimonial` · scope agent-platform · source https://agencyheight.com/
+
 One of these is brand-level, which matters structurally rather than editorially. A brand-level claim has `product_id IS NULL`, so there is no product to gate it on and `fetch_claims` passes it on brand alone. Approving it **bypasses the product gate entirely** — the outer gate above stops applying to it. That is why it was staged as `pending_review` rather than `approved`. Approve it only if you are content for it to be assertable immediately.
-
----
-
-## 2. Prohibited — nothing to approve, confirm they are right
-
-These make the wording unusable wherever it appears, and they are the load-bearing half: a prohibited claim is what stops a stale or indefensible figure reaching a customer. Read them as a list of mistakes you are choosing to prevent.
-
-| # | category | wording that is blocked | why | source |
-|---|---|---|---|---|
-| 1 | `positioning` | Agency Height guarantees leads. | No guaranteed-outcome claim may be made about the Lead Bank, the directory, or the platform. The Lead Bank has no stated pool size or refresh rate, and lead supply depends on consumer demand nobody controls. | https://agencyheight.com/ |
-| 2 | `positioning` | The Recommended badge means Agency Height recommends the agent. | The badge is included with the paid plans. Describing a purchased directory placement as a recommendation, endorsement or quality signal describes it as something it is not, and undisclosed pay-for-placement is the specific exposure. | https://agencyheight.com/ |
-| 3 | `technology` | Markets covers every admitted and E&S option. | An absolute completeness claim about a carrier universe that no one can substantiate, and it appears verbatim on the homepage. One missing carrier in one state makes it false. Use the approved wording, which says what Markets does without claiming exhaustiveness. | https://agencyheight.com/ |
-| 4 | `testimonial` | Agents get 2 to 3 new leads a day. | This is one named agent's testimonial figure ("I have seen, on average, 2-3 new leads on a daily basis") converted into a platform claim. Converting a testimonial into a company claim is a blocker rule in its own right. There is no substantiated lead frequency anywhere in the corpus. | https://agencyheight.com/ |
 
 ---
 
@@ -83,10 +86,10 @@ Rules constrain wording regardless of what any claim says. A `blocker` fails val
 | severity | category | rule | channels |
 |---|---|---|---|
 | `blocker` | `claims` | No guaranteed outcomes. Never promise or imply a number of leads, a lead frequency, an income, a conversion rate, or growth. The Lead Bank has no stated pool size or refresh rate anywhere in the corpus, and lead supply depends on consumer demand nobody controls. The monthly claim CAP (2 on Premium, 7 on Enterprise) is a governed figure and may be stated; the supply behind it may not. | email, meta_ads, google_ads, landing_page, sms |
-| `blocker` | `legal` | Never state an insurance premium, cost range, or savings figure without naming its source and an as-of date in the same asset. This is the single largest risk in the Agency Height corpus: of 400 sampled figure-bearing chunks, 44% carry no attribution marker at all. A figure with a bad citation can be corrected; a figure with no citation cannot even be checked. Applies to every dollar amount about the insurance market, including ranges and averages. | email, meta_ads, google_ads, landing_page, sms |
 | `blocker` | `legal` | Never give insurance advice. Do not recommend a specific coverage, limit, or deductible, do not say a coverage is right or sufficient for the reader, and do not tell anyone what they should carry. Agency Height is a directory and platform, not the agent of record, and coverage recommendations are the licensed agent's job. This is the rule the calculators come closest to breaking -- an estimate is not a recommendation and must not be worded as one. | email, meta_ads, google_ads, landing_page |
-| `blocker` | `legal` | Never make a comparative claim about a named carrier, competitor, or their compensation, products, or employees. The corpus contains full salary and benefits reviews of named insurers, including side-by-side earnings tables. Republishing any of that as marketing turns editorial research into a disparagement and unfair-competition exposure. Naming a carrier factually as a market Agency Height covers is fine; ranking, rating, or comparing one against another is not. | email, meta_ads, google_ads, landing_page, sms |
 | `blocker` | `legal` | State-specific insurance requirements must name the state and the as-of date, and must never be presented as national or as advice. A minimum-coverage figure is correct for one state and wrong for the other 49, and the corpus is full of them -- the commercial auto and trucking by-state pages carry a per-state limit table each. An asset that lifts one row without its state is simply false everywhere else. | email, meta_ads, google_ads, landing_page |
+| `blocker` | `legal` | Never state an insurance premium, cost range, or savings figure without naming its source and an as-of date in the same asset. This is the single largest risk in the Agency Height corpus: of 400 sampled figure-bearing chunks, 44% carry no attribution marker at all. A figure with a bad citation can be corrected; a figure with no citation cannot even be checked. Applies to every dollar amount about the insurance market, including ranges and averages. | email, meta_ads, google_ads, landing_page, sms |
+| `blocker` | `legal` | Never make a comparative claim about a named carrier, competitor, or their compensation, products, or employees. The corpus contains full salary and benefits reviews of named insurers, including side-by-side earnings tables. Republishing any of that as marketing turns editorial research into a disparagement and unfair-competition exposure. Naming a carrier factually as a market Agency Height covers is fine; ranking, rating, or comparing one against another is not. | email, meta_ads, google_ads, landing_page, sms |
 | `blocker` | `messaging` | One asset, one offer tier. Never mix free-tier acquisition with paid-plan features. An ad that leads with "$0 to start" and then names the Lead Bank, unlimited lead details, the Recommended badge or the Agency Website is selling a paid feature under a free headline. Check the campaign type's prohibited_themes: agent-acquisition prohibits every paid feature, and plan-upgrade prohibits the free-tier framing. This is sharper than it looks -- both campaign types address the same person at different moments, so the mistake reads as plausible rather than absurd. | email, meta_ads, google_ads, landing_page |
 | `info` | `positioning` | Editorial content is not an offer, and the two must stay distinguishable. Guides, comparisons, calculators and career reviews exist to be useful; they must not read as an inducement to sign up, and a platform CTA inside one must be visibly separate from the editorial claim it sits next to. The corpus already blurs this -- the Farmers careers review has "Grow Your Agency Faster with Agency Height Insurance Directory" spliced mid-article, three times. | landing_page, email |
 | `warning` | `sourcing` | Third-party review scores must carry the platform, the score, the review count where the source gives one, and the date the score was captured. Scores drift continuously -- the corpus holds "Capterra: 4.6/5 (14168 reviews)" and "TrustRadius: 8.2/10 (5810 reviews)", both true only on the day they were scraped. A score without a capture date is a figure that quietly becomes wrong. | email, meta_ads, google_ads, landing_page |

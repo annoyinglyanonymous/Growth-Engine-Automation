@@ -123,6 +123,12 @@ REQUIRED_SCHEMA: dict[str, dict] = {
         "breaks": "brief validation, asset QA and every generator -- the "
                   "exclusion list is read on every one",
     },
+    "025_tracked_urls.sql": {
+        "columns": (("campaigns", "destination_url", "text"),
+                    ("campaign_assets", "tracked_url", "text")),
+        "breaks": "asset approval (the tracked-link stamp), the campaign "
+                  "detail screen, and filing a brief",
+    },
 }
 
 

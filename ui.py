@@ -334,6 +334,7 @@ async def create_campaign(
     channels: list[str] = Form([]),
     primary_kpi: str = Form(""),
     geographic_target: str = Form(""),
+    destination_url: str = Form(""),
     additional_context: str = Form(""),
     do_not_mention: str = Form(""),
 ):

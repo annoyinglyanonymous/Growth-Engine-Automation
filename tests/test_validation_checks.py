@@ -303,6 +303,9 @@ FULL_BRIEF = {
     "customer_problem": "X", "primary_benefit": "X", "primary_cta": "X",
     "primary_kpi": "X", "channels": ["email"], "offer": "X",
     "proof_points": ["X"],
+    # 025. Part of a complete brief: without it every approved asset ships
+    # without a tracked link, and the check warns.
+    "destination_url": "https://example.com/land",
 }
 
 

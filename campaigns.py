@@ -21,6 +21,9 @@ from generators.pipeline import (bulk_skip_reason,
 TEXT_FIELDS = (
     "name", "objective", "target_audience", "customer_problem", "offer",
     "primary_benefit", "primary_cta", "secondary_cta", "primary_kpi",
+    # 025. Where the campaign's traffic lands; approval stamps it, tagged,
+    # onto each asset.
+    "destination_url",
     "additional_context",
 )
 
@@ -134,14 +137,15 @@ async def create(data: dict, *, created_by: str) -> dict:
             "   objective, target_audience, customer_problem, offer, "
             "   primary_benefit, supporting_benefits, proof_points, "
             "   primary_cta, secondary_cta, channels, primary_kpi, "
-            "   geographic_target, start_date, end_date, additional_context, "
-            "   created_by) "
+            "   geographic_target, destination_url, start_date, end_date, "
+            "   additional_context, created_by) "
             "select p.brand_id, p.id, %(campaign_type_id)s, %(name)s, "
             "       'draft', %(objective)s, %(target_audience)s, "
             "       %(customer_problem)s, %(offer)s, %(primary_benefit)s, "
             "       %(supporting_benefits)s, %(proof_points)s, "
             "       %(primary_cta)s, %(secondary_cta)s, %(channels)s, "
             "       %(primary_kpi)s, %(geographic_target)s, "
+            "       %(destination_url)s, "
             "       %(start_date)s, %(end_date)s, %(additional_context)s, "
             "       %(created_by)s "
             "from public.products p where p.id = %(product_id)s "
@@ -198,8 +202,8 @@ async def pipeline_state(campaign_id: str) -> dict:
     assets = await fetch_all(
         "select a.id, a.channel, a.asset_type, a.variant, a.position, "
         "       a.content, a.status, a.version_number, a.approved_by, "
-        # rejected_by/notes need 022. The boot preflight names it.
-        "       a.rejected_by, a.notes, "
+        # rejected_by/notes need 022, tracked_url 025. The preflight names both.
+        "       a.rejected_by, a.notes, a.tracked_url, "
         "       a.knowledge_snapshot, cc.hook as concept_hook, "
         "       q.status as qa_status, q.blockers, q.warnings, "
         "       q.recommendations, q.deterministic_status, q.ai_status, "

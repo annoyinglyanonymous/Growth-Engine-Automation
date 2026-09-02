@@ -148,6 +148,8 @@ def _asset(**kw) -> dict:
         # 022. Present-but-null, like approved_by: the columns are on
         # the row whether or not anything was ever rejected.
         "rejected_by": None, "notes": None,
+        # 025. Stamped at approval; null until then.
+        "tracked_url": None,
         "knowledge_snapshot": {"kb_chunk_ids": [1, 2],
                                "approved_claims": ["x"],
                                "prohibited_claims": []},
@@ -188,8 +190,8 @@ CAMPAIGN = {
     "brand_name": "Renegade", "product_name": "Franchise Program",
     "campaign_type_name": "Franchise Recruitment",
     "channels": ["email", "meta_ads"], "product_marketable": True,
-    # 021. campaigns.get() selects c.*, so a real row always has these.
-    "approved_by": None, "approved_at": None,
+    # 021, 025. campaigns.get() selects c.*, so a real row always has these.
+    "approved_by": None, "approved_at": None, "destination_url": None,
 }
 
 
@@ -345,3 +347,69 @@ def test_the_brief_form_offers_a_per_campaign_exclusion_field(env):
     # And it must point at the standing list, or every one-off gets typed
     # into every brief for ever.
     assert "/exclusions" in out
+
+
+# --------------------------------------------------------------------------
+# 025: the tracked link on an approved asset
+# --------------------------------------------------------------------------
+
+TRACKED = ("https://renegadeinsurance.com/franchise?utm_source=email"
+           "&utm_medium=email&utm_campaign=test&utm_content=a-1-v5")
+
+
+def test_an_approved_asset_shows_its_tracked_link(env):
+    out = env.get_template("campaign.html").render(
+        c=dict(CAMPAIGN, destination_url="https://renegadeinsurance.com/f"),
+        **_state(assets=[_asset(status="approved", approved_by="alice",
+                                tracked_url=TRACKED)]),
+        msg=None, kind="ok")
+    # Autoescaped inside the value attribute -- & becomes &amp;, which is
+    # correct HTML and un-escapes on copy. Asserting the raw URL would demand
+    # broken output.
+    assert TRACKED.replace("&", "&amp;") in out
+    assert "tracked link" in out
+
+
+def test_an_asset_approved_before_025_says_how_to_get_a_link(env):
+    """tracked_url is stamped at approval, so a pre-025 approval has none.
+    The page has to say the way out -- re-approve a new version -- rather
+    than showing a blank that reads like a bug."""
+    out = env.get_template("campaign.html").render(
+        c=dict(CAMPAIGN, destination_url="https://renegadeinsurance.com/f"),
+        **_state(assets=[_asset(status="approved", approved_by="alice",
+                                tracked_url=None)]),
+        msg=None, kind="ok")
+    flat = " ".join(out.split())
+    assert "re-approve a new version" in flat
+
+
+def test_a_campaign_with_no_destination_says_so_on_the_asset(env):
+    out = env.get_template("campaign.html").render(
+        c=CAMPAIGN,
+        **_state(assets=[_asset(status="approved", approved_by="alice",
+                                tracked_url=None)]),
+        msg=None, kind="ok")
+    flat = " ".join(out.split())
+    assert "no destination URL" in flat
+
+
+def test_an_unapproved_asset_shows_no_link_block(env):
+    """The link is stamped at approval; previewing one on a pending version
+    would show a URL that may never exist."""
+    out = env.get_template("campaign.html").render(
+        c=CAMPAIGN, **_state(assets=[_asset(status="review")]),
+        msg=None, kind="ok")
+    assert "tracked link" not in out
+    assert "no destination URL" not in out
+
+
+def test_the_brief_form_offers_a_destination_url_field(env):
+    out = env.get_template("new.html").render(
+        products=[{"id": "p1", "name": "Franchise Program",
+                   "brand_name": "Renegade", "approved_for_marketing": False,
+                   "brand_slug": "renegade", "primary_cta": "Talk"}],
+        campaign_types=[{"id": "t1", "name": "Franchise",
+                         "brand_slug": "renegade"}],
+        msg=None, kind="ok")
+    assert 'name="destination_url"' in out
+    assert 'type="url"' in out
