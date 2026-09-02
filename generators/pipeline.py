@@ -176,8 +176,9 @@ async def approve(table: str, row_id: str, approved_by: str) -> dict:
     scope = _SUPERSEDE_SCOPE[table]  # KeyError for an unknown table is correct
     async with cursor() as cur:
         await cur.execute(
-            f"select status, {', '.join(scope)} from public.{table} "
-            f"where id = %s for update", (row_id,))
+            f"select status, version_number, {', '.join(scope)} "
+            f"from public.{table} where id = %s for update",
+            (row_id,))
         row = await cur.fetchone()
         if not row:
             raise LookupError(f"no {table} row {row_id}")
@@ -193,11 +194,298 @@ async def approve(table: str, row_id: str, approved_by: str) -> dict:
             tuple(row[c] for c in scope))
         superseded = cur.rowcount
 
+        # Approving v3 also settles v1. An older version left at
+        # 'review' is outstanding work nobody will ever do, it makes
+        # the slot read as unfinished, and Approve all would offer to
+        # approve it. Strictly older: a NEWER pending version is a
+        # real decision someone still owes, and lifecycle's
+        # newer_version_pending blocker is what asks for it.
+        await cur.execute(
+            f"update public.{table} set status = 'superseded' "
+            f"where status in ('draft', 'review') "
+            f"  and version_number < %s and {where}",
+            (row["version_number"], *(row[c] for c in scope)))
+        stale = cur.rowcount
+
         await cur.execute(
             f"update public.{table} "
             f"set status = 'approved', approved_by = %s, approved_at = now() "
             f"where id = %s", (approved_by, row_id))
-    return {"id": row_id, "superseded": superseded}
+    return {"id": row_id, "superseded": superseded, "stale": stale}
+
+
+#: Bulk-approve eligibility, per table: the status a row must be in, and
+#: whether QA has a say.
+#:
+#: campaign_strategies is absent deliberately. Its partial unique index allows
+#: one approved row per campaign, so "approve all strategies" either means
+#: "approve exactly one" -- which is the button that already exists -- or it
+#: means a constraint violation.
+#: `slot` names the columns that make a row one version of one thing.
+#: Where it is set, only the NEWEST pending version in a slot is a
+#: bulk-approve candidate -- see newer_pending_versions.
+_BULK_ELIGIBLE = {
+    "campaign_assets": {"from_status": "review", "qa_gated": True,
+                        "slot": ("channel", "asset_type", "variant",
+                                 "position")},
+    "campaign_angles": {"from_status": "draft", "qa_gated": False},
+    "creative_concepts": {"from_status": "draft", "qa_gated": False},
+}
+
+#: QA outcomes and whether bulk approval may sweep them up.
+#:
+#: 'warning' is EXCLUDED, and that is the whole point of this function having
+#: skip reasons at all. A warning is a truthful finding -- the live example is
+#: an ad whose copy genuinely has no call to action -- and bulk-approving it
+#: means somebody cleared it without reading it. The single Approve button
+#: still accepts a warning, so nothing is blocked; it just costs one deliberate
+#: click per finding, which is the right price.
+_BULK_QA_OK = {"pass"}
+
+_QA_SKIP_REASON = {
+    "warning": "has a QA warning -- read it and approve individually",
+    "needs_info": "QA needs more information",
+    "blocked": "QA blocked it",
+    None: "no QA result yet -- run QA first",
+}
+
+
+def newer_pending_versions(rows, from_status: str,
+                           slot: tuple[str, ...]) -> dict[str, int]:
+    """-> {row id: the newer pending version number in its slot}.
+
+    Only rows that lose to a newer sibling appear. Pure, and shared
+    by approve_many and campaigns.pipeline_state, for the same reason
+    bulk_skip_reason is: a count computed one way and an action taken
+    another is how "Approve all (7)" comes to approve six.
+
+    THE CASE THIS EXISTS FOR IS ORDINARY, NOT EXOTIC
+    An edit request creates v4 while v2 is still sitting in review,
+    so a slot legitimately holds two candidates. Approving both in
+    turn does not raise -- approve() supersedes as it goes -- it just
+    means the surviving version is whichever the loop reached last,
+    and the report claims two approvals for one live asset.
+
+    Approving an OLDER version over a newer one is never what a
+    reviewer means. So the newest pending version is the only
+    candidate, and if it is ineligible the whole slot waits.
+    """
+    if not slot:
+        return {}
+    pending = [r for r in rows if r["status"] == from_status]
+    newest: dict[tuple, dict] = {}
+    for row in pending:
+        key = tuple(row[c] for c in slot)
+        best = newest.get(key)
+        if best is None or row["version_number"] > best["version_number"]:
+            newest[key] = row
+    return {
+        str(row["id"]): newest[tuple(row[c] for c in slot)][
+            "version_number"]
+        for row in pending
+        if row["id"] != newest[tuple(row[c] for c in slot)]["id"]
+    }
+
+
+def bulk_skip_reason(table: str, status: str, qa_status: str | None,
+                     open_requests: int,
+                     newer_version: int | None = None) -> str | None:
+    """None if this row may be bulk-approved, else why not.
+
+    Pure, and shared by approve_many and the UI's button state. Those two
+    disagreeing is the specific bug worth designing out: a count computed one
+    way and an action taken another produces an "Approve all (7)" button that
+    approves six and reports a skip, which reads as a failure rather than as
+    the intended caution.
+    """
+    rules = _BULK_ELIGIBLE.get(table)
+    if rules is None:
+        return f"{table} does not support bulk approval"
+    if status == "approved":
+        return "already approved"
+    if status != rules["from_status"]:
+        return f"status is {status}"
+    # Before QA, deliberately. An older version that has been
+    # overtaken should not advertise its own QA finding: "has a QA
+    # warning -- approve it individually" would send a reviewer to
+    # approve v1 while v3 sits unread, which is the wrong action
+    # stated confidently.
+    if newer_version is not None:
+        return f"v{newer_version} is a newer version awaiting review"
+    if open_requests:
+        return "an edit was requested and is still open"
+    if rules["qa_gated"] and qa_status not in _BULK_QA_OK:
+        return _QA_SKIP_REASON.get(qa_status, f"QA status {qa_status}")
+    return None
+
+
+#: Tables whose rows can be rejected outright, and the statuses a row may be
+#: rejected FROM. Not 'approved': retiring live copy is a different act with
+#: different consequences, and 013's partial unique index means the slot would
+#: then have no live version at all. Supersede it by approving another
+#: version instead.
+_REJECTABLE = {
+    "campaign_assets": ("draft", "review"),
+    "campaign_strategies": ("draft", "review"),
+}
+
+
+async def reject(table: str, row_id: str, rejected_by: str,
+                 note: str | None = None) -> dict:
+    """Turn down one version. Requires 022.
+
+    THE ACTION THIS COMPLETES
+    The revision loop could produce a version nobody wanted and offered no way
+    to say so: approve it, or ask for yet another edit. So an unwanted v4 sat
+    at 'review' indefinitely, and lifecycle's newer_version_pending blocker
+    would hold the whole campaign on it with no way to clear it. Rejecting v4
+    leaves v2 live and settles the slot.
+
+    Rejection does NOT create a version or touch the approved one. The live
+    copy is already correct; what changes is that the alternative stops being
+    an open question.
+    """
+    from_statuses = _REJECTABLE.get(table)
+    if from_statuses is None:
+        raise ValueError(f"{table} rows cannot be rejected "
+                         f"({', '.join(sorted(_REJECTABLE))} can)")
+
+    async with cursor() as cur:
+        await cur.execute(
+            f"select status from public.{table} where id = %s for update",
+            (row_id,))
+        row = await cur.fetchone()
+        if not row:
+            raise LookupError(f"no {table} row {row_id}")
+        if row["status"] == "rejected":
+            return {"id": row_id, "already": True}
+        if row["status"] not in from_statuses:
+            raise ValueError(
+                f"a {table} row at '{row['status']}' cannot be rejected "
+                f"-- only {', '.join(from_statuses)}")
+
+        # note goes into `notes` rather than a new column: it is the same
+        # field an approval note would use, and a rejection without a reason
+        # is allowed on purpose -- forcing prose produces "n/a".
+        await cur.execute(
+            f"update public.{table} set status = 'rejected', "
+            f"    rejected_by = %s, rejected_at = now(), "
+            f"    notes = coalesce(%s, notes) "
+            f"where id = %s", (rejected_by, note, row_id))
+
+    return {"id": row_id, "rejected": True, "from": row["status"]}
+
+
+async def approve_many(table: str, campaign_id: str, approved_by: str) -> dict:
+    """Approve every eligible row for a campaign. Reports what it skipped.
+
+    Returns {approved: [...], skipped: [{id, label, reason}], ...}.
+
+    THE SKIPS ARE THE INTERESTING HALF
+    A bulk action that quietly approves six of seven items and says "done"
+    reads as success. The seventh -- the one with a finding on it -- is exactly
+    the one someone needed to see. So every skip carries a reason, and the
+    caller is expected to show them.
+
+    Rows with an OPEN revision request are also skipped. Someone asked for a
+    change and has not got it yet; approving it underneath them would strand
+    their feedback against text that is now signed off.
+    """
+    rules = _BULK_ELIGIBLE.get(table)
+    if rules is None:
+        raise ValueError(
+            f"{table} does not support bulk approval "
+            f"({', '.join(sorted(_BULK_ELIGIBLE))} do)")
+
+    slot: tuple[str, ...] = tuple(rules.get("slot") or ())
+    rows = await fetch_all(
+        f"select r.id, r.status, "
+        + ("r.version_number, " + "".join(f"r.{c}, " for c in slot)
+           if slot else "")
+        + f"       {_bulk_label_sql(table)} as label, "
+        f"       {'q.status' if rules['qa_gated'] else 'null'} as qa_status, "
+        f"       (select count(*) from public.revision_requests v "
+        f"         where v.{_REVISION_COLUMN[table]} = r.id "
+        f"           and v.status = 'open') as open_requests "
+        f"from public.{table} r "
+        + (
+            "left join ( "
+            "  select distinct on (asset_id) asset_id, status "
+            "  from public.asset_qa_results order by asset_id, qa_number desc "
+            ") q on q.asset_id = r.id "
+            if rules["qa_gated"] else ""
+        )
+        + f"where r.campaign_id = %s order by label"
+        + (", r.version_number desc" if slot else ""),
+        (campaign_id,))
+
+    # Newest-first within a slot, so the row that survives is the one
+    # chosen rather than the one the loop happened to reach last.
+    overtaken = newer_pending_versions(rows, rules["from_status"],
+                                       slot)
+
+    approved: list[dict] = []
+    skipped: list[dict] = []
+    for row in rows:
+        entry = {"id": str(row["id"]), "label": row["label"]}
+        if slot:
+            entry["label"] += f" v{row['version_number']}"
+        reason = bulk_skip_reason(table, row["status"], row["qa_status"],
+                                  row["open_requests"],
+                                  overtaken.get(str(row["id"])))
+        if reason == "already approved":
+            continue                        # nothing to do, not a skip
+        if reason:
+            skipped.append({**entry, "reason": reason})
+            continue
+
+        if table in _SUPERSEDE_SCOPE:
+            result = await approve(table, str(row["id"]), approved_by)
+            entry["superseded"] = result.get("superseded", 0)
+        else:
+            # Angles and concepts approve additively -- several can stand at
+            # once, because the next stage fans out across all of them. That
+            # is why they are not in _SUPERSEDE_SCOPE.
+            async with cursor() as cur:
+                await cur.execute(
+                    f"update public.{table} set status = 'approved', "
+                    f"    decided_by = %s, decided_at = now() "
+                    f"where id = %s and status = %s",
+                    (approved_by, row["id"], rules["from_status"]))
+                if not cur.rowcount:
+                    skipped.append({**entry,
+                                    "reason": "changed while approving"})
+                    continue
+        approved.append(entry)
+
+    return {
+        "table": table,
+        "approved": approved,
+        "skipped": skipped,
+        "counts": {"approved": len(approved), "skipped": len(skipped)},
+    }
+
+
+#: revision_requests column pointing at each table.
+_REVISION_COLUMN = {
+    "campaign_assets": "asset_id",
+    "campaign_angles": "angle_id",
+    "creative_concepts": "concept_id",
+    "campaign_strategies": "strategy_id",
+}
+
+
+def _bulk_label_sql(table: str) -> str:
+    """How to name a row in a skip message.
+
+    An id is useless in "1 skipped"; the reviewer needs to know WHICH ad.
+    """
+    if table == "campaign_assets":
+        return ("concat_ws('/', r.channel, r.variant, "
+                "nullif(r.position::text, ''))")
+    if table == "campaign_angles":
+        return "r.name"
+    return "left(r.hook, 48)"
 
 
 async def approved_strategy(campaign_id: str) -> dict:

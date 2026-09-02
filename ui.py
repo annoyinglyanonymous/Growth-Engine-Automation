@@ -53,12 +53,19 @@ from fastapi.templating import Jinja2Templates
 
 import auth
 import campaigns
+import lifecycle
 from generators import angles as gen_angles
 from generators import concepts as gen_concepts
 from generators import email_sequence as gen_email
 from generators import meta_ads as gen_meta
+from generators import revise
 from generators import strategy as gen_strategy
-from generators.pipeline import StageNotReady, approve
+from generators.pipeline import (
+    StageNotReady,
+    approve,
+    approve_many,
+    reject,
+)
 from validation import asset_qa, brief
 
 ROOT = Path(__file__).resolve().parent
@@ -167,6 +174,22 @@ async def _act(request: Request, campaign_id: str, label: str, coro):
         message, status = result
     else:
         message, status = result, None
+
+    # Every successful action gets a lifecycle advance, here rather than in the
+    # individual routes. Approving a strategy, generating assets and running QA
+    # all change what the campaign has earned, and a per-route call is a call
+    # somebody eventually forgets to add. advance() is a no-op unless the
+    # campaign is behind its own artefacts, so the cost is one small query.
+    try:
+        moved = await lifecycle.advance(campaign_id,
+                                        auth.require_operator(request))
+        if moved["moved"]:
+            message += f" (campaign -> {moved['status']})"
+    except Exception as exc:  # noqa: BLE001
+        # Never let a lifecycle problem hide the result of the thing the
+        # person actually asked for -- but do not swallow it either.
+        message += f" (lifecycle advance failed: {type(exc).__name__})"
+
     return _flash(url, f"{label}: {message}", _kind_for(status))
 
 
@@ -427,3 +450,150 @@ async def do_approve_asset(request: Request, campaign_id: str, asset_id: str,
             return "already approved"
         return f"approved as {operator}; {r['superseded']} superseded"
     return await _act(request, campaign_id, "Approve asset", run())
+
+
+@router.post("/campaigns/{campaign_id}/assets/{asset_id}/reject")
+async def do_reject_asset(request: Request, campaign_id: str, asset_id: str,
+                          operator: str = Depends(auth.require_operator),
+                          note: str = Form("")):
+    """Turn down one version and leave the live one alone.
+
+    The action the revision loop was missing. A reviewer who asks for an edit
+    and dislikes the result could previously only approve it or ask again;
+    lifecycle's newer_version_pending blocker would then hold the campaign on
+    a version nobody wanted, with no way to clear it.
+    """
+    async def run():
+        r = await reject("campaign_assets", asset_id, operator,
+                         note.strip() or None)
+        if r.get("already"):
+            return "already rejected"
+        return f"rejected as {operator}"
+    return await _act(request, campaign_id, "Reject asset", run())
+
+
+# --------------------------------------------------------------------------
+# Approve all
+# --------------------------------------------------------------------------
+
+#: URL segment -> table. Strategy is absent: one approved strategy per
+#: campaign, so bulk approval of it is either a no-op or a constraint
+#: violation. approve_many raises for anything not here.
+_BULK_TABLES = {
+    "angles": "campaign_angles",
+    "concepts": "creative_concepts",
+    "assets": "campaign_assets",
+}
+
+
+# "/approve-all/{stage}" and not "/{stage}/approve-all". The latter has a
+# wildcard where /promote/{to_status} has a literal, so the two patterns can
+# both match "/campaigns/X/promote/approve-all" -- the same class of ambiguity
+# the revise/withdraw pair had. Putting the literal first makes them
+# structurally distinct instead of relying on registration order.
+@router.post("/campaigns/{campaign_id}/approve-all/{stage}")
+async def do_approve_all(request: Request, campaign_id: str, stage: str,
+                         operator: str = Depends(auth.require_operator)):
+    table = _BULK_TABLES.get(stage)
+    if not table:
+        return _flash(f"/campaigns/{campaign_id}",
+                      f"cannot bulk-approve {stage!r}", "error")
+
+    async def run():
+        r = await approve_many(table, campaign_id, operator)
+        done, skipped = r["counts"]["approved"], r["counts"]["skipped"]
+        if not done and not skipped:
+            return "nothing eligible", None
+        # The skips are the half worth reading, so they go in the message and
+        # the colour reflects that something was held back rather than done.
+        detail = "; ".join(f"{s['label']} -- {s['reason']}"
+                           for s in r["skipped"][:4])
+        if skipped > 4:
+            detail += f"; and {skipped - 4} more"
+        message = f"{done} approved"
+        if skipped:
+            message += f", {skipped} left for you: {detail}"
+        return message, ("warning" if skipped else "pass")
+    return await _act(request, campaign_id, f"Approve all {stage}", run())
+
+
+# --------------------------------------------------------------------------
+# Request an edit
+# --------------------------------------------------------------------------
+
+@router.post("/campaigns/{campaign_id}/revise/{kind}/{target_id}")
+async def do_revise(request: Request, campaign_id: str, kind: str,
+                    target_id: str,
+                    operator: str = Depends(auth.require_operator),
+                    feedback: str = Form("")):
+    """File feedback and immediately generate a revision.
+
+    Two calls rather than one, so a model failure leaves the feedback stored
+    and the action retryable -- the person's typed paragraph is not collateral
+    for a timeout. The flash says which half failed.
+    """
+    if kind not in revise.KINDS:
+        return _flash(f"/campaigns/{campaign_id}",
+                      f"cannot revise {kind!r}", "error")
+
+    async def run():
+        filed = await revise.request(kind, target_id, feedback, operator)
+        try:
+            result = await revise.apply(filed["request_id"], operator)
+        except Exception as exc:  # noqa: BLE001
+            return (f"feedback saved, but the revision failed -- "
+                    f"{type(exc).__name__}: {exc}. Retry from the item.",
+                    "blocked")
+
+        where = ("updated in place" if result["in_place"]
+                 else f"new version v{result['version']}")
+        message = f"{result['kind']} revised ({where})"
+        if result["needs_qa"]:
+            message += " -- run QA before approving"
+        if result["agent_note"]:
+            # Surfaced, not buried: this is the agent saying it could not do
+            # part of what was asked, which the reviewer must see.
+            message += f". Agent note: {result['agent_note']}"
+            return message, "warning"
+        return message, "pass"
+    return await _act(request, campaign_id, "Edit", run())
+
+
+# "revisions" and not "revise": /revise/{kind}/{target_id} is registered above
+# and would shadow /revise/{request_id}/withdraw, binding kind="<uuid>" and
+# target_id="withdraw". FastAPI matches in registration order, so the two
+# patterns must not be able to describe the same path in the first place --
+# reordering would only hide the ambiguity until someone adds a third route.
+# --------------------------------------------------------------------------
+# Stage 9 -- the campaign's own status
+# --------------------------------------------------------------------------
+
+@router.post("/campaigns/{campaign_id}/promote/{to_status}")
+async def do_promote(request: Request, campaign_id: str, to_status: str,
+                     operator: str = Depends(auth.require_operator),
+                     note: str = Form("")):
+    """A person moves the campaign. lifecycle.promote does the guarding.
+
+    The guards live there and not here because the UI is one caller of
+    several -- the CLI takes the same path, and a check in a route handler
+    protects exactly one door.
+    """
+    async def run():
+        r = await lifecycle.promote(campaign_id, to_status, operator,
+                                    note=note.strip() or None)
+        message = f"{r['from']} -> {r['status']} by {operator}"
+        # Reaching 'approved' is the one transition worth colouring, because
+        # it is the moment someone takes responsibility for everything the
+        # campaign publishes.
+        return message, ("pass" if to_status == "approved" else None)
+    return await _act(request, campaign_id, "Campaign", run())
+
+
+@router.post("/campaigns/{campaign_id}/revisions/{request_id}/withdraw")
+async def do_withdraw_revision(
+        request: Request, campaign_id: str, request_id: str,
+        operator: str = Depends(auth.require_operator)):
+    async def run():
+        await revise.withdraw(request_id, operator)
+        return "edit request withdrawn"
+    return await _act(request, campaign_id, "Edit", run())

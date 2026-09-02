@@ -13,6 +13,9 @@ it is wrong is validation's job rather than a reason to refuse the insert.
 from __future__ import annotations
 
 from db import cursor, fetch_all, fetch_one
+import lifecycle
+from generators.pipeline import (bulk_skip_reason,
+                                 newer_pending_versions)
 
 #: Text fields taken verbatim from the form or caller.
 TEXT_FIELDS = (
@@ -192,6 +195,8 @@ async def pipeline_state(campaign_id: str) -> dict:
     assets = await fetch_all(
         "select a.id, a.channel, a.asset_type, a.variant, a.position, "
         "       a.content, a.status, a.version_number, a.approved_by, "
+        # rejected_by/notes need 022. The boot preflight names it.
+        "       a.rejected_by, a.notes, "
         "       a.knowledge_snapshot, cc.hook as concept_hook, "
         "       q.status as qa_status, q.blockers, q.warnings, "
         "       q.recommendations, q.deterministic_status, q.ai_status, "
@@ -208,10 +213,83 @@ async def pipeline_state(campaign_id: str) -> dict:
         "order by a.channel, a.variant, a.position nulls first, "
         "         a.version_number", (campaign_id,))
 
+    # Revision requests, fetched once and indexed by target so each item can
+    # show its own history without a query per row.
+    revisions = await fetch_all(
+        "select id, strategy_id, angle_id, concept_id, asset_id, feedback, "
+        "       requested_by, requested_at, status, agent_note, "
+        "       addressed_at, addressed_by, resulting_version "
+        "from public.revision_requests where campaign_id = %s "
+        "order by requested_at desc", (campaign_id,))
+
+    by_target: dict[str, list[dict]] = {}
+    for r in revisions:
+        for col in ("strategy_id", "angle_id", "concept_id", "asset_id"):
+            if r[col]:
+                by_target.setdefault(str(r[col]), []).append(r)
+
+    def attach(rows: list[dict], table: str,
+               qa_key: str | None = None,
+               overtaken: dict[str, int] | None = None) -> None:
+        """Give each row its revisions and its bulk-approve verdict.
+
+        The verdict comes from generators.pipeline.bulk_skip_reason -- the same
+        function approve_many uses -- so the button's count and the action's
+        behaviour cannot drift apart.
+        """
+        for row in rows:
+            mine = by_target.get(str(row["id"]), [])
+            row["revisions"] = mine
+            row["open_revision"] = next(
+                (r for r in mine if r["status"] == "open"), None)
+            row["bulk_skip_reason"] = bulk_skip_reason(
+                table, row["status"],
+                row.get(qa_key) if qa_key else None,
+                sum(1 for r in mine if r["status"] == "open"),
+                (overtaken or {}).get(str(row["id"])))
+
+    attach(strategies, "campaign_strategies")
+    attach(angles, "campaign_angles")
+    attach(concepts, "creative_concepts")
+    # Same helper approve_many uses, so the "Approve all (n)" count
+    # and the action agree about which version of a slot is next.
+    attach(assets, "campaign_assets", qa_key="qa_status",
+           overtaken=newer_pending_versions(
+               assets, "review",
+               ("channel", "asset_type", "variant", "position")))
+
     approved_angles = [a for a in angles if a["status"] == "approved"]
     approved_concepts = [c for c in concepts if c["status"] == "approved"]
 
+    def bulk_ready(rows: list[dict]) -> int:
+        return sum(1 for r in rows if r["bulk_skip_reason"] is None)
+
+    # Stage 9. The readiness blockers come from lifecycle.approval_readiness --
+    # the same function lifecycle.promote enforces -- so the checklist the page
+    # shows and the guard the button hits cannot drift apart.
+    status = (await fetch_one(
+        "select status from public.campaigns where id = %s",
+        (campaign_id,)) or {}).get("status", "draft")
+    facts = await lifecycle.gather(campaign_id)
+    blockers = lifecycle.approval_readiness(facts)
+
     return {
+        "lifecycle": {
+            "blockers": [x.as_dict() for x in blockers],
+            "ready_to_approve": not blockers,
+            "can_go_to": list(lifecycle.MANUAL_MOVES.get(status, ())),
+            "earned": await lifecycle.earned_status(campaign_id),
+            "history": await lifecycle.history(campaign_id),
+            "slots": sorted(
+                (lifecycle.slot_label(s), ok) for s, ok in facts.slots.items()),
+        },
+        "revisions": revisions,
+        "open_revisions": [r for r in revisions if r["status"] == "open"],
+        "bulk": {
+            "angles": bulk_ready(angles),
+            "concepts": bulk_ready(concepts),
+            "assets": bulk_ready(assets),
+        },
         "validations": validations,
         "latest_validation": validations[0] if validations else None,
         "strategies": strategies,

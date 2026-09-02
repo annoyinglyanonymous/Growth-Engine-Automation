@@ -61,6 +61,10 @@ button.danger { background: #fff; color: var(--err); border-color: #e3b8b8; }
 button[disabled] { opacity: .45; cursor: not-allowed; }
 button.sm { padding: 4px 10px; font-size: 13px; }
 form.inline { display: inline; }
+/* The optional reason on a Reject sits beside its button, so it must
+   not take the 100% width every other text input does. */
+form.inline input[type=text] { width: auto; max-width: 210px;
+                               padding: 4px 8px; font-size: 13px; }
 .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
 .flash { padding: 11px 14px; border-radius: 6px; margin-bottom: 18px;
          border: 1px solid; }
@@ -105,6 +109,36 @@ details summary { cursor: pointer; font-weight: 600; font-size: 13px;
 .banner { background: var(--warn-bg); border-bottom: 1px solid #ecd6a4;
           color: var(--warn); padding: 8px 24px; font-size: 13px; }
 .signin { max-width: 420px; margin: 60px auto; }
+details.revise { margin-top: 10px; }
+details.revise summary { color: var(--accent); }
+details.revise textarea { min-height: 72px; margin-bottom: 8px; }
+.revlog { margin-top: 10px; border-top: 1px solid var(--line);
+          padding-top: 8px; }
+.revlog .rev { padding: 6px 0; border-bottom: 1px dashed var(--line); }
+.revlog .rev:last-child { border-bottom: 0; }
+.revlog .quote { margin: 4px 0 0; padding-left: 10px;
+                 border-left: 3px solid var(--line); white-space: pre-wrap; }
+/* The agent explaining what it could not do. Given warning colour on purpose:
+   it means the reviewer asked for something governance would not allow, which
+   is a result they have to read, not a footnote. */
+.revlog .agent-note { margin: 6px 0 0; padding: 6px 9px; border-radius: 5px;
+                      background: var(--warn-bg); color: var(--warn); }
+.rev-addressed .quote { opacity: .75; }
+.slots { display: flex; gap: 6px; flex-wrap: wrap; }
+.slot { padding: 3px 9px; border-radius: 5px; border: 1px solid var(--line);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 12px; }
+.slot.ok      { background: var(--ok-bg);   color: var(--ok);
+                border-color: #bfe0cb; }
+.slot.pending { background: #fbfcfd; color: var(--muted); }
+form.promote { display: flex; gap: 8px; align-items: center; flex: 1 1 320px; }
+form.promote input[type=text] { flex: 1; }
+.pill.live      { background: var(--ok-bg); color: var(--ok);
+                  border-color: var(--ok); }
+.pill.completed { background: #eef1f4; color: var(--ink); }
+.pill.archived  { background: #eef1f4; color: var(--muted); }
+.pill.strategy,
+.pill.production { background: var(--warn-bg); color: var(--warn); }
 .signin .note { color: var(--muted); font-size: 13px; margin: 14px 0 0; }
 @media (max-width: 720px) { .grid2 { grid-template-columns: 1fr; } }
 </style>

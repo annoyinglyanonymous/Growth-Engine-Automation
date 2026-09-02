@@ -15,6 +15,10 @@ STATUS TRANSITIONS
   warning     -> 'validated'    (proceed, with the warnings recorded)
   pass        -> 'validated'
 
+A pass never moves a campaign BACKWARDS -- one already at 'review'
+stays there. Every move is recorded in campaign_status_events; a
+re-run that lands on the status it already had is not a move.
+
 A warning does not stop the pipeline. Blocking on style would train people to
 skip validation, which costs more than the warnings catch.
 """
@@ -27,6 +31,7 @@ import json
 import sys
 
 import auth
+import lifecycle
 from db import cursor, fetch_one, pool
 from validation import context as vctx
 from validation.ai import ai_review_brief
@@ -129,6 +134,28 @@ async def validate(campaign_ref: str, *, validated_by: str,
     next_status = {"blocked": "blocked", "needs_info": "needs_info",
                    "warning": "validated", "pass": "validated"}[overall]
 
+    # The status BEFORE this run. Needed twice -- to decide whether a
+    # passing re-validation would move the campaign backwards, and to record
+    # the transition -- so it is read once here rather than inside the branch.
+    current = (await fetch_one(
+        "select status from public.campaigns where id = %s",
+        (campaign["id"],)) or {}).get("status")
+
+    # A PASSING re-validation must not drag a campaign backwards. Once 021 made
+    # the later statuses reachable, re-validating a campaign sitting at
+    # 'review' would have set it to 'validated' and lifecycle.advance would
+    # then have moved it forward again -- correct final state, two spurious
+    # rows in the status history, and a window where the campaign read as less
+    # progressed than it was.
+    #
+    # A FAILING validation still moves it: blocked means blocked, wherever the
+    # campaign had got to. That asymmetry is the point -- bad news travels and
+    # good news does not undo progress.
+    if next_status == "validated" and current not in (
+            None, "draft", "validating", "blocked", "needs_info",
+            "validated"):
+        next_status = current
+
     async with cursor() as cur:
         await cur.execute(
             "select coalesce(max(validation_number), 0) + 1 as n "
@@ -152,9 +179,27 @@ async def validate(campaign_ref: str, *, validated_by: str,
              json.dumps(ai_results),
              VALIDATOR_VERSION, validated_by))
         row = await cur.fetchone()
-        await cur.execute(
-            "update public.campaigns set status = %s where id = %s",
-            (next_status, campaign["id"]))
+
+        # Stage 3 moves the campaign, so stage 3 records the move --
+        # in this same transaction, so a status and the event
+        # explaining it cannot come apart. Without this the history
+        # had a hole exactly where a reviewer looks hardest:
+        # 'blocked' arrived with no row saying who ran the
+        # validation that blocked it, or when.
+        #
+        # automatic=True: a person clicked Validate, but nobody
+        # CHOSE 'blocked' -- the checks derived it, which is the
+        # same character as lifecycle.advance. changed_by still
+        # records who ran it.
+        if next_status != current:
+            await cur.execute(
+                "update public.campaigns set status = %s "
+                "where id = %s",
+                (next_status, campaign["id"]))
+            await lifecycle.record_transition(
+                cur, campaign["id"], current, next_status,
+                validated_by, True,
+                f"validation #{number}: {overall}")
 
     result["validation_id"] = str(row["id"])
     result["validation_number"] = number

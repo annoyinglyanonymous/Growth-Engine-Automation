@@ -207,6 +207,36 @@ def test_signin_is_a_noop_when_identity_is_off(client, monkeypatch):
     assert r.headers["location"].startswith("/?msg=")
 
 
+def _mounted_paths(target) -> set[str]:
+    """Every path the mounted app can actually resolve.
+
+    Not a flat comprehension over app.routes. This FastAPI version's
+    include_router does not copy routes into app.routes -- it inserts a lazy
+    _IncludedRouter wrapper holding the original router by reference, and that
+    wrapper has no .path. A flat walk therefore returns main.py's own routes
+    and none of the UI's, which is worse than not looking: the assertions
+    below still pass, on nothing.
+    """
+    found: set[str] = set()
+    stack = list(getattr(target, "routes", []))
+    seen: set[int] = set()
+    while stack:
+        route = stack.pop()
+        if id(route) in seen:
+            continue
+        seen.add(id(route))
+        path = getattr(route, "path", None)
+        if isinstance(path, str):
+            found.add(path)
+        # An include wrapper (no path of its own) or a sub-application.
+        inner = getattr(route, "original_router", None)
+        if inner is None and not isinstance(path, str):
+            inner = route
+        if inner is not None:
+            stack.extend(getattr(inner, "routes", []))
+    return found
+
+
 # --------------------------------------------------------------------------
 # Structure: which router is a route on?
 # --------------------------------------------------------------------------
@@ -278,15 +308,111 @@ def test_preflight_names_migrations_that_exist():
     import main
 
     folder = Path(main.__file__).resolve().parent / "migrations"
-    assert main.REQUIRED_COLUMNS, "preflight has nothing to check"
-    for filename, (needed, breaks) in main.REQUIRED_COLUMNS.items():
+    assert main.REQUIRED_SCHEMA, "preflight has nothing to check"
+    for filename, spec in main.REQUIRED_SCHEMA.items():
         assert (folder / filename).exists(), f"no such migration: {filename}"
-        assert needed, f"{filename} lists no columns"
-        assert breaks, f"{filename} does not say what it breaks"
+        assert spec.get("breaks"), f"{filename} does not say what it breaks"
+        needed = spec.get("columns", ())
+        assert needed or spec.get("tables"), f"{filename} requires nothing"
+        sql = (folder / filename).read_text(encoding="utf-8")
+        for table in spec.get("tables", ()):
+            assert table in sql, f"{filename} never mentions table {table}"
         for table, column, want in needed:
             assert want in ("text", "uuid", "boolean", "integer",
                             "timestamp with time zone"), want
             # A column the code needs must actually be added by that file.
-            sql = (folder / filename).read_text(encoding="utf-8")
             assert column in sql, f"{filename} never mentions {column}"
             assert table in sql, f"{filename} never mentions {table}"
+
+
+def test_revise_and_withdraw_paths_cannot_shadow_each_other():
+    """A real bug, caught before it shipped.
+
+    /revise/{kind}/{target_id} and /revise/{request_id}/withdraw both match
+    "/revise/abc/withdraw". FastAPI matches in registration order, so the
+    first would win and bind kind="abc", target_id="withdraw" -- a silent
+    404-shaped failure on the withdraw button.
+
+    Reordering would only hide it until someone adds a third route, so the fix
+    was to make the two patterns unable to describe the same path: the
+    withdraw route lives under /revisions/ and this pins that apart.
+    """
+    paths = {r.path for r in ui.router.routes}
+    # "revis", not "/revise": the latter is not a substring of "/revisions"
+    # and would silently match only one of the two routes -- which is how this
+    # test first passed against a set of one.
+    revise_paths = {p for p in paths if "revis" in p}
+    assert revise_paths == {
+        "/campaigns/{campaign_id}/revise/{kind}/{target_id}",
+        "/campaigns/{campaign_id}/revisions/{request_id}/withdraw",
+    }, revise_paths
+
+
+def test_no_undeclared_route_overlaps():
+    """Any two same-depth routes that can match one URL must be declared safe.
+
+    Overlap is not automatically a bug -- FastAPI resolves it by registration
+    order, and sometimes that is exactly right. It is a bug when nobody
+    decided. So this enumerates every pair that overlaps and requires each to
+    be in the allowlist below with a reason, which turns "we got lucky on
+    ordering" into "we chose this".
+
+    The pair that motivated it was /revise/{kind}/{target_id} against
+    /revise/{request_id}/withdraw: two wildcards in the same position, so
+    nothing could discriminate them and the withdraw button silently hit the
+    wrong handler.
+    """
+    #: frozenset of two paths -> why the overlap is harmless.
+    known_safe = {
+        frozenset({"/campaigns/new", "/campaigns/{campaign_id}"}):
+            "campaign_id is always a uuid, so it can never be the literal "
+            "'new'; /campaigns/new is registered first regardless",
+    }
+
+    # The whole app, not one router. The pair that slipped through last time
+    # sat on one router, but a pair spanning ui.router and public_router -- or
+    # ui.router and main.py's own /documents and /brands routes -- is exactly
+    # as ambiguous and was invisible here.
+    paths = sorted(_mounted_paths(app))
+
+    # This walk is the test's eyes, so prove it can see. Widening the scope
+    # naively made this check examine 10 paths and none of the UI's 22, which
+    # would have quietly switched off the only thing that catches shadowing.
+    should_see = ({r.path for r in ui.router.routes}
+                  | {r.path for r in ui.public_router.routes})
+    missing = should_see - set(paths)
+    assert not missing, (
+        f"the walk is blind to {len(missing)} route(s), so this test is not "
+        f"checking them: {sorted(missing)}")
+    by_depth: dict[int, list[str]] = {}
+    for path in paths:
+        by_depth.setdefault(len(path.strip("/").split("/")), []).append(path)
+
+    undeclared = []
+    for group in by_depth.values():
+        for i, a in enumerate(group):
+            for bb in group[i + 1:]:
+                pa, pb = a.strip("/").split("/"), bb.strip("/").split("/")
+                # They can match the same URL when no position has two
+                # DIFFERENT literals.
+                overlaps = not any(
+                    not x.startswith("{") and not y.startswith("{") and x != y
+                    for x, y in zip(pa, pb))
+                if overlaps and frozenset({a, bb}) not in known_safe:
+                    undeclared.append((a, bb))
+
+    assert not undeclared, (
+        "route pairs that can match the same URL and are not declared safe:\n"
+        + "\n".join(f"  {a}\n  {b}\n" for a, b in undeclared))
+
+
+def test_the_two_routers_share_no_path():
+    """A path registered on both routers is ambiguous in a way that matters.
+
+    public_router is mounted first (main.py), so the public handler wins and
+    the gated screen silently becomes the sign-in page -- a 200 with the wrong
+    body, which is harder to notice than a 500.
+    """
+    shared = ({r.path for r in ui.router.routes}
+              & {r.path for r in ui.public_router.routes})
+    assert not shared, f"on both routers: {sorted(shared)}"

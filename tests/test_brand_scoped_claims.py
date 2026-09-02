@@ -25,32 +25,30 @@ Two properties matter, and they pull in opposite directions:
 
 from __future__ import annotations
 
-import asyncio
-
 import pytest
 
 RENEGADE = "renegade"
+
+#: Figures as they appear in the text the PROMPT receives, which is
+#: `approved_wording or claim_text` -- not claim_text.
+#:
+#: The distinction is load-bearing and cost this test a false failure. The
+#: locations claim reads "9 open retail agency locations" as claim_text and
+#: "9 retail agency locations" as approved_wording: claim_text is the
+#: internally precise count, which excludes the two closed Florida locations,
+#: while the approved wording is what copy is allowed to say. Asserting on
+#: claim_text would pin a string no asset can ever contain.
 COMPANY_FACTS = [
     "200+ agents",
     "48 states",
-    "9 open retail agency locations",
+    "9 retail agency locations",
 ]
 
 
-def _run(coro_factory):
-    import db
-
-    async def go():
-        await db.pool.open()
-        try:
-            return await coro_factory()
-        finally:
-            await db.pool.close()
-
-    try:
-        return asyncio.run(go())
-    except Exception as exc:  # noqa: BLE001 -- unreachable DB is a skip
-        pytest.skip(f"no live database: {type(exc).__name__}: {exc}"[:140])
+# The pool comes from the session-scoped run_db fixture in conftest.py. It
+# used to be opened and closed here per call, which permanently closed the
+# module-level singleton and made every dbtest after the first report a
+# reachable database as unreachable.
 
 
 #: The migration this file describes. Recorded in public.schema_migrations by
@@ -59,7 +57,7 @@ MIGRATION = "015_brand_scoped_claims.sql"
 
 
 @pytest.fixture(scope="module")
-def schema() -> dict:
+def schema(run_db) -> dict:
     """Which of 015's pieces are present, and whether 015 claims to be applied."""
     from db import fetch_all, fetch_one
 
@@ -92,7 +90,7 @@ def schema() -> dict:
             "indexes": {r["indexname"] for r in indexes},
         }
 
-    return _run(load)
+    return run_db(load())
 
 
 def _require(schema) -> None:
@@ -129,7 +127,7 @@ def test_the_consistency_guards_exist(schema):
 
 
 @pytest.mark.dbtest
-def test_the_natural_key_exists_and_is_nulls_not_distinct(schema):
+def test_the_natural_key_exists_and_is_nulls_not_distinct(schema, run_db):
     """Without NULLS NOT DISTINCT the key does nothing for brand-level rows:
     every product_id NULL would be distinct from every other, so two identical
     brand-level claims would not collide."""
@@ -143,7 +141,7 @@ def test_the_natural_key_exists_and_is_nulls_not_distinct(schema):
             "select indexdef from pg_indexes "
             "where indexname = 'claims_natural_key'")
 
-    row = _run(load)
+    row = run_db(load())
     assert "NULLS NOT DISTINCT" in row["indexdef"].upper()
 
 
@@ -152,7 +150,7 @@ def test_the_natural_key_exists_and_is_nulls_not_distinct(schema):
 # --------------------------------------------------------------------------
 
 @pytest.fixture(scope="module")
-def company_claims(schema) -> list[dict]:
+def company_claims(schema, run_db) -> list[dict]:
     _require(schema)
     from db import fetch_all
 
@@ -163,7 +161,7 @@ def company_claims(schema) -> list[dict]:
             "join public.brands b on b.id = c.brand_id "
             "where b.slug = %s and c.category = 'company'", (RENEGADE,))
 
-    return _run(load)
+    return run_db(load())
 
 
 @pytest.mark.dbtest
@@ -197,7 +195,7 @@ def test_the_prohibited_company_claims_kept_their_trigger_phrases(
 # --------------------------------------------------------------------------
 
 @pytest.mark.dbtest
-def test_product_narrowed_retrieval_still_offers_brand_claims(schema):
+def test_product_narrowed_retrieval_still_offers_brand_claims(schema, run_db):
     """fetch_claims('renegade', product_slug='franchise-program') must include
     the company facts. Before 015 they only appeared because they had been
     filed under that exact product; any other product missed them."""
@@ -207,7 +205,7 @@ def test_product_narrowed_retrieval_still_offers_brand_claims(schema):
     async def load():
         return await fetch_claims(RENEGADE, "franchise-program")
 
-    claims = _run(load)
+    claims = run_db(load())
     text = " ".join((c["approved_wording"] or c["claim_text"])
                     for c in claims)
     missing = [f for f in COMPANY_FACTS if f not in text]
@@ -215,7 +213,7 @@ def test_product_narrowed_retrieval_still_offers_brand_claims(schema):
 
 
 @pytest.mark.dbtest
-def test_brand_claims_reach_a_different_product_too(schema):
+def test_brand_claims_reach_a_different_product_too(schema, run_db):
     """The generalisation. agency-acquisition is a different product and is
     approved_for_marketing = false, so its own approved claims are correctly
     withheld -- but the brand's prohibited facts must still arrive."""
@@ -225,7 +223,7 @@ def test_brand_claims_reach_a_different_product_too(schema):
     async def load():
         return await fetch_claims(RENEGADE, "agency-acquisition")
 
-    claims = _run(load)
+    claims = run_db(load())
     prohibited = " ".join(c["claim_text"] for c in claims
                           if c["status"] == "prohibited")
     assert "all 50 states" in prohibited, (
@@ -234,7 +232,7 @@ def test_brand_claims_reach_a_different_product_too(schema):
 
 
 @pytest.mark.dbtest
-def test_an_ungated_products_approved_claims_are_still_withheld(schema):
+def test_an_ungated_products_approved_claims_are_still_withheld(schema, run_db):
     """015 must not have widened the product gate while making product_id
     optional. A brand-level claim bypasses the gate because there is no product
     to gate on; a product-level one must not."""
@@ -244,7 +242,7 @@ def test_an_ungated_products_approved_claims_are_still_withheld(schema):
     async def load():
         return await fetch_claims(RENEGADE, "agency-acquisition")
 
-    claims = _run(load)
+    claims = run_db(load())
     approved_product_claims = [
         c for c in claims
         if c["status"] == "approved" and c["product_slug"] is not None]

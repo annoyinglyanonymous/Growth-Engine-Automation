@@ -145,6 +145,9 @@ def _asset(**kw) -> dict:
         "id": "a1", "channel": "meta_ads", "asset_type": "meta_ad",
         "variant": "A", "position": None, "content": {"headline": "Hi"},
         "status": "review", "version_number": 1, "approved_by": None,
+        # 022. Present-but-null, like approved_by: the columns are on
+        # the row whether or not anything was ever rejected.
+        "rejected_by": None, "notes": None,
         "knowledge_snapshot": {"kb_chunk_ids": [1, 2],
                                "approved_claims": ["x"],
                                "prohibited_claims": []},
@@ -154,6 +157,8 @@ def _asset(**kw) -> dict:
         # 016. Present-but-null is the real shape: the QA left join yields the
         # key whether or not a QA row exists.
         "qa_by": "someone@example.com",
+        # 020. pipeline_state.attach() puts these on every item.
+        "revisions": [], "open_revision": None, "bulk_skip_reason": None,
     }
     base.update(kw)
     return base
@@ -163,6 +168,11 @@ def _state(**kw) -> dict:
     base = {
         "validations": [], "latest_validation": None, "strategies": [],
         "approved_strategy": None, "angles": [], "concepts": [], "assets": [],
+        "revisions": [], "open_revisions": [],
+        "bulk": {"angles": 0, "concepts": 0, "assets": 0},
+        "lifecycle": {"blockers": [], "ready_to_approve": True,
+                      "can_go_to": [], "earned": "draft", "history": [],
+                      "slots": []},
         "can": {"generate_strategy": True, "generate_angles": False,
                 "generate_concepts": False, "generate_assets": False,
                 "run_qa": False},
@@ -178,6 +188,8 @@ CAMPAIGN = {
     "brand_name": "Renegade", "product_name": "Franchise Program",
     "campaign_type_name": "Franchise Recruitment",
     "channels": ["email", "meta_ads"], "product_marketable": True,
+    # 021. campaigns.get() selects c.*, so a real row always has these.
+    "approved_by": None, "approved_at": None,
 }
 
 

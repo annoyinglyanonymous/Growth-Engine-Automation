@@ -125,27 +125,19 @@ def test_the_unscoped_commission_phrase_does_not_hit_the_approved_wording():
 # --------------------------------------------------------------------------
 
 @pytest.fixture(scope="module")
-def live_claims():
+def live_claims(run_db):
     """Claims for the test campaign's product, or skip.
 
     Skips rather than fails when the database is unreachable so the offline
     suite stays green; a CI run with credentials gets the real check.
     """
-    import db
     from validation import context as vctx
 
     async def load():
-        await db.pool.open()
-        try:
-            _, ctx_obj = await vctx.load(CAMPAIGN)
-            return ctx_obj.claims
-        finally:
-            await db.pool.close()
+        _, ctx_obj = await vctx.load(CAMPAIGN)
+        return ctx_obj.claims
 
-    try:
-        return asyncio.run(load())
-    except Exception as exc:  # noqa: BLE001 -- unreachable DB is a skip
-        pytest.skip(f"no live database: {type(exc).__name__}: {exc}"[:120])
+    return run_db(load())
 
 
 @pytest.mark.dbtest

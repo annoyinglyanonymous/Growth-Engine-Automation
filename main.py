@@ -71,31 +71,52 @@ async def lifespan(app: FastAPI):
         await pool.close()
 
 
-#: Columns this code writes or reads that a migration has to have added first,
-#: keyed by the migration that adds them, with what actually breaks without it.
-#: The blast radius is part of the message because it is not guessable: 015's
-#: one column sits in fetch_claims, which every generator and /context reach
-#: through, so a missing claims.brand_id takes down grounding rather than a
-#: screen.
-#: (table, column, expected data_type). The TYPE is checked, not just
-#: existence, because the one bug this preflight failed to catch was a column
-#: that existed with the wrong type: campaigns.created_by was an unused uuid
-#: shaped for auth.users, and writing an operator name to it failed on apply
-#: with `invalid input syntax for type uuid`. Existence is the cheaper check
-#: and the less useful one.
-REQUIRED_COLUMNS: dict[str, tuple[tuple[tuple[str, str, str], ...], str]] = {
-    "015_brand_scoped_claims.sql": (
-        (("claims", "brand_id", "uuid"),),
-        "claim retrieval, /context, and every generator",
-    ),
-    "016_decision_attribution.sql": (
-        (("campaign_angles", "decided_by", "text"),
-         ("creative_concepts", "decided_by", "text"),
-         ("campaign_validations", "validated_by", "text"),
-         ("asset_qa_results", "validated_by", "text"),
-         ("campaigns", "created_by", "text")),
-        "the campaign detail screen, validation, QA, and filing a brief",
-    ),
+#: What this code needs the schema to already have, keyed by the migration
+#: that provides it, with what breaks without it.
+#:
+#: `columns` entries are (table, column, expected data_type). The TYPE is
+#: checked and not just existence, because the first bug this preflight missed
+#: was a column that existed with the wrong one: campaigns.created_by was an
+#: unused uuid shaped for auth.users, and writing an operator name to it failed
+#: on apply with `invalid input syntax for type uuid`.
+#:
+#: `tables` exists because the SECOND bug this preflight missed was a whole
+#: missing table. 020 adds revision_requests, campaigns.pipeline_state queries
+#: it, and the preflight reported nothing at all while the campaign detail page
+#: returned a 500 -- a check that only knows about columns is silent on exactly
+#: the migration that adds no columns to anything.
+REQUIRED_SCHEMA: dict[str, dict] = {
+    "015_brand_scoped_claims.sql": {
+        "columns": (("claims", "brand_id", "uuid"),),
+        "breaks": "claim retrieval, /context, and every generator",
+    },
+    "016_decision_attribution.sql": {
+        "columns": (("campaign_angles", "decided_by", "text"),
+                    ("creative_concepts", "decided_by", "text"),
+                    ("campaign_validations", "validated_by", "text"),
+                    ("asset_qa_results", "validated_by", "text"),
+                    ("campaigns", "created_by", "text")),
+        "breaks": "the campaign detail screen, validation, QA, and filing a "
+                  "brief",
+    },
+    "020_revision_requests.sql": {
+        "tables": ("revision_requests",),
+        "breaks": "the campaign detail screen, Approve all, and every Edit "
+                  "button",
+    },
+    "021_campaign_lifecycle.sql": {
+        "tables": ("campaign_status_events",),
+        "columns": (("campaigns", "approved_by", "text"),),
+        "breaks": "the campaign detail screen, stage 9 (campaign "
+                  "approval), and brief validation -- which now "
+                  "records its own status move",
+    },
+    "022_asset_rejection.sql": {
+        "columns": (("campaign_assets", "rejected_by", "text"),
+                    ("campaign_strategies", "rejected_by", "text")),
+        "breaks": "the Reject button on an asset -- the only way to turn "
+                  "down a revision without approving it",
+    },
 }
 
 
@@ -119,10 +140,15 @@ async def schema_preflight() -> list[str]:
             "select table_name, column_name, data_type "
             "from information_schema.columns where table_schema = 'public'")
     }
+    tables = {table for table, _ in have}
+
     lines: list[str] = []
-    for migration, (needed, breaks) in REQUIRED_COLUMNS.items():
+    for migration, spec in REQUIRED_SCHEMA.items():
         wrong: list[str] = []
-        for table, column, want in needed:
+        for table in spec.get("tables", ()):
+            if table not in tables:
+                wrong.append(f"table {table} (missing)")
+        for table, column, want in spec.get("columns", ()):
             actual = have.get((table, column))
             if actual is None:
                 wrong.append(f"{table}.{column} (missing)")
@@ -131,7 +157,7 @@ async def schema_preflight() -> list[str]:
         if wrong:
             lines.append(
                 f"SCHEMA: {migration} is not applied -- "
-                f"{', '.join(wrong)}. This breaks {breaks}. "
+                f"{', '.join(wrong)}. This breaks {spec['breaks']}. "
                 f"Run: python migrate.py")
     return lines
 
