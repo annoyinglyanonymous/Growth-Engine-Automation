@@ -227,6 +227,102 @@ def test_campaign_detail_renders_findings(env):
     assert 'class="pill blocked"' in out
 
 
+VIDEO_CONTENT = {
+    "duration_target_seconds": 30,
+    "scenes": [
+        {"n": 1, "seconds": 3, "spoken": "I quoted fourteen carriers today.",
+         "on_screen": "14 carriers. One day.",
+         "visual_prompt": "handheld selfie, agent at a desk, 9:16"},
+        {"n": 2, "seconds": 27, "spoken": "It used to take me all week.",
+         "on_screen": "A week, every week",
+         "visual_prompt": "over-shoulder of a laptop"},
+    ],
+    "cta": "Book a 15-minute licensing call",
+    "caption": "Quoting used to take my whole week.",
+}
+
+
+def test_campaign_detail_renders_a_video_shot_list(env):
+    """THE BUG THIS COVERS
+    The asset card rendered {{ value }} for every content field, which was
+    fine while every value was a string. A video script's `scenes` is a list
+    of objects, and printing one straight gives the reviewer a Python repr --
+    [{'n': 1, 'seconds': 3, ...}] -- which is unreadable and, worse, looks
+    like the data is broken rather than the template.
+    """
+    out = env.get_template("campaign.html").render(
+        c=CAMPAIGN,
+        **_state(assets=[_asset(asset_type="video_script",
+                                content=VIDEO_CONTENT)],
+                 can={"generate_strategy": True, "generate_angles": True,
+                      "generate_concepts": True, "generate_assets": True,
+                      "run_qa": True},
+                 counts={"angles_approved": 1, "concepts_approved": 1,
+                         "assets": 1, "assets_blocked": 0,
+                         "assets_approved": 0}),
+        msg=None, kind="ok")
+    flat = " ".join(out.split())
+
+    # No Python repr anywhere.
+    assert "{'n':" not in out and "'spoken'" not in out
+
+    # Every shot's three pieces of copy are on the page, labelled.
+    assert "I quoted fourteen carriers today." in flat
+    assert "It used to take me all week." in flat
+    assert "handheld selfie, agent at a desk, 9:16" in flat
+    assert flat.count("<dt>spoken</dt>") == 2
+    assert flat.count("<dt>visual_prompt</dt>") == 2
+
+    # Structure, not just text: an ordered list so shot 2 reads as shot 2.
+    assert '<ol class="nested">' in out
+    assert "video_script" in flat
+
+
+def test_the_shot_count_is_shown_beside_the_scenes_field(env):
+    """A string field shows its character count; a list shows how many
+    entries it has. Same purpose -- the reviewer should not have to count."""
+    out = env.get_template("campaign.html").render(
+        c=CAMPAIGN,
+        **_state(assets=[_asset(asset_type="video_script",
+                                content=VIDEO_CONTENT)],
+                 can={"generate_strategy": True, "generate_angles": True,
+                      "generate_concepts": True, "generate_assets": True,
+                      "run_qa": True},
+                 counts={"angles_approved": 1, "concepts_approved": 1,
+                         "assets": 1, "assets_blocked": 0,
+                         "assets_approved": 0}),
+        msg=None, kind="ok")
+    flat = " ".join(out.split())
+    assert "<dt>scenes <span class=\"muted\">(2)</span>" in flat
+
+
+def test_the_video_button_follows_the_meta_ads_channel(env):
+    """026: gated on meta_ads rather than a channel of its own, because a UGC
+    video ad IS a Meta ad and inherits its utm convention."""
+    on = env.get_template("campaign.html").render(
+        c=CAMPAIGN,
+        **_state(can={"generate_strategy": True, "generate_angles": True,
+                      "generate_concepts": True, "generate_assets": True,
+                      "run_qa": True},
+                 counts={"angles_approved": 1, "concepts_approved": 1,
+                         "assets": 0, "assets_blocked": 0,
+                         "assets_approved": 0}),
+        msg=None, kind="ok")
+    assert "Generate UGC video scripts" in on
+    assert 'name="seconds"' in on
+
+    off = env.get_template("campaign.html").render(
+        c=dict(CAMPAIGN, channels=["email"]),
+        **_state(can={"generate_strategy": True, "generate_angles": True,
+                      "generate_concepts": True, "generate_assets": True,
+                      "run_qa": True},
+                 counts={"angles_approved": 1, "concepts_approved": 1,
+                         "assets": 0, "assets_blocked": 0,
+                         "assets_approved": 0}),
+        msg=None, kind="ok")
+    assert "Generate UGC video scripts" not in off
+
+
 def test_campaign_detail_renders_assets_with_char_counts(env):
     out = env.get_template("campaign.html").render(
         c=CAMPAIGN,

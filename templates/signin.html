@@ -3,8 +3,13 @@
 {% block body %}
 <div class="signin">
   <div class="card">
-    <h3>Who is approving?</h3>
-    <p class="small muted">
+    <div class="eyebrow" style="font-size:11.5px; font-weight:650;
+         letter-spacing:.09em; text-transform:uppercase; color:var(--muted)">
+      Campaign Engine</div>
+    <h2 style="font-size:19px; font-weight:650; letter-spacing:-.01em;
+               margin:6px 0 4px; text-transform:none; color:var(--ink)">
+      Who is approving?</h2>
+    <p class="small muted" style="margin:0">
       Approvals, rejections and validation runs are recorded against this name.
     </p>
 
@@ -24,8 +29,9 @@
              autocomplete="current-password">
       {% endif %}
 
-      <div class="row" style="margin-top:18px">
-        <button type="submit" data-busy="Signing in&hellip;">Sign in</button>
+      <div class="row" style="margin-top:20px">
+        <button type="submit" data-busy="Signing in&hellip;"
+                style="width:100%; justify-content:center">Sign in</button>
       </div>
     </form>
 
@@ -39,6 +45,7 @@
       Two texts, because the two modes really do differ in what they achieve
       and saying so is the honest thing.
     #}
+    <hr class="sep" style="margin:18px 0 0">
     <p class="note">
       This records <em>who</em> approved something. It is
       <strong>not access control</strong> &mdash; anyone who can reach this

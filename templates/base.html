@@ -4,186 +4,643 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% block title %}Campaign Engine{% endblock %}</title>
+{#- Google Fonts is the one external request in the app, and it is
+    progressive: display=swap paints immediately in the system stack and
+    upgrades when the file lands, so an offline or slow machine gets a
+    slightly plainer page rather than a blank one. Everything else is still
+    inlined -- no framework, no build step. -#}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* No framework and no build step. One stylesheet, inlined, because a
-   four-screen internal tool does not need an asset pipeline. */
+/* ==========================================================================
+   Campaign Engine
+   One stylesheet, inlined. Tokens first, then layout, then components.
+
+   Everything semantic (pass / warning / blocked) is a DIFFERENT hue from the
+   accent, on purpose: this is a tool whose whole job is telling someone that
+   something needs their attention, and a status colour that could be mistaken
+   for a brand colour is a status nobody sees.
+   ========================================================================== */
+
 :root {
-  --ink: #17191c; --muted: #5b6570; --line: #dfe3e8; --bg: #f7f8fa;
-  --card: #fff; --accent: #1f4f8b;
-  --ok: #1c6b3a; --ok-bg: #e8f4ec;
-  --warn: #8a5800; --warn-bg: #fdf2dc;
-  --err: #a01b1b; --err-bg: #fbeaea;
+  /* Ground and ink. Cool-biased neutrals rather than pure greys -- the page
+     is mostly surface, and a flat #808080 reads as unfinished. */
+  --bg:        #eef1f5;
+  --surface:   #ffffff;
+  --surface-2: #f7f9fb;
+  --surface-3: #eef2f6;
+  --line:      #dde3ea;
+  --line-2:    #c9d2dc;
+  --ink:       #151a21;
+  --ink-2:     #3d4854;
+  --muted:     #64707e;
+
+  /* One accent, deep enough to carry white text at small sizes. */
+  --accent:      #0d5c63;
+  --accent-hi:   #0a4a50;
+  /* Text ON the accent. A token and not #fff, because the dark theme flips
+     the accent to a LIGHT teal -- white on it is about 2:1 contrast, which
+     is unreadable, and it is the kind of bug that only shows up on somebody
+     else's machine. */
+  --on-accent:   #ffffff;
+  --accent-soft: #e4f0f1;
+  --accent-line: #a9ccd0;
+
+  --ok:       #126b3a;
+  --ok-bg:    #e6f3ea;
+  --ok-line:  #b4dcc2;
+  --warn:     #855200;
+  --warn-bg:  #fdf3e0;
+  --warn-line:#ecd5a6;
+  --err:      #a02620;
+  --err-bg:   #fbebea;
+  --err-line: #e9c3c1;
+
+  --focus: #1f8f9c;
+
+  --radius:    10px;
+  --radius-sm: 7px;
+  --shadow:    0 1px 2px rgba(21, 26, 33, .05),
+               0 1px 3px rgba(21, 26, 33, .04);
+  --shadow-lg: 0 2px 4px rgba(21, 26, 33, .06),
+               0 8px 24px -8px rgba(21, 26, 33, .12);
+
+  --sans: "Archivo", "Segoe UI Variable Text", "Segoe UI", system-ui,
+          -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas,
+          monospace;
 }
+
+/* The viewer's OS preference. Redefines tokens only -- no component below
+   sets a colour that is not a token, so the whole app follows from here. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:        #0f1318;
+    --surface:   #171d24;
+    --surface-2: #1c232b;
+    --surface-3: #222a33;
+    --line:      #2a333d;
+    --line-2:    #3a4653;
+    --ink:       #e8edf2;
+    --ink-2:     #bcc7d2;
+    --muted:     #8d9aa8;
+
+    --accent:      #4db3bd;
+    --accent-hi:   #6ac6cf;
+    --on-accent:   #08252a;
+    --accent-soft: #143134;
+    --accent-line: #245c62;
+
+    --ok:       #62c98c;
+    --ok-bg:    #12291c;
+    --ok-line:  #23543a;
+    --warn:     #e0ab5a;
+    --warn-bg:  #2a2013;
+    --warn-line:#5a4522;
+    --err:      #f08a83;
+    --err-bg:   #2c1717;
+    --err-line: #5d2d2a;
+
+    --focus: #4db3bd;
+
+    --shadow:    0 1px 2px rgba(0, 0, 0, .4);
+    --shadow-lg: 0 2px 4px rgba(0, 0, 0, .3),
+                 0 8px 24px -8px rgba(0, 0, 0, .5);
+  }
+}
+
+/* -------------------------------------------------------------- reset */
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--ink);
-       font: 15px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-             Roboto, Helvetica, Arial, sans-serif; }
-a { color: var(--accent); }
-header { background: var(--card); border-bottom: 1px solid var(--line);
-         padding: 14px 24px; display: flex; gap: 18px; align-items: baseline; }
-header h1 { font-size: 17px; margin: 0; font-weight: 650; }
-header nav { margin-left: auto; display: flex; gap: 16px; }
-main { max-width: 1080px; margin: 0 auto; padding: 24px; }
-h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .06em;
-     color: var(--muted); margin: 30px 0 12px; font-weight: 650; }
-h3 { font-size: 15px; margin: 0 0 6px; }
-.card { background: var(--card); border: 1px solid var(--line);
-        border-radius: 8px; padding: 16px 18px; margin-bottom: 12px; }
-table { width: 100%; border-collapse: collapse; background: var(--card);
-        border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
-th, td { text-align: left; padding: 10px 14px;
-         border-bottom: 1px solid var(--line); vertical-align: top; }
-th { font-size: 12px; text-transform: uppercase; letter-spacing: .05em;
-     color: var(--muted); background: #fbfcfd; }
-tr:last-child td { border-bottom: 0; }
-.pill { display: inline-block; padding: 2px 9px; border-radius: 20px;
-        font-size: 12px; font-weight: 600; border: 1px solid transparent; }
-.pill.draft      { background: #eef1f4; color: var(--muted); }
-.pill.validated,
-.pill.pass,
-.pill.approved   { background: var(--ok-bg);   color: var(--ok); }
-.pill.warning,
-.pill.review,
-.pill.needs_info { background: var(--warn-bg); color: var(--warn); }
-.pill.blocked,
-.pill.rejected   { background: var(--err-bg);  color: var(--err); }
-.pill.superseded { background: #eef1f4; color: var(--muted);
-                   text-decoration: line-through; }
-.muted { color: var(--muted); }
-.small { font-size: 13px; }
-.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-        font-size: 12px; }
-button, .btn { font: inherit; font-weight: 600; padding: 8px 14px;
-               border-radius: 6px; border: 1px solid var(--accent);
-               background: var(--accent); color: #fff; cursor: pointer; }
-button.ghost { background: #fff; color: var(--accent); }
-button.danger { background: #fff; color: var(--err); border-color: #e3b8b8; }
-button[disabled] { opacity: .45; cursor: not-allowed; }
-button.sm { padding: 4px 10px; font-size: 13px; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 15px/1.6 var(--sans);
+  font-feature-settings: "cv05" 1;
+  -webkit-font-smoothing: antialiased;
+}
+:where(a) { color: var(--accent); text-decoration-thickness: 1px;
+            text-underline-offset: 2px; }
+:where(a:hover) { color: var(--accent-hi); }
+:where(button, a, input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px;
+}
+::selection { background: var(--accent-soft); }
+
+/* ------------------------------------------------------------- app bar */
+.appbar {
+  position: sticky; top: 0; z-index: 30;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; gap: 10px;
+  padding: 0 22px; height: 56px;
+}
+.brand { display: flex; align-items: center; gap: 9px;
+         text-decoration: none; color: var(--ink); }
+.brand .mark {
+  width: 26px; height: 26px; border-radius: 7px; flex: none;
+  background: var(--accent); color: var(--on-accent);
+  display: grid; place-items: center;
+  font: 700 13px/1 var(--sans); letter-spacing: -.02em;
+}
+.brand .name { font-weight: 650; font-size: 15px; letter-spacing: -.01em; }
+.appbar nav { margin-left: 18px; display: flex; gap: 2px; align-items: center; }
+.appbar nav a {
+  color: var(--ink-2); text-decoration: none; font-size: 14px;
+  font-weight: 500; padding: 6px 11px; border-radius: var(--radius-sm);
+}
+.appbar nav a:hover { background: var(--surface-3); color: var(--ink); }
+.appbar nav a[aria-current="page"] {
+  background: var(--accent-soft); color: var(--accent); font-weight: 600;
+}
+.appbar .spacer { margin-left: auto; }
+
+/* The operator, and signing out. A chip rather than a nav link: it is who
+   you ARE here, not somewhere you can go. */
+.who { display: flex; align-items: center; gap: 8px; }
+.who .name {
+  font-size: 13px; font-weight: 600; color: var(--ink-2);
+  background: var(--surface-3); border: 1px solid var(--line);
+  padding: 4px 10px; border-radius: 20px; white-space: nowrap;
+}
+.who form { display: inline; }
+.who button {
+  background: none; border: 0; padding: 4px 2px; cursor: pointer;
+  color: var(--muted); font: 400 13px var(--sans);
+  text-decoration: underline; text-underline-offset: 2px;
+}
+.who button:hover { color: var(--ink); }
+
+.banner {
+  background: var(--warn-bg); color: var(--warn);
+  border-bottom: 1px solid var(--warn-line);
+  padding: 10px 22px; font-size: 13.5px;
+}
+
+main { max-width: 1140px; margin: 0 auto; padding: 26px 22px 80px; }
+
+/* -------------------------------------------------------- page header */
+.page-head { margin-bottom: 22px; }
+.page-head .eyebrow {
+  font-size: 11.5px; font-weight: 650; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 7px;
+}
+.page-head h1 {
+  font-size: 25px; font-weight: 650; letter-spacing: -.02em;
+  line-height: 1.22; margin: 0; text-wrap: balance;
+}
+.page-head .sub { color: var(--muted); font-size: 14px; margin-top: 6px; }
+.head-row { display: flex; gap: 16px; align-items: flex-start;
+            justify-content: space-between; flex-wrap: wrap; }
+
+/* Facts about the thing you are looking at: brand, product, channels. */
+.meta { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 11px; }
+.chip {
+  font-size: 12.5px; color: var(--ink-2); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 20px; padding: 3px 11px;
+  display: inline-flex; gap: 6px; align-items: center;
+}
+.chip b { font-weight: 600; }
+.chip .k { color: var(--muted); font-size: 11px; text-transform: uppercase;
+           letter-spacing: .06em; font-weight: 650; }
+
+/* ------------------------------------------------------------ sections */
+/* A stage. The header is part of the section rather than a floating h2, so
+   the page reads as nine steps instead of one long document. */
+section.stage { margin: 0 0 30px; scroll-margin-top: 74px; }
+.stage-head { display: flex; align-items: center; gap: 11px;
+              margin: 0 0 11px; }
+.stage-head .n {
+  width: 25px; height: 25px; border-radius: 50%; flex: none;
+  display: grid; place-items: center;
+  font: 650 12.5px/1 var(--sans);
+  background: var(--surface-3); color: var(--muted);
+  border: 1px solid var(--line);
+  font-variant-numeric: tabular-nums;
+}
+.stage-head h2 {
+  font-size: 15.5px; font-weight: 650; margin: 0; letter-spacing: -.01em;
+  color: var(--ink); text-transform: none;
+}
+.stage-head .state { margin-left: auto; font-size: 13px; color: var(--muted); }
+section.stage[data-state="done"] .stage-head .n {
+  background: var(--ok-bg); color: var(--ok); border-color: var(--ok-line);
+}
+section.stage[data-state="active"] .stage-head .n {
+  background: var(--accent); color: var(--on-accent); border-color: var(--accent);
+}
+
+/* --------------------------------------------------------- stage rail */
+/* The campaign page is long by nature -- nine stages, every version of every
+   artefact. The rail is how you find out where you are without scrolling
+   through it, and it doubles as the progress readout. */
+.rail {
+  position: sticky; top: 56px; z-index: 20;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 7px; margin: 0 0 24px;
+  display: flex; gap: 4px; overflow-x: auto; scrollbar-width: thin;
+}
+@supports not (backdrop-filter: blur(8px)) {
+  .rail { background: var(--surface); }
+}
+.rail a {
+  flex: 1 0 auto; text-decoration: none; color: var(--ink-2);
+  padding: 7px 12px; border-radius: var(--radius-sm);
+  font-size: 13px; font-weight: 500; white-space: nowrap;
+  display: flex; align-items: center; gap: 7px;
+}
+.rail a:hover { background: var(--surface-3); color: var(--ink); }
+.rail a .dot {
+  width: 7px; height: 7px; border-radius: 50%; flex: none;
+  background: var(--line-2);
+}
+.rail a[data-state="done"] .dot   { background: var(--ok); }
+.rail a[data-state="active"] .dot { background: var(--accent);
+                                    box-shadow: 0 0 0 3px var(--accent-soft); }
+.rail a[data-state="blocked"] .dot { background: var(--err); }
+.rail a .num { color: var(--muted); font-variant-numeric: tabular-nums;
+               font-size: 11.5px; font-weight: 650; }
+
+/* --------------------------------------------------------------- cards */
+.card {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 16px 18px; margin-bottom: 11px;
+  box-shadow: var(--shadow);
+}
+.card.quiet { background: var(--surface-2); box-shadow: none; }
+.card > :first-child { margin-top: 0; }
+.card > :last-child { margin-bottom: 0; }
+
+/* The do-this bar at the top of a stage. Deliberately NOT a white card:
+   actions and artefacts looked identical before, so the page was a wall of
+   equally-weighted boxes. */
+.toolbar {
+  background: var(--surface-2); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 13px 15px; margin-bottom: 12px;
+  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+}
+.toolbar .note { font-size: 13px; color: var(--muted); }
+.toolbar form { display: contents; }
+
+/* An item: one strategy version, one angle, one asset. */
+.item { }
+.item-head {
+  display: flex; gap: 12px; align-items: flex-start;
+  justify-content: space-between; flex-wrap: wrap;
+}
+.item-head .title { display: flex; gap: 8px; align-items: center;
+                    flex-wrap: wrap; min-width: 0; }
+.item-head h3 {
+  font-size: 15px; font-weight: 620; margin: 0; letter-spacing: -.01em;
+  line-height: 1.4;
+}
+.item-head .actions { display: flex; gap: 7px; align-items: center;
+                      flex-wrap: wrap; }
+.byline { font-size: 12.5px; color: var(--muted); margin-top: 3px; }
+.ver {
+  font: 500 11.5px/1 var(--mono); color: var(--muted);
+  background: var(--surface-3); border: 1px solid var(--line);
+  padding: 3px 6px; border-radius: 4px; font-variant-numeric: tabular-nums;
+}
+
+/* --------------------------------------------------------------- pills */
+.pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 2.5px 9px; border-radius: 20px; font-size: 12px; font-weight: 600;
+  border: 1px solid transparent; white-space: nowrap; line-height: 1.5;
+}
+.pill::before {
+  content: ""; width: 5px; height: 5px; border-radius: 50%; flex: none;
+  background: currentColor;
+}
+.pill.nodot::before { display: none; }
+.pill.draft, .pill.superseded, .pill.completed, .pill.archived {
+  background: var(--surface-3); color: var(--muted); border-color: var(--line);
+}
+.pill.superseded { text-decoration: line-through; }
+.pill.completed { color: var(--ink-2); }
+.pill.validated, .pill.pass, .pill.approved, .pill.live {
+  background: var(--ok-bg); color: var(--ok); border-color: var(--ok-line);
+}
+.pill.warning, .pill.review, .pill.needs_info, .pill.validating,
+.pill.strategy, .pill.production {
+  background: var(--warn-bg); color: var(--warn); border-color: var(--warn-line);
+}
+.pill.blocked, .pill.rejected {
+  background: var(--err-bg); color: var(--err); border-color: var(--err-line);
+}
+
+/* ------------------------------------------------------------- buttons */
+button, .btn {
+  font: 600 13.5px/1 var(--sans); padding: 9px 15px;
+  border-radius: var(--radius-sm); border: 1px solid var(--accent);
+  background: var(--accent); color: var(--on-accent); cursor: pointer;
+  display: inline-flex; align-items: center; gap: 7px;
+  text-decoration: none; white-space: nowrap;
+  transition: background .12s ease, border-color .12s ease, opacity .12s ease;
+}
+button:hover:not([disabled]), .btn:hover {
+  background: var(--accent-hi); border-color: var(--accent-hi);
+}
+button.ghost {
+  background: var(--surface); color: var(--accent);
+  border-color: var(--accent-line);
+}
+button.ghost:hover:not([disabled]) {
+  background: var(--accent-soft); border-color: var(--accent);
+}
+button.subtle {
+  background: var(--surface); color: var(--ink-2); border-color: var(--line-2);
+}
+button.subtle:hover:not([disabled]) { background: var(--surface-3);
+                                      border-color: var(--muted); }
+button.danger {
+  background: var(--surface); color: var(--err); border-color: var(--err-line);
+}
+button.danger:hover:not([disabled]) { background: var(--err-bg);
+                                      border-color: var(--err); }
+button[disabled] { opacity: .42; cursor: not-allowed; }
+button.sm { padding: 6px 11px; font-size: 12.5px; }
 form.inline { display: inline; }
-/* 025: the utm-tagged link on an approved asset. Mono and click-to-select,
-   because its one job is to be copied whole into an ESP or Ads Manager. */
-.tracked-url { margin-top: 10px; display: flex; gap: 8px;
-               align-items: center; }
-.tracked-url input[type=text] { flex: 1; width: auto; font-family: ui-monospace,
-               Consolas, monospace; font-size: 12px; padding: 5px 8px;
-               color: var(--muted); background: #fbfcfd; }
-/* The optional reason on a Reject sits beside its button, so it must
-   not take the 100% width every other text input does. */
-form.inline input[type=text] { width: auto; max-width: 210px;
-                               padding: 4px 8px; font-size: 13px; }
-.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
-.flash { padding: 11px 14px; border-radius: 6px; margin-bottom: 18px;
-         border: 1px solid; }
-.flash.ok    { background: var(--ok-bg);   border-color: #bfe0cb;
-               color: var(--ok); }
-.flash.warn  { background: var(--warn-bg); border-color: #ecd6a4;
-               color: var(--warn); }
-.flash.error { background: var(--err-bg);  border-color: #e8c4c4;
-               color: var(--err); }
-label { display: block; font-weight: 600; font-size: 13px; margin: 14px 0 4px; }
+
+/* -------------------------------------------------------------- tables */
+.table-wrap { overflow-x: auto; border: 1px solid var(--line);
+              border-radius: var(--radius); background: var(--surface);
+              box-shadow: var(--shadow); }
+table { width: 100%; border-collapse: collapse; background: var(--surface); }
+.table-wrap table { border: 0; }
+th, td { text-align: left; padding: 11px 15px; vertical-align: top;
+         border-bottom: 1px solid var(--line); }
+th {
+  font-size: 11.5px; text-transform: uppercase; letter-spacing: .07em;
+  color: var(--muted); background: var(--surface-2); font-weight: 650;
+  white-space: nowrap; position: sticky; top: 0;
+}
+tbody tr:last-child td, tr:last-child td { border-bottom: 0; }
+tbody tr:hover td { background: var(--surface-2); }
+td.num { font-variant-numeric: tabular-nums; }
+
+/* ---------------------------------------------------------- stat tiles */
+.stats { display: grid; gap: 11px; margin-bottom: 22px;
+         grid-template-columns: repeat(auto-fit, minmax(148px, 1fr)); }
+.stat {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 13px 15px; box-shadow: var(--shadow);
+}
+.stat .k {
+  font-size: 11.5px; text-transform: uppercase; letter-spacing: .07em;
+  color: var(--muted); font-weight: 650;
+}
+.stat .v {
+  font-size: 25px; font-weight: 650; letter-spacing: -.02em; margin-top: 3px;
+  font-variant-numeric: tabular-nums; line-height: 1.1;
+}
+.stat.attention .v { color: var(--err); }
+.stat.pending .v { color: var(--warn); }
+.stat .sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+/* --------------------------------------------------------------- forms */
+label { display: block; font-weight: 600; font-size: 13px;
+        margin: 15px 0 5px; color: var(--ink-2); }
 label .hint { font-weight: 400; color: var(--muted); }
-input[type=text], textarea, select {
-  width: 100%; padding: 8px 10px; border: 1px solid var(--line);
-  border-radius: 6px; font: inherit; background: #fff; }
-textarea { min-height: 68px; resize: vertical; }
-fieldset { border: 1px solid var(--line); border-radius: 8px;
-           background: var(--card); padding: 4px 18px 18px; margin: 0 0 16px; }
-legend { font-size: 12px; text-transform: uppercase; letter-spacing: .05em;
-         color: var(--muted); font-weight: 650; padding: 0 6px; }
-.checks { display: flex; gap: 16px; margin-top: 6px; }
-.checks label { display: flex; gap: 6px; align-items: center; margin: 0;
-                font-weight: 400; }
-.checks input { width: auto; }
-ul.findings { margin: 8px 0 0; padding-left: 18px; }
-ul.findings li { margin-bottom: 5px; }
+input[type=text], input[type=url], input[type=password], textarea, select {
+  width: 100%; padding: 9px 11px; border: 1px solid var(--line-2);
+  border-radius: var(--radius-sm); font: inherit; background: var(--surface);
+  color: var(--ink);
+}
+input::placeholder, textarea::placeholder { color: var(--muted); opacity: .8; }
+input:focus, textarea:focus, select:focus { border-color: var(--focus); }
+textarea { min-height: 70px; resize: vertical; line-height: 1.55; }
+select { appearance: none; cursor: pointer;
+         background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+                           linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+         background-position: calc(100% - 16px) 50%, calc(100% - 11px) 50%;
+         background-size: 5px 5px, 5px 5px; background-repeat: no-repeat;
+         padding-right: 32px; }
+fieldset {
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--surface); padding: 6px 20px 20px; margin: 0 0 14px;
+  box-shadow: var(--shadow);
+}
+legend {
+  font-size: 11.5px; text-transform: uppercase; letter-spacing: .07em;
+  color: var(--muted); font-weight: 650; padding: 0 8px;
+}
+.checks { display: flex; gap: 18px; margin-top: 7px; flex-wrap: wrap; }
+.checks label { display: flex; gap: 7px; align-items: center; margin: 0;
+                font-weight: 400; color: var(--ink); }
+.checks input, input[type=checkbox] { width: auto; accent-color: var(--accent); }
+.inline-check { display: flex; gap: 7px; align-items: center; margin: 0;
+                font-weight: 400; font-size: 13px; color: var(--ink-2); }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 22px; }
+form.inline input[type=text] {
+  width: auto; max-width: 200px; padding: 6px 10px; font-size: 13px;
+}
+form.promote { display: flex; gap: 8px; align-items: center; flex: 1 1 320px; }
+form.promote input[type=text] { flex: 1; max-width: none; }
+
+/* -------------------------------------------------------------- flashes */
+.flash {
+  padding: 12px 15px; border-radius: var(--radius); margin-bottom: 20px;
+  border: 1px solid; font-size: 14px; display: flex; gap: 10px;
+  align-items: flex-start;
+}
+.flash.ok    { background: var(--ok-bg);   border-color: var(--ok-line);
+               color: var(--ok); }
+.flash.warn  { background: var(--warn-bg); border-color: var(--warn-line);
+               color: var(--warn); }
+.flash.error { background: var(--err-bg);  border-color: var(--err-line);
+               color: var(--err); }
+
+/* ------------------------------------------------------------ findings */
+ul.findings { margin: 9px 0 0; padding: 0; list-style: none; }
+ul.findings li {
+  margin-bottom: 6px; padding: 9px 12px; border-radius: var(--radius-sm);
+  border-left: 3px solid var(--line-2); background: var(--surface-2);
+  font-size: 13.5px; line-height: 1.55;
+}
+ul.findings li:last-child { margin-bottom: 0; }
+li.finding-blocker { border-left-color: var(--err); background: var(--err-bg);
+                     color: var(--err); }
+li.finding-warning { border-left-color: var(--warn); background: var(--warn-bg);
+                     color: var(--warn); }
+li.finding-info { border-left-color: var(--accent-line); }
+ul.findings strong { font-weight: 650; }
+ul.findings .muted { color: inherit; opacity: .78; }
 .finding-blocker { color: var(--err); }
 .finding-warning { color: var(--warn); }
-.asset-fields { margin: 8px 0 0; }
-.asset-fields dt { font-size: 12px; text-transform: uppercase;
-                   letter-spacing: .04em; color: var(--muted);
-                   margin-top: 8px; }
-.asset-fields dd { margin: 2px 0 0; white-space: pre-wrap; }
-.over { color: var(--err); font-weight: 600; }
+
+/* -------------------------------------------------------- asset content */
+.asset-fields { margin: 13px 0 0; border-top: 1px solid var(--line);
+                padding-top: 3px; }
+.asset-fields > dt {
+  font-size: 11px; text-transform: uppercase; letter-spacing: .07em;
+  color: var(--muted); margin-top: 11px; font-weight: 650;
+}
+.asset-fields > dd { margin: 3px 0 0; white-space: pre-wrap;
+                     line-height: 1.6; }
+.asset-fields > dt .muted { text-transform: none; letter-spacing: 0;
+                            font-weight: 400; font-size: 11px; }
+
+/* A shot list, or any nested content. Each entry is a bordered block so the
+   shots read as shots rather than as one run of prose. */
+ol.nested { margin: 6px 0 0; padding: 0; list-style: none;
+            counter-reset: shot; }
+ol.nested > li {
+  counter-increment: shot; position: relative;
+  background: var(--surface-2); border: 1px solid var(--line);
+  border-radius: var(--radius-sm); padding: 11px 13px 11px 38px;
+  margin-bottom: 7px;
+}
+ol.nested > li::before {
+  content: counter(shot); position: absolute; left: 11px; top: 11px;
+  width: 18px; height: 18px; border-radius: 5px;
+  background: var(--surface-3); border: 1px solid var(--line);
+  color: var(--muted); font: 650 10.5px/17px var(--mono); text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+ol.nested > li:last-child { margin-bottom: 0; }
+dl.nested { margin: 0; display: grid; grid-template-columns: auto 1fr;
+            gap: 3px 12px; align-items: baseline; }
+dl.nested dt {
+  font-size: 10.5px; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--muted); font-weight: 650; white-space: nowrap;
+}
+dl.nested dd { margin: 0; font-size: 13.5px; line-height: 1.55;
+               white-space: pre-wrap; }
+ol.nested ol.nested { margin-top: 5px; }
+
+/* The utm-tagged link. Mono and click-to-select: its one job is to be copied
+   whole into an ESP or Ads Manager. */
+.tracked-url {
+  margin-top: 13px; display: flex; gap: 9px; align-items: center;
+  background: var(--surface-2); border: 1px solid var(--line);
+  border-radius: var(--radius-sm); padding: 8px 11px;
+}
+.tracked-url > span {
+  font-size: 10.5px; text-transform: uppercase; letter-spacing: .07em;
+  font-weight: 650; color: var(--muted); white-space: nowrap;
+}
+.tracked-url input[type=text] {
+  flex: 1; width: auto; font: 400 12px var(--mono); padding: 5px 8px;
+  color: var(--ink-2); background: var(--surface); max-width: none;
+}
+
+/* --------------------------------------------------------- revisions */
 details summary { cursor: pointer; font-weight: 600; font-size: 13px;
-                  color: var(--accent); }
-.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; }
-.who { display: flex; gap: 8px; align-items: center; }
-.who .name { font-weight: 600; font-size: 13px; }
-.who button { background: none; border: 0; color: var(--muted);
-              font-size: 13px; font-weight: 400; padding: 0;
-              text-decoration: underline; cursor: pointer; }
-.banner { background: var(--warn-bg); border-bottom: 1px solid #ecd6a4;
-          color: var(--warn); padding: 8px 24px; font-size: 13px; }
-.signin { max-width: 420px; margin: 60px auto; }
-details.revise { margin-top: 10px; }
-details.revise summary { color: var(--accent); }
-details.revise textarea { min-height: 72px; margin-bottom: 8px; }
-.revlog { margin-top: 10px; border-top: 1px solid var(--line);
-          padding-top: 8px; }
-.revlog .rev { padding: 6px 0; border-bottom: 1px dashed var(--line); }
+                  color: var(--accent); padding: 3px 0; }
+details summary:hover { color: var(--accent-hi); }
+details.revise { margin-top: 12px; padding-top: 11px;
+                 border-top: 1px solid var(--line); }
+details.revise textarea { min-height: 74px; margin-bottom: 9px; }
+.revlog { margin-top: 13px; border-top: 1px solid var(--line);
+          padding-top: 4px; }
+.revlog .rev { padding: 10px 0; border-bottom: 1px solid var(--line); }
 .revlog .rev:last-child { border-bottom: 0; }
-.revlog .quote { margin: 4px 0 0; padding-left: 10px;
-                 border-left: 3px solid var(--line); white-space: pre-wrap; }
-/* The agent explaining what it could not do. Given warning colour on purpose:
-   it means the reviewer asked for something governance would not allow, which
+.revlog .quote {
+  margin: 6px 0 0; padding: 8px 12px; white-space: pre-wrap;
+  border-left: 3px solid var(--accent-line); background: var(--surface-2);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 13.5px;
+}
+/* The agent explaining what it could not do. Warning colour on purpose: it
+   means the reviewer asked for something governance would not allow, which
    is a result they have to read, not a footnote. */
-.revlog .agent-note { margin: 6px 0 0; padding: 6px 9px; border-radius: 5px;
-                      background: var(--warn-bg); color: var(--warn); }
-.rev-addressed .quote { opacity: .75; }
-.slots { display: flex; gap: 6px; flex-wrap: wrap; }
-.slot { padding: 3px 9px; border-radius: 5px; border: 1px solid var(--line);
-        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-        font-size: 12px; }
-.slot.ok      { background: var(--ok-bg);   color: var(--ok);
-                border-color: #bfe0cb; }
-.slot.pending { background: #fbfcfd; color: var(--muted); }
-form.promote { display: flex; gap: 8px; align-items: center; flex: 1 1 320px; }
-form.promote input[type=text] { flex: 1; }
-.pill.live      { background: var(--ok-bg); color: var(--ok);
-                  border-color: var(--ok); }
-.pill.completed { background: #eef1f4; color: var(--ink); }
-.pill.archived  { background: #eef1f4; color: var(--muted); }
-.pill.strategy,
-.pill.production { background: var(--warn-bg); color: var(--warn); }
-.signin .note { color: var(--muted); font-size: 13px; margin: 14px 0 0; }
-@media (max-width: 720px) { .grid2 { grid-template-columns: 1fr; } }
+.revlog .agent-note {
+  margin: 7px 0 0; padding: 8px 12px; border-radius: var(--radius-sm);
+  background: var(--warn-bg); color: var(--warn); font-size: 13.5px;
+  border: 1px solid var(--warn-line);
+}
+.rev-addressed .quote { opacity: .7; }
+
+/* ------------------------------------------------------------- slots */
+.slots { display: flex; gap: 7px; flex-wrap: wrap; }
+.slot {
+  padding: 5px 11px; border-radius: var(--radius-sm);
+  border: 1px solid var(--line); background: var(--surface-2);
+  font: 500 12px var(--mono); color: var(--muted);
+  display: inline-flex; gap: 7px; align-items: center;
+}
+.slot.ok { background: var(--ok-bg); color: var(--ok);
+           border-color: var(--ok-line); }
+
+/* -------------------------------------------------------------- misc */
+.muted { color: var(--muted); }
+.small { font-size: 13px; }
+.mono { font-family: var(--mono); font-size: 12px; }
+code { font: 400 12.5px var(--mono); background: var(--surface-3);
+       border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; }
+.over { color: var(--err); font-weight: 650; }
+.row { display: flex; gap: 9px; flex-wrap: wrap; align-items: center; }
+.prose { max-width: 68ch; }
+.empty {
+  background: var(--surface); border: 1px dashed var(--line-2);
+  border-radius: var(--radius); padding: 26px; text-align: center;
+  color: var(--muted); font-size: 14px;
+}
+.signin { max-width: 430px; margin: 56px auto; }
+.signin .note { color: var(--muted); font-size: 12.5px; margin: 16px 0 0;
+                line-height: 1.6; }
+hr.sep { border: 0; border-top: 1px solid var(--line); margin: 13px 0; }
+
+@media (max-width: 760px) {
+  .grid2 { grid-template-columns: 1fr; }
+  .appbar { padding: 0 14px; gap: 6px; }
+  .appbar .brand .name { display: none; }
+  .appbar nav { margin-left: 6px; }
+  .appbar nav a { padding: 6px 8px; }
+  main { padding: 18px 14px 60px; }
+  .page-head h1 { font-size: 21px; }
+  dl.nested { grid-template-columns: 1fr; gap: 1px; }
+  dl.nested dt { margin-top: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
 </style>
 </head>
 <body>
-<header>
-  <h1>Campaign Engine</h1>
-  <span class="muted small">brief &rarr; strategy &rarr; angles &rarr;
-        concepts &rarr; assets &rarr; QA</span>
-  <nav class="small">
-    <a href="/">Campaigns</a>
-    <a href="/campaigns/new">New brief</a>
-    <a href="/exclusions">Do not use</a>
+
+<header class="appbar">
+  <a class="brand" href="/">
+    <span class="mark" aria-hidden="true">CE</span>
+    <span class="name">Campaign Engine</span>
+  </a>
+  <nav>
+    <a href="/" {% if nav is defined and nav == 'campaigns' %}aria-current="page"{% endif %}>Campaigns</a>
+    <a href="/campaigns/new" {% if nav is defined and nav == 'new' %}aria-current="page"{% endif %}>New brief</a>
+    <a href="/exclusions" {% if nav is defined and nav == 'exclusions' %}aria-current="page"{% endif %}>Do not use</a>
     <a href="/docs">API</a>
-    {% if operator is defined and operator %}
-    <span class="who">
-      <span class="name" title="approvals are recorded as this">
-        {{ operator }}</span>
-      <form method="post" action="/signout" class="inline" data-no-busy>
-        <button type="submit">sign out</button>
-      </form>
-    </span>
-    {% endif %}
   </nav>
+  <span class="spacer"></span>
+  {% if operator is defined and operator %}
+  <span class="who">
+    <span class="name" title="approvals are recorded as this">{{ operator }}</span>
+    <form method="post" action="/signout" class="inline" data-no-busy>
+      <button type="submit">sign out</button>
+    </form>
+  </span>
+  {% endif %}
 </header>
+
 {% if identity_enabled is defined and not identity_enabled %}
 <div class="banner">
   <strong>Identity is not configured.</strong>
   Approvals and validation runs are being recorded as
   <span class="mono">{{ unattributed_as }}</span>, which names nobody. Set
-  <span class="mono">OPERATORS</span> in <span class="mono">.env</span> --
+  <span class="mono">OPERATORS</span> in <span class="mono">.env</span> &mdash;
   see <span class="mono">.env.example</span>.
 </div>
 {% endif %}
+
 <main>
 {% if msg %}<div class="flash {{ kind }}">{{ msg }}</div>{% endif %}
 {% block body %}{% endblock %}
 </main>
+
 <script>
 /* The only script in the app. A generation takes 30 to 120 seconds and the
    browser gives no indication that the POST is working, so the button says so
@@ -194,7 +651,7 @@ document.addEventListener('submit', function (e) {
   if (form.dataset.noBusy !== undefined) return;
   var btn = form.querySelector('button[type=submit], button:not([type])');
   if (!btn) return;
-  var busy = btn.dataset.busy || 'Working\u2026';
+  var busy = btn.dataset.busy || 'Working…';
   btn.dataset.original = btn.textContent;
   btn.textContent = busy;
   btn.disabled = true;

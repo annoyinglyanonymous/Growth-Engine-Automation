@@ -22,7 +22,8 @@ BASE = "https://renegadeinsurance.com/franchise"
 
 def build(base=BASE, **kw):
     args = {"campaign_name": "Franchise Recruitment - Captive Agents Q4 2026",
-            "channel": "email", "variant": "A", "position": 2, "version": 5}
+            "channel": "email", "asset_type": "email", "variant": "A",
+            "position": 2, "version": 5}
     args.update(kw)
     return tracked_url(base, **args)
 
@@ -41,14 +42,15 @@ def test_the_four_utm_parameters_are_present_and_correct():
     assert p["utm_medium"] == ["email"]
     assert p["utm_campaign"] == [
         "franchise-recruitment-captive-agents-q4-2026"]
-    assert p["utm_content"] == ["a-2-v5"]
+    assert p["utm_content"] == ["email-a-2-v5"]
 
 
 def test_meta_ads_uses_facebook_as_the_source():
     """GA4 classifies paid-social by recognising the SOURCE against its list
     of social sites; 'facebook' is on it and 'meta' is not. The convention
     loses to the classifier every report depends on."""
-    p = params(build(channel="meta_ads", position=None))
+    p = params(build(channel="meta_ads", asset_type="meta_ad",
+                     position=None))
     assert p["utm_source"] == ["facebook"]
     assert p["utm_medium"] == ["paid_social"]
 
@@ -79,7 +81,7 @@ def test_a_different_version_produces_a_different_url():
     """The reason the version is in utm_content at all: when v7 supersedes v5
     next quarter, the two runs must stay distinguishable in the report."""
     assert build(version=5) != build(version=7)
-    assert params(build(version=7))["utm_content"] == ["a-2-v7"]
+    assert params(build(version=7))["utm_content"] == ["email-a-2-v7"]
 
 
 def test_variants_are_distinguishable():
@@ -143,16 +145,45 @@ def test_punctuation_collapses_to_single_hyphens():
 def test_a_position_of_zero_is_not_treated_as_absent():
     """`position is not None`, not `if position` -- the same trap
     lifecycle.slot_label documents. 0 is a real sequence position."""
-    assert slot_content("A", 0, 3) == "a-0-v3"
+    assert slot_content("email", "A", 0, 3) == "email-a-0-v3"
 
 
 def test_a_standalone_asset_has_no_position_segment():
-    assert slot_content("B", None, 4) == "b-v4"
+    assert slot_content("meta_ad", "B", None, 4) == "ad-b-v4"
+
+
+def test_two_asset_types_in_one_slot_get_different_labels():
+    """THE REGRESSION THIS GUARDS
+    utm_source and utm_medium come from the channel, and a UGC video runs on
+    meta_ads exactly like a static ad. Without the type in utm_content, a
+    meta_ad and a video_script at the same variant and version produce the
+    same tracked URL -- and campaign_assets_one_approved_idx keys on
+    asset_type, so both can be approved at once. Two creatives, one link, and
+    performance data that cannot be told apart afterwards."""
+    shared = dict(campaign_name="Q4 2026", channel="meta_ads", variant="A",
+                  position=None, version=3)
+    ad = tracked_url(BASE, asset_type="meta_ad", **shared)
+    video = tracked_url(BASE, asset_type="video_script", **shared)
+    assert ad != video
+    assert params(ad)["utm_content"] == ["ad-a-v3"]
+    assert params(video)["utm_content"] == ["vid-a-v3"]
+    # Everything else about them is identical, which is exactly why
+    # utm_content had to carry the difference.
+    assert params(ad)["utm_source"] == params(video)["utm_source"]
+
+
+def test_an_unknown_asset_type_is_labelled_rather_than_refused():
+    """Unlike an unknown channel, which has no defensible source/medium: the
+    source and medium are still right here, only the label is unfamiliar.
+    Refusing to stamp -- or blocking approval -- over a label would be a
+    worse outcome than a long token."""
+    assert slot_content("carrier_pigeon", "B", None, 1) \
+        == "carrier-pigeon-b-v1"
 
 
 def test_the_content_label_lands_url_safe_in_the_query():
     p = params(build(variant="A/B çtest", position=None, version=2))
-    assert p["utm_content"] == ["a-b-ctest-v2"]
+    assert p["utm_content"] == ["email-a-b-ctest-v2"]
 
 
 # --------------------------------------------------------------------------
@@ -177,7 +208,8 @@ def test_an_unknown_channel_raises_and_names_the_known_ones():
 
 def test_every_declared_channel_convention_actually_works():
     for channel in CHANNEL_UTM:
-        assert params(build(channel=channel, position=None))["utm_source"]
+        assert params(build(channel=channel, asset_type="meta_ad",
+                            position=None))["utm_source"]
 
 
 # --------------------------------------------------------------------------
@@ -210,10 +242,11 @@ class StampCursor:
                     if sql.startswith("update") and "'approved'" in sql)
 
 
-def approve_with(monkeypatch, *, destination, channel="email", position=2):
+def approve_with(monkeypatch, *, destination, channel="email", position=2,
+                 asset_type="email"):
     asset = {"status": "review", "version_number": 5,
              "campaign_id": "camp-1", "channel": channel,
-             "asset_type": "email", "variant": "A", "position": position}
+             "asset_type": asset_type, "variant": "A", "position": position}
     campaign = {"name": "Franchise Recruitment - Captive Agents Q4 2026",
                 "destination_url": destination}
     cur = StampCursor(asset, campaign)
@@ -232,7 +265,8 @@ def test_approval_with_a_destination_stamps_the_tracked_link(monkeypatch):
     # and any preview can never disagree.
     assert stamped == tracked_url(
         BASE, campaign_name="Franchise Recruitment - Captive Agents Q4 2026",
-        channel="email", variant="A", position=2, version=5)
+        channel="email", asset_type="email", variant="A", position=2,
+        version=5)
     assert result["tracked_url"] == stamped
 
 
@@ -254,6 +288,28 @@ def test_a_channel_with_no_utm_convention_stamps_nothing(monkeypatch):
     sql, _ = cur.final_update
     assert "tracked_url" not in sql
     assert result["superseded"] == 0
+
+
+def test_a_video_script_and_a_static_ad_are_stamped_differently(
+        monkeypatch):
+    """The end of the collision, at the point it would actually have bitten:
+    approval. Both rows are meta_ads, both variant A, both version 5, and
+    campaign_assets_one_approved_idx lets both be approved at once because it
+    keys on asset_type. Before 026 they were stamped with the same URL."""
+    _, ad_cur = approve_with(monkeypatch, destination=BASE,
+                             channel="meta_ads", asset_type="meta_ad",
+                             position=None)
+    _, video_cur = approve_with(monkeypatch, destination=BASE,
+                                channel="meta_ads", asset_type="video_script",
+                                position=None)
+    ad_link = ad_cur.final_update[1][1]
+    video_link = video_cur.final_update[1][1]
+    assert ad_link != video_link
+    assert "utm_content=ad-a-v5" in ad_link
+    assert "utm_content=vid-a-v5" in video_link
+    # Same campaign, same channel: everything except the content label is
+    # identical, which is why the label had to carry the difference.
+    assert ad_link.replace("ad-a-v5", "") == video_link.replace("vid-a-v5", "")
 
 
 def test_strategies_never_touch_tracking(monkeypatch):

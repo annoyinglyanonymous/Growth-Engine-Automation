@@ -2,9 +2,10 @@
 
     tracked_url("https://renegadeinsurance.com/franchise",
                 campaign_name="Franchise Recruitment - Q4 2026",
-                channel="email", variant="A", position=2, version=5)
+                channel="email", asset_type="email", variant="A",
+                position=2, version=5)
     -> https://renegadeinsurance.com/franchise?utm_source=email&utm_medium=email
-       &utm_campaign=franchise-recruitment-q4-2026&utm_content=a-2-v5
+       &utm_campaign=franchise-recruitment-q4-2026&utm_content=email-a-2-v5
 
 WHY THIS EXISTS
 The brief requires a primary_kpi, validation blocks without one, and nothing
@@ -64,18 +65,48 @@ def campaign_slug(name: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", folded.lower()).strip("-")
 
 
-def slot_content(variant: str, position: int | None, version: int) -> str:
-    """utm_content for one asset: variant, sequence position, version.
+#: asset_type -> a short token for utm_content. Short because utm_content is
+#: read in a report column, not parsed.
+#:
+#: This map exists because of a collision, not for tidiness. utm_source and
+#: utm_medium come from the CHANNEL, and a UGC video runs on meta_ads exactly
+#: like a static ad does -- so before 026 a meta_ad and a video_script at the
+#: same variant and version produced BYTE-IDENTICAL tracked URLs, while
+#: campaign_assets_one_approved_idx keys on asset_type and happily lets both
+#: be approved at once. Two different creatives, one link, one merged row of
+#: performance data, and no way to tell afterwards which one earned it.
+#:
+#: Unknown types fall back to the slugged type name rather than raising. An
+#: unknown CHANNEL has no defensible source/medium and _tracked_link declines
+#: to invent one; an unknown asset type is different -- source and medium are
+#: still correct, only the label is unfamiliar, and refusing to stamp (or
+#: worse, blocking approval) over a label would be a bad trade.
+_ASSET_TOKEN: dict[str, str] = {
+    "email": "email",
+    "meta_ad": "ad",
+    "video_script": "vid",
+    "google_ad": "gad",
+    "landing_page_section": "lp",
+    "sms": "sms",
+}
 
-    'a-2-v5' is email variant A, sequence step 2, version 5; 'b-v4' is a
-    standalone variant B at version 4. The version is included because that is
-    the whole point of stamping at approval -- when v7 supersedes v5 next
-    quarter, the two runs stay distinguishable in the report.
+
+def slot_content(asset_type: str, variant: str, position: int | None,
+                 version: int) -> str:
+    """utm_content for one asset: type, variant, sequence position, version.
+
+    'email-a-2-v5' is email variant A, sequence step 2, version 5; 'vid-b-v4'
+    is a standalone video script, variant B, version 4. The version is
+    included because that is the whole point of stamping at approval -- when
+    v7 supersedes v5 next quarter, the two runs stay distinguishable in the
+    report. The type is included because without it they are not
+    distinguishable from each other at all (see _ASSET_TOKEN).
 
     `position is not None`, not `if position`: 0 is a real position and must
     not vanish (same trap slot_label already documents in lifecycle.py).
     """
-    parts = [campaign_slug(variant) or "x"]
+    token = _ASSET_TOKEN.get(asset_type) or campaign_slug(asset_type) or "x"
+    parts = [token, campaign_slug(variant) or "x"]
     if position is not None:
         parts.append(str(position))
     parts.append(f"v{version}")
@@ -83,7 +114,8 @@ def slot_content(variant: str, position: int | None, version: int) -> str:
 
 
 def tracked_url(base: str, *, campaign_name: str, channel: str,
-                variant: str, position: int | None, version: int) -> str:
+                asset_type: str, variant: str, position: int | None,
+                version: int) -> str:
     """The destination with this asset's utm parameters appended.
 
     Existing NON-utm query parameters and the fragment survive -- a
@@ -113,6 +145,7 @@ def tracked_url(base: str, *, campaign_name: str, channel: str,
         ("utm_source", source),
         ("utm_medium", medium),
         ("utm_campaign", campaign_slug(campaign_name)),
-        ("utm_content", slot_content(variant, position, version)),
+        ("utm_content",
+         slot_content(asset_type, variant, position, version)),
     ]
     return urlunsplit(parts._replace(query=urlencode(query)))

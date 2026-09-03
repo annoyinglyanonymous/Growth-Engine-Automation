@@ -59,6 +59,7 @@ from generators import angles as gen_angles
 from generators import concepts as gen_concepts
 from generators import email_sequence as gen_email
 from generators import meta_ads as gen_meta
+from generators import video_script as gen_video
 from generators import revise
 from generators import strategy as gen_strategy
 from generators.pipeline import (
@@ -258,6 +259,7 @@ async def index(request: Request, msg: str | None = None,
                 kind: str = "ok"):
     return templates.TemplateResponse(request, "campaigns.html", {
         "campaigns": await campaigns.list_campaigns(),
+        "nav": "campaigns",
         "msg": msg, "kind": kind, **_chrome(request),
     })
 
@@ -272,6 +274,7 @@ async def exclusions_page(request: Request, msg: str | None = None,
     return templates.TemplateResponse(request, "exclusions.html", {
         "rules": await exclusions.for_brand(),
         "brands": await exclusions.brands(),
+        "nav": "exclusions",
         "msg": msg, "kind": kind, **_chrome(request),
     })
 
@@ -310,7 +313,8 @@ async def retire_exclusion(request: Request, exclusion_id: str,
 async def new_campaign(request: Request, msg: str | None = None,
                        kind: str = "ok"):
     return templates.TemplateResponse(request, "new.html", {
-        **await campaigns.form_options(), "msg": msg, "kind": kind,
+        **await campaigns.form_options(), "nav": "new",
+        "msg": msg, "kind": kind,
         **_chrome(request),
     })
 
@@ -356,6 +360,8 @@ async def campaign_detail(request: Request, campaign_id: str,
         return _flash("/", f"no campaign {campaign_id}", "error")
     state = await campaigns.pipeline_state(campaign["id"])
     return templates.TemplateResponse(request, "campaign.html", {
+        # A campaign detail page belongs to the Campaigns section.
+        "nav": "campaigns",
         "c": campaign, **state, "msg": msg, "kind": kind, **_chrome(request),
     })
 
@@ -466,6 +472,20 @@ async def do_email(request: Request, campaign_id: str,
                                      emails=emails)
         return f"{len(r['emails'])}-email sequence drafted (v{r['version']})"
     return await _act(request, campaign_id, "Generate email sequence", run())
+
+
+@router.post("/campaigns/{campaign_id}/assets/video")
+async def do_video(request: Request, campaign_id: str,
+                   concept_id: str = Form(""), seconds: int = Form(30)):
+    """Draft UGC video scripts. Channel is meta_ads, not a 'video' channel --
+    the ad runs on Meta, so it inherits Meta's utm convention (026)."""
+    async def run():
+        r = await gen_video.generate(campaign_id,
+                                     concept_id=concept_id or None,
+                                     seconds=seconds)
+        return (f"{len(r['assets'])} video script(s) drafted at "
+                f"{r['target_seconds']}s")
+    return await _act(request, campaign_id, "Generate video scripts", run())
 
 
 @router.post("/campaigns/{campaign_id}/qa")

@@ -2,40 +2,99 @@
 {% block title %}Campaigns{% endblock %}
 {% block body %}
 
-<div class="row" style="justify-content: space-between;">
-  <h2 style="margin-top:0">Campaigns</h2>
-  <a class="btn" href="/campaigns/new" style="text-decoration:none">
-    New brief</a>
+{#- Terminal states, so "in progress" means what a person means by it. -#}
+{% set settled = ['approved', 'live', 'completed', 'archived'] %}
+{% set blocked = campaigns | selectattr('status', 'equalto', 'blocked')
+                           | list %}
+{% set live = campaigns | selectattr('status', 'in', ['approved', 'live'])
+                        | list %}
+{% set working = campaigns | rejectattr('status', 'in', settled) | list %}
+
+<div class="page-head">
+  <div class="head-row">
+    <div>
+      <div class="eyebrow">Workspace</div>
+      <h1>Campaigns</h1>
+      <div class="sub">Every brief in the system, newest first.</div>
+    </div>
+    <a class="btn" href="/campaigns/new">New brief</a>
+  </div>
 </div>
 
+{% if campaigns %}
+{#- A summary strip rather than a chart. Four numbers a person actually acts
+    on: how much is in flight, what is stuck, what shipped, and how much of
+    the copy has been signed off. Computed from the same rows as the table
+    below, so the two cannot disagree. -#}
+<div class="stats">
+  <div class="stat">
+    <div class="k">In progress</div>
+    <div class="v">{{ working | length }}</div>
+    <div class="sub">of {{ campaigns | length }} total</div>
+  </div>
+  <div class="stat {% if blocked %}attention{% endif %}">
+    <div class="k">Blocked</div>
+    <div class="v">{{ blocked | length }}</div>
+    <div class="sub">
+      {%- if blocked %}validation must pass first{% else %}nothing stuck{% endif -%}
+    </div>
+  </div>
+  <div class="stat">
+    <div class="k">Approved</div>
+    <div class="v">{{ live | length }}</div>
+    <div class="sub">cleared to publish</div>
+  </div>
+  {% set total_assets = campaigns | sum(attribute='assets') %}
+  {% set ok_assets = campaigns | sum(attribute='approved_assets') %}
+  <div class="stat {% if total_assets and ok_assets < total_assets %}pending{% endif %}">
+    <div class="k">Assets signed off</div>
+    <div class="v">{{ ok_assets }}<span class="muted"
+        style="font-size:16px; font-weight:500">/{{ total_assets }}</span></div>
+    <div class="sub">
+      {%- if total_assets %}
+        {{ total_assets - ok_assets }} awaiting a reviewer
+      {%- else %}none generated yet{% endif -%}
+    </div>
+  </div>
+</div>
+{% endif %}
+
 {% if not campaigns %}
-  <div class="card muted">
-    No campaigns yet. <a href="/campaigns/new">File a brief</a> to start.
+  <div class="empty">
+    <p style="margin:0 0 14px">No campaigns yet.</p>
+    <a class="btn" href="/campaigns/new">File a brief</a>
   </div>
 {% else %}
+<div class="table-wrap">
 <table>
-  <tr>
-    <th>Campaign</th><th>Product</th><th>Type</th><th>Status</th>
-    <th>Channels</th><th>Strategies</th><th>Assets</th>
-  </tr>
+  <thead>
+    <tr>
+      <th>Campaign</th><th>Product</th><th>Type</th><th>Status</th>
+      <th>Channels</th><th>Strategies</th><th>Assets</th>
+    </tr>
+  </thead>
+  <tbody>
   {% for c in campaigns %}
   <tr>
     <td>
-      <a href="/campaigns/{{ c.id }}"><strong>{{ c.name }}</strong></a>
+      <a href="/campaigns/{{ c.id }}"
+         style="font-weight:600; text-decoration:none">{{ c.name }}</a>
       <div class="muted small">{{ c.brand_name }}</div>
     </td>
     <td class="small">{{ c.product_name }}</td>
     <td class="small">{{ c.campaign_type_name or '--' }}</td>
     <td><span class="pill {{ c.status }}">{{ c.status }}</span></td>
     <td class="small">{{ (c.channels or []) | join(', ') or '--' }}</td>
-    <td class="small">{{ c.strategies }}</td>
-    <td class="small">
+    <td class="small num">{{ c.strategies }}</td>
+    <td class="small num">
       {{ c.assets }}{% if c.approved_assets %}
         <span class="muted">({{ c.approved_assets }} approved)</span>
       {% endif %}
     </td>
   </tr>
   {% endfor %}
+  </tbody>
 </table>
+</div>
 {% endif %}
 {% endblock %}

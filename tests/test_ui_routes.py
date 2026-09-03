@@ -318,7 +318,7 @@ def test_preflight_names_migrations_that_exist():
         assert (folder / filename).exists(), f"no such migration: {filename}"
         assert spec.get("breaks"), f"{filename} does not say what it breaks"
         needed = spec.get("columns", ())
-        assert needed or spec.get("tables"), f"{filename} requires nothing"
+        assert needed or spec.get("tables") or spec.get("constraints"),             f"{filename} requires nothing"
         sql = (folder / filename).read_text(encoding="utf-8")
         for table in spec.get("tables", ()):
             assert table in sql, f"{filename} never mentions table {table}"
@@ -332,6 +332,14 @@ def test_preflight_names_migrations_that_exist():
             # A column the code needs must actually be added by that file.
             assert column in sql, f"{filename} never mentions {column}"
             assert table in sql, f"{filename} never mentions {table}"
+        # 026 widens a CHECK rather than adding a column, so the spec names
+        # the constraint and the value it must now permit. Same contract: the
+        # file the message tells someone to run has to be the file that does
+        # it.
+        for table, constraint, want in spec.get("constraints", ()):
+            assert table in sql, f"{filename} never mentions {table}"
+            assert constraint in sql,                 f"{filename} never mentions {constraint}"
+            assert want in sql, f"{filename} never permits {want!r}"
 
 
 def test_revise_and_withdraw_paths_cannot_shadow_each_other():

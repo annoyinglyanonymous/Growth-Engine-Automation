@@ -73,7 +73,8 @@ The UI is one caller; the guards live in the modules, not the routes.
 | 4. Strategy | Generate strategy → Approve | `python -m generators.strategy "<name>"` |
 | 5. Angles | Generate → Approve/Reject each | `python -m generators.angles "<name>"` |
 | 6. Concepts | Generate → Approve/Reject each | `python -m generators.concepts "<name>"` |
-| 7. Assets | Generate Meta ads / email sequence | `python -m generators.meta_ads "<name>"` |
+| 7. Assets | Generate Meta ads / email sequence / UGC video scripts | `python -m generators.meta_ads "<name>"` |
+| | | `python -m generators.video_script "<name>" --seconds 30` |
 | 8. QA | Run QA | `python -m validation.asset_qa "<name>"` |
 | 9. Approval | Approve campaign | `python -m lifecycle "<name>" --promote approved` |
 
@@ -113,13 +114,57 @@ version stays live and the slot is settled. Requires migration 022.
 
 Give the brief a **Destination URL** and every approved asset gets that URL
 with its own utm tags — source/medium per channel, the campaign as
-`utm_campaign`, and the slot + version as `utm_content`, so v5 and v7 of the
-same ad stay distinguishable in a report. The link is **stamped at
+`utm_campaign`, and the asset type + slot + version as `utm_content`
+(`ad-a-v3`, `vid-a-v3`, `email-a-2-v5`), so v5 and v7 of the same ad stay
+distinguishable in a report — and so a UGC video and a static ad in the
+same slot do not report as one thing, which they did until 026. The link is **stamped at
 approval** (renaming the campaign later cannot drift a URL that already
 shipped) and shown on the approved asset — whoever builds the email or the
 ad pastes *that*, not the bare destination, or the campaign ships
 unmeasurable. A brief with channels and no destination gets a validation
 warning, not a blocker. Conventions live in one map in `tracking.py`.
+
+### UGC video scripts
+
+The team makes UGC video ads on an AI video platform, and the platform needs a
+script. Pick a length (15/30/45/60s), press **Generate UGC video scripts**,
+and each approved concept yields two variants — one asset row holding a
+**shot list**:
+
+| Per shot | What it is for |
+| --- | --- |
+| `spoken` | what the person on camera says |
+| `on_screen` | the burned-in caption |
+| `visual_prompt` | paste this into the video tool to make the clip |
+| `seconds` | how long the shot runs |
+
+Plus a `cta` and a feed `caption` for the ad as a whole. The channel is
+`meta_ads`, not a channel of its own: the video runs as a Meta ad, so it
+inherits Meta's utm convention rather than needing a second one invented for
+it. TikTok would be a genuinely new channel, decided when it is wanted.
+
+**A script is approved or rejected whole.** Unlike an email sequence (N rows,
+so QA can fail email 2 of 3), the shots are one deliverable — shot 3 without
+shot 2 is not a shorter ad, it is a broken one.
+
+QA checks two things a character count cannot:
+
+- **Can the line be said?** Words ÷ 2.5 per second against the shot's own
+  length. A 3-second hook carrying 20 words is undeliverable, and that is a
+  fact, not a preference — so it is a warning with a word budget attached,
+  not advice.
+- **Does it run to length?** Shot lengths against the target, and the opening
+  shot against 3 seconds, because on Reels the first three seconds decide
+  whether the rest is watched.
+
+Structural breakage (no shots, a shot missing its spoken line, shots numbered
+with gaps) is a **blocker** — there is no false-positive case for it.
+
+**One thing the checker cannot catch.** The generator is instructed never to
+depict an identifiable real person, and never to frame the speaker as a named
+customer giving a testimonial. A generated face presented as a real customer
+is a fabricated endorsement however well-sourced the words are, and no
+deterministic check can see a picture. That one is on the reviewer.
 
 ### Approve all
 
@@ -309,7 +354,7 @@ database. It is self-tested against deliberate mutations.
 ## Tests
 
 ```
-python -m pytest                  # 526 tests, about 10 seconds
+python -m pytest                  # 589 tests, about 10 seconds
 python -m pytest -m dbtest        # only the ones needing a live database
 ```
 
@@ -335,8 +380,13 @@ than just code:
   login system and a deploy target.
 - **Google Ads, landing pages, SMS.** Schema slots and asset types exist;
   generators and character limits do not. Google Ads is deferred by decision.
-- **Stage 11 entirely** — UTM and tracking, Teams approval, launch
-  integrations, asset-to-platform tracking, performance linkage.
+- **Reading performance back.** Tagged links exist (025/026), so every
+  approved asset is now identifiable in an analytics report. Nothing yet
+  imports those numbers and lays them against the brief's `primary_kpi` —
+  that needs a decision about where the numbers come from (GA4 export,
+  platform CSVs, manual entry) before it needs code.
+- **The rest of stage 11** — Teams approval, launch integrations, pushing an
+  asset to the ad platform itself.
 - **Freshness and citation for Agency Height's editorial figures.** 426 of
   them are third-party market statistics, not self-claims. Quoting a
   third-party figure needs a citation and an age, which is a different review

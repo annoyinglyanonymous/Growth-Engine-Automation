@@ -3,7 +3,7 @@
 
 {% macro findings(items, cls) %}
   {% if items %}
-  <ul class="findings small">
+  <ul class="findings">
     {% for f in items %}
     <li class="finding-{{ cls }}">
       {#- Finding.as_dict() omits empty optional keys, so field/evidence/
@@ -48,22 +48,24 @@
   <div class="revlog small">
     {% for r in item.revisions %}
     <div class="rev rev-{{ r.status }}">
-      <span class="pill {{ 'draft' if r.status == 'open' else 'approved' if r.status == 'addressed' else 'superseded' }}">{{ r.status }}</span>
-      <span class="muted">{{ r.requested_by }}</span>
+      <div class="row">
+        <span class="pill {{ 'draft' if r.status == 'open' else 'approved' if r.status == 'addressed' else 'superseded' }}">{{ r.status }}</span>
+        <span class="muted">{{ r.requested_by }}</span>
+        {% if r.resulting_version %}
+          <span class="muted">&rarr; produced v{{ r.resulting_version }}</span>
+        {% endif %}
+        {% if r.status == 'open' %}
+        <form method="post"
+              action="/campaigns/{{ cid }}/revisions/{{ r.id }}/withdraw"
+              class="inline" style="margin-left:auto">
+          <button type="submit" class="sm subtle">Withdraw</button></form>
+        {% endif %}
+      </div>
       <div class="quote">{{ r.feedback }}</div>
       {% if r.agent_note %}
         {#- The agent saying what it could not do. Never collapsed: a
             reviewer who does not see this concludes they were ignored. #}
         <div class="agent-note">Agent: {{ r.agent_note }}</div>
-      {% endif %}
-      {% if r.resulting_version %}
-        <div class="muted">&rarr; produced v{{ r.resulting_version }}</div>
-      {% endif %}
-      {% if r.status == 'open' %}
-      <form method="post"
-            action="/campaigns/{{ cid }}/revisions/{{ r.id }}/withdraw"
-            class="inline">
-        <button type="submit" class="sm ghost">Withdraw</button></form>
       {% endif %}
     </div>
     {% endfor %}
@@ -71,245 +73,405 @@
   {% endif %}
 {% endmacro %}
 
+{#- Stage state, computed once and used by both the rail and the section
+    headers so the two can never disagree about where the campaign is.
+    "active" is the earliest stage that is not done -- the one thing a
+    reviewer opening this page actually wants to find. -#}
+{% set v = latest_validation %}
+{% set s3_bad = v and v.status in ('blocked', 'needs_info') %}
+{#- Stage 7/8 is done when every SLOT has an approved version, not when any
+    asset does. "One of seven approved" is not a finished copy stage, and a
+    green tick over six drafts awaiting a reviewer is the same class of
+    misleading-but-true signal as a green flash on a blocked validation.
+    lifecycle.slots is the right source: it is what the Approve button
+    enforces, so the rail and the guard cannot drift. -#}
+{% set sl = namespace(total=0, ok=0) %}
+{% for _label, _ok in lifecycle.slots %}
+  {%- set sl.total = sl.total + 1 %}
+  {%- if _ok %}{% set sl.ok = sl.ok + 1 %}{% endif %}
+{%- endfor %}
+{% set done = {
+     3: (v is not none) and v.status in ('pass', 'warning'),
+     4: approved_strategy is not none,
+     5: counts.angles_approved > 0,
+     6: counts.concepts_approved > 0,
+     7: sl.total > 0 and sl.ok == sl.total,
+     9: c.status in ('approved', 'live', 'completed'),
+   } %}
+{% set order = [3, 4, 5, 6, 7, 9] %}
+{% set ns = namespace(active=none) %}
+{% for n in order %}
+  {%- if ns.active is none and not done[n] %}{% set ns.active = n %}{% endif %}
+{%- endfor %}
+{% set state = {
+     3: 'blocked' if s3_bad else 'done' if done[3]
+        else 'active' if ns.active == 3 else 'todo',
+     4: 'done' if done[4] else 'active' if ns.active == 4 else 'todo',
+     5: 'done' if done[5] else 'active' if ns.active == 5 else 'todo',
+     6: 'done' if done[6] else 'active' if ns.active == 6 else 'todo',
+     7: 'blocked' if counts.assets_blocked else 'done' if done[7]
+        else 'active' if ns.active == 7 else 'todo',
+     9: 'done' if done[9] else 'active' if ns.active == 9 else 'todo',
+   } %}
+{% set titles = {3: 'Validation', 4: 'Strategy', 5: 'Angles',
+                 6: 'Concepts', 7: 'Assets &amp; QA', 9: 'Approval'} %}
+
 {% block body %}
 
-<div class="row" style="justify-content:space-between; align-items:baseline">
-  <div>
-    <h2 style="margin:0 0 4px">{{ c.name }}</h2>
-    <div class="muted small">
-      {{ c.brand_name }} &middot; {{ c.product_name }}
-      {%- if c.campaign_type_name %} &middot; {{ c.campaign_type_name }}{% endif %}
-      &middot; {{ (c.channels or []) | join(', ') }}
+<div class="page-head">
+  <div class="head-row">
+    <div style="min-width:0">
+      <div class="eyebrow">Campaign</div>
+      <h1>{{ c.name }}</h1>
+      <div class="meta">
+        <span class="chip"><span class="k">Brand</span> <b>{{ c.brand_name }}</b></span>
+        <span class="chip"><span class="k">Product</span> <b>{{ c.product_name }}</b></span>
+        {%- if c.campaign_type_name %}
+        <span class="chip"><span class="k">Type</span> <b>{{ c.campaign_type_name }}</b></span>
+        {%- endif %}
+        <span class="chip"><span class="k">Channels</span>
+          <b>{{ (c.channels or []) | join(', ') or '--' }}</b></span>
+      </div>
+    </div>
+    <div class="row" style="gap:8px">
+      <span class="pill {{ c.status }}">{{ c.status }}</span>
     </div>
   </div>
-  <span class="pill {{ c.status }}">{{ c.status }}</span>
 </div>
 
 {% if not c.product_marketable %}
-<div class="flash warn" style="margin-top:16px">
-  This product is not approved for marketing, so no approved claim reaches the
-  generators and copy will have nothing governed to assert. Set
-  <span class="mono">products.approved_for_marketing</span> first.
+<div class="flash warn">
+  <div>
+    <strong>This product is not approved for marketing.</strong>
+    No approved claim reaches the generators, so copy will have nothing
+    governed to assert. Set
+    <span class="mono">products.approved_for_marketing</span> first.
+  </div>
 </div>
 {% endif %}
 
-<!-- ------------------------------------------------------------ stage 3 -->
-<h2>Stage 3 &mdash; validation</h2>
-<div class="card">
-  <form method="post" action="/campaigns/{{ c.id }}/validate" class="row">
-    <button type="submit" data-busy="Validating&hellip;">Run validation</button>
-    <label class="small" style="margin:0; font-weight:400">
-      <input type="checkbox" name="use_ai" value="1" style="width:auto">
-      include the AI judgement tier
-    </label>
-  </form>
+{#- The rail. This page is long by nature -- nine stages, every version of
+    every artefact -- and before this the only way to find the stage you
+    cared about was to scroll past the ones you did not. -#}
+<nav class="rail" aria-label="Stages">
+  {% for n in order %}
+  <a href="#stage-{{ n }}" data-state="{{ state[n] }}">
+    <span class="dot" aria-hidden="true"></span>
+    <span class="num">{{ n if n != 7 else '7&ndash;8' | safe }}</span>
+    <span>{{ titles[n] | safe }}</span>
+  </a>
+  {% endfor %}
+</nav>
 
-  {% if latest_validation %}
-  {% set v = latest_validation %}
-  <div style="margin-top:14px">
-    <span class="pill {{ v.status }}">{{ v.status }}</span>
-    <span class="muted small">
-      #{{ v.validation_number }} &middot;
-      deterministic: {{ v.deterministic_status }} &middot;
-      AI: {{ v.ai_status or 'not assessed' }}
-      {% if v.validated_by %}&middot; run by {{ v.validated_by }}{% endif %}
-    </span>
+<!-- ------------------------------------------------------------ stage 3 -->
+<section class="stage" id="stage-3" data-state="{{ state[3] }}">
+  <div class="stage-head">
+    <span class="n">3</span>
+    <h2>Stage 3 &mdash; validation</h2>
+    {% if v %}<span class="state">run #{{ v.validation_number }}</span>{% endif %}
+  </div>
+
+  <div class="toolbar">
+    <form method="post" action="/campaigns/{{ c.id }}/validate">
+      <button type="submit" data-busy="Validating&hellip;">Run validation</button>
+      <label class="inline-check">
+        <input type="checkbox" name="use_ai" value="1">
+        include the AI judgement tier
+      </label>
+    </form>
+  </div>
+
+  {% if v %}
+  <div class="card">
+    <div class="row">
+      <span class="pill {{ v.status }}">{{ v.status }}</span>
+      <span class="muted small">
+        deterministic: {{ v.deterministic_status }} &middot;
+        AI: {{ v.ai_status or 'not assessed' }}
+        {% if v.validated_by %}&middot; run by {{ v.validated_by }}{% endif %}
+      </span>
+    </div>
     {{ findings(v.blockers, 'blocker') }}
     {{ findings(v.warnings, 'warning') }}
     {{ findings(v.recommendations, 'info') }}
     {% if not v.blockers and not v.warnings %}
-      <div class="small muted" style="margin-top:6px">No findings.</div>
+      <div class="small muted" style="margin-top:8px">No findings.</div>
     {% endif %}
   </div>
   {% else %}
-  <p class="muted small" style="margin-bottom:0">Not validated yet.</p>
+  <div class="empty">Not validated yet.</div>
   {% endif %}
-</div>
+</section>
 
 <!-- ------------------------------------------------------------ stage 4 -->
-<h2>Stage 4 &mdash; strategy</h2>
-<div class="card">
-  <form method="post" action="/campaigns/{{ c.id }}/strategy" class="inline">
-    <button type="submit" data-busy="Generating&hellip; (up to 2 min)">
-      Generate strategy</button>
-  </form>
-  {% if strategies %}
-    <span class="muted small" style="margin-left:8px">
-      {{ strategies | length }} version(s)</span>
-  {% endif %}
-</div>
-
-{% for s in strategies %}
-<div class="card">
-  <div class="row" style="justify-content:space-between">
-    <h3>V{{ s.version_number }}
-      <span class="pill {{ s.status }}">{{ s.status }}</span></h3>
-    {% if s.status == 'draft' %}
-    <form method="post"
-          action="/campaigns/{{ c.id }}/strategy/{{ s.id }}/approve"
-          class="inline">
-      <button type="submit" class="sm" data-busy="Approving&hellip;">
-        Approve</button>
-    </form>
-    {% elif s.approved_by %}
-      <span class="muted small">approved by {{ s.approved_by }}</span>
+<section class="stage" id="stage-4" data-state="{{ state[4] }}">
+  <div class="stage-head">
+    <span class="n">4</span>
+    <h2>Stage 4 &mdash; strategy</h2>
+    {% if strategies %}
+      <span class="state">{{ strategies | length }} version(s)</span>
     {% endif %}
   </div>
-  <p style="margin:6px 0"><strong>{{ s.core_message }}</strong></p>
-  <p class="small muted" style="margin:0 0 8px">{{ s.positioning }}</p>
-  <details>
-    <summary>Pain points, benefits, proof points, objections</summary>
-    <div class="grid2 small" style="margin-top:10px">
-      <div>
-        <strong>Pain points</strong>
-        <ul>{% for p in s.pain_points %}<li>{{ p }}</li>{% endfor %}</ul>
-        <strong>Benefits</strong>
-        <ul>{% for b in s.benefits %}<li>{{ b }}</li>{% endfor %}</ul>
+
+  <div class="toolbar">
+    <form method="post" action="/campaigns/{{ c.id }}/strategy" class="inline">
+      <button type="submit" data-busy="Generating&hellip; (up to 2 min)">
+        Generate strategy</button>
+    </form>
+    {% if not strategies %}
+      <span class="note">One core message and positioning, from the brief and
+        the approved claims.</span>
+    {% endif %}
+  </div>
+
+  {% for s in strategies %}
+  <div class="card item">
+    <div class="item-head">
+      <div class="title">
+        <h3>Version {{ s.version_number }}</h3>
+        <span class="pill {{ s.status }}">{{ s.status }}</span>
       </div>
-      <div>
-        <strong>Proof points</strong>
-        <ul>{% for p in s.proof_points %}<li>{{ p }}</li>{% endfor %}</ul>
-        <strong>Objections</strong>
-        <ul>{% for o in s.objections %}
-          <li>{{ o.objection }}<div class="muted">{{ o.response }}</div></li>
-        {% endfor %}</ul>
+      <div class="actions">
+        {% if s.status == 'draft' %}
+        <form method="post"
+              action="/campaigns/{{ c.id }}/strategy/{{ s.id }}/approve"
+              class="inline">
+          <button type="submit" class="sm" data-busy="Approving&hellip;">
+            Approve</button>
+        </form>
+        {% elif s.approved_by %}
+          <span class="muted small">approved by {{ s.approved_by }}</span>
+        {% endif %}
       </div>
     </div>
-    <p class="small muted">Hypothesis: {{ s.hypothesis }}</p>
-    {% if s.knowledge_snapshot %}
-    <p class="small muted mono">
-      grounded in {{ s.knowledge_snapshot.kb_chunk_ids | length }} chunks,
-      {{ s.knowledge_snapshot.approved_claims | length }} approved claims
-    </p>
-    {% endif %}
-  </details>
-  {{ revision_log(s, c.id) }}
-  {% if s.status != 'approved' %}{{ edit_form('strategy', s, c.id) }}{% endif %}
-</div>
-{% endfor %}
+    <p style="margin:10px 0 0; font-size:16px; font-weight:600;
+              letter-spacing:-.01em">{{ s.core_message }}</p>
+    <p class="small muted" style="margin:5px 0 0">{{ s.positioning }}</p>
+    <hr class="sep">
+    <details>
+      <summary>Pain points, benefits, proof points, objections</summary>
+      <div class="grid2 small" style="margin-top:12px">
+        <div>
+          <strong>Pain points</strong>
+          <ul>{% for p in s.pain_points %}<li>{{ p }}</li>{% endfor %}</ul>
+          <strong>Benefits</strong>
+          <ul>{% for b in s.benefits %}<li>{{ b }}</li>{% endfor %}</ul>
+        </div>
+        <div>
+          <strong>Proof points</strong>
+          <ul>{% for p in s.proof_points %}<li>{{ p }}</li>{% endfor %}</ul>
+          <strong>Objections</strong>
+          <ul>{% for o in s.objections %}
+            <li>{{ o.objection }}<div class="muted">{{ o.response }}</div></li>
+          {% endfor %}</ul>
+        </div>
+      </div>
+      <p class="small muted">Hypothesis: {{ s.hypothesis }}</p>
+      {% if s.knowledge_snapshot %}
+      <p class="small muted mono">
+        grounded in {{ s.knowledge_snapshot.kb_chunk_ids | length }} chunks,
+        {{ s.knowledge_snapshot.approved_claims | length }} approved claims
+      </p>
+      {% endif %}
+    </details>
+    {{ revision_log(s, c.id) }}
+    {% if s.status != 'approved' %}{{ edit_form('strategy', s, c.id) }}{% endif %}
+  </div>
+  {% endfor %}
+</section>
 
 <!-- ------------------------------------------------------------ stage 5 -->
-<h2>Stage 5 &mdash; angles</h2>
-<div class="card">
-  <form method="post" action="/campaigns/{{ c.id }}/angles" class="inline">
-    <button type="submit" data-busy="Generating&hellip;"
-            {% if not can.generate_angles %}disabled{% endif %}>
-      Generate angles</button>
-  </form>
-  {% if bulk.angles %}
-    <form method="post" action="/campaigns/{{ c.id }}/approve-all/angles"
-          class="inline" style="margin-left:8px">
-      <button type="submit" class="ghost" data-busy="Approving&hellip;">
-        Approve all ({{ bulk.angles }})</button>
-    </form>
-  {% endif %}
-  {% if not can.generate_angles %}
-    <span class="muted small" style="margin-left:8px">
-      needs an approved strategy</span>
-  {% else %}
-    <span class="muted small" style="margin-left:8px">
-      {{ counts.angles_approved }} approved</span>
-  {% endif %}
-</div>
-
-{% for a in angles %}
-<div class="card">
-  <div class="row" style="justify-content:space-between">
-    <h3>{{ a.name }} <span class="pill {{ a.status }}">{{ a.status }}</span></h3>
-    {% if a.status == 'draft' %}
-    <div class="row">
-      <form method="post"
-            action="/campaigns/{{ c.id }}/angles/{{ a.id }}/approve"
-            class="inline">
-        <button type="submit" class="sm">Approve</button></form>
-      <form method="post"
-            action="/campaigns/{{ c.id }}/angles/{{ a.id }}/reject"
-            class="inline">
-        <button type="submit" class="sm danger">Reject</button></form>
-    </div>
-    {% elif a.decided_by %}
-      <span class="muted small">{{ a.status }} by {{ a.decided_by }}</span>
+<section class="stage" id="stage-5" data-state="{{ state[5] }}">
+  <div class="stage-head">
+    <span class="n">5</span>
+    <h2>Stage 5 &mdash; angles</h2>
+    {% if can.generate_angles %}
+      <span class="state">{{ counts.angles_approved }} approved</span>
     {% endif %}
   </div>
-  <p class="small" style="margin:4px 0">{{ a.hypothesis }}</p>
-  <p class="small muted" style="margin:0">{{ a.rationale }}</p>
-  {{ revision_log(a, c.id) }}
-  {% if a.status != 'approved' %}{{ edit_form('angle', a, c.id) }}{% endif %}
-</div>
-{% endfor %}
+
+  <div class="toolbar">
+    <form method="post" action="/campaigns/{{ c.id }}/angles" class="inline">
+      <button type="submit" data-busy="Generating&hellip;"
+              {% if not can.generate_angles %}disabled{% endif %}>
+        Generate angles</button>
+    </form>
+    {% if bulk.angles %}
+      <form method="post" action="/campaigns/{{ c.id }}/approve-all/angles"
+            class="inline">
+        <button type="submit" class="ghost" data-busy="Approving&hellip;">
+          Approve all ({{ bulk.angles }})</button>
+      </form>
+    {% endif %}
+    {% if not can.generate_angles %}
+      <span class="note">needs an approved strategy</span>
+    {% endif %}
+  </div>
+
+  {% for a in angles %}
+  <div class="card item">
+    <div class="item-head">
+      <div class="title">
+        <h3>{{ a.name }}</h3>
+        <span class="pill {{ a.status }}">{{ a.status }}</span>
+      </div>
+      <div class="actions">
+        {% if a.status == 'draft' %}
+          <form method="post"
+                action="/campaigns/{{ c.id }}/angles/{{ a.id }}/approve"
+                class="inline">
+            <button type="submit" class="sm">Approve</button></form>
+          <form method="post"
+                action="/campaigns/{{ c.id }}/angles/{{ a.id }}/reject"
+                class="inline">
+            <button type="submit" class="sm danger">Reject</button></form>
+        {% elif a.decided_by %}
+          <span class="muted small">{{ a.status }} by {{ a.decided_by }}</span>
+        {% endif %}
+      </div>
+    </div>
+    <p class="small" style="margin:8px 0 0">{{ a.hypothesis }}</p>
+    <p class="small muted" style="margin:4px 0 0">{{ a.rationale }}</p>
+    {{ revision_log(a, c.id) }}
+    {% if a.status != 'approved' %}{{ edit_form('angle', a, c.id) }}{% endif %}
+  </div>
+  {% endfor %}
+</section>
 
 <!-- ------------------------------------------------------------ stage 6 -->
-<h2>Stage 6 &mdash; concepts</h2>
-<div class="card">
-  <form method="post" action="/campaigns/{{ c.id }}/concepts" class="inline">
-    <button type="submit" data-busy="Generating&hellip;"
-            {% if not can.generate_concepts %}disabled{% endif %}>
-      Generate concepts</button>
-  </form>
-  {% if bulk.concepts %}
-    <form method="post" action="/campaigns/{{ c.id }}/approve-all/concepts"
-          class="inline" style="margin-left:8px">
-      <button type="submit" class="ghost" data-busy="Approving&hellip;">
-        Approve all ({{ bulk.concepts }})</button>
-    </form>
-  {% endif %}
-  {% if not can.generate_concepts %}
-    <span class="muted small" style="margin-left:8px">
-      needs an approved angle</span>
-  {% else %}
-    <span class="muted small" style="margin-left:8px">
-      {{ counts.concepts_approved }} approved</span>
-  {% endif %}
-</div>
-
-{% for cc in concepts %}
-<div class="card">
-  <div class="row" style="justify-content:space-between">
-    <h3>{{ cc.hook }}
-      <span class="pill {{ cc.status }}">{{ cc.status }}</span></h3>
-    {% if cc.status == 'draft' %}
-    <div class="row">
-      <form method="post"
-            action="/campaigns/{{ c.id }}/concepts/{{ cc.id }}/approve"
-            class="inline">
-        <button type="submit" class="sm">Approve</button></form>
-      <form method="post"
-            action="/campaigns/{{ c.id }}/concepts/{{ cc.id }}/reject"
-            class="inline">
-        <button type="submit" class="sm danger">Reject</button></form>
-    </div>
-    {% elif cc.decided_by %}
-      <span class="muted small">{{ cc.status }} by {{ cc.decided_by }}</span>
+<section class="stage" id="stage-6" data-state="{{ state[6] }}">
+  <div class="stage-head">
+    <span class="n">6</span>
+    <h2>Stage 6 &mdash; concepts</h2>
+    {% if can.generate_concepts %}
+      <span class="state">{{ counts.concepts_approved }} approved</span>
     {% endif %}
   </div>
-  <div class="muted small">{{ cc.angle }}</div>
-  <p class="small" style="margin:6px 0 0">{{ cc.idea }}</p>
-  <p class="small muted" style="margin:4px 0 0">
-    Visual: {{ cc.visual_direction }}</p>
-  {{ revision_log(cc, c.id) }}
-  {% if cc.status != 'approved' %}{{ edit_form('concept', cc, c.id) }}{% endif %}
-</div>
-{% endfor %}
+
+  <div class="toolbar">
+    <form method="post" action="/campaigns/{{ c.id }}/concepts" class="inline">
+      <button type="submit" data-busy="Generating&hellip;"
+              {% if not can.generate_concepts %}disabled{% endif %}>
+        Generate concepts</button>
+    </form>
+    {% if bulk.concepts %}
+      <form method="post" action="/campaigns/{{ c.id }}/approve-all/concepts"
+            class="inline">
+        <button type="submit" class="ghost" data-busy="Approving&hellip;">
+          Approve all ({{ bulk.concepts }})</button>
+      </form>
+    {% endif %}
+    {% if not can.generate_concepts %}
+      <span class="note">needs an approved angle</span>
+    {% endif %}
+  </div>
+
+  {% for cc in concepts %}
+  <div class="card item">
+    <div class="item-head">
+      <div class="title">
+        <h3>{{ cc.hook }}</h3>
+        <span class="pill {{ cc.status }}">{{ cc.status }}</span>
+      </div>
+      <div class="actions">
+        {% if cc.status == 'draft' %}
+          <form method="post"
+                action="/campaigns/{{ c.id }}/concepts/{{ cc.id }}/approve"
+                class="inline">
+            <button type="submit" class="sm">Approve</button></form>
+          <form method="post"
+                action="/campaigns/{{ c.id }}/concepts/{{ cc.id }}/reject"
+                class="inline">
+            <button type="submit" class="sm danger">Reject</button></form>
+        {% elif cc.decided_by %}
+          <span class="muted small">{{ cc.status }} by {{ cc.decided_by }}</span>
+        {% endif %}
+      </div>
+    </div>
+    <div class="byline">{{ cc.angle }}</div>
+    <p class="small" style="margin:8px 0 0">{{ cc.idea }}</p>
+    <p class="small muted" style="margin:4px 0 0">
+      Visual: {{ cc.visual_direction }}</p>
+    {{ revision_log(cc, c.id) }}
+    {% if cc.status != 'approved' %}{{ edit_form('concept', cc, c.id) }}{% endif %}
+  </div>
+  {% endfor %}
+</section>
 
 <!-- --------------------------------------------------------- stages 7/8 -->
-<h2>Stages 7 &amp; 8 &mdash; assets and QA</h2>
-<div class="card">
+{#- 026. Asset content is no longer guaranteed flat: a video script holds a
+    list of shot objects. Rendering {{ value }} straight printed a Python repr
+    of them. Written against `mapping` and `sequence` rather than against
+    "scenes" so a landing page's sections come out right too, whenever that
+    generator lands. -#}
+{% macro content_value(value) -%}
+  {%- if value is string or value is number or value is boolean -%}
+    {{ value }}
+  {%- elif value is mapping -%}
+    <dl class="nested">
+      {%- for k, v in value.items() %}
+      <dt>{{ k }}</dt><dd>{{ content_value(v) }}</dd>
+      {%- endfor %}
+    </dl>
+  {%- elif value is sequence -%}
+    <ol class="nested">
+      {%- for item in value %}
+      <li>{{ content_value(item) }}</li>
+      {%- endfor %}
+    </ol>
+  {%- else -%}
+    <span class="muted">&mdash;</span>
+  {%- endif %}
+{%- endmacro %}
+
+<section class="stage" id="stage-7" data-state="{{ state[7] }}">
+  <div class="stage-head">
+    <span class="n">7</span>
+    <h2>Stages 7 &amp; 8 &mdash; assets and QA</h2>
+    {% if counts.assets %}
+    <span class="state">
+      {%- if sl.total %}{{ sl.ok }}/{{ sl.total }} slots filled &middot; {% endif %}
+      {{ counts.assets }} asset(s), {{ counts.assets_approved }} approved
+      {%- if counts.assets_blocked %},
+        <span class="finding-blocker">{{ counts.assets_blocked }} blocked
+        </span>{% endif %}
+    </span>
+    {% endif %}
+  </div>
+
   {% if not can.generate_assets %}
-    <p class="muted small" style="margin:0">
+    <div class="empty">
       Needs an approved concept. Migration 013 makes
       <span class="mono">concept_id</span> NOT NULL on assets, so there is no
-      copy without a concept by construction.</p>
+      copy without a concept by construction.
+    </div>
   {% else %}
-  <div class="row">
+  <div class="toolbar">
     {% if 'meta_ads' in (c.channels or []) %}
     <form method="post" action="/campaigns/{{ c.id }}/assets/meta"
           class="inline">
       <button type="submit" data-busy="Generating&hellip; (up to 2 min)">
         Generate Meta ads</button></form>
     {% endif %}
+    {#- 026. Gated on meta_ads, not a channel of its own: a UGC video ad
+        runs as a Meta ad, so it inherits Meta's utm convention instead of
+        needing a second one invented for it. -#}
+    {% if 'meta_ads' in (c.channels or []) %}
+    <form method="post" action="/campaigns/{{ c.id }}/assets/video"
+          class="row" style="gap:7px">
+      <select name="seconds" style="width:auto">
+        <option value="15">15 sec</option>
+        <option value="30" selected>30 sec</option>
+        <option value="45">45 sec</option>
+        <option value="60">60 sec</option>
+      </select>
+      <button type="submit" data-busy="Generating&hellip; (up to 2 min)">
+        Generate UGC video scripts</button>
+    </form>
+    {% endif %}
     {% if 'email' in (c.channels or []) %}
     <form method="post" action="/campaigns/{{ c.id }}/assets/email"
-          class="row" style="gap:6px">
+          class="row" style="gap:7px">
       <select name="emails" style="width:auto">
         <option value="3" selected>3 emails</option>
         <option value="4">4 emails</option>
@@ -320,12 +482,12 @@
     </form>
     {% endif %}
   </div>
-  <div class="row" style="margin-top:12px">
-    <form method="post" action="/campaigns/{{ c.id }}/qa" class="row">
+  <div class="toolbar">
+    <form method="post" action="/campaigns/{{ c.id }}/qa">
       <button type="submit" class="ghost" data-busy="Running QA&hellip;"
               {% if not can.run_qa %}disabled{% endif %}>Run QA</button>
-      <label class="small" style="margin:0; font-weight:400">
-        <input type="checkbox" name="use_ai" value="1" style="width:auto">
+      <label class="inline-check">
+        <input type="checkbox" name="use_ai" value="1">
         include the AI judgement tier
       </label>
     </form>
@@ -336,199 +498,202 @@
         Approve all ({{ bulk.assets }})</button>
     </form>
     {% endif %}
-    {% if counts.assets %}
-    <span class="muted small">
-      {{ counts.assets }} asset(s), {{ counts.assets_approved }} approved
-      {%- if counts.assets_blocked %},
-        <span class="finding-blocker">{{ counts.assets_blocked }} blocked
-        </span>{% endif %}
-    </span>
-    {% endif %}
   </div>
   {% endif %}
-</div>
 
-{% for a in assets %}
-<div class="card">
-  <div class="row" style="justify-content:space-between">
-    <h3>
-      {{ a.channel }} / {{ a.asset_type }} &middot; variant {{ a.variant }}
-      {%- if a.position %} &middot; email {{ a.position }}{% endif %}
-      <span class="muted small">v{{ a.version_number }}</span>
-      <span class="pill {{ a.status }}">{{ a.status }}</span>
-      {% if a.qa_status %}
-        <span class="pill {{ a.qa_status }}">QA {{ a.qa_status }}</span>
-      {% else %}
-        <span class="muted small">no QA yet</span>
-      {% endif %}
-    </h3>
-    {% if a.status == 'review' and a.qa_status in ('pass', 'warning') %}
-    <form method="post"
-          action="/campaigns/{{ c.id }}/assets/{{ a.id }}/approve"
-          class="inline">
-      <button type="submit" class="sm" data-busy="Approving&hellip;">
+  {% for a in assets %}
+  <div class="card item">
+    <div class="item-head">
+      <div class="title">
+        <h3>{{ a.channel }} / {{ a.asset_type }}
+          &middot; variant {{ a.variant }}
+          {%- if a.position %} &middot; email {{ a.position }}{% endif %}</h3>
+        <span class="ver">v{{ a.version_number }}</span>
+        <span class="pill {{ a.status }}">{{ a.status }}</span>
+        {% if a.qa_status %}
+          <span class="pill {{ a.qa_status }}">QA {{ a.qa_status }}</span>
+        {% else %}
+          <span class="muted small">no QA yet</span>
+        {% endif %}
+      </div>
+      <div class="actions">
+      {% if a.status == 'review' and a.qa_status in ('pass', 'warning') %}
+      <form method="post"
+            action="/campaigns/{{ c.id }}/assets/{{ a.id }}/approve"
+            class="inline">
+        <button type="submit" class="sm" data-busy="Approving&hellip;">
         Approve</button></form>
-    {% endif %}
-    {#- Reject stands next to Approve for anything not yet decided, including
-        a version with no QA result: turning something down does not require
-        QA to have run on it first. It is the action the edit loop was
-        missing -- ask for a change, dislike the result, keep what you had. -#}
-    {% if a.status in ('draft', 'review') %}
-    <form method="post"
-          action="/campaigns/{{ c.id }}/assets/{{ a.id }}/reject"
-          class="inline">
-      <input type="text" name="note"
-             placeholder="why (optional)" maxlength="500">
-      <button type="submit" class="sm ghost" data-busy="Rejecting&hellip;">
-        Reject</button></form>
-    {% endif %}
-    {% if a.status == 'approved' and a.approved_by %}
-      <span class="muted small">approved by {{ a.approved_by }}</span>
-    {% elif a.status == 'rejected' and a.rejected_by %}
-      <span class="muted small">rejected by {{ a.rejected_by }}
-        {%- if a.notes %} &mdash; {{ a.notes }}{% endif %}</span>
-    {% endif %}
-  </div>
-  <div class="muted small">concept: {{ a.concept_hook }}{% if a.qa_by %}
-    &middot; QA by {{ a.qa_by }}{% endif %}</div>
-
-  <dl class="asset-fields">
-    {% for key, value in a.content.items() %}
-    <dt>{{ key }}
-      {%- if value is string %}
-        <span class="muted">({{ value | length }} chars)</span>{% endif %}
-    </dt>
-    <dd>{{ value }}</dd>
-    {% endfor %}
-  </dl>
-
-  {#- 025. The link is part of the deliverable: whoever builds the email in
-      the ESP or the ad in Ads Manager pastes THIS, not the bare destination,
-      or the campaign ships unmeasurable. Readonly input rather than text so
-      it can be selected whole with one click. -#}
-  {% if a.status == 'approved' %}
-    {% if a.tracked_url %}
-    <div class="tracked-url">
-      <span class="small muted">tracked link</span>
-      <input type="text" readonly value="{{ a.tracked_url }}"
-             onclick="this.select()">
+      {% endif %}
+      {#- Reject stands next to Approve for anything not yet decided, including
+          a version with no QA result: turning something down does not require
+          QA to have run on it first. It is the action the edit loop was
+          missing -- ask for a change, dislike the result, keep what you had. -#}
+      {% if a.status in ('draft', 'review') %}
+      <form method="post"
+            action="/campaigns/{{ c.id }}/assets/{{ a.id }}/reject"
+            class="inline">
+        <input type="text" name="note"
+               placeholder="why (optional)" maxlength="500">
+        <button type="submit" class="sm subtle" data-busy="Rejecting&hellip;">
+          Reject</button></form>
+      {% endif %}
+      {% if a.status == 'approved' and a.approved_by %}
+        <span class="muted small">approved by {{ a.approved_by }}</span>
+      {% elif a.status == 'rejected' and a.rejected_by %}
+        <span class="muted small">rejected by {{ a.rejected_by }}
+          {%- if a.notes %} &mdash; {{ a.notes }}{% endif %}</span>
+      {% endif %}
+      </div>
     </div>
-    {% elif c.destination_url %}
-    <p class="small muted" style="margin:10px 0 0">
-      approved before tracked links existed &mdash; re-approve a new version
-      to stamp one</p>
-    {% else %}
-    <p class="small muted" style="margin:10px 0 0">
-      no tracked link &mdash; the brief has no destination URL</p>
+    <div class="byline">concept: {{ a.concept_hook }}{% if a.qa_by %}
+      &middot; QA by {{ a.qa_by }}{% endif %}</div>
+
+    <dl class="asset-fields">
+      {% for key, value in a.content.items() %}
+      <dt>{{ key }}
+        {%- if value is string %}
+          <span class="muted">({{ value | length }} chars)</span>
+        {%- elif value is sequence %}
+          <span class="muted">({{ value | length }})</span>{% endif %}
+      </dt>
+      <dd>{{ content_value(value) }}</dd>
+      {% endfor %}
+    </dl>
+
+    {#- 025. The link is part of the deliverable: whoever builds the email in
+        the ESP or the ad in Ads Manager pastes THIS, not the bare destination,
+        or the campaign ships unmeasurable. Readonly input rather than text so
+        it can be selected whole with one click. -#}
+    {% if a.status == 'approved' %}
+      {% if a.tracked_url %}
+      <div class="tracked-url">
+        <span>tracked link</span>
+        <input type="text" readonly value="{{ a.tracked_url }}"
+               onclick="this.select()">
+      </div>
+      {% elif c.destination_url %}
+      <p class="small muted" style="margin:12px 0 0">
+        approved before tracked links existed &mdash; re-approve a new version
+        to stamp one</p>
+      {% else %}
+      <p class="small muted" style="margin:12px 0 0">
+        no tracked link &mdash; the brief has no destination URL</p>
+      {% endif %}
     {% endif %}
-  {% endif %}
 
-  {% if a.blockers or a.warnings %}
-  <div style="margin-top:10px">
-    {{ findings(a.blockers, 'blocker') }}
-    {{ findings(a.warnings, 'warning') }}
+    {% if a.blockers or a.warnings %}
+    <div style="margin-top:12px">
+      {{ findings(a.blockers, 'blocker') }}
+      {{ findings(a.warnings, 'warning') }}
+    </div>
+    {% endif %}
+
+    {% if a.knowledge_snapshot %}
+    <p class="small muted mono" style="margin:12px 0 0">
+      {{ a.knowledge_snapshot.kb_chunk_ids | length }} chunks &middot;
+      {{ a.knowledge_snapshot.approved_claims | length }} approved claims &middot;
+      {{ a.knowledge_snapshot.prohibited_claims | length }} prohibited withheld
+    </p>
+    {% endif %}
+
+    {{ revision_log(a, c.id) }}
+    {% if a.status not in ('approved', 'superseded', 'rejected') %}
+      {{ edit_form('asset', a, c.id) }}
+    {% endif %}
   </div>
-  {% endif %}
-
-  {% if a.knowledge_snapshot %}
-  <p class="small muted mono" style="margin:10px 0 0">
-    {{ a.knowledge_snapshot.kb_chunk_ids | length }} chunks &middot;
-    {{ a.knowledge_snapshot.approved_claims | length }} approved claims &middot;
-    {{ a.knowledge_snapshot.prohibited_claims | length }} prohibited withheld
-  </p>
-  {% endif %}
-
-  {{ revision_log(a, c.id) }}
-  {% if a.status not in ('approved', 'superseded', 'rejected') %}
-    {{ edit_form('asset', a, c.id) }}
-  {% endif %}
-</div>
-{% endfor %}
+  {% endfor %}
+</section>
 
 <!-- ------------------------------------------------------------ stage 9 -->
-<h2>Stage 9 &mdash; campaign approval</h2>
-<div class="card">
-  <div class="row" style="justify-content:space-between; align-items:baseline">
-    <div>
+<section class="stage" id="stage-9" data-state="{{ state[9] }}">
+  <div class="stage-head">
+    <span class="n">9</span>
+    <h2>Stage 9 &mdash; campaign approval</h2>
+    {% if lifecycle.earned != c.status %}
+      <span class="state">pipeline is at
+        <strong>{{ lifecycle.earned }}</strong></span>
+    {% endif %}
+  </div>
+
+  <div class="card">
+    <div class="row">
       <span class="pill {{ c.status }}">{{ c.status }}</span>
-      {% if lifecycle.earned != c.status %}
-        <span class="muted small">pipeline is at
-          <strong>{{ lifecycle.earned }}</strong></span>
-      {% endif %}
       {% if c.approved_by %}
-        <span class="muted small">&middot; approved by {{ c.approved_by }}</span>
+        <span class="muted small">approved by {{ c.approved_by }}</span>
       {% endif %}
     </div>
-  </div>
 
-  {% if lifecycle.slots %}
-  <div class="slots small" style="margin-top:12px">
-    {% for label, ok in lifecycle.slots %}
-      <span class="slot {{ 'ok' if ok else 'pending' }}">
-        {{ '&check;' | safe if ok else '&middot;' | safe }} {{ label }}</span>
-    {% endfor %}
-  </div>
-  {% endif %}
-
-  {% if lifecycle.blockers %}
-    {#- Not a flash: this is a standing checklist, not a one-time message.
-        Every entry is a thing to go and do. #}
-    <div style="margin-top:12px">
-      <div class="small muted">Not ready to approve:</div>
-      {{ findings(lifecycle.blockers, 'blocker') }}
-    </div>
-  {% elif 'approved' in lifecycle.can_go_to %}
-    <div class="flash ok" style="margin:12px 0 0">
-      Every asset slot has an approved version and every channel in the brief
-      is covered. Approving the campaign records you as responsible for
-      everything it publishes.
-    </div>
-  {% endif %}
-
-  {% if lifecycle.can_go_to %}
-  <div class="row" style="margin-top:12px; align-items:flex-start">
-    {% for target in lifecycle.can_go_to %}
-    <form method="post" action="/campaigns/{{ c.id }}/promote/{{ target }}"
-          {% if target == 'approved' %}class="promote"{% else %}class="inline"{% endif %}>
-      {% if target == 'approved' %}
-      <input type="text" name="note" maxlength="300"
-             placeholder="optional note for the record">
-      {% endif %}
-      <button type="submit"
-              class="{{ '' if target == 'approved' else 'ghost' }}{{ ' danger' if target == 'archived' else '' }}"
-              data-busy="Working&hellip;"
-              {% if target == 'approved' and lifecycle.blockers %}disabled{% endif %}>
-        {{ 'Approve campaign' if target == 'approved'
-           else 'Mark live' if target == 'live'
-           else 'Mark completed' if target == 'completed'
-           else 'Archive' }}</button>
-    </form>
-    {% endfor %}
-  </div>
-  {% else %}
-    <p class="muted small" style="margin:12px 0 0">
-      {{ c.status }} is terminal &mdash; nothing further to do here.</p>
-  {% endif %}
-
-  {% if lifecycle.history %}
-  <details style="margin-top:12px">
-    <summary>Status history ({{ lifecycle.history | length }})</summary>
-    <table style="margin-top:10px">
-      <tr><th>from</th><th>to</th><th>by</th><th>how</th><th>note</th></tr>
-      {% for e in lifecycle.history %}
-      <tr>
-        <td class="muted">{{ e.from_status or '&mdash;' | safe }}</td>
-        <td><span class="pill {{ e.to_status }}">{{ e.to_status }}</span></td>
-        <td class="small">{{ e.changed_by }}</td>
-        {#- The distinction 021 exists to preserve: an inference must not read
-            as a sign-off. #}
-        <td class="small muted">{{ 'automatic' if e.automatic else 'decided' }}</td>
-        <td class="small">{{ e.note or '' }}</td>
-      </tr>
+    {% if lifecycle.slots %}
+    <div class="slots" style="margin-top:14px">
+      {% for label, ok in lifecycle.slots %}
+        <span class="slot {{ 'ok' if ok else 'pending' }}">
+          {{ '&check;' | safe if ok else '&middot;' | safe }} {{ label }}</span>
       {% endfor %}
-    </table>
-  </details>
-  {% endif %}
-</div>
+    </div>
+    {% endif %}
+
+    {% if lifecycle.blockers %}
+      {#- Not a flash: this is a standing checklist, not a one-time message.
+          Every entry is a thing to go and do. #}
+      <div style="margin-top:14px">
+        <div class="small muted">Not ready to approve:</div>
+        {{ findings(lifecycle.blockers, 'blocker') }}
+      </div>
+    {% elif 'approved' in lifecycle.can_go_to %}
+      <div class="flash ok" style="margin:14px 0 0">
+        <div>Every asset slot has an approved version and every channel in the
+          brief is covered. Approving the campaign records you as responsible
+          for everything it publishes.</div>
+      </div>
+    {% endif %}
+
+    {% if lifecycle.can_go_to %}
+    <div class="row" style="margin-top:14px; align-items:flex-start">
+      {% for target in lifecycle.can_go_to %}
+      <form method="post" action="/campaigns/{{ c.id }}/promote/{{ target }}"
+            {% if target == 'approved' %}class="promote"{% else %}class="inline"{% endif %}>
+        {% if target == 'approved' %}
+        <input type="text" name="note" maxlength="300"
+               placeholder="optional note for the record">
+        {% endif %}
+        <button type="submit"
+                class="{{ '' if target == 'approved' else 'ghost' }}{{ ' danger' if target == 'archived' else '' }}"
+                data-busy="Working&hellip;"
+                {% if target == 'approved' and lifecycle.blockers %}disabled{% endif %}>
+          {{ 'Approve campaign' if target == 'approved'
+             else 'Mark live' if target == 'live'
+             else 'Mark completed' if target == 'completed'
+             else 'Archive' }}</button>
+      </form>
+      {% endfor %}
+    </div>
+    {% else %}
+      <p class="muted small" style="margin:14px 0 0">
+        {{ c.status }} is terminal &mdash; nothing further to do here.</p>
+    {% endif %}
+
+    {% if lifecycle.history %}
+    <details style="margin-top:14px">
+      <summary>Status history ({{ lifecycle.history | length }})</summary>
+      <div class="table-wrap" style="margin-top:11px">
+        <table>
+          <tr><th>from</th><th>to</th><th>by</th><th>how</th><th>note</th></tr>
+          {% for e in lifecycle.history %}
+          <tr>
+            <td class="muted">{{ e.from_status or '&mdash;' | safe }}</td>
+            <td><span class="pill {{ e.to_status }}">{{ e.to_status }}</span></td>
+            <td class="small">{{ e.changed_by }}</td>
+            {#- The distinction 021 exists to preserve: an inference must not
+                read as a sign-off. #}
+            <td class="small muted">{{ 'automatic' if e.automatic else 'decided' }}</td>
+            <td class="small">{{ e.note or '' }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </details>
+    {% endif %}
+  </div>
+</section>
 
 {% endblock %}

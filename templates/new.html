@@ -2,12 +2,15 @@
 {% block title %}New brief{% endblock %}
 {% block body %}
 
-<h2 style="margin-top:0">Stage 1 &mdash; campaign brief</h2>
-<p class="muted small" style="max-width:64ch">
-  A brief is filed as <strong>draft</strong> and is allowed to be incomplete or
-  wrong. Validation is the next step and will say exactly what is missing, so
-  nothing here refuses to save.
-</p>
+<div class="page-head">
+  <div class="eyebrow">Stage 1</div>
+  <h1>Campaign brief</h1>
+  <div class="sub prose">
+    A brief is filed as <strong>draft</strong> and is allowed to be incomplete
+    or wrong. Validation is the next step and will say exactly what is
+    missing, so nothing here refuses to save.
+  </div>
+</div>
 
 <form method="post" action="/campaigns">
   <fieldset>
@@ -88,13 +91,12 @@
         <span class="hint">&mdash; never AK or HI</span>
         <input type="text" name="geographic_target"
                placeholder="FL, GA, SC, TX"></label></div>
-      <div><label>Destination URL
-        <span class="hint">&mdash; where the traffic lands; each approved
-          asset gets this with its own utm tags</span>
-        <input type="url" name="destination_url"
-               placeholder="https://renegadeinsurance.com/franchise">
-        </label></div>
     </div>
+    <label>Destination URL
+      <span class="hint">&mdash; where the traffic lands; each approved
+        asset gets this with its own utm tags</span>
+      <input type="url" name="destination_url"
+             placeholder="https://renegadeinsurance.com/franchise"></label>
     <label>Additional context
       <textarea name="additional_context"></textarea></label>
   </fieldset>
@@ -104,11 +106,11 @@
       it. Deliberately its own fieldset for that reason. -#}
   <fieldset>
     <legend>Do not mention</legend>
-    <p class="small muted" style="margin:0 0 12px">
+    <p class="small muted prose" style="margin:8px 0 0">
       Words and phrases this campaign must not use. Each one becomes a
-      blocker: any asset containing it fails QA and cannot be approved. For
-      wording that should never be used for this brand at all, use
-      <a href="/exclusions">the standing list</a> instead.
+      <strong>blocker</strong>: any asset containing it fails QA and cannot be
+      approved. For wording that should never be used for this brand at all,
+      use <a href="/exclusions">the standing list</a> instead.
     </p>
     <label>Excluded wording
       <span class="hint">&mdash; one per line, or comma separated</span>
@@ -117,7 +119,9 @@
     </label>
   </fieldset>
 
-  <button type="submit" data-busy="Filing&hellip;">File brief</button>
-  <a href="/" class="muted small" style="margin-left:12px">Cancel</a>
+  <div class="row" style="margin-top:18px">
+    <button type="submit" data-busy="Filing&hellip;">File brief</button>
+    <a href="/" class="muted small">Cancel</a>
+  </div>
 </form>
 {% endblock %}

@@ -2,19 +2,19 @@
 {% block title %}Do not use{% endblock %}
 {% block body %}
 
-<div class="row" style="justify-content: space-between;">
-  <h2 style="margin-top:0">Do not use</h2>
-  <a class="muted small" href="/">Back to campaigns</a>
-</div>
-
-<div class="card">
-  <p class="small" style="margin-top:0">
+<div class="page-head">
+  <div class="eyebrow">Governance</div>
+  <h1>Do not use</h1>
+  <div class="sub prose">
     Wording that must never appear in generated copy for a brand. Every entry
     is a <strong>blocker</strong>: any asset containing it fails QA and cannot
     be approved, and the phrase is stated to the model as a flat instruction
     before it sees any evidence.
-  </p>
-  <p class="small muted" style="margin-bottom:0">
+  </div>
+</div>
+
+<div class="card quiet">
+  <p class="small muted prose" style="margin:0">
     Matching ignores case and extra spacing, and anchors on whole words &mdash;
     so <code>ad</code> will not flag &ldquo;adjuster&rdquo;. For a one-off that
     applies to a single campaign, use <em>Do not mention</em> on the brief
@@ -22,71 +22,93 @@
   </p>
 </div>
 
-<div class="card">
-  <h3 style="margin-top:0">Add one</h3>
-  <form method="post" action="/exclusions">
-    <div class="grid2">
-      <div><label>Brand
-        <select name="brand_slug" required>
-          {% for b in brands %}
-          <option value="{{ b.slug }}">{{ b.name }}</option>
-          {% endfor %}
-        </select></label></div>
-      <div><label>Phrase
-        <input type="text" name="phrase" required minlength="2"
-               maxlength="200" placeholder="free forever"></label></div>
-    </div>
-    <label>Why <span class="hint">&mdash; optional; shown to whoever hits the
-      blocker</span>
-      <input type="text" name="note" maxlength="500"
-             placeholder="Legal asked us to stop claiming this"></label>
-    <button type="submit" data-busy="Adding&hellip;">Add exclusion</button>
-  </form>
-</div>
-
-{% if not rules %}
-  <div class="card muted">
-    Nothing excluded yet. Until something is added here or on a brief, no
-    wording is blocked on the operator&rsquo;s instruction.
+<section class="stage" style="margin-top:24px">
+  <div class="stage-head">
+    <h2>Add an exclusion</h2>
   </div>
-{% else %}
-<table>
-  <tr>
-    <th>Phrase</th><th>Brand</th><th>Why</th><th>Added by</th><th></th>
-  </tr>
-  {% for r in rules %}
-  <tr{% if not r.active %} class="muted"{% endif %}>
-    <td>
-      <strong>{{ r.phrase }}</strong>
-      {% if not r.active %}
-        <span class="pill superseded">retired</span>
-      {% endif %}
-    </td>
-    <td class="small">{{ r.brand_name }}</td>
-    <td class="small">{{ r.note or '--' }}</td>
-    <td class="small">
-      {{ r.added_by }}
-      <div class="muted small">{{ r.added_at.strftime('%Y-%m-%d') }}</div>
-    </td>
-    <td>
-      {% if r.active %}
-      <form method="post" action="/exclusions/{{ r.id }}/retire"
-            class="inline">
-        <button type="submit" class="sm ghost" data-busy="Retiring&hellip;">
-          Retire</button></form>
-      {% else %}
-        <span class="muted small">by {{ r.retired_by }}
-          {{ r.retired_at.strftime('%Y-%m-%d') }}</span>
-      {% endif %}
-    </td>
-  </tr>
-  {% endfor %}
-</table>
-<p class="small muted">
-  Retired entries are kept rather than deleted, so
-  &ldquo;we used to forbid this and stopped&rdquo; stays answerable. Adding a
-  retired phrase again revives it.
-</p>
-{% endif %}
+  <div class="card">
+    <form method="post" action="/exclusions">
+      <div class="grid2">
+        <div><label>Brand
+          <select name="brand_slug" required>
+            {% for b in brands %}
+            <option value="{{ b.slug }}">{{ b.name }}</option>
+            {% endfor %}
+          </select></label></div>
+        <div><label>Phrase
+          <input type="text" name="phrase" required minlength="2"
+                 maxlength="200" placeholder="free forever"></label></div>
+      </div>
+      <label>Why <span class="hint">&mdash; optional; shown to whoever hits
+        the blocker</span>
+        <input type="text" name="note" maxlength="500"
+               placeholder="Legal asked us to stop claiming this"></label>
+      <div class="row" style="margin-top:16px">
+        <button type="submit" data-busy="Adding&hellip;">Add exclusion</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="stage">
+  <div class="stage-head">
+    <h2>The standing list</h2>
+    {% if rules %}
+      <span class="state">{{ rules | selectattr('active') | list | length }}
+        active</span>
+    {% endif %}
+  </div>
+
+  {% if not rules %}
+    <div class="empty">
+      Nothing excluded yet. Until something is added here or on a brief, no
+      wording is blocked on the operator&rsquo;s instruction.
+    </div>
+  {% else %}
+  <div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Phrase</th><th>Brand</th><th>Why</th><th>Added by</th><th></th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for r in rules %}
+    <tr{% if not r.active %} class="muted"{% endif %}>
+      <td>
+        <strong>{{ r.phrase }}</strong>
+        {% if not r.active %}
+          <span class="pill superseded">retired</span>
+        {% endif %}
+      </td>
+      <td class="small">{{ r.brand_name }}</td>
+      <td class="small">{{ r.note or '--' }}</td>
+      <td class="small">
+        {{ r.added_by }}
+        <div class="muted small">{{ r.added_at.strftime('%Y-%m-%d') }}</div>
+      </td>
+      <td>
+        {% if r.active %}
+        <form method="post" action="/exclusions/{{ r.id }}/retire"
+              class="inline">
+          <button type="submit" class="sm subtle" data-busy="Retiring&hellip;">
+            Retire</button></form>
+        {% else %}
+          <span class="muted small">by {{ r.retired_by }}
+            {{ r.retired_at.strftime('%Y-%m-%d') }}</span>
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  <p class="small muted prose" style="margin-top:12px">
+    Retired entries are kept rather than deleted, so
+    &ldquo;we used to forbid this and stopped&rdquo; stays answerable. Adding a
+    retired phrase again revives it.
+  </p>
+  {% endif %}
+</section>
 
 {% endblock %}

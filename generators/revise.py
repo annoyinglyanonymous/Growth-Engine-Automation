@@ -149,8 +149,12 @@ KINDS: dict[str, Kind] = {
         content_columns=("content",),
         versioned=True,
         shape="the SAME keys as the current draft, no more and no fewer",
-        guidance="Respect the channel's character limits. Do not add or remove "
-                 "keys -- the field names are what the platform expects.",
+        guidance="Respect the channel's character limits. Do not add or "
+                 "remove keys -- the field names are what the platform "
+                 "expects and what the limit checks read by name. A list of "
+                 "shots or sections MAY gain or lose entries if the note asks "
+                 "for that, but every entry keeps the same keys as the "
+                 "others.",
     ),
 }
 
@@ -302,40 +306,100 @@ def _shape_hint(kind: Kind) -> str:
             f'}}')
 
 
+def _kind_of(value: object) -> str:
+    """A JSON shape name, for both comparison and the message a reviewer
+    reads. bool before int deliberately: True is an int in Python, and a shot
+    that runs `true` seconds is not a rounding question."""
+    if isinstance(value, str):
+        return "text"
+    if isinstance(value, bool):
+        return "true/false"
+    if isinstance(value, (int, float)):
+        return "a number"
+    if isinstance(value, dict):
+        return "an object"
+    if isinstance(value, list):
+        return "a list"
+    if value is None:
+        return "null"
+    return type(value).__name__
+
+
+def _shape_problems(previous: object, got: object,
+                    path: str = "") -> list[str]:
+    """Every way `got` fails to have the same shape as `previous`.
+
+    WHY A SHAPE COMPARISON AND NOT A FIELD LIST
+    This used to require every asset value to be a non-empty string, which
+    was true while every asset was three or four flat fields. A video script
+    is a nested shot list, so that rule would reject every legitimate
+    revision of one -- twice, and then raise. Comparing against the shape
+    that is already in the database says the same thing for flat content and
+    keeps saying it for nested content, without this function needing to know
+    what a scene is.
+
+    It also fixes something that was already broken: campaign_strategies
+    stores `objections` as a list of OBJECTS, and the old rule demanded lists
+    of strings, so a strategy revision that touched nothing but the core
+    message failed validation every time.
+
+    LENGTHS MAY CHANGE, KEYS MAY NOT
+    A list can grow or shrink -- "make it shorter" legitimately means four
+    shots instead of five, and that is a creative decision. Renaming or
+    dropping a KEY is different: field names are what the ad platform expects
+    and what the character-limit checks read by name, so a renamed key is a
+    broken asset rather than a shorter one. List entries are therefore checked
+    against the first existing entry as a template.
+    """
+    here = path or "the object"
+    prev_kind, got_kind = _kind_of(previous), _kind_of(got)
+
+    # A previously-empty field has no shape to preserve, so anything
+    # substantive is an improvement -- a null rationale being filled in is
+    # the point of asking for a revision, not a violation.
+    if previous is None:
+        if got is None or (isinstance(got, (str, list, dict)) and not got) \
+                or (isinstance(got, str) and not got.strip()):
+            return [f"{here} must be filled in"]
+        return []
+
+    if prev_kind != got_kind:
+        return [f"{here} must be {prev_kind}, not {got_kind}"]
+
+    out: list[str] = []
+    if prev_kind == "text":
+        if not got.strip():
+            out.append(f"{here} must be a non-empty string")
+    elif prev_kind == "an object":
+        missing = sorted(set(previous) - set(got))
+        added = sorted(set(got) - set(previous))
+        where = "" if not path else f" in {path}"
+        if missing:
+            out.append(f"missing key(s){where}: {', '.join(missing)}")
+        if added:
+            out.append(f"unexpected key(s){where}: {', '.join(added)}")
+        for key in previous:
+            if key in got:
+                out.extend(_shape_problems(
+                    previous[key], got[key],
+                    f"{path}.{key}" if path else str(key)))
+    elif prev_kind == "a list":
+        if previous and not got:
+            out.append(f"{here} had entries and must not be emptied")
+        elif previous:
+            template = previous[0]
+            for i, item in enumerate(got):
+                out.extend(_shape_problems(template, item, f"{path}[{i}]"))
+    return out
+
+
 def validate(kind: Kind, data: dict, previous: dict) -> list[str]:
     """Structural check on the model's answer. Never a judgement call."""
-    problems: list[str] = []
     revised = data.get("revised")
     if not isinstance(revised, dict) or not revised:
         return ["'revised' must be a non-empty object"]
 
-    if kind.table == "campaign_assets":
-        # Field names are what the ad platform expects, so a renamed or
-        # dropped key is a broken asset rather than a stylistic choice.
-        missing = sorted(set(previous) - set(revised))
-        added = sorted(set(revised) - set(previous))
-        if missing:
-            problems.append(f"missing key(s): {', '.join(missing)}")
-        if added:
-            problems.append(f"unexpected key(s): {', '.join(added)}")
-        for key, value in revised.items():
-            if not isinstance(value, str) or not value.strip():
-                problems.append(f"{key} must be a non-empty string")
-    else:
-        for key in kind.content_columns:
-            if key not in revised:
-                problems.append(f"missing {key}")
-                continue
-            value = revised[key]
-            expected_list = isinstance(previous.get(key), list)
-            if expected_list and not isinstance(value, list):
-                problems.append(f"{key} must be a list")
-            elif expected_list and not all(
-                    isinstance(v, str) and v.strip() for v in value):
-                problems.append(f"{key} entries must be non-empty strings")
-            elif not expected_list and not (isinstance(value, str)
-                                            and value.strip()):
-                problems.append(f"{key} must be a non-empty string")
+    problems = _shape_problems(previous, revised)
 
     if not isinstance(data.get("agent_note", ""), str):
         problems.append("agent_note must be a string")

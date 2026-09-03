@@ -129,6 +129,18 @@ REQUIRED_SCHEMA: dict[str, dict] = {
         "breaks": "asset approval (the tracked-link stamp), the campaign "
                   "detail screen, and filing a brief",
     },
+    "026_video_script_assets.sql": {
+        # A widened CHECK, not a new column -- so it is matched by looking
+        # for the new value inside the constraint's definition. Without an
+        # entry here 026 would be the one migration whose absence surfaced
+        # as a raw CheckViolation from the generator instead of a line at
+        # boot naming the file to run, which is the whole point of this
+        # preflight.
+        "constraints": (("campaign_assets", "campaign_assets_asset_type_check",
+                         "video_script"),),
+        "breaks": "generating UGC video scripts (stage 7); everything else "
+                  "is unaffected",
+    },
 }
 
 
@@ -154,6 +166,21 @@ async def schema_preflight() -> list[str]:
     }
     tables = {table for table, _ in have}
 
+    # Constraint definitions, for the specs that widen a CHECK rather than add
+    # a column. pg_get_constraintdef renders the whole expression, so a
+    # substring search for the new value is enough and does not depend on how
+    # Postgres chose to format the list.
+    defs = {
+        (r["table_name"], r["conname"]): r["definition"]
+        for r in await fetch_all(
+            "select rel.relname as table_name, con.conname, "
+            "       pg_get_constraintdef(con.oid) as definition "
+            "from pg_constraint con "
+            "join pg_class rel on rel.oid = con.conrelid "
+            "join pg_namespace nsp on nsp.oid = rel.relnamespace "
+            "where nsp.nspname = 'public' and con.contype = 'c'")
+    }
+
     lines: list[str] = []
     for migration, spec in REQUIRED_SCHEMA.items():
         wrong: list[str] = []
@@ -166,6 +193,12 @@ async def schema_preflight() -> list[str]:
                 wrong.append(f"{table}.{column} (missing)")
             elif actual != want:
                 wrong.append(f"{table}.{column} (is {actual}, needs {want})")
+        for table, constraint, want in spec.get("constraints", ()):
+            definition = defs.get((table, constraint))
+            if definition is None:
+                wrong.append(f"constraint {constraint} (missing)")
+            elif want not in definition:
+                wrong.append(f"{constraint} (does not allow {want!r})")
         if wrong:
             lines.append(
                 f"SCHEMA: {migration} is not applied -- "

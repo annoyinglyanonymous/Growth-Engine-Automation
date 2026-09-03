@@ -194,8 +194,9 @@ async def _tracked_link(cur, row: dict) -> str | None:
         return None
     return tracking.tracked_url(
         camp["destination_url"], campaign_name=camp["name"],
-        channel=row["channel"], variant=row["variant"],
-        position=row["position"], version=row["version_number"])
+        channel=row["channel"], asset_type=row["asset_type"],
+        variant=row["variant"], position=row["position"],
+        version=row["version_number"])
 
 
 async def approve(table: str, row_id: str, approved_by: str) -> dict:

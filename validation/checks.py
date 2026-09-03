@@ -153,8 +153,43 @@ def money_amounts(text: str) -> set[float]:
 
 
 def fields_of(content: dict) -> list[tuple[str, str]]:
-    """(field_name, text) for every string field, so findings can name one."""
-    return [(k, v) for k, v in (content or {}).items() if isinstance(v, str)]
+    """(field_name, text) for every string ANYWHERE in the content.
+
+    Every check in this module reads its text through here, so this walk is
+    what decides how much of an asset is actually governed. It used to read
+    only top-level values, which was true enough while every asset was flat
+    -- a Meta ad is three strings, an email four. A video script is not: its
+    spoken lines live in content["scenes"][i]["spoken"], and under the old
+    version a prohibited claim in shot 3 was invisible to all seven checks
+    and passed QA looking clean. That is the exact failure this project is
+    organised against, so the walk recurses.
+
+    Names are paths, so a finding still points at one editable thing:
+    top-level keys keep their bare name (`headline`), nested ones read
+    `scenes[2].spoken`. The top-level case is deliberately byte-identical to
+    what this returned before -- existing findings, their stored jsonb and
+    their tests must not shift because the traversal got deeper.
+
+    Non-strings are skipped rather than coerced. A scene's `seconds` is an
+    int and `str(3)` is not text anyone wrote; matching prohibited wording
+    against it would be theatre. Structural numbers are checked by
+    check_video_script, which knows what they mean.
+    """
+    out: list[tuple[str, str]] = []
+
+    def walk(node: object, prefix: str) -> None:
+        if isinstance(node, str):
+            out.append((prefix, node))
+        elif isinstance(node, dict):
+            for k, v in node.items():
+                walk(v, f"{prefix}.{k}" if prefix else str(k))
+        elif isinstance(node, list):
+            for i, v in enumerate(node):
+                walk(v, f"{prefix}[{i}]")
+        # Anything else -- int, float, bool, None -- carries no text.
+
+    walk(content or {}, "")
+    return out
 
 
 # --------------------------------------------------------------------------
@@ -672,6 +707,13 @@ CHANNEL_LIMITS: dict[tuple[str, str], dict[str, int]] = {
     ("meta_ads", "meta_ad"): {"primary_text": 125, "headline": 40,
                               "description": 30},
     ("email", "email"): {"subject": 60, "preheader": 90, "body": 1800},
+    # 026. A video script has exactly one field a character count means
+    # anything for: the feed caption, which Meta truncates at the same length
+    # as an ad's primary_text because it is the same piece of chrome. The rest
+    # of a script is spoken, and the limit on a spoken line is how long it
+    # takes to say -- check_video_script, not a character count. Inventing a
+    # character limit for a voiceover would be a number with no referent.
+    ("meta_ads", "video_script"): {"caption": 125},
 }
 
 
@@ -698,6 +740,199 @@ def check_character_limits(content: dict, channel: str,
                 evidence=val[limit:limit + 40],
                 remedy="Tighten the phrasing rather than truncating.",
             ))
+    return findings
+
+
+# --------------------------------------------------------------------------
+# 8. Video scripts (026)
+# --------------------------------------------------------------------------
+
+#: Words a person says per second at ad-read pace. 150 words per minute is the
+#: long-standing broadcast convention, and UGC delivery is not materially
+#: faster once you allow for the breath between shots. The number exists so
+#: "can this line be said in three seconds" is a FACT with a stated basis
+#: rather than a feeling -- which is the whole difference between this tier
+#: and the AI one.
+WORDS_PER_SECOND = 2.5
+
+#: How long the opening shot may run. On Reels the first three seconds decide
+#: whether the rest is watched at all, so a hook that takes longer than this
+#: is a hook that mostly did not happen.
+HOOK_MAX_SECONDS = 3
+
+#: Slack allowed before a timing mismatch is worth a reviewer's attention. A
+#: 30-second target delivered in 34 is a normal edit; delivered in 48 is a
+#: different ad. 15% draws that line without flagging every script.
+TIMING_TOLERANCE = 0.15
+
+#: An on-screen caption is read at a glance on a phone, over moving footage.
+#: Past roughly two short lines it is decoration nobody finishes.
+ON_SCREEN_MAX_CHARS = 45
+
+#: Keys every shot must carry. `spoken` and `on_screen` are the copy;
+#: `visual_prompt` is what gets pasted into the video platform; `n` and
+#: `seconds` are what make the list assemblable in order and to length.
+SCENE_KEYS = ("n", "seconds", "spoken", "on_screen", "visual_prompt")
+
+
+def _word_count(text: str) -> int:
+    return len(normalise(text).split())
+
+
+def _is_number(value: object) -> bool:
+    """Numeric and not a bool. jsonb round-trips True as a number-ish thing
+    in enough languages that excluding it explicitly is cheaper than being
+    surprised by a shot that runs `true` seconds."""
+    return isinstance(value, (int, float)) and not isinstance(value, bool)
+
+
+def check_video_script(content: dict, asset_type: str) -> list[Finding]:
+    """Structure and timing of a UGC shot list. Returns [] for anything else.
+
+    The video analogue of check_character_limits: it asks whether the asset
+    fits its medium, where the medium's real constraint is time rather than
+    characters. Everything about what the script SAYS is already covered --
+    fields_of walks into the scenes, so prohibited wording, exclusions,
+    pricing, features, CTA and claim freshness all read the spoken lines.
+
+    TWO SEVERITIES, ON PURPOSE
+    Structural breakage is a blocker: a video_script row with no scenes is not
+    a script, and that is a fact with no false-positive case, so asset_qa is
+    right to move it out of draft where nobody can approve it by reading only
+    the status column. Timing is a warning: a script that runs four seconds
+    long is a trim, not a governance failure, and a blocker there would teach
+    reviewers to override the checker -- which is how a real blocker comes to
+    be ignored later.
+    """
+    if asset_type != "video_script":
+        return []
+
+    findings: list[Finding] = []
+    scenes = (content or {}).get("scenes")
+
+    if not isinstance(scenes, list) or not scenes:
+        return [Finding(
+            check="video_script", severity="blocker", field_name="scenes",
+            message="A video script must carry a non-empty `scenes` list; "
+                    "there is nothing here to shoot.",
+            evidence=repr(scenes)[:60],
+            remedy="Regenerate the script (python -m generators.video_script "
+                   "<ref>).",
+        )]
+
+    for i, scene in enumerate(scenes):
+        if not isinstance(scene, dict):
+            findings.append(Finding(
+                check="video_script", severity="blocker",
+                field_name=f"scenes[{i}]",
+                message=f"Shot {i + 1} is {type(scene).__name__}, not an "
+                        f"object carrying {', '.join(SCENE_KEYS)}.",
+                evidence=repr(scene)[:60],
+            ))
+            continue
+        # Presence is not enough: every timing rule below reads `seconds` as
+        # a number and every text rule reads its field as a string, and both
+        # skip silently on the wrong type. A shot whose `seconds` came back
+        # as true, or whose `spoken` came back as a list, would then draw no
+        # finding at all -- an untimed shot that looks checked. So the type
+        # is part of the structure.
+        wrong = []
+        for key in SCENE_KEYS:
+            value = scene.get(key)
+            if key in ("n", "seconds"):
+                if not _is_number(value):
+                    wrong.append(f"{key} must be a number")
+                elif value <= 0:
+                    wrong.append(f"{key} must be greater than zero")
+            elif not isinstance(value, str) or not value.strip():
+                wrong.append(f"{key} must be a non-empty string")
+        if wrong:
+            findings.append(Finding(
+                check="video_script", severity="blocker",
+                field_name=f"scenes[{i}]",
+                message=f"Shot {i + 1}: {'; '.join(wrong)}.",
+                remedy="Every shot needs a number, a length in seconds, a "
+                       "spoken line, an on-screen caption and a visual "
+                       "prompt, or it cannot be built.",
+            ))
+
+    # Numbering, before anything that treats shot order as meaningful.
+    numbers = [s.get("n") for s in scenes if isinstance(s, dict)]
+    if numbers and numbers != list(range(1, len(numbers) + 1)):
+        findings.append(Finding(
+            check="video_script", severity="blocker", field_name="scenes",
+            message=f"Shot numbers are {numbers}, not 1..{len(numbers)}, so "
+                    f"the shots cannot be assembled in order.",
+            remedy="Renumber them from 1 with no gaps.",
+        ))
+
+    for i, scene in enumerate(scenes):
+        if not isinstance(scene, dict):
+            continue
+        seconds = scene.get("seconds")
+        spoken = scene.get("spoken")
+
+        if _is_number(seconds) and isinstance(spoken, str) and seconds > 0:
+            words = _word_count(spoken)
+            needed = words / WORDS_PER_SECOND
+            if needed > seconds * (1 + TIMING_TOLERANCE):
+                findings.append(Finding(
+                    check="video_script", severity="warning",
+                    field_name=f"scenes[{i}].spoken",
+                    message=f"Shot {i + 1} allows {seconds:g}s but its line "
+                            f"is {words} words, which takes about "
+                            f"{needed:.1f}s to say.",
+                    evidence=spoken[:80],
+                    remedy=f"Cut it to about "
+                           f"{int(seconds * WORDS_PER_SECOND)} words, or give "
+                           f"the shot more time.",
+                ))
+
+        if i == 0 and _is_number(seconds) and seconds > HOOK_MAX_SECONDS:
+            findings.append(Finding(
+                check="video_script", severity="warning",
+                field_name=f"scenes[{i}].seconds",
+                message=f"The opening shot runs {seconds:g}s. On Reels the "
+                        f"first {HOOK_MAX_SECONDS}s decide whether the rest "
+                        f"is watched at all.",
+                remedy=f"Hold the hook to {HOOK_MAX_SECONDS}s and move the "
+                       f"detail into shot 2.",
+            ))
+
+        on_screen = scene.get("on_screen")
+        if isinstance(on_screen, str) and len(on_screen) > ON_SCREEN_MAX_CHARS:
+            findings.append(Finding(
+                check="video_script", severity="warning",
+                field_name=f"scenes[{i}].on_screen",
+                message=f"Shot {i + 1} has a {len(on_screen)}-character "
+                        f"on-screen caption; past {ON_SCREEN_MAX_CHARS} it is "
+                        f"not read on a phone.",
+                evidence=on_screen[ON_SCREEN_MAX_CHARS:
+                                   ON_SCREEN_MAX_CHARS + 40],
+                remedy="Shorten the caption; the spoken line carries the "
+                       "detail.",
+            ))
+
+    # Total runtime against what the operator asked for.
+    target = (content or {}).get("duration_target_seconds")
+    declared = sum(s["seconds"] for s in scenes
+                   if isinstance(s, dict) and _is_number(s.get("seconds")))
+    if not _is_number(target) or target <= 0:
+        findings.append(Finding(
+            check="video_script", severity="info",
+            field_name="duration_target_seconds",
+            message=f"No duration target on this script, so its "
+                    f"{declared:g}s runtime is not checked against one.",
+        ))
+    elif abs(declared - target) > target * TIMING_TOLERANCE:
+        findings.append(Finding(
+            check="video_script", severity="warning", field_name="scenes",
+            message=f"The shots total {declared:g}s against a "
+                    f"{target:g}s target.",
+            remedy="Adjust the shot lengths, or regenerate at the length you "
+                   "actually want.",
+        ))
+
     return findings
 
 
@@ -760,6 +995,9 @@ def run_asset_checks(content: dict, channel: str, asset_type: str,
         *check_unavailable_features(content, ctx),
         *check_cta_consistency(content, ctx),
         *check_character_limits(content, channel, asset_type),
+        # Beside character limits, and for the same reason: does this
+        # asset fit its medium. A video's medium is measured in seconds.
+        *check_video_script(content, asset_type),
         # Last: it is the only check here that reports on something
         # the copy got RIGHT but may have got right about a stale
         # fact, so it belongs below the findings about the copy.
